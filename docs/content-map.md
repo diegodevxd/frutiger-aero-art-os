@@ -8,9 +8,9 @@ Inventario completo del contenido auténtico de **moekat (`@moekat`)** extraído
 
 | Sección de `reigen.moe` | Página en nuestro sitio | Contenido de moekat asignado | Estado |
 | :--- | :--- | :--- | :--- |
-| `/` (Splash Entry Gate) | `index.html` | Título `MOEKAT`, aviso de archivo (71 obras, apto PC y móvil), bloques `M O E K A T`, cajón desplegable superior con redes y accesos, miniaturas de vista previa (`tyarot`, `digital1`, `escultura1`, `biseturia1`), CTA `ENTRAR → home.html` y contador local. | **Construida** |
-| `/home` (Hub Principal + Navegación lateral + Showcase aleatorio + Tabs + Jukebox + Columna derecha) | `home.html` | Barra lateral fija (`NAVIGATION`, submenú de `GALERIA (71)` y redes), widget mini-lienzo interactivo, selector de 5 filtros pastel (`FILTRO`), Showcase **`OBRA AL AZAR`** con las 71 piezas, Tabs (`BIENVENIDX` con avatar OC Garfield `image/dibujotradicional9.png`, *Artist Statement*, 4 obras seleccionadas y disciplinas; `MUSICA` reproduciendo `music/WorldFrutti.mp3`; `COMISIONES` con resumen MXN y láminas; `CONTACTO` con formulario Formspree), tarjeta de bienvenida con avatar OC Garfield `image/dibujotradicional9.png`, estado `COMISIONES ABIERTAS` + aplauso interactivo. | **Construida** |
-| `/galerie` (Galería general + Galería Garfield Tarot + Lightbox) | `galerie.html` | Dividida en dos secciones mediante pestañas: **Galería** (`49` obras generales con filtros, buscador, paginación y stickers pastel) y **Galería Garfield** (`22` Arcanos Mayores del Tarot de Garfield ordenados `0. El Loco` -> `XXI. El Mundo`, decorada exclusivamente con GIFs de `gifs/garfield/`), con Lightbox completo. | **Construida** |
+| `/` (Splash Entry Gate) | `index.html` | Título `MOEKAT`, aviso de archivo (75 obras, apto PC y móvil), bloques `M O E K A T`, cajón desplegable superior con redes y accesos, miniaturas de vista previa (`tyarot`, `digital1`, `escultura1`, `biseturia1`), CTA `ENTRAR → home.html` y contador local. | **Construida** |
+| `/home` (Hub Principal + Navegación lateral + Showcase aleatorio + Tabs + Jukebox + Columna derecha) | `home.html` | Barra lateral fija (`NAVIGATION`, submenú de `GALERIA (75)` y redes), widget mini-lienzo interactivo, selector de 5 filtros pastel (`FILTRO`), Showcase **`OBRA AL AZAR`** con las 75 piezas, Tabs (`BIENVENIDX` con avatar OC Garfield `image/dibujotradicional9.png`, *Artist Statement*, 4 obras seleccionadas y disciplinas; `MUSICA` reproduciendo `music/WorldFrutti.mp3`; `COMISIONES` con resumen MXN y láminas; `CONTACTO` con formulario Formspree), tarjeta de bienvenida con avatar OC Garfield `image/dibujotradicional9.png`, estado `COMISIONES ABIERTAS` + aplauso interactivo. | **Construida** |
+| `/galerie` (Galería general + Garfield Tarot + Portafolio + Bitácoras + Dioramas + Lightbox) | `galerie.html` | Seis pestañas: **Galería :: Archivo** (`53` obras generales con filtros, buscador y paginación), **Galería Garfield :: Tarot** (`22` Arcanos Mayores ordenados `0. El Loco` -> `XXI. El Mundo`), **Portafolio** (`24` láminas en 2 tomos), **Bitácora Piedra** (`18` páginas), **Bitácora Dibujo** (`1` lámina) y **Dioramas** (`9` fotos + `1` video). Las secciones nuevas usan visor secuencial *page-flip* con tira de miniaturas en carga diferida; todas abren en el Lightbox completo. | **Construida** |
 | `/profil` (Perfil con bordes de encaje, ficha, dato interactivo, 10 favoritas, marquee de estampillas y Q&A) | `profil.html` | Semblanza completa (*moekat / `@moekat`, artista transgénero y guanajuatense, Lic. Artes Visuales UG 2023*), avatar oficial OC Garfield `image/dibujotradicional9.png`, ficha técnica, certificado simbólico del archivo, emote interactivo `o0o.png` que cicla 7 datos reales, rejilla `2×5` de 10 obras destacadas, marquee de estampillas, disciplinas y Q&A. | **Construida** |
 | *(Sección de comisiones)* | `comisiones.html` | Información de `Comisiones/`: Tabla de precios MXN, paquetes de Emotes, reglas `SÍ PUEDO HACER` / `NO PUEDO HACER`, estado dinámico con GIF (`js/config.js`), 3 láminas clicables en Lightbox y enlace a contacto. | **Construida** |
 | `/oekaki` (Drawbox / Lienzo interactivo) | `oekaki.html` | Lienzo HTML5 (`520×420`), `Deshacer`, `Limpiar`, `Borrador`, tamaño de pincel, paleta de 20 colores + selector libre, descarga PNG (`lienzo-moekat.png`) y guardado local de bocetos en `localStorage`. | **Construida** |
@@ -32,7 +32,7 @@ Inventario completo del contenido auténtico de **moekat (`@moekat`)** extraído
 
 ## 3. Inventario Completo de Assets en `image/`, `Comisiones/` y `music/`
 
-### A. Obras en `image/` (71 piezas totales)
+### A. Obras en `image/` (75 piezas totales)
 
 #### 1. Tarot (`tarot` — 22 obras)
 | # | Título | Archivo completo | Miniatura | Técnica / Año |
@@ -118,6 +118,16 @@ Inventario completo del contenido auténtico de **moekat (`@moekat`)** extraído
 | 69 | Emote o0o | `image/o0o.png` | `image/thumbs/o0o.png` | PNG • 2024 |
 | 70 | Emote GG | `image/GG.png` | `image/thumbs/GG.png` | PNG • 2024 |
 | 71 | Emote Chopperpipi | `image/Chopperpipi.png` | `image/thumbs/Chopperpipi.png` | PNG • 2024 |
+
+### A.2 Galerías nuevas renderizadas desde PDF y fotos (2026)
+
+| Sección | Fuente original | Salida web | Piezas | Notas |
+| :--- | :--- | :--- | :--- | :--- |
+| Portafolio | `Portafolio.pdf` + `Portafolio Demian Tenorio PDF.pdf` | `image/portafolio/portafolio-01..12.webp`, `image/portafolio/seleccion-01..12.webp` | 24 láminas | PDFs no versionados; páginas rasterizadas a WebP (máx. 1600 px) y miniaturas en `thumbs/`. |
+| Bitácora :: Escultura en piedra | `bitacora_escultura_en_piedra.pdf` | `image/bitacora-piedra/piedra-01..18.webp` | 18 páginas | Proceso completo: bocetos, referencias, construcción, lijado y resultado. |
+| Bitácora :: Dibujo | `Dibujos Tarea 3.pdf` | `image/bitacora-dibujo/dibujo-01.webp` | 1 lámina | Lámina de estudios y bocetos. |
+| Dibujo Tradicional (archivo general) | `dibujo.jpeg`, `dibujo2.jpeg`, `dibujo3.jpeg`, `dibujo4.jpeg` | `image/dibujos/dibujo-01..04.webp` | 4 obras | Se suman a la categoría Dibujo Tradicional (14 piezas). |
+| Dioramas | `diorama2..9.jpeg`, `diorama10.png`, `diorama.mp4` | `image/dioramas/diorama-01..09.webp`, `image/dioramas/diorama.mp4`, `diorama-poster.webp` | 9 fotos + 1 video | Video re-codificado (H.264, ~1.7 MB), silenciado, con controles y póster. |
 
 ### B. Otros Assets Propios
 - `Comisiones/Comisiones tablita.png` → Tabla de precios MXN en `comisiones.html` y `home.html`.

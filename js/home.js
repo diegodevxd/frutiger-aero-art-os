@@ -320,10 +320,10 @@
     const clapBtn = document.getElementById('clapBtn');
     const clapCount = document.getElementById('clapCount');
     if (clapBtn && clapCount) {
-      let count = 71;
+      let count = 75;
       try {
-        const stored = parseInt(localStorage.getItem('pastel_kudos_count') || '71', 10);
-        if (!Number.isNaN(stored) && stored >= 71) count = stored;
+        const stored = parseInt(localStorage.getItem('pastel_kudos_count') || '75', 10);
+        if (!Number.isNaN(stored) && stored >= 75) count = stored;
       } catch {}
       clapCount.textContent = String(count);
 

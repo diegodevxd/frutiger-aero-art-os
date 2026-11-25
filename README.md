@@ -8,9 +8,10 @@ Rediseño completo del portafolio artístico de **moekat (`@moekat`)**, estudian
 
 - `index.html` - Portada de entrada con lluvia de estrellas pastel, cajón desplegable de redes y accesos rápidos, vista previa de piezas, bloques `M O E K A T`, botones `88×31` y contador local.
 - `home.html` - Hub principal con barra lateral fija (`NAVIGATION`), submenú de Galería / Galería Garfield, widget mini-lienzo interactivo, selector de 5 filtros pastel persistentes (`FILTRO`), showcase aleatoria, *Artist Statement*, avatar OC de Garfield (`image/dibujotradicional9.png`), Jukebox para `music/WorldFrutti.mp3`, resumen de comisiones y formulario de contacto.
-- `galerie.html` - Galería dividida en dos secciones (`?tab=general` y `?tab=garfield`):
-  - **Galería** (`49` obras): Dibujo Digital (`15`), Dibujo Tradicional (`10`), Esculturas (`7`), Bisutería (`7`), Collage (`7`) y Emotes (`3`) con filtros, buscador, paginación y Lightbox a resolución completa.
+- `galerie.html` - Galería en seis pestañas (`?tab=general`, `?tab=garfield`, `?tab=portafolio`, `?tab=piedra`, `?tab=dibujo`, `?tab=dioramas`):
+  - **Galería** (`53` obras): Dibujo Digital (`15`), Dibujo Tradicional (`14`), Esculturas (`7`), Bisutería (`7`), Collage (`7`) y Emotes (`3`) con filtros, buscador, paginación y Lightbox a resolución completa.
   - **Galería Garfield** (`22` Arcanos Mayores): baraja completa del Tarot de Garfield ordenada de `0. El Loco` a `XXI. El Mundo` con subtítulos y decorada exclusivamente con GIFs en `gifs/garfield/`.
+  - **Portafolio** (`24` láminas en 2 tomos), **Bitácora Piedra** (`18` páginas), **Bitácora Dibujo** (`1` lámina) y **Dioramas** (`9` fotos + `1` video): visor secuencial *page-flip* con miniaturas en carga diferida.
 - `profil.html` - Semblanza, avatar OC de Garfield (`image/dibujotradicional9.png`), ficha técnica de moekat (`@moekat`), dato interactivo al hacer clic, rejilla de 10 obras destacadas, cinta marquee de estampillas, disciplinas y *Artist Statement* en formato Q&A.
 - `comisiones.html` - Tarifas en MXN, paquetes promocionales de Emotes, reglas (`Sí puedo hacer / No puedo hacer`), estado dinámico con GIF (`js/config.js`) y láminas originales ampliables.
 - `oekaki.html` - Lienzo interactivo HTML5 con pincel, borrador, deshacer, paleta de 20 colores pastel/tinta, descarga PNG (`lienzo-moekat.png`) y guardado local de bocetos.
@@ -42,5 +43,5 @@ Luego visita `http://localhost:8000/index.html`.
 ## Documentación y capturas
 
 - Notas de estudio de referencia: [docs/reference-notes.md](docs/reference-notes.md)
-- Mapeo de contenido e inventario de las 71 obras: [docs/content-map.md](docs/content-map.md)
+- Mapeo de contenido e inventario de las 75 obras: [docs/content-map.md](docs/content-map.md)
 - Capturas en escritorio y móvil: `docs/screenshots/`

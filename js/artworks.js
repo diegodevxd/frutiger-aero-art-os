@@ -1,7 +1,7 @@
 /* ==========================================================================
-   CATALOGO AUTENTICO DE OBRAS (71 piezas originales de moekat / @moekat)
+   CATALOGO AUTENTICO DE OBRAS (75 piezas originales de moekat / @moekat)
    Incluye los 22 Arcanos Mayores del Tarot de Garfield (0 - XXI) ordenados
-   y las 49 obras generales (Digital, Tradicional, Escultura, Bisuteria, Collage, Emotes).
+   y las 53 obras generales (Digital, Tradicional, Escultura, Bisuteria, Collage, Emotes).
    ========================================================================== */
 
 (function () {
@@ -50,11 +50,11 @@
     thumb: `image/thumbs/${c.file}`
   }));
 
-  // 2. Categorias generales (49 obras fuera del Tarot de Garfield)
+  // 2. Categorias generales (53 obras fuera del Tarot de Garfield)
   const generalCategories = [
-    { id: 'all', label: 'Todas', count: 49, badge: '* 49 obras' },
+    { id: 'all', label: 'Todas', count: 53, badge: '* 53 obras' },
     { id: 'dibujo-digital', label: 'Dibujo Digital', count: 15, badge: '+ 15 piezas' },
-    { id: 'dibujo-tradicional', label: 'Dibujo Tradicional', count: 10, badge: '/ 10 piezas' },
+    { id: 'dibujo-tradicional', label: 'Dibujo Tradicional', count: 14, badge: '/ 14 piezas' },
     { id: 'esculturas', label: 'Esculturas', count: 7, badge: '~ 7 piezas' },
     { id: 'bisuteria', label: 'Bisutería', count: 7, badge: '<3 7 piezas' },
     { id: 'collage', label: 'Collage', count: 7, badge: '# 7 piezas' },
@@ -62,7 +62,7 @@
   ];
 
   const categories = [
-    { id: 'all', label: 'Todas', count: 71, badge: '* 71 obras' },
+    { id: 'all', label: 'Todas', count: 75, badge: '* 75 obras' },
     { id: 'tarot', label: 'Tarot', count: 22, badge: '+ 22 cartas' },
     ...generalCategories.slice(1)
   ];
@@ -94,6 +94,19 @@
       meta: 'Lápiz y Papel • 2024',
       src: `image/dibujotradicional${suffix}.${tradicionalExts[i]}`,
       thumb: `image/thumbs/dibujotradicional${suffix}.jpg`
+    });
+  }
+
+  // Dibujo Tradicional, archivo 2026 (4 laminas nuevas)
+  for (let i = 0; i < 4; i++) {
+    generalArtworks.push({
+      id: `dibujo-nuevo-${i + 1}`,
+      category: 'dibujo-tradicional',
+      categoryLabel: 'Dibujo Tradicional',
+      title: `Dibujo Tradicional ${ROMAN[10 + i]}`,
+      meta: 'Lápiz de color • 2026',
+      src: `image/dibujos/dibujo-0${i + 1}.webp`,
+      thumb: `image/dibujos/thumbs/dibujo-0${i + 1}.webp`
     });
   }
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GALERIA &amp; TAROT GARFIELD | moekat (@moekat)</title>
-  <meta name="description" content="Portafolio de moekat dividido en Galería General (49 obras de ilustración, escultura, bisutería, collage y emotes) y Galería Garfield (baraja completa de 22 Arcanos Mayores del Tarot de Garfield).">
+  <meta name="description" content="Portafolio de moekat dividido en Galería General (53 obras de ilustración, escultura, bisutería, collage y emotes) y Galería Garfield (baraja completa de 22 Arcanos Mayores del Tarot de Garfield).">
   <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
     <div class="win-bar pink" id="galWinBar" data-ui>
       <div class="win-bar-title">
         <img src="icons/gallery.png" alt="" width="16" height="16">
-        <span id="galWinTitle">C:\MOEKAT\GALERIE.HTM :: ARCHIVO VISUAL (49 OBRAS)</span>
+        <span id="galWinTitle">C:\MOEKAT\GALERIE.HTM :: ARCHIVO VISUAL (53 OBRAS)</span>
       </div>
       <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
     </div>
@@ -51,10 +51,22 @@
     <!-- Barra de sub-menu / pestañas para cambiar entre Galería normal y Galería Garfield -->
     <nav class="gallery-mode-tabs" role="tablist" aria-label="Secciones de la galería">
       <button type="button" class="gallery-mode-tab is-active" id="tabBtnGeneral" role="tab" aria-selected="true" data-mode="general">
-        [*] Galería :: Archivo (49)
+        [*] Galería :: Archivo (53)
       </button>
       <button type="button" class="gallery-mode-tab" id="tabBtnGarfield" role="tab" aria-selected="false" data-mode="garfield">
         [*] Galería Garfield :: Tarot (22)
+      </button>
+      <button type="button" class="gallery-mode-tab" id="tabBtnPortafolio" role="tab" aria-selected="false" data-mode="portafolio">
+        [+] Portafolio (24)
+      </button>
+      <button type="button" class="gallery-mode-tab" id="tabBtnPiedra" role="tab" aria-selected="false" data-mode="piedra">
+        [+] Bitácora Piedra (18)
+      </button>
+      <button type="button" class="gallery-mode-tab" id="tabBtnDibujo" role="tab" aria-selected="false" data-mode="dibujo">
+        [+] Bitácora Dibujo (1)
+      </button>
+      <button type="button" class="gallery-mode-tab" id="tabBtnDioramas" role="tab" aria-selected="false" data-mode="dioramas">
+        [+] Dioramas (9+1)
       </button>
     </nav>
 
@@ -71,7 +83,7 @@
           </div>
 
           <div class="general-meta-controls">
-            <span class="pastel-badge butter">Mostrando: <strong id="galStatCount">49 / 49</strong></span>
+            <span class="pastel-badge butter">Mostrando: <strong id="galStatCount">53 / 53</strong></span>
             <span class="pastel-badge lavender" id="galStatCat">Todas</span>
             <input type="search" id="gallerySearch" class="gallery-search" placeholder="Buscar obra..." aria-label="Buscar obra">
             <button type="button" class="candy-btn lavender" id="galleryDensityBtn">Vista: Amplia</button>
@@ -79,7 +91,7 @@
         </div>
 
         <p class="lead-line">
-          Archivo completo de moekat (@moekat): 49 obras generales y baraja ordenada de 22 Arcanos del Tarot de Garfield.
+          Archivo completo de moekat (@moekat): 53 obras generales y baraja ordenada de 22 Arcanos del Tarot de Garfield.
         </p>
 
         <div class="general-cats-row">
@@ -93,7 +105,7 @@
       </header>
 
       <div class="gallery-grid-frame" aria-label="Rejilla de obras generales">
-        <h2 class="gallery-section-title">Archivo general (49 obras)</h2>
+        <h2 class="gallery-section-title">Archivo general (53 obras)</h2>
         <div class="gallery-grid" id="galleryGrid"></div>
       </div>
 
@@ -165,9 +177,51 @@
         </div>
       </footer>
     </section>
+
+    <!-- ==================================================================
+         SECCIONES EXTRA: PORTAFOLIO, BITACORAS PDF Y DIORAMAS
+         Los datos viven en js/pdf-galleries.js y se renderizan con JS:
+         visor secuencial (page-flip) + tira de miniaturas con carga lazy.
+         ================================================================== -->
+    <section class="gallery-section-extra" id="gallerySectionPortafolio" data-extra="portafolio" role="tabpanel" aria-labelledby="tabBtnPortafolio" hidden>
+      <header class="extra-gallery-header">
+        <h2 class="gallery-section-title">Portafolio :: 2026</h2>
+        <p class="extra-gallery-intro"></p>
+        <div class="extra-gallery-badges" aria-hidden="true"></div>
+      </header>
+      <div class="extra-gallery-body" data-extra-body></div>
+    </section>
+
+    <section class="gallery-section-extra" id="gallerySectionPiedra" data-extra="piedra" role="tabpanel" aria-labelledby="tabBtnPiedra" hidden>
+      <header class="extra-gallery-header">
+        <h2 class="gallery-section-title">Bitácora :: Escultura en piedra</h2>
+        <p class="extra-gallery-intro"></p>
+        <div class="extra-gallery-badges" aria-hidden="true"></div>
+      </header>
+      <div class="extra-gallery-body" data-extra-body></div>
+    </section>
+
+    <section class="gallery-section-extra" id="gallerySectionDibujo" data-extra="dibujo" role="tabpanel" aria-labelledby="tabBtnDibujo" hidden>
+      <header class="extra-gallery-header">
+        <h2 class="gallery-section-title">Bitácora :: Dibujo</h2>
+        <p class="extra-gallery-intro"></p>
+        <div class="extra-gallery-badges" aria-hidden="true"></div>
+      </header>
+      <div class="extra-gallery-body" data-extra-body></div>
+    </section>
+
+    <section class="gallery-section-extra" id="gallerySectionDioramas" data-extra="dioramas" role="tabpanel" aria-labelledby="tabBtnDioramas" hidden>
+      <header class="extra-gallery-header">
+        <h2 class="gallery-section-title">Dioramas :: Maquetas y miniaturas</h2>
+        <p class="extra-gallery-intro"></p>
+        <div class="extra-gallery-badges" aria-hidden="true"></div>
+      </header>
+      <div class="extra-gallery-body" data-extra-body></div>
+    </section>
   </div>
 
   <script src="js/artworks.js"></script>
+  <script src="js/pdf-galleries.js"></script>
   <script src="js/effects.js"></script>
   <script src="js/galerie.js"></script>
 </body>
