@@ -1,6 +1,7 @@
 /* ==========================================================================
    TOKENS DE DISEÑO - Web Retro Pastel Kawaii / Gyaru (1998-2004)
-   Cero gradientes, cero sombras modernas, cero radios redondeados.
+   Solo 2 familias (Pixelify Sans + Verdana), cero gradientes, cero sombras,
+   cero border-radius, contraste >= 4.5:1.
    ========================================================================== */
 
 :root {
@@ -11,16 +12,16 @@
   --bg-card: #FFFFFF;
   --bg-plum: #3B1E4F;
   --bg-plum-deep: #291238;
-  --bg-plum-mid: #532D6D;
+  --bg-plum-mid: #4D2466;
 
-  /* --- Paleta Pastel Kawaii / Gyaru --- */
+  /* --- Paleta Pastel Kawaii / Gyaru (sin índigo/violeta de IA) --- */
   --pink-soft: #FFD6E8;
   --pink-mid: #FF9EC7;
-  --pink-deep: #B82E72;
+  --pink-deep: #9E1D5D;
 
   --lavender-soft: #E8DCFF;
   --lavender-mid: #C4AAFF;
-  --lavender-deep: #5C35A6;
+  --lavender-deep: #7E1F64;
 
   --mint-soft: #CDF7E7;
   --mint-mid: #85E3C3;
@@ -28,42 +29,40 @@
 
   --peach-soft: #FFE4D1;
   --peach-mid: #FFB890;
-  --peach-deep: #A8441E;
+  --peach-deep: #993914;
 
   --sky-soft: #D6F0FF;
   --sky-mid: #8ED4FF;
-  --sky-deep: #1D5D94;
+  --sky-deep: #164E7E;
 
   --butter-soft: #FFF5BE;
   --butter-mid: #FFE07A;
-  --butter-deep: #785400;
+  --butter-deep: #6E4B00;
 
-  /* --- Tinta y contraste (>= 4.5:1) --- */
-  --ink: #2D173B;
-  --ink-muted: #5A3B6B;
+  /* --- Tinta y contraste (>= 4.5:1 / >= 7:1 cuerpo) --- */
+  --ink: #241030;
+  --ink-muted: #4A2B5E;
   --ink-inverse: #FFF9FB;
-  --ink-accent: #B82E72;
+  --ink-accent: #9E1D5D;
 
   /* --- Biseles estilo Windows 98 / Web Retro --- */
   --bevel-light: #FFFFFF;
-  --bevel-dark: #8B5D9E;
-  --bevel-plum-light: #8A5BA8;
-  --bevel-plum-dark: #1A0A26;
+  --bevel-dark: #7B4C91;
+  --bevel-plum-light: #9E6CBE;
+  --bevel-plum-dark: #180922;
 
-  /* --- Tipografía bitmap / sistema clásica --- */
-  --font-display: 'Pixelify Sans', 'Silkscreen', 'Trebuchet MS', sans-serif;
-  --font-body: 'Verdana', 'Tahoma', 'DotGothic16', sans-serif;
-  --font-pixel: 'Silkscreen', 'DotGothic16', 'Tahoma', sans-serif;
+  /* --- Exactamente 2 tipografías (Display pixel + Texto sistema clásico) --- */
+  --font-display: 'Pixelify Sans', sans-serif;
+  --font-pixel: 'Pixelify Sans', sans-serif;
+  --font-body: 'Verdana', sans-serif;
 
-  /* --- Escala Tipográfica densa clásica --- */
-  --text-xs: 0.72rem;
-  --text-sm: 0.82rem;
-  --text-base: 0.88rem;
-  --text-md: 1rem;
-  --text-lg: 1.2rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 1.95rem;
-  --text-hero: clamp(1.65rem, 3.6vw, 2.5rem);
+  /* --- Escala Tipográfica en 5 pasos (>= 13px legible, 16px cuerpo) --- */
+  --text-xs: 13px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-md: 20px;
+  --text-lg: 28px;
+  --text-hero: clamp(2.2rem, 4.7vw, 4.25rem);
 
   /* --- Espaciado denso old-web --- */
   --space-1: 4px;
@@ -83,5 +82,4 @@
   --z-tooltip: 300;
   --z-veil: 500;
   --z-lightbox: 700;
-  --z-preloader: 900;
 }

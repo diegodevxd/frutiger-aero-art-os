@@ -1,19 +1,19 @@
 # Mapeo de Contenido del Portafolio (`docs/content-map.md`)
 
-Inventario completo del contenido auténtico de **Demian Tenorio Rico (`@dmxn_08`)** extraído de `index.html`, `script.js`, `README.md`, `image/`, `Comisiones/` y `music/`, junto con su ubicación exacta en el rediseño pastel estilo `reigen.moe`.
+Inventario completo del contenido auténtico de **moekat (`@moekat`)** extraído de `image/`, `Comisiones/` y `music/`, junto con su ubicación exacta en el rediseño web retro pastel.
 
 ---
 
 ## 1. Mapa de Secciones (Referencia vs. Nuestro Rediseño)
 
-| Sección de `reigen.moe` | Página en nuestro sitio | Contenido propio de Demian asignado | Estado |
+| Sección de `reigen.moe` | Página en nuestro sitio | Contenido de moekat asignado | Estado |
 | :--- | :--- | :--- | :--- |
-| `/` (Splash Entry Gate) | `index.html` | Título `DEMIAN TENORIO`, aviso de archivo (71 obras, apto PC y móvil), bloques `D M X N`, cajón desplegable superior con redes reales (`@demi.demiau`, `@Chicharron_08`, `@dmxn_08`), miniaturas de vista previa (`tyarot`, `digital1`, `escultura1`, `biseturia1`), CTA `ENTRAR → home.html` y contador local. | **Construida** |
-| `/home` (Hub Principal + Navegación lateral + Showcase aleatorio + Tabs + Jukebox + Columna derecha) | `home.html` | Barra lateral fija (`NAVEGACIÓN`, enlaces `EN EL SITIO` y `REDES SOCIALES`, widget mini-lienzo interactivo, stickers `@dmxn_08`), selector de 5 filtros pastel (`FILTRO ✦`), Hero banner compuesto con obras de `image/`, Marquesina de identidad, Showcase **`OBRA AL AZAR ✦`** con las 71 piezas, Tabs (`BIENVENIDX` con *Artist Statement* + 4 obras seleccionadas + disciplinas; `MÚSICA` reproduciendo `music/WorldFrutti.mp3`; `COMISIONES` con resumen MXN y láminas; `CONTACTO` con formulario Formspree `https://formspree.io/f/xrbapazl`), tarjeta de bienvenida, estado `COMISIONES ABIERTAS` + aplauso interactivo. | **Construida** |
-| `/galerie` (Galería con info sticky + rejilla 5 cols + Lightbox) | `galerie.html` | Las **71 obras originales** de `image/` con sus miniaturas `image/thumbs/`, filtros por las **7 categorías** (`Tarot 22`, `Dibujo Digital 15`, `Dibujo Tradicional 10`, `Esculturas 7`, `Bisutería 7`, `Collage 7`, `Emotes 3`), buscador, densidad, paginación `← ANT ☆ SIG →` (25 por página en vista completa), hover con rotación/brillo pastel y Lightbox a resolución completa con zoom, teclado y enlace *"♡ Encargar obra similar"*. | **Construida** |
-| `/profil` (Perfil con bordes de encaje, ficha, dato interactivo, 10 favoritas, marquee de estampillas y Q&A) | `profil.html` | Semblanza completa (*artista transgénero y guanajuatense, Lic. Artes Visuales UG 2023*), ficha técnica de artista, certificado simbólico del archivo, emote interactivo `o0o.png` que cicla 7 datos reales de Demian, rejilla `2×5` de 10 obras destacadas, marquee infinito de estampillas con sus piezas, disciplinas y el *Artist Statement* completo en formato Q&A pastel. | **Construida** |
-| *(Nueva sección propia basada en contenido real)* | `comisiones.html` | Reemplaza secciones personales faltantes con la información real de `Comisiones/`: Tabla de precios MXN (Retrato / Medio o 3/4 / Completo × Lineart / Color base / Renderizado, +75% personaje extra), paquetes de Emotes (3=$200, 5=$350, 10=$600 PROMO) junto a `o0o.png`, `GG.png` y `Chopperpipi.png`, reglas `SÍ PUEDO HACER` / `NO PUEDO HACER`, las 3 láminas originales clicables en Lightbox y enlace directo a contacto. | **Construida** |
-| `/oekaki` (Drawbox / Lienzo interactivo) | `oekaki.html` | Recrea `/oekaki` de la referencia y conserva la función de `Paint` del proyecto anterior: lienzo HTML5 (`520×420`), `Deshacer`, `Limpiar`, `Borrador`, tamaño de pincel, paleta pastel/viva de 20 colores + selector libre, descarga PNG y guardado local de bocetos en `localStorage` con galería desplegable. | **Construida** |
+| `/` (Splash Entry Gate) | `index.html` | Título `MOEKAT`, aviso de archivo (75 obras, apto PC y móvil), bloques `M O E K A T`, cajón desplegable superior con redes y accesos, miniaturas de vista previa (`tyarot`, `digital1`, `escultura1`, `biseturia1`), CTA `ENTRAR → home.html` y contador local. | **Construida** |
+| `/home` (Hub Principal + Navegación lateral + Showcase aleatorio + Tabs + Jukebox + Columna derecha) | `home.html` | Barra lateral fija (`NAVIGATION`, submenú de `GALERIA (75)` y redes), widget mini-lienzo interactivo, selector de 5 filtros pastel (`FILTRO`), Showcase **`OBRA AL AZAR`** con las 75 piezas, Tabs (`BIENVENIDX` con avatar OC Garfield `image/dibujotradicional9.png`, *Artist Statement*, 4 obras seleccionadas y disciplinas; `MUSICA` reproduciendo `music/WorldFrutti.mp3`; `COMISIONES` con resumen MXN y láminas; `CONTACTO` con formulario Formspree), tarjeta de bienvenida con avatar OC Garfield `image/dibujotradicional9.png`, estado `COMISIONES ABIERTAS` + aplauso interactivo. | **Construida** |
+| `/galerie` (Galería general + Garfield Tarot + Portafolio + Bitácoras + Dioramas + Lightbox) | `galerie.html` | Seis pestañas: **Galería :: Archivo** (`53` obras generales con filtros, buscador y paginación), **Galería Garfield :: Tarot** (`22` Arcanos Mayores ordenados `0. El Loco` -> `XXI. El Mundo`), **Portafolio** (`24` láminas en 2 tomos), **Bitácora Piedra** (`18` páginas), **Bitácora Dibujo** (`1` lámina) y **Dioramas** (`9` fotos + `1` video). Las secciones nuevas usan visor secuencial *page-flip* con tira de miniaturas en carga diferida; todas abren en el Lightbox completo. | **Construida** |
+| `/profil` (Perfil con bordes de encaje, ficha, dato interactivo, 10 favoritas, marquee de estampillas y Q&A) | `profil.html` | Semblanza completa (*moekat / `@moekat`, artista transgénero y guanajuatense, Lic. Artes Visuales UG 2023*), avatar oficial OC Garfield `image/dibujotradicional9.png`, ficha técnica, certificado simbólico del archivo, emote interactivo `o0o.png` que cicla 7 datos reales, rejilla `2×5` de 10 obras destacadas, marquee de estampillas, disciplinas y Q&A. | **Construida** |
+| *(Sección de comisiones)* | `comisiones.html` | Información de `Comisiones/`: Tabla de precios MXN, paquetes de Emotes, reglas `SÍ PUEDO HACER` / `NO PUEDO HACER`, estado dinámico con GIF (`js/config.js`), 3 láminas clicables en Lightbox y enlace a contacto. | **Construida** |
+| `/oekaki` (Drawbox / Lienzo interactivo) | `oekaki.html` | Lienzo HTML5 (`520×420`), `Deshacer`, `Limpiar`, `Borrador`, tamaño de pincel, paleta de 20 colores + selector libre, descarga PNG (`lienzo-moekat.png`) y guardado local de bocetos en `localStorage`. | **Construida** |
 
 ---
 
@@ -21,18 +21,18 @@ Inventario completo del contenido auténtico de **Demian Tenorio Rico (`@dmxn_08
 
 | Elemento omitido | Origen | Razón por la que se omite |
 | :--- | :--- | :--- |
-| `/shrines` | `reigen.moe` | Demian no tiene contenido curado de fandoms/shrines en su portafolio; sus influencias de cultura pop ya viven en su *Artist Statement* y en su galería de Tarot e Ilustración. |
-| `/journal` | `reigen.moe` | No existen entradas de blog o diario en el proyecto original; inventar entradas violaría la regla de usar solo contenido real del autor. |
-| `/credit` | `reigen.moe` | Era una lista de créditos de recursos externos de terceros usados por `reigen.moe` (`98.css`, `gifcities`, etc.) que no usamos ni aplican a este portafolio. |
-| Webrings, Neighbors, Fanlist, Guestbook, Chatbox externo (`iframe.chat`), Selfship, Changelog externo | `reigen.moe` | Comunidades y servicios externos propios de Neocities/Nekoweb del autor de `reigen.moe`, sin presencia ni cuentas equivalentes en el portafolio de Demian. |
-| Subdominio móvil separado (`m.reigen.moe`) | `reigen.moe` | Se sustituye por CSS responsivo unificado en las mismas 6 páginas para que funcione tanto localmente (`file://` o servidor estático) como en móvil/escritorio. |
-| Escritorio Windows XP, Barra de tareas, Menú Inicio, Calculadora, Bloc de Notas, Fondos Aero, Explorador de archivos XP | Versión anterior del repo | Sustituidos deliberadamente por el rediseño pastel estilo `reigen.moe`; permanecen accesibles únicamente en el historial de Git (`main`). |
+| `/shrines` | `reigen.moe` | No hay contenido separado de fandoms/shrines en el portafolio aparte del Tarot de Garfield e ilustración. |
+| `/journal` | `reigen.moe` | No existen entradas de diario en el proyecto; inventar entradas violaría usar solo contenido real. |
+| `/credit` | `reigen.moe` | Créditos externos propios de `reigen.moe` que no aplican al proyecto. |
+| Webrings, Neighbors, Fanlist, Guestbook, Chatbox externo, Selfship | `reigen.moe` | Servicios comunitarios externos sin cuentas equivalentes. |
+| Subdominio móvil separado (`m.reigen.moe`) | `reigen.moe` | Sustituido por CSS responsivo unificado en las mismas 6 páginas. |
+| Escritorio Windows XP retro | Versión anterior del repo | Sustituido por el rediseño old-web pastel; accesible en el historial de Git (`main`). |
 
 ---
 
 ## 3. Inventario Completo de Assets en `image/`, `Comisiones/` y `music/`
 
-### A. Obras en `image/` (71 piezas totales)
+### A. Obras en `image/` (75 piezas totales)
 
 #### 1. Tarot (`tarot` — 22 obras)
 | # | Título | Archivo completo | Miniatura | Técnica / Año |
@@ -119,14 +119,24 @@ Inventario completo del contenido auténtico de **Demian Tenorio Rico (`@dmxn_08
 | 70 | Emote GG | `image/GG.png` | `image/thumbs/GG.png` | PNG • 2024 |
 | 71 | Emote Chopperpipi | `image/Chopperpipi.png` | `image/thumbs/Chopperpipi.png` | PNG • 2024 |
 
+### A.2 Galerías nuevas renderizadas desde PDF y fotos (2026)
+
+| Sección | Fuente original | Salida web | Piezas | Notas |
+| :--- | :--- | :--- | :--- | :--- |
+| Portafolio | `Portafolio.pdf` + `Portafolio Demian Tenorio PDF.pdf` | `image/portafolio/portafolio-01..12.webp`, `image/portafolio/seleccion-01..12.webp` | 24 láminas | PDFs no versionados; páginas rasterizadas a WebP (máx. 1600 px) y miniaturas en `thumbs/`. |
+| Bitácora :: Escultura en piedra | `bitacora_escultura_en_piedra.pdf` | `image/bitacora-piedra/piedra-01..18.webp` | 18 páginas | Proceso completo: bocetos, referencias, construcción, lijado y resultado. |
+| Bitácora :: Dibujo | `Dibujos Tarea 3.pdf` | `image/bitacora-dibujo/dibujo-01.webp` | 1 lámina | Lámina de estudios y bocetos. |
+| Dibujo Tradicional (archivo general) | `dibujo.jpeg`, `dibujo2.jpeg`, `dibujo3.jpeg`, `dibujo4.jpeg` | `image/dibujos/dibujo-01..04.webp` | 4 obras | Se suman a la categoría Dibujo Tradicional (14 piezas). |
+| Dioramas | `diorama2..9.jpeg`, `diorama10.png`, `diorama.mp4` | `image/dioramas/diorama-01..09.webp`, `image/dioramas/diorama.mp4`, `diorama-poster.webp` | 9 fotos + 1 video | Video re-codificado (H.264, ~1.7 MB), silenciado, con controles y póster. |
+
 ### B. Otros Assets Propios
 - `Comisiones/Comisiones tablita.png` → Tabla de precios MXN en `comisiones.html` y `home.html`.
 - `Comisiones/Comisiones reglas.png` → Reglas "Sí puedo hacer / No puedo hacer" y redes en `comisiones.html` y `home.html`.
 - `Comisiones/Comisiones ejemplos y emotes.png` → Ejemplos de acabado (Lineart / Color base / Renderizado) y paquetes de emotes en `comisiones.html` y `home.html`.
 - `music/WorldFrutti.mp3` → Pista oficial del Jukebox en `home.html`.
 
-### C. Textos, Redes y Contacto Verificados
-- **Nombre / Usuario:** Demian Tenorio Rico (`@dmxn_08`).
+### C. Identidad, Avatar y Enlaces Externos Pendientes de Confirmación
+- **Usuario / Nombre en el sitio:** moekat (`@moekat`).
+- **Avatar / OC oficial:** Garfield (`image/dibujotradicional9.png`).
 - **Formación e identidad:** Artista visual transgénero y guanajuatense; ingresó en 2023 a la Licenciatura en Artes Visuales en la Universidad de Guanajuato.
-- **Redes oficiales (de `Comisiones reglas.png`):** Instagram `@demi.demiau` • Twitter/X `@Chicharron_08` • TikTok `@dmxn_08`.
-- **Contacto / Formspree:** `https://formspree.io/f/xrbapazl` (`name`, `email`, `service`, `budget`, `message`, `_replyto`).
+- **Redes oficiales:** Instagram `@moekat.085` (`https://www.instagram.com/moekat.085/`), X `@Dmxn_0805` (`https://x.com/Dmxn_0805`), TikTok `@dmxn_0805` (`https://www.tiktok.com/@dmxn_0805`); Formspree `https://formspree.io/f/xrbapazl`.

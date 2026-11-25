@@ -196,7 +196,7 @@
     if (downloadBtn) {
       downloadBtn.addEventListener('click', () => {
         const a = document.createElement('a');
-        a.download = 'lienzo-dmxn_08.png';
+        a.download = 'lienzo-moekat.png';
         a.href = canvas.toDataURL('image/png');
         a.click();
       });

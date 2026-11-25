@@ -1,7 +1,7 @@
 # Notas de Estudio de Referencia: `https://reigen.moe`
 
 Estudio estructural, visual e interactivo realizado directamente en el navegador sobre `https://reigen.moe` y sus rutas enlazadas (`/`, `/home`, `/galerie`, `/profil`, `/shrines`, `/journal`, `/oekaki`, `/credit`, además de vistas móviles en `m.reigen.moe`).  
-*Propósito:* replicar la arquitectura de navegación, layout, transiciones, animaciones, efectos de cursor/scroll y tono web retro-indie usando únicamente contenido, obras y assets propios de Demian Tenorio Rico (`@dmxn_08`) bajo una paleta pastel kawaii/gyaru.
+*Propósito:* replicar la arquitectura de navegación, layout, transiciones, animaciones, efectos de cursor/scroll y tono web retro-indie usando únicamente contenido, obras y assets propios de moekat (`@moekat`) bajo una paleta pastel kawaii/gyaru.
 
 ---
 
@@ -109,8 +109,9 @@ Estudio estructural, visual e interactivo realizado directamente en el navegador
 
 ---
 
-## 3. Reglas de Adaptación al Proyecto de Demian
+## 3. Reglas de Adaptación al Proyecto de moekat (`@moekat`)
 
 1. **Cero assets externos de `reigen.moe`**: Ninguna imagen, icono, cursor, GIF, fuente descargada de terceros (`file.garden`, `dimden.dev`) ni texto ajeno se reutiliza. Todo elemento decorativo (encajes, moños, cursores pastel, estrellas, corazones, sellos) es SVG/CSS original; todo arte es de `image/` y `Comisiones/`; la música es `music/WorldFrutti.mp3`.
 2. **Estética pastel kawaii / gyaru con alto contraste**: Se reemplazan los neones agresivos (`#00ff00`, `#ff0000`, `#0000ff`) y filtros saturados por crema rosada (`#FFF9FB`), rosa bebé (`#FFD6E8`), lavanda (`#E8DCFF`), menta (`#CDF7E7`), durazno (`#FFE4D1`) y azul cielo suave (`#D6F0FF`), usando tinta ciruela profunda (`#3B234A`) y ciruela aterciopelada (`#452459`) para garantizar legibilidad >= 4.5:1.
 3. **Solo secciones con contenido real**: Se omiten `shrines`, `journal`, `credit`, `webrings`, `guestbook`, `fanlist`, `neighbors`, `chatbox` y `selfship`, integrando en su lugar `comisiones.html` para mostrar las tablas y reglas reales de `Comisiones/` y manteniendo el formulario real de Formspree para contacto.
+4. **Criterios anti-diseño-IA y artesanía late-90s / early-2000s (`design-taste-frontend`)**: Solo 2 familias tipográficas (`Pixelify Sans` + `Verdana`), lectura cómoda (`>= 13px` etiquetas y `16px` cuerpo), eliminación del preloader `#loading` y violeta `#5C35A6` por ciruela pastel `#7E1F64`, tablas HTML densas biseladas en lugar de tarjetas uniformes de IA, marquesinas superiores de ancho completo y Bitácora con scroll enmarcada (`inset`).

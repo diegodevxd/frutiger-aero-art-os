@@ -1,5 +1,5 @@
 /* ==========================================================================
-   EFECTOS COMPARTIDOS — Preloader, Transición entre páginas, Wobble, Rainbow,
+   EFECTOS COMPARTIDOS — Transición entre páginas, Wobble, Rainbow,
    Partículas pastel, Destellos del cursor, Tooltip flotante y Lightbox.
    ========================================================================== */
 
@@ -11,23 +11,9 @@
     window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 
   /* ----------------------------------------------------------------------
-     1. Preloader (#loading) & Cortina de Transición (.page-veil)
+     1. Cortina de Transición (.page-veil)
      ---------------------------------------------------------------------- */
-  function hidePreloader() {
-    const loader = document.getElementById('loading');
-    if (loader && !loader.classList.contains('is-loaded')) {
-      loader.classList.add('is-loaded');
-    }
-  }
-
-  function initPreloaderAndTransitions() {
-    if (document.readyState === 'complete') {
-      setTimeout(hidePreloader, 120);
-    } else {
-      window.addEventListener('load', () => setTimeout(hidePreloader, 150), { once: true });
-      setTimeout(hidePreloader, 520);
-    }
-
+  function initPageTransitions() {
     let veil = document.querySelector('.page-veil');
     if (!veil) {
       veil = document.createElement('div');
@@ -38,7 +24,6 @@
 
     window.addEventListener('pageshow', () => {
       veil.classList.remove('is-entering');
-      hidePreloader();
     });
 
     document.addEventListener('click', (e) => {
@@ -198,8 +183,8 @@
       }, dur * 1000 + 200);
     }
 
-    for (let i = 0; i < 6; i++) {
-      setTimeout(spawnCharm, i * 240);
+    for (let i = 0; i < 8; i++) {
+      setTimeout(spawnCharm, i * 160);
     }
     setInterval(spawnCharm, 900);
   }
@@ -284,7 +269,7 @@
           <div class="lightbox-footer">
             <div class="lightbox-meta-wrap">
               <h3 id="lbTitle">Obra</h3>
-              <p id="lbMeta">Archivo visual • @dmxn_08</p>
+              <p id="lbMeta">Archivo visual • @moekat</p>
             </div>
             <div class="lightbox-actions">
               <button type="button" class="candy-btn lavender" id="lbPrevBtn" aria-label="Obra anterior">&lt;&lt; Anterior</button>
@@ -314,7 +299,7 @@
       const current = items[index];
       if (!current) return;
       imgEl.src = current.src;
-      imgEl.alt = current.title || 'Obra de Demian Tenorio Rico';
+      imgEl.alt = current.title || 'Obra de moekat';
       imgEl.classList.toggle('is-zoomed', zoomed);
       titleEl.textContent = current.title || 'Obra';
       metaEl.textContent = current.meta || 'Archivo visual';
@@ -396,7 +381,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    initPreloaderAndTransitions();
+    initPageTransitions();
     splitTextEffect('[data-wobble]', 'wobble-char');
     splitTextEffect('[data-rainbow]', 'rainbow-char');
     initCursorTooltip();

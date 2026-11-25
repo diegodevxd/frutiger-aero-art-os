@@ -156,7 +156,7 @@
     if (obra) {
       const msgEl = document.getElementById('contactMessage');
       if (msgEl) {
-        msgEl.value = `Hola Demian, me interesa encargar una obra similar a: ${obra}.`;
+        msgEl.value = `Hola moekat, me interesa encargar una obra similar a: ${obra}.`;
       }
       activateTab('contacto', true);
     } else if (window.location.hash) {
@@ -320,10 +320,10 @@
     const clapBtn = document.getElementById('clapBtn');
     const clapCount = document.getElementById('clapCount');
     if (clapBtn && clapCount) {
-      let count = 71;
+      let count = 75;
       try {
-        const stored = parseInt(localStorage.getItem('pastel_kudos_count') || '71', 10);
-        if (!Number.isNaN(stored) && stored >= 71) count = stored;
+        const stored = parseInt(localStorage.getItem('pastel_kudos_count') || '75', 10);
+        if (!Number.isNaN(stored) && stored >= 75) count = stored;
       } catch {}
       clapCount.textContent = String(count);
 
@@ -377,7 +377,7 @@
         });
 
         if (res.ok) {
-          showStatus(true, `¡Gracias ${fd.get('name') || ''}! Tu consulta se envió correctamente a Demian.`);
+          showStatus(true, `¡Gracias ${fd.get('name') || ''}! Tu consulta se envió correctamente a moekat.`);
           form.reset();
         } else {
           const data = await res.json().catch(() => null);

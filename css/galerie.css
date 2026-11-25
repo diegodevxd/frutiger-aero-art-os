@@ -1,15 +1,20 @@
 /* ==========================================================================
    GALERIA EN DOS SECCIONES (galerie.html)
-   1. Galeria Normal: arte-primero, rejilla completa 49 obras + deco pastel retro.
+   1. Galeria Normal: 49 obras + filtros + paginacion + lightbox.
    2. Galeria Garfield: baraja completa Tarot de Garfield (0 - XXI) + GIFs Garfield.
    ========================================================================== */
 
 body.gallery-page {
   min-height: 100svh;
-  padding: 16px 14px 36px;
+  padding: 0 16px 36px;
   background-color: var(--bg-blush);
   background-image: url('../gifs/tiles/tile-home.png');
   background-repeat: repeat;
+}
+
+body.gallery-page > .retro-marquee {
+  width: calc(100% + 32px);
+  margin: 0 -16px 16px;
 }
 
 body.gallery-page[data-gallery-mode="garfield"] {
@@ -18,7 +23,10 @@ body.gallery-page[data-gallery-mode="garfield"] {
 }
 
 .gallery-window {
-  max-width: 1040px;
+  position: relative;
+  z-index: var(--z-content);
+  max-width: 1060px;
+  width: 100%;
   margin: 0 auto;
   background: var(--bg-cream);
   border: 4px ridge var(--pink-mid);
@@ -29,10 +37,10 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   border-color: var(--peach-mid);
 }
 
-/* Barra de 2 pestanas estilo old-web para Galeria vs Galeria Garfield */
+/* Barra de pestanas estilo old-web: Galeria, Garfield, Portafolio, Bitacoras, Dioramas */
 .gallery-mode-tabs {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 6px;
   padding: 8px 10px 0;
   background: var(--lavender-soft);
@@ -47,7 +55,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   background: var(--bg-blush);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.72rem;
+  font-size: 13px;
   font-weight: 700;
   text-align: center;
 }
@@ -69,10 +77,17 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 
 .gallery-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+  font-size: var(--text-hero);
   font-weight: 700;
   color: var(--ink);
-  line-height: 1.1;
+  line-height: 1.04;
+}
+
+.gallery-section-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--ink);
+  margin-bottom: 8px;
 }
 
 /* ==========================================================================
@@ -80,7 +95,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
    ========================================================================== */
 
 .gallery-section-general {
-  padding: 10px 12px 14px;
+  padding: 12px 14px 16px;
   display: grid;
   gap: 10px;
   background: var(--bg-cream);
@@ -94,7 +109,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 .general-toolbar {
   display: grid;
   gap: 8px;
-  padding: 9px 10px;
+  padding: 10px 12px;
   background: var(--bg-blush);
   border: 2px solid var(--ink);
 }
@@ -115,7 +130,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 }
 
 .gallery-search {
-  width: 158px;
+  width: 170px;
   max-width: 100%;
   padding: 5px 8px;
   border: 2px solid var(--ink);
@@ -123,7 +138,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 14px;
 }
 
 .general-cats-row {
@@ -132,25 +147,25 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
-  padding-top: 6px;
-  border-top: 2px dotted var(--lavender-deep);
+  padding-top: 8px;
+  border-top: 3px dotted var(--lavender-deep);
 }
 
 .gallery-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
 }
 
 .cat-btn {
-  padding: 4px 8px;
+  padding: 5px 9px;
   border: 2px solid;
   border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
   outline: 2px solid var(--ink);
   background: var(--bg-card);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.6rem;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -169,18 +184,18 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   align-items: center;
   gap: 7px;
   font-family: var(--font-pixel);
-  font-size: 0.66rem;
+  font-size: 13px;
 }
 
 .page-nav-btn {
-  padding: 4px 8px;
+  padding: 5px 9px;
   border: 2px solid;
   border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
   outline: 2px solid var(--ink);
   background: var(--sky-soft);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 13px;
 }
 
 .page-nav-btn:hover:not(:disabled) {
@@ -194,7 +209,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 
 /* Marco de rejilla general */
 .gallery-grid-frame {
-  padding: 10px;
+  padding: 10px 12px;
   background-color: var(--lavender-soft);
   background-image: url('../gifs/tiles/tile-subpage.png');
   background-repeat: repeat;
@@ -217,7 +232,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   position: relative;
   aspect-ratio: 1 / 1;
   width: 100%;
-  padding: 2px;
+  padding: 3px;
   border: 2px solid;
   border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
   outline: 2px solid var(--ink);
@@ -234,14 +249,15 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 
 .art-tile-badge {
   position: absolute;
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
-  padding: 2px 5px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  padding: 3px 6px;
   background: var(--bg-plum);
   color: var(--butter-soft);
   font-family: var(--font-pixel);
-  font-size: 0.54rem;
+  font-size: 13px;
+  line-height: 1.15;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -263,7 +279,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   place-items: center;
   color: var(--lavender-deep);
   font-family: var(--font-pixel);
-  font-size: 0.85rem;
+  font-size: 16px;
   pointer-events: none;
 }
 
@@ -272,7 +288,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   padding: 28px 16px;
   text-align: center;
   background: var(--bg-cream);
-  border: 2px dashed var(--pink-deep);
+  border: 3px dashed var(--pink-deep);
 }
 
 .general-oldweb-footer {
@@ -288,14 +304,14 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
    ========================================================================== */
 
 .gallery-section-garfield {
-  padding: 10px 12px 14px;
+  padding: 12px 14px 16px;
   display: grid;
   gap: 10px;
   background: #FFF2E2;
 }
 
 .garfield-header-bar {
-  padding: 9px 11px;
+  padding: 10px 12px;
   background: var(--butter-soft);
   border: 3px double var(--peach-deep);
   outline: 2px solid var(--ink);
@@ -312,13 +328,16 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 
 .garfield-title-copy {
   text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
 }
 
 .garfield-title-copy p {
-  font-size: 0.8rem;
+  font-size: 16px;
   font-weight: 700;
   color: var(--ink);
-  margin-top: 2px;
+  max-width: 58ch;
 }
 
 .garfield-actions-row {
@@ -327,8 +346,8 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   justify-content: space-between;
   gap: 8px;
   flex-wrap: wrap;
-  padding-top: 6px;
-  border-top: 2px dotted var(--peach-deep);
+  padding-top: 8px;
+  border-top: 3px dotted var(--peach-deep);
 }
 
 .garfield-mini-stickers {
@@ -347,7 +366,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 
 /* Spread Grid de 22 Cartas de Tarot */
 .tarot-spread-frame {
-  padding: 10px;
+  padding: 10px 12px;
   background: var(--peach-soft);
   border: 4px ridge var(--peach-mid);
   outline: 3px solid var(--ink);
@@ -362,7 +381,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 .tarot-card {
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding: 6px;
   background: #FFFDF8;
   border: 2px solid;
   border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
@@ -382,12 +401,12 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   align-items: center;
   justify-content: space-between;
   gap: 4px;
-  padding: 2px 5px;
+  padding: 3px 6px;
   margin-bottom: 4px;
   background: var(--bg-plum);
   color: var(--butter-soft);
   font-family: var(--font-pixel);
-  font-size: 0.56rem;
+  font-size: 13px;
 }
 
 .tarot-card-num {
@@ -414,21 +433,21 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 }
 
 .tarot-card-caption {
-  padding: 5px 3px 2px;
+  padding: 6px 4px 3px;
   display: grid;
-  gap: 1px;
+  gap: 2px;
 }
 
 .tarot-card-caption strong {
   font-family: var(--font-display);
-  font-size: 0.92rem;
+  font-size: 18px;
   color: var(--ink);
   line-height: 1.15;
 }
 
 .tarot-card-caption span {
   font-family: var(--font-pixel);
-  font-size: 0.54rem;
+  font-size: 13px;
   color: var(--peach-deep);
 }
 
@@ -450,7 +469,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   gap: 8px;
   flex-wrap: wrap;
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 13px;
   color: var(--peach-deep);
 }
 
@@ -483,7 +502,12 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 
 @media (max-width: 640px) {
   body.gallery-page {
-    padding: 12px 8px 26px;
+    padding: 0 14px 26px;
+  }
+
+  body.gallery-page > .retro-marquee {
+    width: calc(100% + 28px);
+    margin: 0 -14px 12px;
   }
 
   .gallery-mode-tabs {
@@ -492,19 +516,24 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   }
 
   .gallery-mode-tab {
-    font-size: 0.6rem;
-    padding: 7px 4px;
+    font-size: 13px;
+    padding: 7px 6px;
   }
 
   .gallery-section-general,
   .gallery-section-garfield {
-    padding: 8px;
+    padding: 10px;
+  }
+
+  .gallery-grid-frame,
+  .tarot-spread-frame {
+    padding: 9px 10px;
   }
 
   .gallery-grid,
   .gallery-grid.is-large {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .tarot-spread-grid {
@@ -515,5 +544,282 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   .garfield-title-row {
     grid-template-columns: 1fr;
     justify-items: center;
+  }
+}
+
+/* ==========================================================================
+   SECCIONES EXTRA: PORTAFOLIO, BITACORAS PDF Y DIORAMAS
+   Visor secuencial estilo libro (page-flip) + tira de miniaturas lazy.
+   ========================================================================== */
+
+.gallery-section-extra {
+  padding: 12px 14px 16px;
+  display: grid;
+  gap: 12px;
+  background: var(--bg-cream);
+}
+
+.gallery-section-extra[hidden] {
+  display: none;
+}
+
+.extra-gallery-header {
+  padding: 10px 12px;
+  background: var(--sky-soft);
+  border: 3px double var(--ink);
+  outline: 2px solid var(--ink);
+  display: grid;
+  gap: 7px;
+}
+
+.extra-gallery-header .gallery-section-title {
+  margin-bottom: 0;
+}
+
+.extra-gallery-intro {
+  max-width: 72ch;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.extra-gallery-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.extra-gallery-body {
+  display: grid;
+  gap: 12px;
+}
+
+.pageflip-group {
+  padding: 10px 12px;
+  display: grid;
+  gap: 9px;
+  background-color: var(--lavender-soft);
+  background-image: url('../gifs/tiles/tile-subpage.png');
+  background-repeat: repeat;
+  border: 4px ridge var(--pink-mid);
+  outline: 3px solid var(--ink);
+}
+
+.pageflip-group-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pageflip-group-title span {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--pink-deep);
+}
+
+.pageflip {
+  display: grid;
+  gap: 9px;
+}
+
+.pageflip-stage {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: var(--bg-cream);
+  border: 3px solid var(--ink);
+  outline: 2px solid var(--pink-mid);
+}
+
+.pageflip-image-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 220px;
+  padding: 4px;
+  background: #FFFFFF url('../gifs/tiles/tile-subpage.png') repeat;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  cursor: zoom-in;
+}
+
+.pageflip-image-btn img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: min(68vh, 620px);
+  object-fit: contain;
+  border: 1px solid var(--ink);
+  background: #FFFFFF;
+}
+
+.pageflip-arrow {
+  width: 42px;
+  min-width: 42px;
+  height: 58px;
+  padding: 0;
+  border: 3px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
+  background: var(--butter-soft);
+  color: var(--ink);
+  font-family: var(--font-pixel);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.pageflip-arrow:hover:not(:disabled) {
+  background: var(--pink-soft);
+}
+
+.pageflip-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pageflip-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pageflip-counter {
+  padding: 4px 10px;
+  background: var(--bg-plum);
+  color: var(--butter-soft);
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  border: 2px solid var(--ink);
+}
+
+.pageflip-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(66px, 1fr));
+  gap: 6px;
+  max-height: 216px;
+  overflow-y: auto;
+  padding: 7px;
+  background: var(--bg-blush);
+  border: 2px solid var(--ink);
+}
+
+.pageflip-thumb {
+  padding: 2px;
+  border: 2px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.pageflip-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.pageflip-thumb.is-active {
+  outline: 3px solid var(--pink-deep);
+  background: var(--butter-soft);
+}
+
+.pageflip-thumb:hover {
+  outline: 2px solid var(--lavender-deep);
+}
+
+/* Dioramas: rejilla + reproductor */
+.diorama-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.diorama-grid .art-tile {
+  aspect-ratio: 1 / 1;
+}
+
+.video-frame {
+  padding: 10px 12px;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  background: var(--bg-plum);
+  border: 4px ridge var(--pink-mid);
+  outline: 3px solid var(--ink);
+}
+
+.video-frame-title {
+  font-family: var(--font-pixel);
+  font-size: 15px;
+  color: var(--butter-soft);
+  text-align: center;
+}
+
+.video-frame video {
+  width: min(100%, 360px);
+  max-height: 70vh;
+  background: #000000;
+  border: 3px solid var(--butter-soft);
+  outline: 2px solid var(--ink);
+}
+
+.video-frame-caption {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--pink-soft);
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .diorama-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-section-extra {
+    padding: 10px;
+  }
+
+  .gallery-mode-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pageflip-group {
+    padding: 9px 10px;
+  }
+
+  .pageflip-arrow {
+    width: 32px;
+    min-width: 32px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .pageflip-image-btn {
+    min-height: 160px;
+  }
+
+  .pageflip-image-btn img {
+    max-height: 56vh;
+  }
+
+  .pageflip-thumbs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-height: 180px;
+  }
+
+  .diorama-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 }

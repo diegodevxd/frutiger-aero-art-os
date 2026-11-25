@@ -3,29 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INICIO | Demian Tenorio (@dmxn_08)</title>
-  <meta name="description" content="Hub principal del portafolio visual de Demian Tenorio Rico (@dmxn_08).">
+  <title>INICIO | moekat (@moekat)</title>
+  <meta name="description" content="Hub principal del portafolio visual de moekat (@moekat).">
   <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
-<body class="home-page">
-  <div id="loading" aria-live="polite">
-    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFD6E8" stroke="#2D173B" stroke-width="3.5" stroke-linejoin="round"/>
-      <circle cx="32" cy="31" r="5" fill="#85E3C3" stroke="#2D173B" stroke-width="2.5"/>
-    </svg>
-    <div class="loading-card">cargando estudio @dmxn_08...</div>
+<body class="home-page" data-particles="stars">
+  <div class="retro-marquee plum" aria-hidden="true">
+    <div class="retro-marquee-track">
+      <span class="mq-seg">* Estudio visual de moekat (@moekat) *</span>
+      <span class="mq-seg">* Lic. Artes Visuales UG * Tarot de Garfield *</span>
+      <span class="mq-seg">* Ilustración * Escultura * Bisutería * Emotes *</span>
+      <span class="mq-seg">* Estudio visual de moekat (@moekat) *</span>
+      <span class="mq-seg">* Lic. Artes Visuales UG * Tarot de Garfield *</span>
+      <span class="mq-seg">* Ilustración * Escultura * Bisutería * Emotes *</span>
+    </div>
   </div>
-
-  <!-- Botón flotante superior derecha FILTRO -->
-  <button type="button" class="filter-toggle-btn" id="filterToggleBtn" data-tip="Alterna entre 5 filtros pastel (guardado automático)">
-    FILTRO [*]
-    <span id="filterLabel">Pastel Kawaii</span>
-  </button>
 
   <div class="crt-scanlines" id="crtScanlines" aria-hidden="true"></div>
   <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
@@ -34,13 +31,13 @@
     <!-- Barra superior móvil -->
     <header class="mobile-topbar">
       <button type="button" class="candy-btn butter" id="mobileMenuBtn" aria-expanded="false" aria-controls="homeSidebar">[MENU]</button>
-      <span class="mobile-brand">@dmxn_08 * ART</span>
+      <span class="mobile-brand">@moekat * art hub</span>
     </header>
 
     <div class="hub-shell">
-      <!-- COLUMNA 1: SIDEBAR FIJA IZQUIERDA (EXACTA A REIGEN.MOE) -->
+      <!-- COLUMNA 1: SIDEBAR FIJA IZQUIERDA -->
       <aside class="sidebar" id="homeSidebar" aria-label="Navegación principal">
-        <div class="mini-paint-widget">
+        <div class="mini-paint-widget" data-ui>
           <div class="mini-paint-bar">
             <span>untitled - Paint</span>
             <span>[X]</span>
@@ -50,7 +47,7 @@
               <span>/</span><span>~</span><span>*</span><span>#</span><span>+</span>
             </div>
             <button type="button" class="mini-paint-btn" id="miniPaintBtn" data-tip="Clic para cambiar la obra aleatoria del centro">
-              <img id="miniPaintImg" src="image/thumbs/tyarot.jpg" alt="Vista previa aleatoria de Demian">
+              <img id="miniPaintImg" src="image/thumbs/tyarot.jpg" alt="Vista previa aleatoria de moekat">
             </button>
           </div>
           <div class="mini-paint-palette" aria-hidden="true">
@@ -63,83 +60,87 @@
           </div>
         </div>
 
-        <div class="nav-wobble-title" data-wobble>NAVIGATION</div>
+        <div class="nav-wobble-title" data-wobble>Navigation</div>
 
         <div class="nav-section-head">
-          <span>ON-SITE</span>
+          <span>En el sitio</span>
           <img class="gif-sticker gif-pixel" src="gifs/old-web-pixel-cute.gif" alt="" width="24" height="24">
         </div>
         <nav class="nav-box" aria-label="Páginas del portafolio">
           <div class="nav-box-inner">
             <details class="nav-gal-menu" open>
-              <summary class="nav-item-link nav-gal-summary">GALERIA (71)</summary>
+              <summary class="nav-item-link nav-gal-summary">Galería (75)</summary>
               <div class="nav-gal-sub">
-                <a class="nav-sub-link" href="galerie.html">&gt; Galería (49)</a>
+                <a class="nav-sub-link" href="galerie.html">&gt; Galería (53)</a>
                 <a class="nav-sub-link" href="galerie.html?tab=garfield">&gt; Galería Garfield (22)</a>
+                <a class="nav-sub-link" href="galerie.html?tab=portafolio">&gt; Portafolio (24)</a>
+                <a class="nav-sub-link" href="galerie.html?tab=piedra">&gt; Bitácora piedra (18)</a>
+                <a class="nav-sub-link" href="galerie.html?tab=dibujo">&gt; Bitácora dibujo (1)</a>
+                <a class="nav-sub-link" href="galerie.html?tab=dioramas">&gt; Dioramas (9+1)</a>
               </div>
             </details>
-            <a class="nav-item-link" href="profil.html">PERFIL</a>
-            <a class="nav-item-link" href="comisiones.html">COMISIONES</a>
-            <a class="nav-item-link" href="oekaki.html">OEKAKI / LIENZO</a>
-            <a class="nav-item-link" href="#contacto" data-open-tab="contacto" id="sidebarContactLink">CONTACTO</a>
+            <a class="nav-item-link" href="profil.html">Perfil</a>
+            <a class="nav-item-link" href="comisiones.html">Comisiones</a>
+            <a class="nav-item-link" href="oekaki.html">Oekaki / Lienzo</a>
+            <a class="nav-item-link" href="#contacto" data-open-tab="contacto" id="sidebarContactLink">Contacto</a>
           </div>
         </nav>
 
         <div class="nav-section-head">
-          <span>OFF-SITE</span>
+          <span>Redes externas</span>
           <img class="gif-sticker gif-pixel" src="gifs/emoticon-te-amo.gif" alt="" width="44" height="12">
         </div>
         <div class="nav-box">
           <div class="nav-box-inner">
-            <a class="nav-item-link" href="https://instagram.com/demi.demiau" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
-            <a class="nav-item-link" href="https://x.com/Chicharron_08" target="_blank" rel="noopener noreferrer">TWITTER / X</a>
-            <a class="nav-item-link" href="https://tiktok.com/@dmxn_08" target="_blank" rel="noopener noreferrer">TIKTOK</a>
-            <a class="nav-item-link" href="#contacto" data-open-tab="contacto">E-MAIL / FORM</a>
+            <a class="nav-item-link" href="https://www.instagram.com/moekat.085/" target="_blank" rel="noopener noreferrer">Instagram @moekat.085</a>
+            <a class="nav-item-link" href="https://x.com/Dmxn_0805" target="_blank" rel="noopener noreferrer">X @Dmxn_0805</a>
+            <a class="nav-item-link" href="https://www.tiktok.com/@dmxn_0805" target="_blank" rel="noopener noreferrer">TikTok @dmxn_0805</a>
+            <a class="nav-item-link" href="#contacto" data-open-tab="contacto">E-mail / Form</a>
           </div>
         </div>
 
         <p class="sidebar-contact-line">
-          Para ver mis redes, precios o escribirme directamente, entra a <a href="#contacto" data-open-tab="contacto">esta sección</a>.
+          Para ver tarifas o escribirme, entra a <a href="#contacto" data-open-tab="contacto">Contacto</a>.
         </p>
 
         <!-- Botones 88x31 estilo old-web -->
         <div class="badges-88x31-row" aria-label="Botones 88 por 31">
-          <a class="btn88-link" href="profil.html" data-tip="Demian Tenorio Rico (@dmxn_08)"><img src="gifs/buttons/btn-dmxn.gif" alt="@DMXN_08" width="88" height="31"></a>
-          <a class="btn88-link" href="profil.html" data-tip="Licenciatura Artes Visuales UG"><img src="gifs/buttons/btn-ug-artes.gif" alt="UG ARTES" width="88" height="31"></a>
-          <a class="btn88-link" href="galerie.html?tab=garfield" data-tip="Colección Garfield Tarot (22 cartas)"><img src="gifs/buttons/btn-tarot.gif" alt="TAROT 22" width="88" height="31"></a>
-          <a class="btn88-link" href="comisiones.html" data-tip="Comisiones abiertas en MXN"><img src="gifs/buttons/btn-comm.gif" alt="COMISIONES" width="88" height="31"></a>
+          <a class="btn88-link" href="profil.html" data-tip="moekat (@moekat)"><img src="gifs/buttons/btn-moekat.gif" alt="@moekat" width="88" height="31"></a>
+          <a class="btn88-link" href="profil.html" data-tip="Licenciatura Artes Visuales UG"><img src="gifs/buttons/btn-ug-artes.gif" alt="UG Artes" width="88" height="31"></a>
+          <a class="btn88-link" href="galerie.html?tab=garfield" data-tip="Colección Garfield Tarot (22 cartas)"><img src="gifs/buttons/btn-tarot.gif" alt="Tarot 22" width="88" height="31"></a>
+          <a class="btn88-link" href="comisiones.html" data-tip="Comisiones abiertas en MXN"><img src="gifs/buttons/btn-comm.gif" alt="Comisiones" width="88" height="31"></a>
         </div>
 
         <!-- Banners apilados -->
         <div class="sidebar-wide-banners">
           <a class="wide-sticker-banner" href="home.html">
             <img src="image/thumbs/o0o.png" alt="">
-            <span>Demian Tenorio</span>
+            <span>moekat :: art</span>
             <img src="image/thumbs/GG.png" alt="">
           </a>
           <a class="wide-sticker-banner alt" href="galerie.html">
             <img class="gif-pixel" src="gifs/old-web-wink.gif" alt="">
-            <span>@dmxn_08 * 71</span>
+            <span>@moekat * 75</span>
             <img class="gif-pixel" src="gifs/punch-cat.gif" alt="">
           </a>
         </div>
 
         <div class="link-me-note">
           :: Link me back? ::<br>
-          (archivo visual @dmxn_08)
+          (archivo visual @moekat)
         </div>
 
         <!-- Crest World Wide Web pastel original -->
         <svg class="www-crest" viewBox="0 0 130 98" role="img" aria-label="World Wide Web">
           <rect x="4" y="10" width="122" height="80" fill="#3B1E4F" stroke="#FFE07A" stroke-width="4"/>
-          <path d="M24 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#FF9EC7" stroke="#2D173B" stroke-width="1.5"/>
-          <path d="M65 4l4 7 7 1-5 5 1 7-7-4-7 4 1-7-5-5 7-1z" fill="#FFE07A" stroke="#2D173B" stroke-width="1.5"/>
-          <path d="M106 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#85E3C3" stroke="#2D173B" stroke-width="1.5"/>
+          <path d="M24 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#FF9EC7" stroke="#241030" stroke-width="1.5"/>
+          <path d="M65 4l4 7 7 1-5 5 1 7-7-4-7 4 1-7-5-5 7-1z" fill="#FFE07A" stroke="#241030" stroke-width="1.5"/>
+          <path d="M106 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#85E3C3" stroke="#241030" stroke-width="1.5"/>
           <circle cx="65" cy="48" r="19" fill="#8ED4FF" stroke="#FFF9FB" stroke-width="2.5"/>
           <ellipse cx="65" cy="48" rx="9" ry="19" fill="none" stroke="#FFF9FB" stroke-width="1.8"/>
           <line x1="46" y1="48" x2="84" y2="48" stroke="#FFF9FB" stroke-width="1.8"/>
-          <rect x="14" y="68" width="102" height="17" fill="#FFD6E8" stroke="#2D173B" stroke-width="2"/>
-          <text x="65" y="80" text-anchor="middle" fill="#2D173B" font-family="Trebuchet MS, sans-serif" font-weight="700" font-size="9.5">WORLD WIDE WEB</text>
+          <rect x="14" y="68" width="102" height="17" fill="#FFD6E8" stroke="#241030" stroke-width="2"/>
+          <text x="65" y="80" text-anchor="middle" fill="#241030" font-family="Verdana, sans-serif" font-weight="700" font-size="9">WORLD WIDE WEB</text>
         </svg>
 
         <a class="sidebar-back-link" href="index.html">&lt;&lt; volver a portada</a>
@@ -148,19 +149,19 @@
       <!-- ZONA PRINCIPAL: 3 COLUMNAS OLD-WEB -->
       <main class="hub-main">
         <div class="hub-outer-frame">
-          <div class="win-bar">
+          <div class="win-bar" data-ui>
             <div class="win-bar-title">
               <img src="icons/portfolio.png" alt="" width="16" height="16">
-              <span>DMXN_08_HUB.HTM :: 71 OBRAS EN LINEA</span>
+              <span>C:\MOEKAT\MOEKAT_HUB.HTM :: 75 obras</span>
             </div>
             <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
           </div>
 
-          <div class="retro-marquee plum" aria-hidden="true">
-            <div class="retro-marquee-track">
-              <span>* DEMIAN TENORIO RICO * @DMXN_08 * LIC. ARTES VISUALES UG * TAROT | ILUSTRACION | ESCULTURA | BISUTERIA | COLLAGE | EMOTES *</span>
-              <span>* DEMIAN TENORIO RICO * @DMXN_08 * LIC. ARTES VISUALES UG * TAROT | ILUSTRACION | ESCULTURA | BISUTERIA | COLLAGE | EMOTES *</span>
-            </div>
+          <div class="hub-toolbar-strip">
+            <span class="hub-toolbar-info">[*] Portafolio web hecho a mano de moekat (@moekat)</span>
+            <button type="button" class="filter-toggle-btn" id="filterToggleBtn" data-tip="Alterna entre 5 filtros pastel (guardado automático)">
+              Filtro [*] <span id="filterLabel">Pastel Kawaii</span>
+            </button>
           </div>
 
           <div class="hub-3col">
@@ -168,45 +169,49 @@
             <div class="hub-center-col">
               <section class="random-showcase" aria-label="Obra aleatoria">
                 <div class="showcase-header-bar">
-                  <h1 class="showcase-title" data-rainbow>DEMIAN TENORIO :: @DMXN_08</h1>
+                  <h1 class="showcase-title" data-rainbow>MOEKAT :: ART</h1>
                   <img class="gif-sticker mcbling-pop" src="gifs/boyfriend-mcbling.gif" alt="" width="110" height="23">
                 </div>
+
+                <p class="lead-line">
+                  Estudio visual de moekat (@moekat): 75 obras de Tarot de Garfield, ilustración, escultura y bisutería.
+                </p>
 
                 <div class="showcase-stage">
                   <div class="showcase-left-ornaments" aria-hidden="true">
                     <svg class="spin-charm" viewBox="0 0 36 36">
-                      <rect x="2" y="2" width="32" height="32" fill="#FFD6E8" stroke="#2D173B" stroke-width="2"/>
-                      <path d="M18 5l3 8 8.5.7-6.5 5.4 2 8.2-7-4.5-7 4.5 2-8.2-6.5-5.4L15 13z" fill="#FFE07A" stroke="#2D173B" stroke-width="1.8"/>
+                      <rect x="2" y="2" width="32" height="32" fill="#FFD6E8" stroke="#241030" stroke-width="2"/>
+                      <path d="M18 5l3 8 8.5.7-6.5 5.4 2 8.2-7-4.5-7 4.5 2-8.2-6.5-5.4L15 13z" fill="#FFE07A" stroke="#241030" stroke-width="1.8"/>
                     </svg>
                     <img class="gif-sticker gif-pixel" src="gifs/old-web-2000s-pixel.gif" alt="" width="34" height="34">
                   </div>
 
                   <button type="button" class="showcase-img-btn" id="showcaseOpenBtn" data-tip="Clic para abrir en el visor a resolución completa">
-                    <img id="randomArtImg" src="image/tyarot.jpg" alt="Tarot I - Arte Digital - 2024">
+                    <img id="randomArtImg" src="image/tyarot20.jpg" alt="0. El Loco - Garfield Tarot - moekat">
                   </button>
                 </div>
 
                 <div class="showcase-bottom-bar">
                   <div class="showcase-caption">
-                    <strong id="randomArtTitle">Tarot I</strong> | <span id="randomArtMeta">Tarot - Arte Digital - 2024</span>
+                    <strong id="randomArtTitle">0. El Loco</strong> | <span id="randomArtMeta">Garfield Tarot • Arcanos Mayores (The Fool)</span>
                   </div>
-                  <button type="button" class="random-retro-btn" id="shuffleArtBtn">OBRA AL AZAR [*]</button>
+                  <button type="button" class="random-retro-btn" id="shuffleArtBtn">Obra al azar [*]</button>
                 </div>
               </section>
 
               <div class="study-banner">
                 <div class="study-banner-left">
                   <img class="gif-sticker gif-pixel" src="gifs/old-web-wink.gif" alt="" width="20" height="20">
-                  <strong>DEMIAN :: ART</strong>
+                  <strong>Archivo @moekat</strong>
                 </div>
-                <span>TAROT | ILUSTRACION | ESCULTURA &amp; MAS!</span>
+                <span>Tarot | Ilustración | Escultura y más</span>
               </div>
 
               <div class="hub-tabs" id="hubTabs" role="tablist" aria-label="Secciones del estudio">
-                <button type="button" class="hub-tab-btn is-active" role="tab" aria-selected="true" data-tab="welcome">BIENVENIDX</button>
-                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="musica">MUSICA</button>
-                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="comisiones">COMISIONES</button>
-                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="contacto">CONTACTO</button>
+                <button type="button" class="hub-tab-btn is-active" role="tab" aria-selected="true" data-tab="welcome">Bienvenidx</button>
+                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="musica">Música</button>
+                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="comisiones">Comisiones</button>
+                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="contacto">Contacto</button>
               </div>
 
               <!-- TAB 1: BIENVENIDX -->
@@ -215,45 +220,42 @@
                   &laquo; Busco que mi arte sea un recordatorio de que lo absurdo también puede ser bello &lt;3 &raquo;
                 </div>
 
-                <div class="sparkle-divider">
-                  <img class="gif-sticker gif-pixel" src="gifs/laughing-cat.gif" alt="" width="20" height="20">
-                  <span>:: ARTIST STATEMENT ::</span>
-                  <img class="gif-sticker gif-pixel" src="gifs/punch-cat.gif" alt="" width="20" height="20">
-                </div>
+                <table class="oldweb-statement-table" aria-label="Artist Statement y avatar OC Garfield">
+                  <tbody>
+                    <tr>
+                      <td class="statement-copy-cell">
+                        <div class="statement-subhead">
+                          <span>Espacio lúdico y vibrante</span>
+                          <img class="gif-sticker" src="gifs/demi-beret-cat.gif" alt="" width="34" height="34">
+                        </div>
+                        <p class="statement-para-block">Mi trabajo artístico busca ser un espacio lúdico y vibrante, donde el color es protagonista y se convierte en un vehículo para motivar, liberar emociones y, en ocasiones, provocar una risa inesperada.</p>
 
-                <div class="welcome-oldweb-grid">
-                  <div class="statement-boxes">
-                    <div class="statement-card">
-                      <div class="statement-card-head">
-                        <span>Espacio lúdico y vibrante</span>
-                        <img class="gif-sticker" src="gifs/demi-beret-cat.gif" alt="" width="38" height="38">
-                      </div>
-                      <p>Mi trabajo artístico busca ser un espacio lúdico y vibrante, donde el color es protagonista y se convierte en un vehículo para motivar, liberar emociones y, en ocasiones, provocar una risa inesperada.</p>
-                    </div>
+                        <div class="pixel-hr" aria-hidden="true"></div>
 
-                    <div class="statement-card">
-                      <div class="statement-card-head">
-                        <span>Entre lo real y lo irreal</span>
-                        <img class="gif-sticker" src="gifs/demi-yui-idea.gif" alt="" width="44" height="33">
-                      </div>
-                      <p>Exploro lo cómico y lo absurdo como herramientas de desahogo y juego, generando un contraste constante entre lo real y lo irreal. Ese choque me permite cuestionar lo cotidiano y abrir la puerta a mundos semireales que se sienten familiares y extraños al mismo tiempo.</p>
-                    </div>
+                        <div class="statement-subhead">
+                          <span>Entre lo real y lo irreal</span>
+                          <img class="gif-sticker" src="gifs/demi-yui-idea.gif" alt="" width="40" height="30">
+                        </div>
+                        <p class="statement-para-block">Exploro lo cómico y lo absurdo como herramientas de desahogo y juego, generando un contraste constante entre lo real y lo irreal. Ese choque me permite cuestionar lo cotidiano y abrir la puerta a mundos semireales que se sienten familiares y extraños al mismo tiempo.</p>
 
-                    <div class="statement-card">
-                      <div class="statement-card-head">
-                        <span>Fandoms e identidad visual</span>
-                        <img class="gif-sticker" src="gifs/bunny-glitter.gif" alt="" width="40" height="30">
-                      </div>
-                      <p>Visualmente, mi estilo se nutre del arte semirrealista y de la riqueza creativa de los fandoms en internet, donde lo espontáneo y lo exagerado conviven con lo íntimo y lo auténtico. Mis piezas son un reflejo de esa energía digital: coloridas, irónicas y, sobre todo, vivas.</p>
-                    </div>
-                  </div>
+                        <div class="pixel-hr" aria-hidden="true"></div>
 
-                  <aside class="welcome-art-aside">
-                    <img class="aside-artwork" src="image/thumbs/digital1.jpg" alt="Dibujo Digital I de Demian Tenorio">
-                    <span style="font-size:0.74rem; font-weight:700;">Arte por Demian Tenorio Rico (@dmxn_08)</span>
-                    <img class="gif-sticker" src="gifs/demi-pusheen-trio.gif" alt="" width="96" height="69" style="margin:0 auto;">
-                  </aside>
-                </div>
+                        <div class="statement-subhead">
+                          <span>Fandoms e identidad visual</span>
+                          <img class="gif-sticker" src="gifs/bunny-glitter.gif" alt="" width="38" height="28">
+                        </div>
+                        <p class="statement-para-block">Visualmente, mi estilo se nutre del arte semirrealista y de la riqueza creativa de los fandoms en internet, donde lo espontáneo y lo exagerado conviven con lo íntimo y lo auténtico. Mis piezas son un reflejo de esa energía digital: coloridas, irónicas y, sobre todo, vivas.</p>
+                      </td>
+                      <td class="statement-aside-cell">
+                        <aside class="welcome-art-aside">
+                          <img class="aside-artwork avatar-garfield" src="image/dibujotradicional9.png" alt="OC Garfield de moekat">
+                          <span style="display:block; font-size:14px; font-weight:700; margin-bottom:6px;">OC Garfield • @moekat</span>
+                          <img class="gif-sticker" src="gifs/demi-pusheen-trio.gif" alt="" width="96" height="69" style="margin:0 auto;">
+                        </aside>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
                 <h2 class="panel-heading">
                   <span>Obras Seleccionadas</span>
@@ -261,48 +263,66 @@
                 </h2>
                 <div class="selected-grid">
                   <button type="button" class="selected-card" data-featured-idx="0">
-                    <img src="image/thumbs/tyarot.jpg" alt="V. El Hierofante - Garfield Tarot">
+                    <img src="image/thumbs/tyarot.jpg" alt="V. El Hierofante - Garfield Tarot de moekat">
                     <strong>V. El Hierofante</strong>
                     <span>Garfield Tarot</span>
                   </button>
                   <button type="button" class="selected-card" data-featured-idx="1">
-                    <img src="image/thumbs/escultura1.jpg" alt="Escultura I">
+                    <img src="image/thumbs/escultura1.jpg" alt="Escultura I de moekat">
                     <strong>Escultura I</strong>
                     <span>Arcilla</span>
                   </button>
                   <button type="button" class="selected-card" data-featured-idx="2">
-                    <img src="image/thumbs/digital1.jpg" alt="Dibujo Digital I">
+                    <img src="image/thumbs/digital1.jpg" alt="Dibujo Digital I de moekat">
                     <strong>Dibujo Digital I</strong>
                     <span>Ilustración</span>
                   </button>
                   <button type="button" class="selected-card" data-featured-idx="3">
-                    <img src="image/thumbs/biseturia1.jpg" alt="Bisutería I">
+                    <img src="image/thumbs/biseturia1.jpg" alt="Bisutería I de moekat">
                     <strong>Bisutería I</strong>
                     <span>Arte Objeto</span>
                   </button>
                 </div>
 
-                <h2 class="panel-heading">Disciplinas &amp; Archivo</h2>
-                <div class="disciplines-grid">
-                  <a class="discipline-card" href="galerie.html?tab=garfield">
-                    <strong>Tarot Garfield (0 - XXI)</strong>
-                    <span>22 cartas ilustradas | Arcanos Mayores &gt;&gt;</span>
-                  </a>
-                  <a class="discipline-card" href="galerie.html?cat=dibujo-digital">
-                    <strong>Ilustración Digital &amp; Tradicional</strong>
-                    <span>25 piezas | Color, lápiz y técnica mixta &gt;&gt;</span>
-                  </a>
-                  <a class="discipline-card" href="galerie.html?cat=esculturas">
-                    <strong>Escultura en Arcilla &amp; Cerámica</strong>
-                    <span>7 piezas tridimensionales &gt;&gt;</span>
-                  </a>
-                  <a class="discipline-card" href="galerie.html?cat=bisuteria">
-                    <strong>Bisutería, Collage &amp; Emotes</strong>
-                    <span>17 obras entre arte objeto, papel y PNG &gt;&gt;</span>
-                  </a>
-                </div>
+                <h2 class="panel-heading">Índice de Disciplinas</h2>
+                <table class="retro-index-table">
+                  <thead>
+                    <tr>
+                      <th>Disciplina</th>
+                      <th>Contenido</th>
+                      <th>Cantidad</th>
+                      <th>Acceso</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Tarot Garfield (0 - XXI)</strong></td>
+                      <td>22 Arcanos Mayores ilustrados a mano</td>
+                      <td>22 cartas</td>
+                      <td><a href="galerie.html?tab=garfield">Abrir Tarot &gt;&gt;</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ilustración Digital &amp; Tradicional</strong></td>
+                      <td>Color, lápiz y técnica mixta</td>
+                      <td>25 obras</td>
+                      <td><a href="galerie.html?cat=dibujo-digital">Ver archivo &gt;&gt;</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Escultura en Arcilla &amp; Cerámica</strong></td>
+                      <td>Piezas tridimensionales modeladas</td>
+                      <td>7 piezas</td>
+                      <td><a href="galerie.html?cat=esculturas">Ver archivo &gt;&gt;</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Bisutería, Collage &amp; Emotes</strong></td>
+                      <td>Arte objeto, papel mixto y PNG</td>
+                      <td>17 piezas</td>
+                      <td><a href="galerie.html?cat=bisuteria">Ver archivo &gt;&gt;</a></td>
+                    </tr>
+                  </tbody>
+                </table>
 
-                <div class="btn88-row" style="margin-bottom:8px;" aria-label="Botones retro del estudio">
+                <div class="btn88-row" style="margin-bottom:10px;" aria-label="Botones retro del estudio">
                   <a class="btn88-link" href="galerie.html?tab=garfield"><img src="gifs/buttons/btn-garfield.gif" alt="Garfield Tarot" width="88" height="31"></a>
                   <a class="btn88-link" href="oekaki.html"><img src="gifs/buttons/btn-oekaki.gif" alt="Oekaki Drawbox" width="88" height="31"></a>
                   <span class="btn88-link"><img src="gifs/buttons/btn-bestviewed.gif" alt="Mejor visto en 800x600" width="88" height="31"></span>
@@ -316,7 +336,7 @@
                 </div>
               </section>
 
-              <!-- TAB 2: MÚSICA -->
+              <!-- TAB 2: MUSICA -->
               <section class="hub-panel" id="panel-musica" role="tabpanel">
                 <h2 class="panel-heading">
                   <span>Jukebox | Música para Crear Arte [~]</span>
@@ -353,23 +373,45 @@
                   <div class="comm-status-gif-frame">
                     <img data-comm-status-gif src="gifs/comm-open.gif" alt="Estado de comisiones">
                   </div>
-                  <p data-comm-status-note style="font-size:0.82rem; font-weight:700;">¡Comisiones disponibles! Revisa tarifas o escríbeme &lt;3</p>
+                  <p data-comm-status-note style="font-size:16px; font-weight:700;">¡Comisiones disponibles! Revisa tarifas o escríbeme &lt;3</p>
                 </div>
 
-                <div class="comm-summary-grid">
-                  <div class="comm-mini-box">
-                    <h4>Retrato</h4>
-                    <p>Lineart $200<br>Color base $350<br>Renderizado $650</p>
-                  </div>
-                  <div class="comm-mini-box">
-                    <h4>Medio o 3/4</h4>
-                    <p>Lineart $350<br>Color base $500<br>Renderizado $750</p>
-                  </div>
-                  <div class="comm-mini-box">
-                    <h4>Completo &amp; Emotes</h4>
-                    <p>Completo desde $500<br>3 Emotes $200 | 5 $350<br>10 Emotes Promo $600</p>
-                  </div>
-                </div>
+                <table class="retro-index-table">
+                  <thead>
+                    <tr>
+                      <th>Tipo</th>
+                      <th>Lineart</th>
+                      <th>Color base</th>
+                      <th>Renderizado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Retrato</strong></td>
+                      <td>$200 MXN</td>
+                      <td>$350 MXN</td>
+                      <td>$650 MXN</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Medio o 3/4</strong></td>
+                      <td>$350 MXN</td>
+                      <td>$500 MXN</td>
+                      <td>$750 MXN</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Completo</strong></td>
+                      <td>$500 MXN</td>
+                      <td>$650 MXN</td>
+                      <td>$850 MXN</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Emotes PNG</strong></td>
+                      <td>3 por $200</td>
+                      <td>5 por $350</td>
+                      <td>10 Promo $600</td>
+                    </tr>
+                  </tbody>
+                </table>
 
                 <div class="comm-sheets-row">
                   <button type="button" class="comm-sheet-thumb" data-sheet-idx="0" data-tip="Ampliar Tabla de Precios">
@@ -395,7 +437,7 @@
                   <span>Contacto Profesional &lt;3</span>
                   <img class="gif-sticker gif-pixel" src="gifs/emoticon-te-amo.gif" alt="" width="68" height="19">
                 </h2>
-                <p style="margin-bottom:10px; font-weight:600;">¿Te interesa mi portafolio o te interesa adquirir una comisión? ¡Puedes rellenar el siguiente formulario para contactarte conmigo!</p>
+                <p style="margin-bottom:10px; font-size:16px; font-weight:600;">¿Te interesa mi portafolio o te interesa adquirir una comisión? ¡Puedes rellenar el siguiente formulario para contactarte conmigo!</p>
 
                 <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrbapazl" method="POST">
                   <div class="form-row-2">
@@ -454,19 +496,19 @@
 
             <!-- CINTA VERTICAL DECORATIVA -->
             <div class="vertical-pastel-ribbon" aria-hidden="true">
-              &lt;3 @dmxn_08 * artes visuales ug * tarot &amp; ilustracion * pastel kawaii &lt;3
+              &lt;3 @moekat * artes visuales ug * tarot &amp; ilustración * pastel kawaii &lt;3
             </div>
 
             <!-- COLUMNA DERECHA -->
             <aside class="hub-side-col" aria-label="Bienvenida y estado">
               <div class="side-card welcome-card">
                 <div class="welcome-art-header">
-                  <img class="bg-art" src="image/thumbs/digital1.jpg" alt="Obra digital de Demian Tenorio">
+                  <img class="bg-art avatar-garfield" src="image/dibujotradicional9.png" alt="OC Garfield - avatar de moekat">
                   <img class="sticker-corner gif-pixel" src="gifs/strawberry-glitter.gif" alt="">
                 </div>
                 <div class="welcome-bubble">
                   <h2>¡Bienvenidx!</h2>
-                  <p>Soy Demian Tenorio Rico (@dmxn_08), artista transgénero y guanajuatense en la Lic. de Artes Visuales (UG). Explora mis 71 obras originales y disfruta tu estancia &lt;3</p>
+                  <p>Soy moekat (@moekat), artista transgénero y guanajuatense en la Lic. de Artes Visuales (UG). Explora mis 75 obras originales &lt;3</p>
                   <span class="live-clock-pill" id="liveClock">00:00:00</span>
                 </div>
               </div>
@@ -474,13 +516,13 @@
               <div class="side-card status-card">
                 <div class="status-top-split">
                   <div class="status-online-box">
-                    <span>status:</span>
+                    <span>estado:</span>
                     <span class="online-gif-wrap">
                       <img class="gif-sticker gif-pixel" src="gifs/online-myspace.gif" alt="En línea" width="77" height="29">
                     </span>
                   </div>
                   <button type="button" class="candy-btn clap-btn" id="clapBtn">
-                    <span>&lt;3 Clap (<strong id="clapCount">71</strong>)</span>
+                    <span>&lt;3 Clap (<strong id="clapCount">75</strong>)</span>
                   </button>
                 </div>
 
@@ -489,22 +531,28 @@
                   <div class="comm-status-gif-frame">
                     <img data-comm-status-gif src="gifs/comm-open.gif" alt="Estado de comisiones">
                   </div>
-                  <p data-comm-status-note style="font-size:0.76rem; font-weight:700; line-height:1.35;">¡Comisiones disponibles! Revisa tarifas o escríbeme &lt;3</p>
-                  <a class="candy-btn mint" href="comisiones.html" style="padding:5px 10px; font-size:0.68rem;">Ver comisiones &gt;&gt;</a>
+                  <p data-comm-status-note style="font-size:14px; font-weight:700; line-height:1.35;">¡Comisiones disponibles! Revisa tarifas o escríbeme &lt;3</p>
+                  <a class="candy-btn mint" href="comisiones.html">Ver comisiones &gt;&gt;</a>
                 </div>
               </div>
 
-              <div class="side-card filter-hint-card">
-                <img class="filter-hint-thumb" src="image/thumbs/tyarot2.jpg" alt="Tarot II - muestra de filtro">
-                <p>¿Quieres probar otros tonos pastel? Pulsa <strong>[FILTRO *]</strong> arriba a la derecha para alternar 5 atmósferas &lt;3</p>
+              <div class="side-card updates-log-card">
+                <h2>[*] Bitácora del sitio</h2>
+                <div class="updates-scroll-well" tabindex="0">
+                  <p><strong>[Nuevo]</strong> Perfil actualizado a @moekat y avatar OC Garfield.</p>
+                  <p><strong>[Tarot]</strong> Baraja completa de 22 Arcanos en Galería Garfield.</p>
+                  <p><strong>[Archivo]</strong> 53 obras en Digital, Tradicional, Escultura y más.</p>
+                  <p><strong>[MXN]</strong> Tabla de precios, emotes y reglas en Comisiones.</p>
+                  <p><strong>[Drawbox]</strong> Lienzo Oekaki BBS interactivo disponible.</p>
+                </div>
               </div>
 
               <div class="side-card" style="display:grid; gap:8px;">
                 <div class="mini-banners-stack">
-                  <a class="mini-banner-link" href="galerie.html?tab=garfield"><span>* GARFIELD TAROT</span><span>22 &gt;&gt;</span></a>
-                  <a class="mini-banner-link" href="galerie.html"><span>+ GALERIA ARCHIVO</span><span>49 &gt;&gt;</span></a>
-                  <a class="mini-banner-link" href="galerie.html?cat=esculturas"><span>* ESCULTURA &amp; ARCILLA</span><span>7 &gt;&gt;</span></a>
-                  <a class="mini-banner-link" href="oekaki.html"><span>/ LIENZO KAWAII</span><span>[+]</span></a>
+                  <a class="mini-banner-link" href="galerie.html?tab=garfield"><span>* Garfield Tarot</span><span>22 &gt;&gt;</span></a>
+                  <a class="mini-banner-link" href="galerie.html"><span>+ Galería archivo</span><span>53 &gt;&gt;</span></a>
+                  <a class="mini-banner-link" href="galerie.html?cat=esculturas"><span>* Escultura &amp; arcilla</span><span>7 &gt;&gt;</span></a>
+                  <a class="mini-banner-link" href="oekaki.html"><span>/ Lienzo kawaii</span><span>[+]</span></a>
                 </div>
                 <div class="gif-shelf">
                   <img class="gif-sticker" src="gifs/blushing-mdd.gif" alt="" width="76" height="67" style="border:2px solid var(--ink);">
