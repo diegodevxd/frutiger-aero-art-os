@@ -136,20 +136,20 @@ body.splash-page {
   padding: 0 4px;
 }
 
-/* 4 bloques tipo tabla HTML de iniciales (D M X N) */
+/* 6 bloques tipo tabla HTML de iniciales (M O E K A T) */
 .splash-blocks-table {
   border-collapse: separate;
-  border-spacing: 8px;
+  border-spacing: 6px;
   margin: 0 auto;
 }
 
 .char-tile {
-  width: clamp(50px, 11vw, 66px);
-  height: clamp(52px, 11vw, 66px);
+  width: clamp(40px, 9.5vw, 58px);
+  height: clamp(46px, 10vw, 62px);
   text-align: center;
   vertical-align: middle;
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 4.4vw, 2.3rem);
+  font-size: clamp(1.35rem, 3.8vw, 2rem);
   font-weight: 700;
   color: var(--ink);
   border: 3px solid;
@@ -161,6 +161,8 @@ body.splash-page {
 .char-tile.butter { background: var(--butter-soft); }
 .char-tile.lavender { background: var(--lavender-soft); }
 .char-tile.mint { background: var(--mint-soft); }
+.char-tile.sky { background: var(--sky-soft); }
+.char-tile.peach { background: var(--peach-soft); }
 
 .splash-subtitle {
   font-family: var(--font-pixel);

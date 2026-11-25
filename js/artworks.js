@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CATALOGO AUTENTICO DE OBRAS (71 piezas originales de Demian Tenorio Rico)
+   CATALOGO AUTENTICO DE OBRAS (71 piezas originales de moekat / @moekat)
    Incluye los 22 Arcanos Mayores del Tarot de Garfield (0 - XXI) ordenados
    y las 49 obras generales (Digital, Tradicional, Escultura, Bisuteria, Collage, Emotes).
    ========================================================================== */
@@ -170,17 +170,17 @@
   const commissionSheets = [
     {
       title: 'Tabla de Precios (MXN)',
-      meta: 'Comisiones • Demian Tenorio',
+      meta: 'Comisiones • moekat',
       src: 'Comisiones/Comisiones%20tablita.png'
     },
     {
       title: 'Reglas y Condiciones',
-      meta: 'Comisiones • Demian Tenorio',
+      meta: 'Comisiones • moekat',
       src: 'Comisiones/Comisiones%20reglas.png'
     },
     {
       title: 'Ejemplos de Acabado y Emotes',
-      meta: 'Comisiones • Demian Tenorio',
+      meta: 'Comisiones • moekat',
       src: 'Comisiones/Comisiones%20ejemplos%20y%20emotes.png'
     }
   ];

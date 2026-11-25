@@ -64,14 +64,14 @@
 
       if (winTitle) {
         winTitle.textContent = isGarf
-          ? 'C:\\DMXN_08\\GARFIELD_TAROT.HTM :: 22 ARCANOS MAYORES (0 - XXI)'
-          : 'C:\\DMXN_08\\GALERIE.HTM :: ARCHIVO VISUAL (49 OBRAS)';
+          ? 'C:\\MOEKAT\\GARFIELD_TAROT.HTM :: 22 ARCANOS MAYORES (0 - XXI)'
+          : 'C:\\MOEKAT\\GALERIE.HTM :: ARCHIVO VISUAL (49 OBRAS)';
       }
 
       if (marqueeTrack) {
         const line = isGarf
-          ? '* GALERIA GARFIELD :: MAZO COMPLETO DE TAROT * 22 ARCANOS MAYORES * DE 0. EL LOCO A XXI. EL MUNDO * DIBUJOS ORIGINALES DE @DMXN_08 *'
-          : '* GALERIA DE DEMIAN TENORIO (@DMXN_08) * DIBUJO DIGITAL * TRADICIONAL * ESCULTURAS * BISUTERIA * COLLAGE * EMOTES * CLIC EN CUALQUIER OBRA PARA AMPLIAR *';
+          ? '* GALERIA GARFIELD :: MAZO COMPLETO DE TAROT * 22 ARCANOS MAYORES * DE 0. EL LOCO A XXI. EL MUNDO * DIBUJOS ORIGINALES DE @MOEKAT *'
+          : '* GALERIA DE MOEKAT (@MOEKAT) * DIBUJO DIGITAL * TRADICIONAL * ESCULTURAS * BISUTERIA * COLLAGE * EMOTES * CLIC EN CUALQUIER OBRA PARA AMPLIAR *';
         marqueeTrack.innerHTML = `<span>${line}</span><span>${line}</span>`;
       }
     }
@@ -219,7 +219,7 @@
         imgBox.className = 'tarot-card-img-box';
         const img = document.createElement('img');
         img.src = card.thumb;
-        img.alt = `${card.title} - Garfield Tarot por Demian Tenorio`;
+        img.alt = `${card.title} - Garfield Tarot por moekat`;
         img.loading = 'eager';
         img.decoding = 'async';
         imgBox.appendChild(img);

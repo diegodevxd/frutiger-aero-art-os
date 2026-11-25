@@ -1,7 +1,7 @@
 # Notas de Estudio de Referencia: `https://reigen.moe`
 
 Estudio estructural, visual e interactivo realizado directamente en el navegador sobre `https://reigen.moe` y sus rutas enlazadas (`/`, `/home`, `/galerie`, `/profil`, `/shrines`, `/journal`, `/oekaki`, `/credit`, además de vistas móviles en `m.reigen.moe`).  
-*Propósito:* replicar la arquitectura de navegación, layout, transiciones, animaciones, efectos de cursor/scroll y tono web retro-indie usando únicamente contenido, obras y assets propios de Demian Tenorio Rico (`@dmxn_08`) bajo una paleta pastel kawaii/gyaru.
+*Propósito:* replicar la arquitectura de navegación, layout, transiciones, animaciones, efectos de cursor/scroll y tono web retro-indie usando únicamente contenido, obras y assets propios de moekat (`@moekat`) bajo una paleta pastel kawaii/gyaru.
 
 ---
 
@@ -109,7 +109,7 @@ Estudio estructural, visual e interactivo realizado directamente en el navegador
 
 ---
 
-## 3. Reglas de Adaptación al Proyecto de Demian
+## 3. Reglas de Adaptación al Proyecto de moekat (`@moekat`)
 
 1. **Cero assets externos de `reigen.moe`**: Ninguna imagen, icono, cursor, GIF, fuente descargada de terceros (`file.garden`, `dimden.dev`) ni texto ajeno se reutiliza. Todo elemento decorativo (encajes, moños, cursores pastel, estrellas, corazones, sellos) es SVG/CSS original; todo arte es de `image/` y `Comisiones/`; la música es `music/WorldFrutti.mp3`.
 2. **Estética pastel kawaii / gyaru con alto contraste**: Se reemplazan los neones agresivos (`#00ff00`, `#ff0000`, `#0000ff`) y filtros saturados por crema rosada (`#FFF9FB`), rosa bebé (`#FFD6E8`), lavanda (`#E8DCFF`), menta (`#CDF7E7`), durazno (`#FFE4D1`) y azul cielo suave (`#D6F0FF`), usando tinta ciruela profunda (`#3B234A`) y ciruela aterciopelada (`#452459`) para garantizar legibilidad >= 4.5:1.

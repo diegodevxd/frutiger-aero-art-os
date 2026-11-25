@@ -284,7 +284,7 @@
           <div class="lightbox-footer">
             <div class="lightbox-meta-wrap">
               <h3 id="lbTitle">Obra</h3>
-              <p id="lbMeta">Archivo visual • @dmxn_08</p>
+              <p id="lbMeta">Archivo visual • @moekat</p>
             </div>
             <div class="lightbox-actions">
               <button type="button" class="candy-btn lavender" id="lbPrevBtn" aria-label="Obra anterior">&lt;&lt; Anterior</button>
@@ -314,7 +314,7 @@
       const current = items[index];
       if (!current) return;
       imgEl.src = current.src;
-      imgEl.alt = current.title || 'Obra de Demian Tenorio Rico';
+      imgEl.alt = current.title || 'Obra de moekat';
       imgEl.classList.toggle('is-zoomed', zoomed);
       titleEl.textContent = current.title || 'Obra';
       metaEl.textContent = current.meta || 'Archivo visual';

@@ -47,6 +47,11 @@ img {
   -webkit-user-drag: none;
 }
 
+.avatar-garfield {
+  object-fit: cover;
+  object-position: center 66%;
+}
+
 a {
   color: var(--pink-deep);
   text-decoration: underline;

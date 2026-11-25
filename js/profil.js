@@ -4,7 +4,7 @@
 
 (function () {
   const ARTIST_FACTS = [
-    'Soy Demian Tenorio Rico (@dmxn_08), artista transgénero y guanajuatense.',
+    'Soy moekat (@moekat), artista transgénero y guanajuatense.',
     'En 2023 ingresé a la Licenciatura en Artes Visuales en la Universidad de Guanajuato.',
     'Mi portafolio reúne 71 piezas entre Tarot (22 cartas), Ilustración Digital y Tradicional, Escultura, Bisutería, Collage y Emotes.',
     'Mis esculturas alternan arcilla y cerámica, explorando formas lúdicas y coloridas.',

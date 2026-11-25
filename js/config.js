@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CONFIGURACIÓN DEL PORTAFOLIO (@dmxn_08)
+   CONFIGURACIÓN DEL PORTAFOLIO (@moekat)
    Cambia COMMISSIONS_OPEN entre true (abiertas) y false (cerradas).
    ========================================================================== */
 
