@@ -1,94 +1,139 @@
 /* ==========================================================================
-   GALERÍA GARFIELD (galerie.html) - Tema exclusivo de Garfield + Stickers cute
-   Mantiene las 71 obras originales de Demian en rejilla densa old-web.
+   GALERIA EN DOS SECCIONES (galerie.html)
+   1. Galeria Normal: arte-primero, rejilla completa 49 obras + deco pastel retro.
+   2. Galeria Garfield: baraja completa Tarot de Garfield (0 - XXI) + GIFs Garfield.
    ========================================================================== */
 
 body.gallery-page {
   min-height: 100svh;
-  padding: 18px 14px 36px;
-  background-color: #FFF2E2;
-  background-image: url('../gifs/tiles/tile-galerie-garfield.png');
+  padding: 16px 14px 36px;
+  background-color: var(--bg-blush);
+  background-image: url('../gifs/tiles/tile-home.png');
   background-repeat: repeat;
 }
 
+body.gallery-page[data-gallery-mode="garfield"] {
+  background-color: #FFF2E2;
+  background-image: url('../gifs/tiles/tile-galerie-garfield.png');
+}
+
 .gallery-window {
-  max-width: 1020px;
+  max-width: 1040px;
   margin: 0 auto;
   background: var(--bg-cream);
-  border: 4px ridge var(--peach-mid);
+  border: 4px ridge var(--pink-mid);
   outline: 3px solid var(--ink);
 }
 
-.gallery-layout {
+body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
+  border-color: var(--peach-mid);
+}
+
+/* Barra de 2 pestanas estilo old-web para Galeria vs Galeria Garfield */
+.gallery-mode-tabs {
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
-  gap: 14px;
-  padding: 12px;
-  align-items: start;
-  background: var(--peach-soft);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  padding: 8px 10px 0;
+  background: var(--lavender-soft);
+  border-bottom: 3px solid var(--ink);
 }
 
-/* Panel izquierdo sticky */
-.gallery-info-panel {
-  position: sticky;
-  top: 16px;
+.gallery-mode-tab {
+  padding: 8px 10px;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--ink) var(--bevel-light);
+  border-bottom: none;
+  background: var(--bg-blush);
+  color: var(--ink);
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
 }
 
-.gallery-wordart-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 6px 8px;
+.gallery-mode-tab:hover {
   background: var(--butter-soft);
-  border: 3px double var(--peach-deep);
-  outline: 2px solid var(--ink);
-  margin-bottom: 8px;
 }
 
-.gallery-wordart {
+.gallery-mode-tab.is-active {
+  background: var(--bg-cream);
+  color: var(--pink-deep);
+  outline: 2px solid var(--ink);
+}
+
+.gallery-mode-tab[data-mode="garfield"].is-active {
+  background: #FFF2E2;
+  color: var(--peach-deep);
+}
+
+.gallery-heading {
   font-family: var(--font-display);
-  font-size: clamp(1.18rem, 2.2vw, 1.48rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
   font-weight: 700;
   color: var(--ink);
-  text-align: center;
   line-height: 1.1;
 }
 
-.gallery-info-inner {
-  padding: 12px;
+/* ==========================================================================
+   SECCION 1: GALERIA GENERAL (ARTE ARRIBA DEL PLIEGUE)
+   ========================================================================== */
+
+.gallery-section-general {
+  padding: 10px 12px 14px;
   display: grid;
   gap: 10px;
   background: var(--bg-cream);
 }
 
-.garfield-stats-table {
-  width: 100%;
-  border-collapse: collapse;
+.gallery-section-general[hidden],
+.gallery-section-garfield[hidden] {
+  display: none;
+}
+
+.general-toolbar {
+  display: grid;
+  gap: 8px;
+  padding: 9px 10px;
   background: var(--bg-blush);
-  font-family: var(--font-pixel);
-  font-size: 0.66rem;
-}
-
-.garfield-stats-table th,
-.garfield-stats-table td {
-  padding: 5px 7px;
   border: 2px solid var(--ink);
-  text-align: left;
 }
 
-.garfield-stats-table th {
-  background: var(--peach-soft);
-  color: var(--peach-deep);
-  width: 42%;
+.general-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.gallery-intro {
-  font-size: 0.82rem;
+.general-meta-controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.gallery-search {
+  width: 158px;
+  max-width: 100%;
+  padding: 5px 8px;
+  border: 2px solid var(--ink);
+  background: #FFFFFF;
   color: var(--ink);
-  padding: 7px 9px;
-  background: var(--bg-card);
-  border: 2px dashed var(--peach-deep);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.general-cats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  border-top: 2px dotted var(--lavender-deep);
 }
 
 .gallery-filters {
@@ -98,14 +143,14 @@ body.gallery-page {
 }
 
 .cat-btn {
-  padding: 4px 7px;
+  padding: 4px 8px;
   border: 2px solid;
   border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
   outline: 2px solid var(--ink);
   background: var(--bg-card);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 700;
 }
 
@@ -119,43 +164,23 @@ body.gallery-page {
   border-color: var(--bevel-plum-dark) var(--bevel-plum-light) var(--bevel-plum-light) var(--bevel-plum-dark);
 }
 
-.gallery-search-row {
-  display: flex;
-  gap: 6px;
-}
-
-.gallery-search {
-  flex: 1;
-  min-width: 0;
-  padding: 6px 8px;
-  border: 2px solid var(--ink);
-  background: #FFFFFF;
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.82rem;
-}
-
 .gallery-pagination {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  padding-top: 8px;
-  border-top: 2px dotted var(--lavender-deep);
+  gap: 7px;
   font-family: var(--font-pixel);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
 }
 
 .page-nav-btn {
-  padding: 5px 9px;
+  padding: 4px 8px;
   border: 2px solid;
   border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
   outline: 2px solid var(--ink);
   background: var(--sky-soft);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.64rem;
+  font-size: 0.62rem;
 }
 
 .page-nav-btn:hover:not(:disabled) {
@@ -167,46 +192,7 @@ body.gallery-page {
   cursor: not-allowed;
 }
 
-/* Rincón Garfield del panel izquierdo */
-.garfield-shrine-box {
-  padding: 8px;
-  background: var(--peach-soft);
-  border: 2px dashed var(--peach-deep);
-  display: grid;
-  gap: 6px;
-  text-align: center;
-}
-
-.garfield-shrine-label {
-  font-family: var(--font-pixel);
-  font-size: 0.6rem;
-  color: var(--peach-deep);
-  background: var(--butter-soft);
-  border: 2px solid var(--ink);
-  padding: 2px 4px;
-}
-
-.garfield-mini-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.garfield-gif-card {
-  background: #FFFFFF;
-  border: 2px solid var(--ink);
-  padding: 2px;
-}
-
-/* Marco derecho con rejilla densa de 5 columnas */
-.gallery-main-col {
-  display: grid;
-  gap: 10px;
-  min-width: 0;
-}
-
+/* Marco de rejilla general */
 .gallery-grid-frame {
   padding: 10px;
   background-color: var(--lavender-soft);
@@ -219,12 +205,12 @@ body.gallery-page {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
+  gap: 9px;
 }
 
 .gallery-grid.is-large {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  gap: 12px;
 }
 
 .art-tile {
@@ -249,8 +235,8 @@ body.gallery-page {
 .art-tile-badge {
   position: absolute;
   left: 2px;
+  right: 2px;
   bottom: 2px;
-  max-width: calc(100% - 4px);
   padding: 2px 5px;
   background: var(--bg-plum);
   color: var(--butter-soft);
@@ -259,20 +245,14 @@ body.gallery-page {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  opacity: 0;
 }
 
 .art-tile:hover {
-  transform: rotate(3deg) scale(1.04);
-  outline: 3px dashed var(--pink-deep);
+  transform: scale(1.03);
+  outline: 3px solid var(--pink-deep);
   z-index: 4;
 }
 
-.art-tile:hover .art-tile-badge {
-  opacity: 1;
-}
-
-/* Celda decorativa vacía estilo reigen.moe */
 .art-placeholder {
   aspect-ratio: 1 / 1;
   border: 2px solid var(--ink);
@@ -283,7 +263,7 @@ body.gallery-page {
   place-items: center;
   color: var(--lavender-deep);
   font-family: var(--font-pixel);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   pointer-events: none;
 }
 
@@ -293,6 +273,163 @@ body.gallery-page {
   text-align: center;
   background: var(--bg-cream);
   border: 2px dashed var(--pink-deep);
+}
+
+.general-oldweb-footer {
+  padding: 10px 12px;
+  background: var(--bg-blush);
+  border: 3px double var(--pink-deep);
+  display: grid;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   SECCION 2: GALERIA GARFIELD (TAROT 0 - XXI + SOLO GIFS GARFIELD)
+   ========================================================================== */
+
+.gallery-section-garfield {
+  padding: 10px 12px 14px;
+  display: grid;
+  gap: 10px;
+  background: #FFF2E2;
+}
+
+.garfield-header-bar {
+  padding: 9px 11px;
+  background: var(--butter-soft);
+  border: 3px double var(--peach-deep);
+  outline: 2px solid var(--ink);
+  display: grid;
+  gap: 8px;
+}
+
+.garfield-title-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.garfield-title-copy {
+  text-align: center;
+}
+
+.garfield-title-copy p {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 2px;
+}
+
+.garfield-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  border-top: 2px dotted var(--peach-deep);
+}
+
+.garfield-mini-stickers {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.garfield-gif-card {
+  background: #FFFFFF;
+  border: 2px solid var(--ink);
+  padding: 2px;
+  display: inline-flex;
+}
+
+/* Spread Grid de 22 Cartas de Tarot */
+.tarot-spread-frame {
+  padding: 10px;
+  background: var(--peach-soft);
+  border: 4px ridge var(--peach-mid);
+  outline: 3px solid var(--ink);
+}
+
+.tarot-spread-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tarot-card {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background: #FFFDF8;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
+  text-align: center;
+  transition: transform 0.14s ease-out;
+}
+
+.tarot-card:hover {
+  transform: translateY(-2px);
+  background: var(--butter-soft);
+  outline: 3px solid var(--peach-deep);
+}
+
+.tarot-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 2px 5px;
+  margin-bottom: 4px;
+  background: var(--bg-plum);
+  color: var(--butter-soft);
+  font-family: var(--font-pixel);
+  font-size: 0.56rem;
+}
+
+.tarot-card-num {
+  color: var(--pink-soft);
+  font-weight: 700;
+}
+
+.tarot-card-img-box {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: #FFF8EE;
+  border: 2px solid var(--ink);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tarot-card-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tarot-card-caption {
+  padding: 5px 3px 2px;
+  display: grid;
+  gap: 1px;
+}
+
+.tarot-card-caption strong {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.tarot-card-caption span {
+  font-family: var(--font-pixel);
+  font-size: 0.54rem;
+  color: var(--peach-deep);
 }
 
 /* Tira inferior exclusiva de stickers Garfield & Cute */
@@ -313,7 +450,7 @@ body.gallery-page {
   gap: 8px;
   flex-wrap: wrap;
   font-family: var(--font-pixel);
-  font-size: 0.64rem;
+  font-size: 0.62rem;
   color: var(--peach-deep);
 }
 
@@ -322,7 +459,7 @@ body.gallery-page {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 9px;
 }
 
 .garfield-sticker-frame {
@@ -334,26 +471,33 @@ body.gallery-page {
   justify-content: center;
 }
 
-@media (max-width: 1020px) {
-  .gallery-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-info-panel {
-    position: static;
-  }
-
+@media (max-width: 960px) {
   .gallery-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+  .tarot-spread-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   body.gallery-page {
     padding: 12px 8px 26px;
   }
 
-  .gallery-layout {
+  .gallery-mode-tabs {
+    padding: 6px 6px 0;
+    gap: 4px;
+  }
+
+  .gallery-mode-tab {
+    font-size: 0.6rem;
+    padding: 7px 4px;
+  }
+
+  .gallery-section-general,
+  .gallery-section-garfield {
     padding: 8px;
   }
 
@@ -361,5 +505,15 @@ body.gallery-page {
   .gallery-grid.is-large {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
+  }
+
+  .tarot-spread-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .garfield-title-row {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
 }

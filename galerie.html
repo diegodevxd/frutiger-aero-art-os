@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GALERIA GARFIELD | Demian Tenorio (@dmxn_08)</title>
-  <meta name="description" content="Galería completa con las 71 obras de Demian Tenorio Rico (@dmxn_08): Tarot, Dibujo Digital, Dibujo Tradicional, Esculturas, Bisutería, Collage y Emotes.">
+  <title>GALERIA &amp; TAROT GARFIELD | Demian Tenorio (@dmxn_08)</title>
+  <meta name="description" content="Portafolio dividido en Galería General (49 obras de ilustración, escultura, bisutería, collage y emotes) y Galería Garfield (baraja completa de 22 Arcanos Mayores del Tarot de Garfield).">
   <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,10 +12,12 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/galerie.css">
 </head>
-<body class="gallery-page">
+<body class="gallery-page" data-gallery-mode="general">
   <div id="loading" aria-live="polite">
-    <img src="gifs/garfield/garfield-sticker-1.gif" alt="" width="74" height="73" style="border:2px solid var(--ink); background:#FFFFFF;">
-    <div class="loading-card">abriendo colección Garfield de 71 obras...</div>
+    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#E8DCFF" stroke="#2D173B" stroke-width="3.5" stroke-linejoin="round"/>
+    </svg>
+    <div class="loading-card">abriendo archivo visual @dmxn_08...</div>
   </div>
 
   <a class="back-widget" href="home.html" data-tip="Volver al inicio (@dmxn_08)">
@@ -24,94 +26,132 @@
   </a>
 
   <div class="gallery-window">
-    <div class="win-bar pink">
+    <div class="win-bar pink" id="galWinBar">
       <div class="win-bar-title">
         <img src="icons/gallery.png" alt="" width="16" height="16">
-        <span>C:\DMXN_08\GALERIE_GARFIELD.HTM :: 71 OBRAS</span>
+        <span id="galWinTitle">C:\DMXN_08\GALERIE.HTM :: ARCHIVO VISUAL (49 OBRAS)</span>
       </div>
       <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
     </div>
 
     <div class="retro-marquee" aria-hidden="true">
-      <div class="retro-marquee-track">
-        <span>* GARFIELD GALLERY ARCHIVE * 71 OBRAS ORIGINALES DE @DMXN_08 * LASAGNA &amp; PASTEL * TAROT * ESCULTURA * ILUSTRACION *</span>
-        <span>* GARFIELD GALLERY ARCHIVE * 71 OBRAS ORIGINALES DE @DMXN_08 * LASAGNA &amp; PASTEL * TAROT * ESCULTURA * ILUSTRACION *</span>
+      <div class="retro-marquee-track" id="galMarqueeTrack">
+        <span>* GALERIA DE DEMIAN TENORIO (@DMXN_08) * DIBUJO DIGITAL * TRADICIONAL * ESCULTURAS * BISUTERIA * COLLAGE * EMOTES * CLIC EN CUALQUIER OBRA PARA AMPLIAR *</span>
+        <span>* GALERIA DE DEMIAN TENORIO (@DMXN_08) * DIBUJO DIGITAL * TRADICIONAL * ESCULTURAS * BISUTERIA * COLLAGE * EMOTES * CLIC EN CUALQUIER OBRA PARA AMPLIAR *</span>
       </div>
     </div>
 
-    <main class="gallery-layout">
-      <!-- Columna izquierda sticky con marco arcoíris -->
-      <aside class="gallery-info-panel" aria-label="Filtros y paginación de la galería">
-        <div class="gallery-wordart-row">
-          <img class="gif-sticker" src="gifs/garfield/garfield-sticker-1.gif" alt="Garfield sticker" width="46" height="46">
-          <h1 class="gallery-wordart">GALERIA :: @DMXN_08</h1>
-          <img class="gif-sticker" src="gifs/garfield/garfield-sticker-2.gif" alt="Garfield sticker 2" width="46" height="38">
-        </div>
+    <!-- Barra de sub-menu / pestanas para cambiar entre Galeria normal y Galeria Garfield -->
+    <nav class="gallery-mode-tabs" role="tablist" aria-label="Secciones de la galería">
+      <button type="button" class="gallery-mode-tab is-active" id="tabBtnGeneral" role="tab" aria-selected="true" data-mode="general">
+        [*] GALERIA :: ARCHIVO (49)
+      </button>
+      <button type="button" class="gallery-mode-tab" id="tabBtnGarfield" role="tab" aria-selected="false" data-mode="garfield">
+        [*] GALERIA GARFIELD :: TAROT (22)
+      </button>
+    </nav>
 
-        <div class="rainbow-frame">
-          <div class="rainbow-inner gallery-info-inner">
-            <table class="garfield-stats-table" id="galleryStats">
-              <tbody>
-                <tr><th>No. DE OBRAS:</th><td><strong id="galStatCount">71 / 71</strong></td></tr>
-                <tr><th>CATEGORIA:</th><td><strong id="galStatCat">TODAS</strong></td></tr>
-                <tr><th>EDICION:</th><td><strong>GARFIELD ZONE &lt;3</strong></td></tr>
-              </tbody>
-            </table>
+    <!-- ==================================================================
+         SECCION 1: GALERIA GENERAL (TODAS LAS OBRAS NO-TAROT + GIFS RETRO)
+         ================================================================== -->
+    <section class="gallery-section-general" id="gallerySectionGeneral" role="tabpanel" aria-labelledby="tabBtnGeneral">
+      <header class="general-toolbar">
+        <div class="general-title-bar">
+          <div class="gif-inline-pair">
+            <img class="gif-sticker gif-pixel" src="gifs/old-web-2000s-pixel.gif" alt="" width="30" height="30">
+            <h1 class="gallery-heading">GALERIA :: @DMXN_08</h1>
+            <img class="gif-sticker gif-pixel" src="gifs/old-web-pixel-cute.gif" alt="" width="28" height="28">
+          </div>
 
-            <p class="gallery-intro">
-              Archivo completo de Demian Tenorio Rico: Tarot ilustrado, Dibujo Digital y Tradicional, Escultura en arcilla/cerámica, Bisutería, Collage y Emotes. Haz clic en cualquier miniatura para abrir el visor &lt;3
-            </p>
-
-            <div class="gallery-filters" id="galleryFilters" aria-label="Filtrar por categoría"></div>
-
-            <div class="gallery-search-row">
-              <input type="search" id="gallerySearch" class="gallery-search" placeholder="Buscar obra...">
-              <button type="button" class="candy-btn lavender" id="galleryDensityBtn">Vista: Amplia</button>
-            </div>
-
-            <div class="gallery-pagination">
-              <button type="button" class="page-nav-btn" id="galPrevBtn">&lt;&lt; ANT</button>
-              <span id="galPageInfo">PAG 1 / 3</span>
-              <button type="button" class="page-nav-btn" id="galNextBtn">SIG &gt;&gt;</button>
-            </div>
-
-            <div class="garfield-shrine-box" aria-label="Stickers animados de Garfield">
-              <div class="garfield-shrine-label">* GARFIELD LASAGNA CORNER *</div>
-              <div class="garfield-mini-row">
-                <span class="garfield-gif-card"><img class="gif-sticker" src="gifs/garfield/garfield-dancing-lasagna.gif" alt="Garfield bailando lasaña" width="76" height="53"></span>
-                <span class="garfield-gif-card"><img class="gif-sticker" src="gifs/garfield/garfield-baby.gif" alt="Bebé Garfield" width="56" height="56"></span>
-                <span class="garfield-gif-card"><img class="gif-sticker" src="gifs/garfield/garfield-catty-kitty.gif" alt="Garfield kitty" width="66" height="53"></span>
-              </div>
-              <div class="btn88-row">
-                <a class="btn88-link" href="galerie.html"><img src="gifs/buttons/btn-garfield.gif" alt="Garfield Shrine" width="88" height="31"></a>
-                <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-dmxn.gif" alt="@DMXN_08" width="88" height="31"></a>
-              </div>
-            </div>
+          <div class="general-meta-controls">
+            <span class="pastel-badge butter">MOSTRANDO: <strong id="galStatCount">49 / 49</strong></span>
+            <span class="pastel-badge lavender" id="galStatCat">TODAS</span>
+            <input type="search" id="gallerySearch" class="gallery-search" placeholder="Buscar obra..." aria-label="Buscar obra">
+            <button type="button" class="candy-btn lavender" id="galleryDensityBtn">Vista: Amplia</button>
           </div>
         </div>
-      </aside>
 
-      <!-- Columna derecha con rejilla densa + tira Garfield y stickers lindos abajo -->
-      <div class="gallery-main-col">
-        <section class="gallery-grid-frame" aria-label="Rejilla de obras">
-          <div class="gallery-grid" id="galleryGrid"></div>
-        </section>
+        <div class="general-cats-row">
+          <div class="gallery-filters" id="galleryFilters" aria-label="Filtrar por categoría"></div>
+          <div class="gallery-pagination">
+            <button type="button" class="page-nav-btn" id="galPrevBtn">&lt;&lt; ANT</button>
+            <span id="galPageInfo">PAG 1 / 2</span>
+            <button type="button" class="page-nav-btn" id="galNextBtn">SIG &gt;&gt;</button>
+          </div>
+        </div>
+      </header>
 
-        <section class="garfield-sticker-footer" aria-label="Stickers de Garfield y cute">
-          <div class="garfield-sticker-footer-head">
-            <span>:: GARFIELD &amp; CUTE STICKER BOARD ::</span>
-            <span>ARCHIVO @DMXN_08</span>
-          </div>
-          <div class="garfield-sticker-strip">
-            <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/garfield-archie.gif" alt="Garfield Archie" width="78" height="55"></span>
-            <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/garfield-belly-full.gif" alt="Garfield barriga llena" width="90" height="50"></span>
-            <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/garfield-dancing-lasagna.gif" alt="Garfield con lasaña" width="80" height="55"></span>
-            <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/cute-aww-love.gif" alt="Aww corazones cute" width="62" height="55"></span>
-            <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/smile-cute-funny.gif" alt="Garfield peluche feliz" width="74" height="55"></span>
-          </div>
-        </section>
+      <div class="gallery-grid-frame" aria-label="Rejilla de obras generales">
+        <div class="gallery-grid" id="galleryGrid"></div>
       </div>
-    </main>
+
+      <footer class="general-oldweb-footer" aria-label="Decoración pastel retro">
+        <div class="gif-shelf">
+          <img class="gif-stamp" src="gifs/meat-stamp.gif" alt="" width="99" height="56">
+          <img class="gif-sticker" src="gifs/bunny-glitter.gif" alt="" width="64" height="48">
+          <img class="gif-sticker" src="gifs/demi-nyanko-roll.gif" alt="" width="84" height="47" style="border:2px solid var(--ink);">
+          <img class="gif-sticker gif-pixel" src="gifs/old-web-wink.gif" alt="" width="24" height="24">
+          <img class="gif-sticker gif-pixel" src="gifs/punch-cat.gif" alt="" width="24" height="24">
+          <img class="gif-sticker" src="gifs/strawberry-glitter.gif" alt="" width="34" height="58">
+        </div>
+        <div class="btn88-row">
+          <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-dmxn.gif" alt="@DMXN_08" width="88" height="31"></a>
+          <a class="btn88-link" href="profil.html"><img src="gifs/buttons/btn-ug-artes.gif" alt="UG Artes" width="88" height="31"></a>
+          <a class="btn88-link" href="comisiones.html"><img src="gifs/buttons/btn-comm.gif" alt="Comisiones" width="88" height="31"></a>
+          <a class="btn88-link" href="oekaki.html"><img src="gifs/buttons/btn-oekaki.gif" alt="Oekaki" width="88" height="31"></a>
+          <span class="btn88-link"><img src="gifs/buttons/btn-html.gif" alt="HTML 4.0" width="88" height="31"></span>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ==================================================================
+         SECCION 2: GALERIA GARFIELD (TAROT 0 - XXI + SOLO GIFS GARFIELD)
+         ================================================================== -->
+    <section class="gallery-section-garfield" id="gallerySectionGarfield" role="tabpanel" aria-labelledby="tabBtnGarfield" hidden>
+      <header class="garfield-header-bar">
+        <div class="garfield-title-row">
+          <img class="gif-sticker" src="gifs/garfield/garfield-sticker-1.gif" alt="Garfield sticker" width="52" height="52">
+          <div class="garfield-title-copy">
+            <h2 class="gallery-heading">GALERIA GARFIELD :: TAROT (0 - XXI)</h2>
+            <p>Mazo completo de 22 Arcanos Mayores ilustrados a mano por Demian Tenorio Rico (@dmxn_08). Ordenados de 0. El Loco a XXI. El Mundo.</p>
+          </div>
+          <img class="gif-sticker" src="gifs/garfield/garfield-sticker-2.gif" alt="Garfield sticker 2" width="52" height="43">
+        </div>
+
+        <div class="garfield-actions-row">
+          <div class="garfield-mini-stickers">
+            <span class="garfield-gif-card"><img class="gif-sticker" src="gifs/garfield/garfield-dancing-lasagna.gif" alt="Garfield bailando lasaña" width="64" height="44"></span>
+            <span class="garfield-gif-card"><img class="gif-sticker" src="gifs/garfield/garfield-baby.gif" alt="Bebé Garfield" width="44" height="44"></span>
+            <span class="garfield-gif-card"><img class="gif-sticker" src="gifs/garfield/garfield-catty-kitty.gif" alt="Garfield kitty" width="54" height="44"></span>
+            <span class="garfield-gif-card"><img class="gif-sticker" src="gifs/garfield/cute-aww-love.gif" alt="Aww corazones cute" width="50" height="44"></span>
+          </div>
+          <button type="button" class="candy-btn butter" id="drawTarotBtn">[?] SACAR CARTA AL AZAR</button>
+        </div>
+      </header>
+
+      <div class="tarot-spread-frame" aria-label="Baraja de Tarot de Garfield ordenada 0 a XXI">
+        <div class="tarot-spread-grid" id="garfieldTarotGrid"></div>
+      </div>
+
+      <footer class="garfield-sticker-footer" aria-label="Stickers exclusivos de Garfield">
+        <div class="garfield-sticker-footer-head">
+          <span>:: GARFIELD TAROT SHRINE &amp; CUTE STICKER BOARD ::</span>
+          <span>22 ARCANOS MAYORES (0 - XXI)</span>
+        </div>
+        <div class="garfield-sticker-strip">
+          <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/garfield-archie.gif" alt="Garfield Archie" width="76" height="53"></span>
+          <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/garfield-belly-full.gif" alt="Garfield barriga llena" width="88" height="49"></span>
+          <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/garfield-dancing-lasagna.gif" alt="Garfield con lasaña" width="76" height="53"></span>
+          <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/cute-aww-love.gif" alt="Aww corazones cute" width="60" height="53"></span>
+          <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/smile-cute-funny.gif" alt="Garfield peluche feliz" width="71" height="53"></span>
+        </div>
+        <div class="btn88-row">
+          <a class="btn88-link" href="galerie.html?tab=garfield"><img src="gifs/buttons/btn-garfield.gif" alt="Garfield Shrine" width="88" height="31"></a>
+          <a class="btn88-link" href="galerie.html?tab=garfield"><img src="gifs/buttons/btn-tarot.gif" alt="Tarot 22 Arcanos" width="88" height="31"></a>
+          <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-dmxn.gif" alt="@DMXN_08" width="88" height="31"></a>
+        </div>
+      </footer>
+    </section>
   </div>
 
   <script src="js/artworks.js"></script>

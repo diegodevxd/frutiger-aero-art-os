@@ -53,7 +53,7 @@
 
     if (data && stampTrack) {
       const stampIds = [
-        'tarot-1', 'tarot-3', 'tarot-10', 'digital-1', 'digital-2', 'digital-5',
+        'tarot-5', 'tarot-20', 'tarot-10', 'digital-1', 'digital-2', 'digital-5',
         'tradicional-1', 'tradicional-4', 'escultura-1', 'escultura-2',
         'bisuteria-1', 'collage-1', 'emote-1', 'emote-2'
       ];
