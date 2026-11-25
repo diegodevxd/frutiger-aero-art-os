@@ -68,6 +68,9 @@
       <button type="button" class="gallery-mode-tab" id="tabBtnDioramas" role="tab" aria-selected="false" data-mode="dioramas">
         [+] Dioramas (9+1)
       </button>
+      <button type="button" class="gallery-mode-tab" id="tabBtnDrive" role="tab" aria-selected="false" data-mode="drive">
+        [*] Drive (auto)
+      </button>
     </nav>
 
     <!-- ==================================================================
@@ -214,6 +217,15 @@
       <header class="extra-gallery-header">
         <h2 class="gallery-section-title">Dioramas :: Maquetas y miniaturas</h2>
         <p class="extra-gallery-intro"></p>
+        <div class="extra-gallery-badges" aria-hidden="true"></div>
+      </header>
+      <div class="extra-gallery-body" data-extra-body></div>
+    </section>
+
+    <section class="gallery-section-extra" id="gallerySectionDrive" data-extra="drive" role="tabpanel" aria-labelledby="tabBtnDrive" hidden>
+      <header class="extra-gallery-header">
+        <h2 class="gallery-section-title">Drive :: Sincronización automática</h2>
+        <p class="extra-gallery-intro">Sección alimentada por el workflow diario de Google Drive. Cualquier subcarpeta de la carpeta compartida se convierte en una sección de esta galería.</p>
         <div class="extra-gallery-badges" aria-hidden="true"></div>
       </header>
       <div class="extra-gallery-body" data-extra-body></div>

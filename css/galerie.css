@@ -40,7 +40,7 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
 /* Barra de pestanas estilo old-web: Galeria, Garfield, Portafolio, Bitacoras, Dioramas */
 .gallery-mode-tabs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 6px;
   padding: 8px 10px 0;
   background: var(--lavender-soft);
@@ -821,5 +821,39 @@ body.gallery-page[data-gallery-mode="garfield"] .gallery-window {
   .diorama-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
+  }
+}
+
+/* Sección Drive: manifest generado por el workflow diario */
+.drive-section {
+  padding: 10px 12px;
+  display: grid;
+  gap: 9px;
+  background: var(--mint-soft);
+  border: 3px double var(--ink);
+  outline: 2px solid var(--pink-mid);
+}
+
+.drive-section + .drive-section {
+  margin-top: 12px;
+}
+
+.drive-section .pageflip-group {
+  background-color: var(--bg-blush);
+}
+
+.drive-loading {
+  padding: 18px 12px;
+  text-align: center;
+  font-family: var(--font-pixel);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--butter-soft);
+  border: 2px dashed var(--ink);
+}
+
+@media (max-width: 640px) {
+  .drive-section {
+    padding: 9px 10px;
   }
 }
