@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIENZO KAWAII | Demian Tenorio (@dmxn_08)</title>
+  <meta name="description" content="Lienzo de dibujo interactivo estilo Drawbox pastel en el portafolio de Demian Tenorio Rico (@dmxn_08).">
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/subpage.css">
+</head>
+<body class="subpage">
+  <div id="loading" aria-live="polite">
+    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFE07A" stroke="#2D173B" stroke-width="3.5" stroke-linejoin="round"/>
+    </svg>
+    <div class="loading-card">preparando pinceles pastel...</div>
+  </div>
+
+  <a class="back-widget" href="home.html" data-tip="Volver al inicio (@dmxn_08)">
+    <img class="back-glitter-img" src="gifs/back-glitter.gif" alt="<<-BACK" width="136" height="42">
+    <img class="back-garfield-img" src="gifs/garfield/garfield-sleeping.gif" alt="Garfield durmiendo" width="108" height="82">
+  </a>
+
+  <main class="lace-frame subpage-shell">
+    <div class="win-bar">
+      <div class="win-bar-title">
+        <img src="icons/paint.png" alt="" width="16" height="16">
+        <span>C:\DMXN_08\OEKAKI_BBS.EXE</span>
+      </div>
+      <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
+    </div>
+
+    <div class="retro-marquee" aria-hidden="true">
+      <div class="retro-marquee-track">
+        <span>* OEKAKI DRAWBOX PASTEL * DIBUJA CON RATON O DEDO * DESCARGA TU BOCETO EN PNG O GUARDALO EN EL NAVEGADOR *</span>
+        <span>* OEKAKI DRAWBOX PASTEL * DIBUJA CON RATON O DEDO * DESCARGA TU BOCETO EN PNG O GUARDALO EN EL NAVEGADOR *</span>
+      </div>
+    </div>
+
+    <nav class="subpage-nav-strip" aria-label="Accesos rápidos">
+      <a class="candy-btn" href="home.html">Inicio</a>
+      <a class="candy-btn lavender" href="galerie.html">Galería (49)</a>
+      <a class="candy-btn butter" href="galerie.html?tab=garfield">Garfield Tarot (22)</a>
+      <a class="candy-btn mint" href="profil.html">Perfil</a>
+      <a class="candy-btn sky" href="comisiones.html">Comisiones</a>
+    </nav>
+
+    <div class="subpage-inner">
+      <div class="gif-inline-pair" style="justify-content:center;">
+        <img class="gif-sticker" src="gifs/demi-yui-idea.gif" alt="" width="56" height="42" style="border:2px solid var(--ink);">
+        <h1 class="subpage-title">[+] LIENZO KAWAII [+]</h1>
+        <img class="gif-sticker gif-pixel" src="gifs/old-web-wink.gif" alt="" width="24" height="24">
+      </div>
+
+      <section class="oekaki-board" aria-label="Mesa de dibujo interactiva">
+        <div class="canvas-stage">
+          <canvas id="oekakiCanvas" width="520" height="420" aria-label="Lienzo para dibujar"></canvas>
+        </div>
+
+        <aside class="oekaki-tools" aria-label="Herramientas de dibujo">
+          <div class="tool-btn-row">
+            <button type="button" class="candy-btn lavender" id="undoBtn">&lt;&lt; Deshacer</button>
+            <button type="button" class="candy-btn butter" id="clearBtn">[X] Limpiar</button>
+          </div>
+
+          <button type="button" class="candy-btn" id="eraserBtn">Borrador</button>
+
+          <div class="brush-range-wrap">
+            <label for="brushSize">Grosor del pincel: <strong id="brushSizeVal">5px</strong></label>
+            <input type="range" id="brushSize" min="1" max="28" value="5">
+          </div>
+
+          <div>
+            <div style="font-family:var(--font-pixel); font-size:0.64rem; margin-bottom:5px;">PALETA PASTEL &amp; TINTA</div>
+            <div class="swatch-grid" id="swatchGrid"></div>
+          </div>
+
+          <label class="custom-color-row">
+            <span>Color libre:</span>
+            <input type="color" id="customColor" value="#3B234A">
+          </label>
+
+          <button type="button" class="candy-btn mint" id="downloadBtn">[v] Descargar PNG</button>
+          <button type="button" class="candy-btn plum" id="saveLocalBtn">&lt;3 Guardar aquí</button>
+
+          <div class="gif-shelf" style="padding-top:4px;" aria-hidden="true">
+            <img class="gif-sticker" src="gifs/demi-pusheen-trio.gif" alt="" width="86" height="62" style="border:2px solid var(--ink);">
+            <img class="gif-sticker gif-pixel" src="gifs/punch-cat.gif" alt="" width="24" height="24">
+          </div>
+        </aside>
+      </section>
+
+      <details class="saved-doodles-drawer" open>
+        <summary>Ver bocetos guardados localmente (<span id="doodleCount">0</span>)</summary>
+        <div class="doodle-gallery" id="doodleGallery"></div>
+      </details>
+
+      <div class="btn88-row" aria-label="Botones 88 por 31">
+        <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-dmxn.gif" alt="@DMXN_08" width="88" height="31"></a>
+        <a class="btn88-link" href="oekaki.html"><img src="gifs/buttons/btn-oekaki.gif" alt="Oekaki" width="88" height="31"></a>
+        <a class="btn88-link" href="galerie.html?tab=garfield"><img src="gifs/buttons/btn-garfield.gif" alt="Galería Garfield" width="88" height="31"></a>
+        <span class="btn88-link"><img src="gifs/buttons/btn-bestviewed.gif" alt="800x600" width="88" height="31"></span>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/effects.js"></script>
+  <script src="js/oekaki.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+/* ==========================================================================
+   PORTADA / ENTRY GATE (index.html) - Ventana retro HTML 4 sobre gingham
+   ========================================================================== */
+
+body.splash-page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 58px 14px 28px;
+  background-color: #FFEBF4;
+  background-image: url('../gifs/tiles/tile-splash.png');
+  background-repeat: repeat;
+}
+
+/* Cajón desplegable superior derecha */
+.quick-drawer {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: var(--z-floating);
+  max-width: min(300px, calc(100vw - 20px));
+  background: var(--bg-cream);
+  border: 4px double var(--pink-deep);
+  outline: 2px solid var(--ink);
+  font-family: var(--font-pixel);
+  font-size: 0.68rem;
+}
+
+.quick-drawer summary {
+  list-style: none;
+  padding: 7px 11px;
+  background: var(--pink-soft);
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.quick-drawer summary::-webkit-details-marker {
+  display: none;
+}
+
+.quick-drawer:not([open]) summary {
+  border-bottom: none;
+}
+
+.quick-drawer-body {
+  padding: 8px;
+  display: grid;
+  gap: 5px;
+  background: var(--bg-card);
+}
+
+.quick-drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  background: var(--bg-blush);
+  border: 2px solid var(--pink-mid);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.quick-drawer-link:hover {
+  background: var(--lavender-soft);
+  border-color: var(--lavender-deep);
+  color: var(--ink);
+}
+
+/* Ventana principal centrada estilo portal 2001 */
+.splash-window {
+  position: relative;
+  z-index: var(--z-content);
+  width: min(700px, 100%);
+  background: var(--bg-cream);
+  border: 4px ridge var(--pink-mid);
+  outline: 3px solid var(--ink);
+}
+
+.splash-stage {
+  padding: 18px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background-color: var(--bg-blush);
+  background-image: url('../gifs/tiles/tile-subpage.png');
+  background-repeat: repeat;
+}
+
+.splash-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.splash-wordart {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 0.04em;
+  color: var(--bg-plum);
+  padding: 8px 18px;
+  background: var(--butter-soft);
+  border: 4px double var(--pink-deep);
+  outline: 3px solid var(--ink);
+}
+
+.splash-notice {
+  max-width: 560px;
+  background: var(--bg-card);
+  border: 2px dashed var(--pink-deep);
+  outline: 2px solid var(--ink);
+  padding: 8px 12px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.splash-notice strong {
+  color: var(--pink-deep);
+  background: var(--pink-soft);
+  padding: 0 4px;
+}
+
+/* 4 bloques tipo tabla HTML de iniciales (D M X N) */
+.splash-blocks-table {
+  border-collapse: separate;
+  border-spacing: 8px;
+  margin: 0 auto;
+}
+
+.char-tile {
+  width: clamp(50px, 11vw, 66px);
+  height: clamp(52px, 11vw, 66px);
+  text-align: center;
+  vertical-align: middle;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4.4vw, 2.3rem);
+  font-weight: 700;
+  color: var(--ink);
+  border: 3px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
+}
+
+.char-tile.pink { background: var(--pink-soft); }
+.char-tile.butter { background: var(--butter-soft); }
+.char-tile.lavender { background: var(--lavender-soft); }
+.char-tile.mint { background: var(--mint-soft); }
+
+.splash-subtitle {
+  font-family: var(--font-pixel);
+  font-size: clamp(0.78rem, 2.2vw, 0.96rem);
+  font-weight: 700;
+  color: var(--lavender-deep);
+  background: var(--bg-card);
+  padding: 4px 10px;
+  border: 2px solid var(--lavender-mid);
+}
+
+/* Botón ENTRAR biselado flanqueado por flechas animadas */
+.enter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.enter-arrows {
+  display: inline-flex;
+  gap: 3px;
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+}
+
+.enter-arrows.left span {
+  display: inline-block;
+  animation: pulse-arrow 0.9s ease-in-out infinite;
+}
+
+.enter-arrows.right span {
+  display: inline-block;
+  animation: pulse-arrow-rev 0.9s ease-in-out infinite;
+}
+
+.enter-cta {
+  padding: 10px 28px;
+  font-family: var(--font-pixel);
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--butter-mid);
+  border: 3px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 3px solid var(--ink);
+}
+
+.enter-cta:hover {
+  color: var(--ink);
+  background: var(--pink-soft);
+}
+
+.enter-cta:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+}
+
+/* Tira de miniaturas cuadradas enmarcadas */
+.splash-preview-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.preview-charm {
+  width: 66px;
+  height: 66px;
+  padding: 3px;
+  background: var(--bg-card);
+  border: 2px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  outline: 2px solid var(--ink);
+  overflow: hidden;
+  transition: transform 0.14s ease-out;
+}
+
+.preview-charm:hover {
+  transform: scale(1.06);
+  outline-color: var(--pink-deep);
+}
+
+.preview-charm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contador retro pastel */
+.splash-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  background: var(--bg-card);
+  border: 2px solid var(--ink);
+  font-family: var(--font-pixel);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ink);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lcd-digits {
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  background: var(--bg-plum);
+  color: var(--mint-soft);
+  border: 2px inset var(--pink-mid);
+}
+
+.splash-footer-note {
+  padding: 6px 12px;
+  background: var(--bg-cream);
+  border-top: 2px solid var(--ink);
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+  text-align: center;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 600px) {
+  body.splash-page {
+    padding: 56px 8px 22px;
+  }
+
+  .splash-stage {
+    padding: 14px 10px;
+  }
+
+  .enter-arrows {
+    font-size: 0.85rem;
+  }
+
+  .enter-cta {
+    padding: 9px 18px;
+  }
+}

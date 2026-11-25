@@ -1,57 +1,44 @@
-# 🎨 Frutiger Aero OS - Fine Arts Digital Portfolio
+# Portafolio Visual — Demian Tenorio Rico (`@dmxn_08`)
 
-An interactive, multi-window operating system simulation environment built to showcase the fine arts and plastic art portfolio of "Demian Tenorio". This platform is styled completely under the nostalgic, glossy, and fluid Web 2.0 *Frutiger Aero* / *Windows XP* design paradigm.
+Rediseño completo del portafolio artístico de **Demian Tenorio Rico (`@dmxn_08`)**, estudiante de la Licenciatura en Artes Visuales en la Universidad de Guanajuato. Inspirado en la estructura multipágina, transiciones y micro-interacciones de `reigen.moe`, reinterpretado con una paleta **pastel kawaii / gyaru** y construido al 100% con obras, textos, láminas y música propios del autor.
 
-## 🚀 Key Technical Architectures
+> La versión anterior estilo Windows XP / Frutiger Aero OS permanece intacta en el historial de Git (rama `main`).
 
-- **Custom Multi-Window Workspace Engine:** Implements an advanced vanilla JavaScript layout controller managing active desktop instances. Includes dynamic drag-and-drop state listeners (`initializeDragEvents`), active window layering via asynchronous Z-index manipulation, and structural minification states.
-- **Embedded Native Applications Stack:**
-  - **HTML5 Canvas Paint Utility:** A fully functional digital drawing sketchpad driven by mouse events (`isDrawing`), canvas stroke tracking, and pixel rendering pipelines.
-  - **Asynchronous Audio Playlist Engine:** A modular media stream interface managing audio track array indexing, real-time progress bar recalculations, and dynamic iframe source manipulation.
-  - **State-Driven Calculator Node:** A mathematical layout interpreter supporting immediate operand updates, floating operations, and error catching loops.
-- **Intelligent Performance Optimization Guard (`performance-mode`):** To preserve a smooth rendering pipeline (60 FPS) during intense DOM interactions, the system contextually toggles a lightweight layout class during active window drags. This immediately pauses expensive CSS keyframe bubble animations and reduces background opacity vectors to mitigate rendering overhead.
-- **Glossy Skeuomorphic Shader System:** A handcrafted UI library leveraging sophisticated CSS background layer filtering, liquid floating animations, glassmorphic taskbars, and custom system-level icon grids optimized for high fluid responsiveness.
+## Páginas del sitio
 
-## 🛠️ Technology Stack
+- `index.html` — Portada de entrada con lluvia de estrellas pastel, cajón desplegable de redes y accesos rápidos, vista previa de piezas y contador local.
+- `home.html` — Hub principal con barra lateral fija (`NAVEGACIÓN`), widget mini-lienzo interactivo, selector de 5 filtros pastel persistentes (`FILTRO ✦`), showcase **`Obra al azar ✦`**, *Artist Statement*, Jukebox para `music/WorldFrutti.mp3`, resumen de comisiones y formulario de contacto Formspree.
+- `galerie.html` — Archivo completo de **71 obras** (`Tarot 22`, `Dibujo Digital 15`, `Dibujo Tradicional 10`, `Esculturas 7`, `Bisutería 7`, `Collage 7`, `Emotes 3`) con filtros, buscador, paginación (25 por página) y Lightbox a resolución completa.
+- `profil.html` — Semblanza, ficha técnica de artista, dato interactivo al hacer clic, rejilla de 10 obras destacadas, cinta marquee de estampillas, disciplinas y *Artist Statement* en formato Q&A.
+- `comisiones.html` — Tarifas en MXN, paquetes promocionales de Emotes, reglas (`Sí puedo hacer / No puedo hacer`), estado dinámico con GIF (`js/config.js`) y láminas originales ampliables.
+- `oekaki.html` — Lienzo interactivo HTML5 con pincel, borrador, deshacer, paleta de 20 colores pastel/tinta, descarga PNG y guardado local de bocetos.
 
-- **System Architecture:** HTML5 (Semantic shell modeling)
-- **Visual Interface Matrix:** CSS3 (Custom property tokens, glassmorphic filters, continuous coordinate animations, and mobile layout break configurations)
-- **Core Kernel Scripting:** Vanilla JavaScript (ES6 Execution contexts, functional scope tracking, performance triggers, and interactive DOM mutations)
+## Configuración de Comisiones y GIFs
 
----
+- El estado de comisiones (abiertas o cerradas) se controla desde una sola bandera en `js/config.js`: `window.COMMISSIONS_OPEN = true` (`gifs/comm-open.gif`) o `false` (`gifs/comm-closed.gif`).
+- Todos los GIFs y stickers decorativos están almacenados localmente en `gifs/` (sin hotlinks externos).
 
-## 📦 Directory Layout & Assets
+## Paleta Pastel (Tokens en `css/tokens.css`)
 
-```
-frutiger-art-os/
-│
-├── index.html          # Shell viewport and structural native window markup nodes
-├── styles.css          # Skeuomorphic styling, taskbar layouts, window animations, and media arrays
-└── script.js          # Window lifecycle managers, canvas event binders, calculations, and media pipelines
-```
+- **Fondos y superficies:** Crema rosado (`#FFF9FB`), Blush (`#FFF0F6`), Durazno cálido (`#FFF6EE`) y Ciruela aterciopelado (`#452459`).
+- **Acentos pastel:** Rosa bebé (`#FFD6E8` / `#FF9EC7`), Lavanda (`#E8DCFF` / `#C4AAFF`), Menta (`#CDF7E7` / `#85E3C3`), Durazno (`#FFE4D1`), Azul cielo (`#D6F0FF`) y Amarillo mantequilla (`#FFF5BE`).
+- **Contraste tipográfico:** Tinta ciruela (`#3B234A`) sobre fondos claros y crema claro (`#FFF9FB`) sobre paneles ciruela.
 
----
+## Cómo ejecutarlo localmente
 
-## 💻 Local Workspace Spawning
+No requiere compilación ni dependencias externas.
 
-This application runs strictly client-side on any modern high-performance web runtime environment without compilation overhead.
-
-### Direct Access
-1. Clone this repository to your filesystem.
-2. Open the root `index.html` file in your preferred internet browser terminal.
-
-### Production Environment Simulation
-To thoroughly audit asset resolution or review background media streams across standard network sockets, spin up the terminal directory inside a lightweight local web server:
+1. Abre directamente `index.html` en tu navegador, **o**
+2. Sirve el directorio con un servidor estático local:
 
 ```bash
-# Servicing through Python
 python -m http.server 8000
-
-# Servicing through Node.js (http-server toolkit)
-npx http-server -p 8000
 ```
-Once initialized, form a persistent socket connection loop via `http://localhost:8000`.
 
-## 📄 License
+Luego visita `http://localhost:8000/index.html`.
 
-This digital portfolio core architecture is open-source software distributed under the terms of the **MIT License**.
+## Documentación y capturas
+
+- Notas de estudio de referencia: [docs/reference-notes.md](docs/reference-notes.md)
+- Mapeo de contenido e inventario de las 71 obras: [docs/content-map.md](docs/content-map.md)
+- Capturas en escritorio y móvil: `docs/screenshots/`

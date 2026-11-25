@@ -1,0 +1,87 @@
+/* ==========================================================================
+   TOKENS DE DISEÑO - Web Retro Pastel Kawaii / Gyaru (1998-2004)
+   Cero gradientes, cero sombras modernas, cero radios redondeados.
+   ========================================================================== */
+
+:root {
+  /* --- Superficies planas de alto contraste --- */
+  --bg-cream: #FFF9FB;
+  --bg-blush: #FFF0F6;
+  --bg-warm: #FFF6EE;
+  --bg-card: #FFFFFF;
+  --bg-plum: #3B1E4F;
+  --bg-plum-deep: #291238;
+  --bg-plum-mid: #532D6D;
+
+  /* --- Paleta Pastel Kawaii / Gyaru --- */
+  --pink-soft: #FFD6E8;
+  --pink-mid: #FF9EC7;
+  --pink-deep: #B82E72;
+
+  --lavender-soft: #E8DCFF;
+  --lavender-mid: #C4AAFF;
+  --lavender-deep: #5C35A6;
+
+  --mint-soft: #CDF7E7;
+  --mint-mid: #85E3C3;
+  --mint-deep: #146E53;
+
+  --peach-soft: #FFE4D1;
+  --peach-mid: #FFB890;
+  --peach-deep: #A8441E;
+
+  --sky-soft: #D6F0FF;
+  --sky-mid: #8ED4FF;
+  --sky-deep: #1D5D94;
+
+  --butter-soft: #FFF5BE;
+  --butter-mid: #FFE07A;
+  --butter-deep: #785400;
+
+  /* --- Tinta y contraste (>= 4.5:1) --- */
+  --ink: #2D173B;
+  --ink-muted: #5A3B6B;
+  --ink-inverse: #FFF9FB;
+  --ink-accent: #B82E72;
+
+  /* --- Biseles estilo Windows 98 / Web Retro --- */
+  --bevel-light: #FFFFFF;
+  --bevel-dark: #8B5D9E;
+  --bevel-plum-light: #8A5BA8;
+  --bevel-plum-dark: #1A0A26;
+
+  /* --- Tipografía bitmap / sistema clásica --- */
+  --font-display: 'Pixelify Sans', 'Silkscreen', 'Trebuchet MS', sans-serif;
+  --font-body: 'Verdana', 'Tahoma', 'DotGothic16', sans-serif;
+  --font-pixel: 'Silkscreen', 'DotGothic16', 'Tahoma', sans-serif;
+
+  /* --- Escala Tipográfica densa clásica --- */
+  --text-xs: 0.72rem;
+  --text-sm: 0.82rem;
+  --text-base: 0.88rem;
+  --text-md: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.95rem;
+  --text-hero: clamp(1.65rem, 3.6vw, 2.5rem);
+
+  /* --- Espaciado denso old-web --- */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 10px;
+  --space-4: 14px;
+  --space-5: 18px;
+  --space-6: 24px;
+
+  --radius-none: 0px;
+
+  /* --- Capas Z-Index --- */
+  --z-particles: 5;
+  --z-content: 20;
+  --z-sticky: 60;
+  --z-floating: 120;
+  --z-tooltip: 300;
+  --z-veil: 500;
+  --z-lightbox: 700;
+  --z-preloader: 900;
+}
