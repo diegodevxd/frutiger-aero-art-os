@@ -1,5 +1,5 @@
 /* ==========================================================================
-   HUB PRINCIPAL (home.html) - Sidebar fija pixel + 3 columnas old-web
+   HUB PRINCIPAL (home.html) - Sidebar pixel + 3 columnas + tablas HTML
    ========================================================================== */
 
 body.home-page {
@@ -29,55 +29,27 @@ body.home-page {
   display: block;
 }
 
-/* Botón flotante superior derecha FILTRO */
-.filter-toggle-btn {
-  position: fixed;
-  top: 10px;
-  right: 12px;
-  z-index: var(--z-floating);
-  padding: 6px 10px;
-  background: var(--bg-cream);
-  color: var(--ink);
-  border: 2px solid;
-  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
-  outline: 2px solid var(--ink);
-  font-family: var(--font-pixel);
-  font-size: 0.64rem;
-  line-height: 1.25;
-  text-align: center;
-}
-
-.filter-toggle-btn:hover {
-  background: var(--butter-soft);
-}
-
-.filter-toggle-btn span {
-  display: block;
-  font-size: 0.58rem;
-  color: var(--pink-deep);
-}
-
 .mobile-topbar {
   display: none;
 }
 
 /* ==========================================================================
-   SHELL DE 2 ZONAS: SIDEBAR FIJA (236px) + CONTENIDO 3-COL
+   SHELL DE 2 ZONAS: SIDEBAR FIJA (244px) + CONTENIDO 3-COL
    ========================================================================== */
 
 .hub-shell {
   display: grid;
-  grid-template-columns: 236px minmax(0, 1fr);
-  min-height: 100svh;
+  grid-template-columns: 244px minmax(0, 1fr);
+  min-height: calc(100svh - 32px);
 }
 
-/* --- SIDEBAR IZQUIERDA --- */
+/* --- SIDEBAR IZQUIERDA (padding >= 18px para margen equilibrado) --- */
 .sidebar {
   position: sticky;
   top: 0;
   height: 100svh;
   overflow-y: auto;
-  padding: 10px 10px 20px;
+  padding: 18px 16px 24px;
   background-color: var(--bg-plum);
   background-image: url('../gifs/tiles/tile-sidebar.png');
   background-repeat: repeat;
@@ -89,11 +61,11 @@ body.home-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   z-index: var(--z-sticky);
 }
 
-/* Mini ventana Paint interactiva */
+/* Mini ventana Paint interactiva (marcada data-ui en HTML) */
 .mini-paint-widget {
   width: 100%;
   background: var(--bg-cream);
@@ -110,7 +82,7 @@ body.home-page {
   background: var(--pink-soft);
   border-bottom: 2px solid var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.58rem;
+  font-size: 13px;
   color: var(--ink);
 }
 
@@ -127,7 +99,7 @@ body.home-page {
   background: var(--lavender-soft);
   border-right: 2px solid var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.56rem;
+  font-size: 12px;
   text-align: center;
   color: var(--ink);
 }
@@ -165,10 +137,8 @@ body.home-page {
 
 .nav-wobble-title {
   font-family: var(--font-pixel);
-  font-size: 1.18rem;
+  font-size: 20px;
   font-weight: 700;
-  font-style: italic;
-  letter-spacing: 0.06em;
   color: var(--butter-soft);
   margin-top: 2px;
 }
@@ -178,8 +148,8 @@ body.home-page {
   align-items: center;
   gap: 6px;
   font-family: var(--font-pixel);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--mint-soft);
   margin-bottom: -4px;
 }
@@ -208,10 +178,9 @@ body.home-page {
   align-items: center;
   justify-content: space-between;
   padding: 6px 7px;
-  border-bottom: 2px dotted rgba(255, 214, 232, 0.35);
+  border-bottom: 3px dotted rgba(255, 214, 232, 0.35);
   font-family: var(--font-pixel);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
+  font-size: 13px;
   color: var(--butter-soft);
   text-decoration: none;
   transition: background-color 0.14s ease-out, color 0.14s ease-out;
@@ -224,7 +193,7 @@ body.home-page {
 .nav-item-link::before,
 .nav-item-link::after {
   content: '*';
-  font-size: 0.68rem;
+  font-size: 13px;
   color: var(--pink-mid);
 }
 
@@ -240,7 +209,7 @@ body.home-page {
 }
 
 .nav-gal-menu {
-  border-bottom: 2px dotted rgba(255, 214, 232, 0.35);
+  border-bottom: 3px dotted rgba(255, 214, 232, 0.35);
 }
 
 .nav-gal-summary {
@@ -256,17 +225,17 @@ body.home-page {
   display: flex;
   flex-direction: column;
   background: var(--bg-plum-deep);
-  border-top: 2px dotted rgba(255, 214, 232, 0.28);
+  border-top: 3px dotted rgba(255, 214, 232, 0.28);
 }
 
 .nav-sub-link {
   display: block;
-  padding: 5px 8px 5px 12px;
+  padding: 5px 8px 5px 10px;
   font-family: var(--font-pixel);
-  font-size: 0.6rem;
+  font-size: 13px;
   color: var(--pink-soft);
   text-decoration: none;
-  border-bottom: 2px dotted rgba(255, 214, 232, 0.22);
+  border-bottom: 3px dotted rgba(255, 214, 232, 0.22);
 }
 
 .nav-sub-link:last-child {
@@ -279,8 +248,8 @@ body.home-page {
 }
 
 .sidebar-contact-line {
-  font-size: 0.74rem;
-  line-height: 1.4;
+  font-size: 13px;
+  line-height: 1.45;
   text-align: center;
   color: var(--pink-soft);
 }
@@ -326,7 +295,7 @@ body.home-page {
   background: var(--pink-soft);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.6rem;
+  font-size: 13px;
   text-decoration: none;
 }
 
@@ -344,7 +313,7 @@ body.home-page {
 
 .link-me-note {
   font-family: var(--font-pixel);
-  font-size: 0.56rem;
+  font-size: 13px;
   color: var(--mint-soft);
   text-align: center;
   line-height: 1.4;
@@ -358,7 +327,7 @@ body.home-page {
 
 .sidebar-back-link {
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 13px;
   color: var(--sky-soft);
   text-decoration: underline;
 }
@@ -372,22 +341,66 @@ body.home-page {
    ========================================================================== */
 
 .hub-main {
-  padding: 50px 14px 32px;
+  padding: 12px 12px 24px;
   min-width: 0;
 }
 
 .hub-outer-frame {
-  max-width: 1100px;
-  margin: 0 auto;
+  position: relative;
+  z-index: var(--z-content);
+  width: 100%;
   border: 4px ridge var(--pink-mid);
   outline: 3px solid var(--ink);
   background: var(--bg-cream);
 }
 
+/* Barra utilitaria integrada debajo de .win-bar (incluye el selector FILTRO) */
+.hub-toolbar-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--lavender-soft);
+  border-bottom: 2px solid var(--ink);
+}
+
+.hub-toolbar-info {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.filter-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 11px;
+  background: var(--bg-cream);
+  color: var(--ink);
+  border: 3px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.filter-toggle-btn:hover {
+  background: var(--butter-soft);
+}
+
+.filter-toggle-btn span {
+  color: var(--pink-deep);
+}
+
 /* Layout interno: Columna Central | Cinta Vertical | Columna Derecha */
 .hub-3col {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 24px 278px;
+  grid-template-columns: minmax(0, 1fr) 24px 282px;
   align-items: start;
   background-color: var(--bg-blush);
   background-image: url('../gifs/tiles/tile-home.png');
@@ -403,28 +416,38 @@ body.home-page {
   min-width: 0;
 }
 
-/* Marco superior de Random Artwork estilo referencia */
+/* Marco superior de Portada + Random Artwork */
 .random-showcase {
   position: relative;
   border: 3px ridge var(--lavender-mid);
   outline: 2px solid var(--ink);
   background: var(--pink-soft);
-  padding: 10px 12px 12px;
+  padding: 12px 14px;
 }
 
 .showcase-header-bar {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 10px;
+  margin-bottom: 6px;
   flex-wrap: wrap;
 }
 
 .showcase-title {
   font-family: var(--font-display);
-  font-size: clamp(1.12rem, 2.2vw, 1.45rem);
+  font-size: var(--text-hero);
   font-weight: 700;
+  line-height: 1.04;
+  color: var(--ink);
+}
+
+.random-showcase .lead-line {
+  margin-bottom: 10px;
+  font-size: 18px;
+  background: var(--bg-cream);
+  padding: 6px 10px;
+  border: 2px solid var(--ink);
 }
 
 .showcase-stage {
@@ -432,9 +455,9 @@ body.home-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 268px;
-  padding: 14px 44px;
-  border: 2px dashed var(--pink-deep);
+  min-height: 248px;
+  padding: 12px 42px;
+  border: 3px dashed var(--pink-deep);
   background-color: var(--bg-cream);
   background-image: url('../gifs/tiles/tile-placeholder.png');
   background-repeat: repeat;
@@ -463,7 +486,7 @@ body.home-page {
   outline: 2px solid var(--ink);
   background: var(--bg-card);
   padding: 5px;
-  max-width: 336px;
+  max-width: 330px;
   width: 100%;
 }
 
@@ -473,7 +496,7 @@ body.home-page {
 
 .showcase-img-btn img {
   width: 100%;
-  height: 248px;
+  height: 230px;
   object-fit: cover;
   border: 2px solid var(--ink);
 }
@@ -489,32 +512,34 @@ body.home-page {
 
 .showcase-caption strong {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 20px;
   color: var(--ink);
 }
 
 .showcase-caption span {
-  font-size: 0.8rem;
+  font-size: 14px;
   font-weight: 700;
   color: var(--ink-muted);
 }
 
 .random-retro-btn {
-  padding: 6px 11px;
-  border: 2px solid;
+  min-height: 40px;
+  padding: 7px 14px;
+  border: 3px solid;
   border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
   outline: 2px solid var(--ink);
   background: var(--butter-soft);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.66rem;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .random-retro-btn:hover {
   background: var(--mint-soft);
 }
 
-/* Sub-banner estilo Psychic Web */
+/* Sub-banner estilo portal */
 .study-banner {
   display: flex;
   align-items: center;
@@ -536,13 +561,13 @@ body.home-page {
 
 .study-banner strong {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 20px;
   color: var(--butter-soft);
 }
 
 .study-banner span {
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 13px;
   color: var(--mint-soft);
 }
 
@@ -554,14 +579,16 @@ body.home-page {
 }
 
 .hub-tab-btn {
-  padding: 8px 6px;
+  min-height: 38px;
+  padding: 7px 6px;
   background: var(--pink-soft);
   color: var(--ink);
-  border: 2px solid;
+  border: 3px solid;
   border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
   outline: 2px solid var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.66rem;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .hub-tab-btn:hover {
@@ -588,67 +615,62 @@ body.home-page {
 }
 
 .motto-quote {
-  padding: 8px 10px;
+  padding: 10px 12px;
   background: var(--butter-soft);
-  border: 2px dashed var(--pink-deep);
+  border: 3px dashed var(--pink-deep);
   font-family: var(--font-display);
-  font-size: 0.96rem;
+  font-size: 20px;
   color: var(--ink);
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.sparkle-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 4px 0 10px;
-  color: var(--pink-deep);
-  font-family: var(--font-pixel);
-  font-size: 0.7rem;
-}
-
-.welcome-oldweb-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) 174px;
-  gap: 10px;
-  align-items: start;
-  margin-bottom: 14px;
-}
-
-.statement-boxes {
-  display: grid;
-  gap: 8px;
-}
-
-.statement-card {
+/* Tabla clásica HTML de 2 columnas para Artist Statement + Garfield Avatar */
+.oldweb-statement-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
   background: var(--bg-cream);
-  border: 2px solid var(--mint-deep);
-  padding: 9px 11px;
-  font-size: 0.85rem;
+  border: 3px ridge var(--pink-mid);
+  outline: 2px solid var(--ink);
 }
 
-.statement-card-head {
+.oldweb-statement-table > tbody > tr > td {
+  border: 2px solid var(--ink);
+  padding: 12px;
+  vertical-align: top;
+}
+
+.statement-copy-cell {
+  width: 68%;
+}
+
+.statement-aside-cell {
+  width: 32%;
+  background: var(--bg-blush);
+  text-align: center;
+}
+
+.statement-para-block {
+  max-width: 58ch;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.statement-subhead {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
   font-family: var(--font-display);
-  font-size: 0.96rem;
+  font-size: 20px;
   color: var(--lavender-deep);
-  margin-bottom: 5px;
-  border-bottom: 2px dotted var(--mint-mid);
-  padding-bottom: 3px;
+  margin-bottom: 4px;
 }
 
-.welcome-art-aside {
-  display: grid;
-  gap: 7px;
-  text-align: center;
-  background: var(--bg-blush);
-  border: 2px solid var(--ink);
-  padding: 7px;
+.statement-copy-cell .pixel-hr {
+  margin: 10px 0;
 }
 
 .welcome-art-aside img.aside-artwork {
@@ -656,11 +678,12 @@ body.home-page {
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border: 2px solid var(--ink);
+  margin-bottom: 6px;
 }
 
 .panel-heading {
   font-family: var(--font-display);
-  font-size: 1.18rem;
+  font-size: 22px;
   color: var(--pink-deep);
   margin-bottom: 8px;
   display: flex;
@@ -669,12 +692,12 @@ body.home-page {
   flex-wrap: wrap;
 }
 
-/* Obras Seleccionadas & Disciplinas */
+/* Obras Seleccionadas */
 .selected-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .selected-card {
@@ -682,7 +705,7 @@ body.home-page {
   border: 2px solid;
   border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
   outline: 2px solid var(--ink);
-  padding: 4px;
+  padding: 5px;
   text-align: left;
   transition: transform 0.14s ease-out;
 }
@@ -696,57 +719,50 @@ body.home-page {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   border: 2px solid var(--ink);
 }
 
 .selected-card strong {
   display: block;
-  font-size: 0.78rem;
+  font-size: 14px;
   color: var(--ink);
 }
 
 .selected-card span {
-  font-size: 0.68rem;
+  font-size: 13px;
   color: var(--ink-muted);
 }
 
-.disciplines-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 12px;
+/* Tabla HTML clásica de Disciplinas (sustituye grid de tarjetas idénticas) */
+.retro-index-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 14px;
+  background: var(--bg-card);
+  border: 3px ridge var(--lavender-mid);
+  outline: 2px solid var(--ink);
 }
 
-.discipline-card {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+.retro-index-table th,
+.retro-index-table td {
   padding: 8px 10px;
-  border: 2px solid var(--ink);
-  background: var(--mint-soft);
-  color: var(--ink);
-  text-decoration: none;
+  border: 2px solid var(--pink-mid);
+  text-align: left;
+  font-size: 16px;
 }
 
-.discipline-card:nth-child(2) { background: var(--sky-soft); }
-.discipline-card:nth-child(3) { background: var(--peach-soft); }
-.discipline-card:nth-child(4) { background: var(--lavender-soft); }
-
-.discipline-card:hover {
-  color: var(--ink);
-  background: var(--butter-soft);
+.retro-index-table thead th {
+  background: var(--bg-plum);
+  color: var(--butter-soft);
+  font-family: var(--font-pixel);
+  font-size: 13px;
 }
 
-.discipline-card strong {
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-}
-
-.discipline-card span {
-  font-size: 0.74rem;
-  color: var(--ink-muted);
-}
+.retro-index-table tbody tr:nth-child(odd) { background: var(--mint-soft); }
+.retro-index-table tbody tr:nth-child(even) { background: var(--sky-soft); }
+.retro-index-table tbody tr:nth-child(3) { background: var(--peach-soft); }
+.retro-index-table tbody tr:nth-child(4) { background: var(--lavender-soft); }
 
 /* Jukebox */
 .jukebox-wrap {
@@ -768,7 +784,7 @@ body.home-page {
 
 .jukebox-track {
   font-family: var(--font-pixel);
-  font-size: 0.74rem;
+  font-size: 14px;
   color: var(--butter-soft);
 }
 
@@ -816,28 +832,11 @@ body.home-page {
   align-items: center;
   gap: 8px;
   font-family: var(--font-pixel);
-  font-size: 0.66rem;
+  font-size: 13px;
   color: var(--mint-soft);
 }
 
-/* Comisiones tab */
-.comm-summary-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.comm-mini-box {
-  padding: 8px;
-  border: 2px solid var(--ink);
-  background: var(--peach-soft);
-  font-size: 0.82rem;
-}
-
-.comm-mini-box:nth-child(2) { background: var(--lavender-soft); }
-.comm-mini-box:nth-child(3) { background: var(--mint-soft); }
-
+/* Comisiones tab: tabla compacta */
 .comm-sheets-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -876,7 +875,7 @@ body.home-page {
 
 .form-field label {
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 14px;
 }
 
 .form-control {
@@ -886,15 +885,14 @@ body.home-page {
   background: var(--bg-card);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 0.86rem;
-  font-weight: 600;
+  font-size: 16px;
 }
 
 .form-status {
   padding: 8px 10px;
   border: 2px solid var(--ink);
   font-weight: 700;
-  font-size: 0.84rem;
+  font-size: 14px;
   display: none;
 }
 
@@ -912,8 +910,8 @@ body.home-page {
   border-right: 2px solid var(--ink);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.01em;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   display: flex;
@@ -926,7 +924,7 @@ body.home-page {
 
 /* --- COLUMNA DERECHA --- */
 .hub-side-col {
-  padding: 10px 10px 10px 8px;
+  padding: 10px 8px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -937,7 +935,7 @@ body.home-page {
   background: var(--bg-card);
   border: 2px solid var(--ink);
   outline: 2px solid var(--lavender-mid);
-  padding: 9px;
+  padding: 8px;
 }
 
 .welcome-card {
@@ -968,7 +966,7 @@ body.home-page {
 }
 
 .welcome-bubble {
-  margin: -14px 7px 7px;
+  margin: -12px 8px 8px;
   position: relative;
   z-index: 2;
   background: var(--bg-cream);
@@ -979,13 +977,13 @@ body.home-page {
 
 .welcome-bubble h2 {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 20px;
   color: var(--pink-deep);
   margin-bottom: 4px;
 }
 
 .welcome-bubble p {
-  font-size: 0.78rem;
+  font-size: 13px;
   line-height: 1.4;
   margin-bottom: 7px;
 }
@@ -997,7 +995,7 @@ body.home-page {
   color: var(--mint-soft);
   border: 2px solid var(--pink-mid);
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 13px;
 }
 
 .status-card {
@@ -1025,44 +1023,61 @@ body.home-page {
 
 .status-online-box span {
   font-family: var(--font-pixel);
-  font-size: 0.6rem;
+  font-size: 13px;
 }
 
 .clap-btn {
   padding: 7px 6px;
-  font-size: 0.66rem;
+  font-size: 13px;
   white-space: nowrap;
 }
 
 .comm-status-box {
   background: var(--bg-cream);
-  border: 2px dashed var(--pink-deep);
+  border: 3px dashed var(--pink-deep);
   padding: 8px;
   display: grid;
   gap: 7px;
   justify-items: center;
 }
 
-.filter-hint-card {
+/* Caja scrollable estilo Bitácora / Updates de web 2001 */
+.updates-log-card {
   background: var(--butter-soft);
-  border: 2px dashed var(--lavender-deep);
-  text-align: center;
+  border: 3px ridge var(--lavender-mid);
+  outline: 2px solid var(--ink);
+  padding: 8px;
   display: grid;
   gap: 6px;
-  justify-items: center;
 }
 
-.filter-hint-thumb {
-  width: 92px;
-  height: 92px;
-  object-fit: cover;
-  border: 2px solid var(--ink);
+.updates-log-card h2 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--lavender-deep);
+  text-align: center;
 }
 
-.filter-hint-card p {
-  font-size: 0.76rem;
-  font-weight: 700;
+.updates-scroll-well {
+  max-height: 118px;
+  overflow-y: auto;
+  background: #FFFFFF;
+  border: 3px inset var(--pink-mid);
+  padding: 6px 8px;
+  display: grid;
+  gap: 5px;
+  font-size: 13px;
   line-height: 1.38;
+}
+
+.updates-scroll-well p {
+  border-bottom: 3px dotted var(--lavender-mid);
+  padding-bottom: 4px;
+}
+
+.updates-scroll-well p:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .mini-banners-stack {
@@ -1079,7 +1094,7 @@ body.home-page {
   background: var(--pink-soft);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.62rem;
+  font-size: 13px;
   text-decoration: none;
 }
 
@@ -1121,7 +1136,7 @@ body.home-page {
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-    padding: 8px 132px 8px 10px;
+    padding: 8px 16px;
     background: var(--bg-plum);
     color: var(--bg-cream);
     border-bottom: 4px solid var(--pink-mid);
@@ -1130,15 +1145,8 @@ body.home-page {
   .mobile-brand {
     font-family: var(--font-pixel);
     font-weight: 700;
-    font-size: 0.84rem;
+    font-size: 14px;
     color: var(--butter-soft);
-  }
-
-  .filter-toggle-btn {
-    top: 6px;
-    right: 8px;
-    padding: 4px 8px;
-    font-size: 0.58rem;
   }
 
   .hub-shell {
@@ -1174,13 +1182,37 @@ body.home-page {
   }
 
   .hub-main {
-    padding: 8px 6px 24px;
+    padding: 10px 14px 24px;
   }
 
-  .welcome-oldweb-grid,
+  .oldweb-statement-table,
+  .oldweb-statement-table > tbody,
+  .oldweb-statement-table > tbody > tr,
+  .oldweb-statement-table > tbody > tr > td,
+  .retro-index-table,
+  .retro-index-table tbody,
+  .retro-index-table tr,
+  .retro-index-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .retro-index-table thead {
+    display: none;
+  }
+
+  .retro-index-table tbody tr {
+    border-bottom: 2px solid var(--pink-mid);
+    padding: 6px 8px;
+  }
+
+  .retro-index-table tbody td {
+    border: none;
+    padding: 2px 4px;
+    font-size: 14px;
+  }
+
   .hub-side-col,
-  .disciplines-grid,
-  .comm-summary-grid,
   .comm-sheets-row,
   .form-row-2 {
     grid-template-columns: 1fr;
@@ -1196,7 +1228,7 @@ body.home-page {
 
   .showcase-stage {
     flex-direction: column;
-    padding: 10px 8px 12px;
+    padding: 10px 10px 12px;
     gap: 8px;
   }
 

@@ -12,37 +12,24 @@
   <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/splash.css">
 </head>
 <body class="splash-page" data-particles="stars">
-  <div id="loading" aria-live="polite">
-    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFE07A" stroke="#2D173B" stroke-width="3.5" stroke-linejoin="round"/>
-      <circle cx="32" cy="31" r="5" fill="#FF9EC7" stroke="#2D173B" stroke-width="2.5"/>
-    </svg>
-    <div class="loading-card">abriendo archivo pastel de @moekat...</div>
+  <div class="retro-marquee plum" aria-hidden="true">
+    <div class="retro-marquee-track">
+      <span class="mq-seg">* Archivo visual de moekat (@moekat) *</span>
+      <span class="mq-seg">* 71 obras originales * Tarot de Garfield *</span>
+      <span class="mq-seg">* Ilustración * Escultura * Comisiones MXN *</span>
+      <span class="mq-seg">* Archivo visual de moekat (@moekat) *</span>
+      <span class="mq-seg">* 71 obras originales * Tarot de Garfield *</span>
+      <span class="mq-seg">* Ilustración * Escultura * Comisiones MXN *</span>
+    </div>
   </div>
 
-  <!-- Cajon desplegable superior derecha -->
-  <details class="quick-drawer">
-    <summary data-tip="Redes y accesos rápidos de moekat">[+] REDES &amp; ACCESOS</summary>
-    <div class="quick-drawer-body">
-      <div style="text-align:center;"><img class="gif-sticker gif-pixel" src="gifs/online-myspace.gif" alt="En línea" width="77" height="29"></div>
-      <a class="quick-drawer-link" href="galerie.html"><span>Galería (49 obras)</span><span>&gt;&gt;</span></a>
-      <a class="quick-drawer-link" href="galerie.html?tab=garfield"><span>Galería Garfield :: Tarot (22)</span><span>&gt;&gt;</span></a>
-      <a class="quick-drawer-link" href="comisiones.html"><span>Tabla de Comisiones</span><span>&gt;&gt;</span></a>
-      <a class="quick-drawer-link" href="profil.html"><span>Sobre moekat</span><span>&gt;&gt;</span></a>
-      <a class="quick-drawer-link" href="home.html#contacto"><span>Formulario de Contacto</span><span>&gt;&gt;</span></a>
-      <a class="quick-drawer-link" href="https://instagram.com/demi.demiau" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span>[+]</span></a>
-      <a class="quick-drawer-link" href="https://x.com/Chicharron_08" target="_blank" rel="noopener noreferrer"><span>Twitter / X</span><span>[+]</span></a>
-      <a class="quick-drawer-link" href="https://tiktok.com/@dmxn_08" target="_blank" rel="noopener noreferrer"><span>TikTok</span><span>[+]</span></a>
-    </div>
-  </details>
-
   <div class="splash-window">
-    <div class="win-bar">
+    <div class="win-bar" data-ui>
       <div class="win-bar-title">
         <img src="icons/explorer.png" alt="" width="16" height="16">
         <span>C:\MOEKAT\PORTAL_99.HTM</span>
@@ -50,25 +37,29 @@
       <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
     </div>
 
-    <div class="retro-marquee plum" aria-hidden="true">
-      <div class="retro-marquee-track">
-        <span>* BIENVENIDX AL ARCHIVO DE MOEKAT (@MOEKAT) * 71 OBRAS * TAROT DE GARFIELD * ESCULTURA * ILUSTRACION * COMISIONES *</span>
-        <span>* BIENVENIDX AL ARCHIVO DE MOEKAT (@MOEKAT) * 71 OBRAS * TAROT DE GARFIELD * ESCULTURA * ILUSTRACION * COMISIONES *</span>
-      </div>
-    </div>
+    <nav class="splash-nav-strip" aria-label="Accesos directos del portal">
+      <a href="galerie.html">Galería (49)</a>
+      <a href="galerie.html?tab=garfield">Garfield Tarot (22)</a>
+      <a href="profil.html">Perfil</a>
+      <a href="comisiones.html">Comisiones MXN</a>
+      <a href="oekaki.html">Lienzo Kawaii</a>
+      <a href="https://instagram.com/demi.demiau" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://x.com/Chicharron_08" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+      <a href="https://tiktok.com/@dmxn_08" target="_blank" rel="noopener noreferrer">TikTok</a>
+    </nav>
 
     <main class="splash-stage">
       <div class="splash-title-row">
         <img class="gif-sticker gif-pixel" src="gifs/old-web-2000s-pixel.gif" alt="" width="34" height="34">
-        <h1 class="splash-wordart">MOEKAT</h1>
+        <h1 class="splash-wordart" data-rainbow>MOEKAT</h1>
         <img class="gif-sticker gif-pixel" src="gifs/old-web-pixel-cute.gif" alt="" width="34" height="34">
       </div>
 
-      <p class="splash-notice">
-        Archivo artístico de <strong>moekat (@moekat)</strong> | Universidad de Guanajuato. 71 obras originales y adaptable a computadora y móvil &lt;3
+      <p class="lead-line splash-lead">
+        Archivo artístico de <strong>moekat (@moekat)</strong> en Guanajuato: 71 obras originales entre Tarot de Garfield, ilustración y escultura.
       </p>
 
-      <table class="splash-blocks-table" role="presentation" aria-label="MOEKAT">
+      <table class="splash-blocks-table" role="presentation" aria-label="Letras MOEKAT">
         <tr>
           <td class="char-tile pink">M</td>
           <td class="char-tile butter">O</td>
@@ -79,11 +70,9 @@
         </tr>
       </table>
 
-      <p class="splash-subtitle">* bienvenidx a mi portafolio visual *!</p>
-
       <div class="enter-row">
         <div class="enter-arrows left" aria-hidden="true"><span>&gt;</span><span>&gt;</span></div>
-        <a class="enter-cta" href="home.html" data-tip="Entrar al estudio visual de moekat">ENTRAR</a>
+        <a class="enter-cta" href="home.html" data-tip="Entrar al estudio visual de moekat">ENTRAR AL ESTUDIO</a>
         <div class="enter-arrows right" aria-hidden="true"><span>&lt;</span><span>&lt;</span></div>
       </div>
 
@@ -102,13 +91,22 @@
         </a>
       </div>
 
-      <div class="splash-counter">
-        <img class="gif-sticker gif-pixel" src="gifs/old-web-wink.gif" alt="" width="20" height="20">
-        <span>ARCHIVO CURADO:</span>
-        <span class="lcd-digits" id="splashVisitCounter">71 OBRAS | #0001</span>
-        <span>* @moekat</span>
-        <img class="gif-sticker gif-pixel" src="gifs/punch-cat.gif" alt="" width="24" height="24">
-      </div>
+      <table class="splash-info-table" aria-label="Ficha rápida del archivo web">
+        <tbody>
+          <tr>
+            <th>Webmaster</th>
+            <td><span style="display:inline-flex; align-items:center; gap:6px; flex-wrap:wrap;">moekat (@moekat) <img class="gif-sticker gif-pixel" src="gifs/online-myspace.gif" alt="En línea" width="77" height="29"></span></td>
+            <th>Archivo</th>
+            <td><span class="lcd-digits" id="splashVisitCounter">71 obras | #0001</span></td>
+          </tr>
+          <tr>
+            <th>Escuela</th>
+            <td>Lic. Artes Visuales (UG)</td>
+            <th>Estado</th>
+            <td><span style="display:inline-flex; align-items:center; gap:6px; flex-wrap:wrap;">Comisiones abiertas <img class="gif-sticker gif-pixel" src="gifs/old-web-wink.gif" alt="" width="20" height="20"></span></td>
+          </tr>
+        </tbody>
+      </table>
 
       <div class="btn88-row" aria-label="Botones 88 por 31">
         <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-moekat.gif" alt="@moekat Art Zone" width="88" height="31"></a>
@@ -127,7 +125,7 @@
     </main>
 
     <div class="splash-footer-note">
-      * PORTAFOLIO PERSONAL DE MOEKAT (@MOEKAT) | OPTIMIZADO PARA PANTALLA ANCHA Y MOVIL *
+      * Portafolio personal de moekat (@moekat) | Hecho a mano con botones 88x31 y tablas HTML *
     </div>
   </div>
 
@@ -139,7 +137,7 @@
       try {
         var n = parseInt(localStorage.getItem('moekat_visits') || '0', 10) + 1;
         localStorage.setItem('moekat_visits', String(n));
-        el.textContent = '71 OBRAS | #' + String(n).padStart(4, '0');
+        el.textContent = '71 obras | #' + String(n).padStart(4, '0');
       } catch (e) {}
     })();
   </script>

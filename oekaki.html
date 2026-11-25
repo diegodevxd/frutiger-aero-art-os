@@ -8,25 +8,24 @@
   <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/subpage.css">
 </head>
-<body class="subpage">
-  <div id="loading" aria-live="polite">
-    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFE07A" stroke="#2D173B" stroke-width="3.5" stroke-linejoin="round"/>
-    </svg>
-    <div class="loading-card">preparando pinceles pastel...</div>
+<body class="subpage" data-particles="stars">
+  <div class="retro-marquee" aria-hidden="true">
+    <div class="retro-marquee-track">
+      <span class="mq-seg">* Oekaki Drawbox pastel de @moekat *</span>
+      <span class="mq-seg">* Dibuja con ratón o dedo en pantalla *</span>
+      <span class="mq-seg">* Descarga PNG o guarda en el navegador *</span>
+      <span class="mq-seg">* Oekaki Drawbox pastel de @moekat *</span>
+      <span class="mq-seg">* Dibuja con ratón o dedo en pantalla *</span>
+      <span class="mq-seg">* Descarga PNG o guarda en el navegador *</span>
+    </div>
   </div>
 
-  <a class="back-widget" href="home.html" data-tip="Volver al inicio (@moekat)">
-    <img class="back-glitter-img" src="gifs/back-glitter.gif" alt="<<-BACK" width="136" height="42">
-    <img class="back-garfield-img" src="gifs/garfield/garfield-sleeping.gif" alt="Garfield durmiendo" width="108" height="82">
-  </a>
-
   <main class="lace-frame subpage-shell">
-    <div class="win-bar">
+    <div class="win-bar" data-ui>
       <div class="win-bar-title">
         <img src="icons/paint.png" alt="" width="16" height="16">
         <span>C:\MOEKAT\OEKAKI_BBS.EXE</span>
@@ -34,26 +33,30 @@
       <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
     </div>
 
-    <div class="retro-marquee" aria-hidden="true">
-      <div class="retro-marquee-track">
-        <span>* OEKAKI DRAWBOX PASTEL DE @MOEKAT * DIBUJA CON RATON O DEDO * DESCARGA TU BOCETO EN PNG O GUARDALO EN EL NAVEGADOR *</span>
-        <span>* OEKAKI DRAWBOX PASTEL DE @MOEKAT * DIBUJA CON RATON O DEDO * DESCARGA TU BOCETO EN PNG O GUARDALO EN EL NAVEGADOR *</span>
+    <nav class="retro-return-bar" aria-label="Volver y accesos rápidos">
+      <a class="back-widget-inline" href="home.html" data-tip="Volver al inicio (@moekat)">
+        <img class="back-glitter-img" src="gifs/back-glitter.gif" alt="<<-BACK" width="96" height="30">
+        <img class="back-garfield-img" src="gifs/garfield/garfield-sleeping.gif" alt="Garfield durmiendo" width="44" height="36">
+      </a>
+      <div class="retro-nav-pills">
+        <a class="candy-btn" href="home.html">Inicio</a>
+        <a class="candy-btn lavender" href="galerie.html">Galería (49)</a>
+        <a class="candy-btn butter" href="galerie.html?tab=garfield">Garfield Tarot</a>
+        <a class="candy-btn mint" href="profil.html">Perfil</a>
+        <a class="candy-btn sky" href="comisiones.html">Comisiones</a>
       </div>
-    </div>
-
-    <nav class="subpage-nav-strip" aria-label="Accesos rápidos">
-      <a class="candy-btn" href="home.html">Inicio</a>
-      <a class="candy-btn lavender" href="galerie.html">Galería (49)</a>
-      <a class="candy-btn butter" href="galerie.html?tab=garfield">Garfield Tarot (22)</a>
-      <a class="candy-btn mint" href="profil.html">Perfil</a>
-      <a class="candy-btn sky" href="comisiones.html">Comisiones</a>
     </nav>
 
     <div class="subpage-inner">
-      <div class="gif-inline-pair" style="justify-content:center;">
-        <img class="gif-sticker" src="gifs/demi-yui-idea.gif" alt="" width="56" height="42" style="border:2px solid var(--ink);">
-        <h1 class="subpage-title">[+] LIENZO KAWAII [+]</h1>
-        <img class="gif-sticker gif-pixel" src="gifs/old-web-wink.gif" alt="" width="24" height="24">
+      <div class="subpage-hero-head">
+        <div class="gif-inline-pair" style="justify-content:center;">
+          <img class="gif-sticker" src="gifs/demi-yui-idea.gif" alt="" width="56" height="42" style="border:2px solid var(--ink);">
+          <h1 class="subpage-title" data-rainbow>Lienzo Kawaii</h1>
+          <img class="gif-sticker gif-pixel" src="gifs/old-web-wink.gif" alt="" width="24" height="24">
+        </div>
+        <p class="lead-line">
+          Mesa de dibujo Oekaki BBS de @moekat: traza bocetos con pinceles pastel y exporta en PNG.
+        </p>
       </div>
 
       <section class="oekaki-board" aria-label="Mesa de dibujo interactiva">
@@ -75,7 +78,7 @@
           </div>
 
           <div>
-            <div style="font-family:var(--font-pixel); font-size:0.64rem; margin-bottom:5px;">PALETA PASTEL &amp; TINTA</div>
+            <div style="font-family:var(--font-pixel); font-size:13px; margin-bottom:5px;">Paleta pastel y tinta</div>
             <div class="swatch-grid" id="swatchGrid"></div>
           </div>
 
@@ -94,13 +97,35 @@
         </aside>
       </section>
 
+      <div class="bbs-status-strip">
+        Lienzo 520x420 px | Paleta pastel Oekaki | Guardado local en el navegador | @moekat BBS
+      </div>
+
+      <section class="oekaki-examples" aria-label="Inspiración del archivo de moekat">
+        <h2 class="subpage-sec-heading">Referencias del archivo de @moekat</h2>
+        <div class="oekaki-examples-grid">
+          <a class="oekaki-ex-card" href="galerie.html?cat=dibujo-digital" data-tip="Dibujo Digital IV">
+            <img src="image/thumbs/digital4.jpg" alt="Dibujo Digital IV de moekat">
+          </a>
+          <a class="oekaki-ex-card" href="galerie.html?cat=dibujo-digital" data-tip="Dibujo Digital XII">
+            <img src="image/thumbs/digital12.jpg" alt="Dibujo Digital XII de moekat">
+          </a>
+          <a class="oekaki-ex-card" href="galerie.html?cat=collage" data-tip="Collage II">
+            <img src="image/thumbs/collage2.jpg" alt="Collage II de moekat">
+          </a>
+          <a class="oekaki-ex-card" href="galerie.html?tab=garfield" data-tip="0. El Loco - Garfield Tarot">
+            <img src="image/thumbs/tyarot20.jpg" alt="0. El Loco - Garfield Tarot de moekat">
+          </a>
+        </div>
+      </section>
+
       <details class="saved-doodles-drawer" open>
         <summary>Ver bocetos guardados localmente (<span id="doodleCount">0</span>)</summary>
         <div class="doodle-gallery" id="doodleGallery"></div>
       </details>
 
       <div class="btn88-row" aria-label="Botones 88 por 31">
-        <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-moekat.gif" alt="@MOEKAT" width="88" height="31"></a>
+        <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-moekat.gif" alt="@moekat" width="88" height="31"></a>
         <a class="btn88-link" href="oekaki.html"><img src="gifs/buttons/btn-oekaki.gif" alt="Oekaki" width="88" height="31"></a>
         <a class="btn88-link" href="galerie.html?tab=garfield"><img src="gifs/buttons/btn-garfield.gif" alt="Galería Garfield" width="88" height="31"></a>
         <span class="btn88-link"><img src="gifs/buttons/btn-bestviewed.gif" alt="800x600" width="88" height="31"></span>

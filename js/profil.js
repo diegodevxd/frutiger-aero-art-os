@@ -58,15 +58,13 @@
         'bisuteria-1', 'collage-1', 'emote-1', 'emote-2'
       ];
       const list = stampIds.map((id) => data.getById(id));
-      const doubled = [...list, ...list];
       stampTrack.innerHTML = '';
-      doubled.forEach((item, idx) => {
+      list.forEach((item) => {
         const wrap = document.createElement('div');
         wrap.className = 'stamp-item';
-        if (idx >= list.length) wrap.setAttribute('aria-hidden', 'true');
         const img = document.createElement('img');
         img.src = item.thumb;
-        img.alt = idx >= list.length ? '' : item.title;
+        img.alt = item.title;
         img.decoding = 'async';
         wrap.appendChild(img);
         stampTrack.appendChild(wrap);

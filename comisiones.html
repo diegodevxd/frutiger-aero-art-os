@@ -8,25 +8,24 @@
   <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/subpage.css">
 </head>
-<body class="subpage">
-  <div id="loading" aria-live="polite">
-    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#CDF7E7" stroke="#2D173B" stroke-width="3.5" stroke-linejoin="round"/>
-    </svg>
-    <div class="loading-card">cargando tabla de comisiones de @moekat...</div>
+<body class="subpage" data-particles="flowers">
+  <div class="retro-marquee" aria-hidden="true">
+    <div class="retro-marquee-track">
+      <span class="mq-seg">* Comisiones abiertas en MXN * @moekat *</span>
+      <span class="mq-seg">* Retrato * Medio cuerpo * Completo * Emotes *</span>
+      <span class="mq-seg">* Consulta las reglas y ejemplos abajo *</span>
+      <span class="mq-seg">* Comisiones abiertas en MXN * @moekat *</span>
+      <span class="mq-seg">* Retrato * Medio cuerpo * Completo * Emotes *</span>
+      <span class="mq-seg">* Consulta las reglas y ejemplos abajo *</span>
+    </div>
   </div>
 
-  <a class="back-widget" href="home.html" data-tip="Volver al inicio (@moekat)">
-    <img class="back-glitter-img" src="gifs/back-glitter.gif" alt="<<-BACK" width="136" height="42">
-    <img class="back-garfield-img" src="gifs/garfield/garfield-sleeping.gif" alt="Garfield durmiendo" width="108" height="82">
-  </a>
-
   <main class="lace-frame subpage-shell">
-    <div class="win-bar">
+    <div class="win-bar" data-ui>
       <div class="win-bar-title">
         <img src="icons/services.png" alt="" width="16" height="16">
         <span>C:\MOEKAT\COMISIONES_MXN.HTM</span>
@@ -34,23 +33,27 @@
       <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
     </div>
 
-    <div class="retro-marquee" aria-hidden="true">
-      <div class="retro-marquee-track">
-        <span>* COMISIONES ABIERTAS EN MXN * RETRATO * MEDIO CUERPO * COMPLETO * PAQUETES DE EMOTES * CONSULTA LAS REGLAS ANTES DE PEDIR *</span>
-        <span>* COMISIONES ABIERTAS EN MXN * RETRATO * MEDIO CUERPO * COMPLETO * PAQUETES DE EMOTES * CONSULTA LAS REGLAS ANTES DE PEDIR *</span>
+    <nav class="retro-return-bar" aria-label="Volver y accesos rápidos">
+      <a class="back-widget-inline" href="home.html" data-tip="Volver al inicio (@moekat)">
+        <img class="back-glitter-img" src="gifs/back-glitter.gif" alt="<<-BACK" width="96" height="30">
+        <img class="back-garfield-img" src="gifs/garfield/garfield-sleeping.gif" alt="Garfield durmiendo" width="44" height="36">
+      </a>
+      <div class="retro-nav-pills">
+        <a class="candy-btn" href="home.html">Inicio</a>
+        <a class="candy-btn lavender" href="galerie.html">Galería (49)</a>
+        <a class="candy-btn butter" href="galerie.html?tab=garfield">Garfield Tarot</a>
+        <a class="candy-btn mint" href="profil.html">Perfil</a>
+        <a class="candy-btn sky" href="oekaki.html">Lienzo Kawaii</a>
       </div>
-    </div>
-
-    <nav class="subpage-nav-strip" aria-label="Accesos rápidos">
-      <a class="candy-btn" href="home.html">Inicio</a>
-      <a class="candy-btn lavender" href="galerie.html">Galería (49)</a>
-      <a class="candy-btn butter" href="galerie.html?tab=garfield">Garfield Tarot (22)</a>
-      <a class="candy-btn mint" href="profil.html">Perfil</a>
-      <a class="candy-btn sky" href="oekaki.html">Lienzo Kawaii</a>
     </nav>
 
     <div class="subpage-inner">
-      <h1 class="subpage-title">:: TABLA DE COMISIONES ::</h1>
+      <div class="subpage-hero-head">
+        <h1 class="subpage-title" data-rainbow>Comisiones MXN</h1>
+        <p class="lead-line">
+          Tarifas oficiales en pesos mexicanos, paquetes de emotes, reglas y láminas de moekat (@moekat).
+        </p>
+      </div>
 
       <section class="comm-status-banner" aria-label="Estado actual de comisiones">
         <div class="comm-status-banner-copy">
@@ -60,7 +63,7 @@
             </span>
             <span class="comm-status-pill" data-comm-status-pill>* COMISIONES ABIERTAS *</span>
           </div>
-          <p data-comm-status-note style="font-weight:700;">¡Comisiones disponibles! Revisa tarifas o escríbeme &lt;3</p>
+          <p data-comm-status-note>¡Comisiones disponibles! Revisa tarifas o escríbeme &lt;3</p>
         </div>
         <div class="comm-status-gif-frame" style="margin:0;">
           <img data-comm-status-gif src="gifs/comm-open.gif" alt="Estado de comisiones">
@@ -68,6 +71,7 @@
       </section>
 
       <section aria-label="Tarifas de ilustración">
+        <h2 class="subpage-sec-heading">Tarifas de ilustración (MXN)</h2>
         <div class="price-table-wrap">
           <table class="price-table">
             <thead>
@@ -109,12 +113,29 @@
 
       <section class="emotes-promo-card" aria-label="Paquetes de Emotes">
         <div>
-          <h2 style="font-family:var(--font-display); font-size:1.25rem; color:var(--lavender-deep);">Paquetes de Emotes ::</h2>
-          <div class="emote-prices-list">
-            <div class="emote-price-row"><span>Paquete de 3</span><span>$200 MXN</span></div>
-            <div class="emote-price-row"><span>Paquete de 5</span><span>$350 MXN</span></div>
-            <div class="emote-price-row"><span>Paquete de 10 <span class="promo-tag">PROMO</span></span><span>$600 MXN</span></div>
-          </div>
+          <h2 style="font-family:var(--font-display); font-size:22px; color:var(--lavender-deep);">Paquetes de Emotes</h2>
+          <table class="emotes-table">
+            <thead>
+              <tr>
+                <th>Paquete</th>
+                <th>Precio (MXN)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Paquete de 3</td>
+                <td>$200 MXN</td>
+              </tr>
+              <tr>
+                <td>Paquete de 5</td>
+                <td>$350 MXN</td>
+              </tr>
+              <tr>
+                <td>Paquete de 10 <span class="promo-tag">Promo</span></td>
+                <td>$600 MXN</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="emote-samples-row">
           <div class="emote-sample-box"><img src="image/o0o.png" alt="Ejemplo Emote o0o"></div>
@@ -123,32 +144,43 @@
         </div>
       </section>
 
-      <section class="rules-grid" aria-label="Reglas de comisiones">
-        <div class="rule-card yes">
-          <h3>[+] SI PUEDO HACER <img class="gif-sticker gif-pixel" src="gifs/old-web-pixel-cute.gif" alt="" width="24" height="24"></h3>
-          <ul>
-            <li>Personajes / OC's</li>
-            <li>Ships</li>
-            <li>Furry</li>
-            <li>Kemonomimi</li>
-            <li>NSFW</li>
-            <li>Gore</li>
-          </ul>
-        </div>
-        <div class="rule-card no">
-          <h3>[X] NO PUEDO HACER <img class="gif-sticker" src="gifs/cat-shy.gif" alt="" width="34" height="34" style="border:2px solid var(--ink);"></h3>
-          <ul>
-            <li>Mecha</li>
-            <li>Fetish Art <strong>(Pregunta antes)</strong></li>
-            <li>Gore / Ilustraciones de odio de gente real</li>
-            <li>Loli / shota - Proship</li>
-            <li>Fondos muy complejos <strong>(Pregunta antes)</strong></li>
-          </ul>
-        </div>
+      <section aria-label="Reglas de comisiones">
+        <h2 class="subpage-sec-heading">Reglas de comisión</h2>
+        <table class="rules-table">
+          <thead>
+            <tr>
+              <th class="rule-head-yes">[+] Sí puedo hacer <img class="gif-sticker gif-pixel" src="gifs/old-web-pixel-cute.gif" alt="" width="24" height="24" style="display:inline-block; vertical-align:middle;"></th>
+              <th class="rule-head-no">[X] No puedo hacer <img class="gif-sticker" src="gifs/cat-shy.gif" alt="" width="30" height="30" style="display:inline-block; vertical-align:middle; border:2px solid var(--ink);"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="rule-cell-yes">
+                <ul>
+                  <li>Personajes / OC's</li>
+                  <li>Ships</li>
+                  <li>Furry</li>
+                  <li>Kemonomimi</li>
+                  <li>NSFW</li>
+                  <li>Gore</li>
+                </ul>
+              </td>
+              <td class="rule-cell-no">
+                <ul>
+                  <li>Mecha</li>
+                  <li>Fetish Art <strong>(Pregunta antes)</strong></li>
+                  <li>Gore / Ilustraciones de odio de gente real</li>
+                  <li>Loli / shota - Proship</li>
+                  <li>Fondos muy complejos <strong>(Pregunta antes)</strong></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
 
       <section aria-label="Láminas originales">
-        <h2 style="font-family:var(--font-display); margin-bottom:8px; color:var(--pink-deep);">Láminas Originales (haz clic para ampliar)</h2>
+        <h2 style="font-family:var(--font-display); font-size:22px; margin-bottom:8px; color:var(--pink-deep);">Láminas Originales (clic para ampliar)</h2>
         <div class="sheets-gallery" id="commissionSheetsGrid">
           <button type="button" class="sheet-card" data-sheet="0">
             <img src="Comisiones/Comisiones%20tablita.png" alt="Tabla de precios de comisiones">
@@ -167,8 +199,8 @@
 
       <div class="comm-cta-bar">
         <div>
-          <strong style="font-family:var(--font-display); font-size:1.05rem; color:var(--butter-soft);">¿Listx para encargar tu obra con moekat? &lt;3 <img class="gif-sticker gif-pixel" src="gifs/emoticon-te-amo.gif" alt="" width="54" height="15"></strong>
-          <div style="font-size:0.82rem; color:var(--pink-soft);">Redes de @moekat: <a href="https://instagram.com/demi.demiau" target="_blank" rel="noopener noreferrer" style="color:var(--butter-soft);">Instagram</a> | <a href="https://x.com/Chicharron_08" target="_blank" rel="noopener noreferrer" style="color:var(--butter-soft);">Twitter / X</a> | <a href="https://tiktok.com/@dmxn_08" target="_blank" rel="noopener noreferrer" style="color:var(--butter-soft);">TikTok</a></div>
+          <strong style="font-family:var(--font-display); font-size:18px; color:var(--butter-soft);">¿Listx para encargar tu obra con moekat? &lt;3 <img class="gif-sticker gif-pixel" src="gifs/emoticon-te-amo.gif" alt="" width="54" height="15"></strong>
+          <div style="font-size:14px; color:var(--pink-soft);">Redes de @moekat: <a href="https://instagram.com/demi.demiau" target="_blank" rel="noopener noreferrer" style="color:var(--butter-soft);">Instagram</a> | <a href="https://x.com/Chicharron_08" target="_blank" rel="noopener noreferrer" style="color:var(--butter-soft);">Twitter / X</a> | <a href="https://tiktok.com/@dmxn_08" target="_blank" rel="noopener noreferrer" style="color:var(--butter-soft);">TikTok</a></div>
         </div>
         <div class="gif-inline-pair">
           <img class="gif-sticker gif-pixel" src="gifs/laughing-cat.gif" alt="" width="24" height="24">
@@ -177,7 +209,7 @@
       </div>
 
       <div class="btn88-row" aria-label="Botones 88 por 31">
-        <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-moekat.gif" alt="@MOEKAT" width="88" height="31"></a>
+        <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-moekat.gif" alt="@moekat" width="88" height="31"></a>
         <a class="btn88-link" href="comisiones.html"><img src="gifs/buttons/btn-comm.gif" alt="Comisiones" width="88" height="31"></a>
         <a class="btn88-link" href="galerie.html?tab=garfield"><img src="gifs/buttons/btn-garfield.gif" alt="Galería Garfield" width="88" height="31"></a>
         <span class="btn88-link"><img src="gifs/buttons/btn-html.gif" alt="HTML 4.0" width="88" height="31"></span>

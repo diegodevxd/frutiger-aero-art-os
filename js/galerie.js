@@ -69,10 +69,23 @@
       }
 
       if (marqueeTrack) {
-        const line = isGarf
-          ? '* GALERIA GARFIELD :: MAZO COMPLETO DE TAROT * 22 ARCANOS MAYORES * DE 0. EL LOCO A XXI. EL MUNDO * DIBUJOS ORIGINALES DE @MOEKAT *'
-          : '* GALERIA DE MOEKAT (@MOEKAT) * DIBUJO DIGITAL * TRADICIONAL * ESCULTURAS * BISUTERIA * COLLAGE * EMOTES * CLIC EN CUALQUIER OBRA PARA AMPLIAR *';
-        marqueeTrack.innerHTML = `<span>${line}</span><span>${line}</span>`;
+        const segs = isGarf
+          ? [
+              '* Galería Garfield :: Tarot (0 - XXI)',
+              '* 22 Arcanos Mayores ilustrados por @moekat',
+              '* De 0. El Loco a XXI. El Mundo',
+              '* Clic en cualquier carta para ampliar'
+            ]
+          : [
+              '* Galería visual de moekat (@moekat)',
+              '* Dibujo Digital & Tradicional',
+              '* Esculturas, Bisutería y Collage',
+              '* Clic en cualquier obra para ampliar'
+            ];
+        const htmlSegs = [...segs, ...segs]
+          .map((s) => `<span class="mq-seg">${s}</span>`)
+          .join('');
+        marqueeTrack.innerHTML = htmlSegs;
       }
     }
 
@@ -137,8 +150,8 @@
       const activeCategoryObj =
         data.generalCategories.find((c) => c.id === activeCat) || data.generalCategories[0];
       if (countEl) countEl.textContent = `${filtered.length} / ${data.generalArtworks.length}`;
-      if (catEl) catEl.textContent = activeCategoryObj.label.toUpperCase();
-      if (pageInfo) pageInfo.textContent = `PAG ${currentPage} / ${totalPages}`;
+      if (catEl) catEl.textContent = activeCategoryObj.label;
+      if (pageInfo) pageInfo.textContent = `Pag ${currentPage} / ${totalPages}`;
       if (prevBtn) prevBtn.disabled = currentPage <= 1;
       if (nextBtn) nextBtn.disabled = currentPage >= totalPages;
 
@@ -211,7 +224,7 @@
         numSpan.className = 'tarot-card-num';
         numSpan.textContent = card.roman;
         const typeSpan = document.createElement('span');
-        typeSpan.textContent = 'ARCANO MAYOR';
+        typeSpan.textContent = 'Arcano Mayor';
         head.appendChild(numSpan);
         head.appendChild(typeSpan);
 
@@ -229,7 +242,7 @@
         const titleEl = document.createElement('strong');
         titleEl.textContent = card.cardName;
         const subEl = document.createElement('span');
-        subEl.textContent = `${card.roman} | ${card.cardEnglish.toUpperCase()}`;
+        subEl.textContent = `${card.roman} | ${card.cardEnglish}`;
         caption.appendChild(titleEl);
         caption.appendChild(subEl);
 

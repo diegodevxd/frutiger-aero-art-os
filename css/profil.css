@@ -3,16 +3,21 @@
    ========================================================================== */
 
 body.profile-page {
-  padding: 18px 14px 48px;
+  padding: 0 16px 44px;
   background-color: #FFDFF0;
   background-image: url('../gifs/tiles/tile-profil.png');
   background-repeat: repeat;
 }
 
+body.profile-page > .retro-marquee {
+  width: calc(100% + 32px);
+  margin: 0 -16px 16px;
+}
+
 .profile-wrap {
   position: relative;
   z-index: var(--z-content);
-  max-width: 960px;
+  max-width: 1020px;
   width: 100%;
   margin: 0 auto;
   display: grid;
@@ -33,7 +38,7 @@ body.profile-page {
 .profile-banner-head {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   background: var(--bg-cream);
   border: 4px ridge var(--pink-mid);
   outline: 3px solid var(--ink);
@@ -45,16 +50,24 @@ body.profile-page {
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  padding: 10px 14px;
+  padding: 12px 16px;
+}
+
+.profile-hero-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
 }
 
 .head-portrait {
-  width: 104px;
-  height: 104px;
+  width: 170px;
+  height: 146px;
   padding: 4px;
   background: var(--bg-card);
-  border: 2px solid;
-  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  border: 3px inset var(--pink-mid);
   outline: 2px solid var(--ink);
   flex-shrink: 0;
 }
@@ -68,84 +81,68 @@ body.profile-page {
 
 .profile-arched-title {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 4.4vw, 2.7rem);
+  font-size: var(--text-hero);
   font-weight: 700;
+  line-height: 1.04;
   color: var(--lavender-deep);
   background: var(--butter-soft);
-  padding: 6px 16px;
-  border: 3px double var(--pink-deep);
+  padding: 6px 18px;
+  border: 4px double var(--pink-deep);
   outline: 2px solid var(--ink);
-  transform: rotate(-2deg);
   text-align: center;
 }
 
-.checkered-ribbon {
-  width: 100%;
-  height: 16px;
-  border-top: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-  background-color: var(--bg-cream);
-  background-image: url('../gifs/tiles/tile-checkered.png');
-  background-repeat: repeat;
+.profile-banner-head .lead-line {
+  text-align: center;
+  font-size: 18px;
+  padding: 0 8px;
 }
 
-/* Marco principal con encaje y moño decorativo */
+/* Marco principal con encaje */
 .profile-primary-card {
   position: relative;
   background: var(--bg-cream);
   outline: 3px solid var(--ink);
 }
 
-.satin-bow {
-  position: absolute;
-  top: -28px;
-  left: -12px;
-  width: 70px;
-  height: 52px;
-  z-index: 6;
-  pointer-events: none;
-}
-
 .profile-grid-top {
   display: grid;
-  grid-template-columns: minmax(0, 1.32fr) minmax(250px, 0.88fr);
+  grid-template-columns: minmax(0, 1.32fr) minmax(260px, 0.88fr);
   gap: 14px;
-  padding: 16px 14px 14px;
+  padding: 16px 16px 14px;
 }
 
 .profile-bio-col {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 12px;
+  gap: 12px;
 }
 
 .badges-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
 }
 
 .bio-split {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 204px minmax(0, 1fr);
+  gap: 12px;
   align-items: start;
 }
 
 .cert-card {
   background: var(--bg-card);
-  border: 2px solid;
-  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  border: 3px outset var(--pink-mid);
   outline: 2px solid var(--ink);
-  padding: 8px;
+  padding: 9px;
   text-align: center;
-  font-size: 0.76rem;
+  font-size: 14px;
 }
 
 .cert-card img {
-  width: 88px;
-  height: 88px;
+  width: 172px;
+  height: 140px;
   object-fit: cover;
   margin: 0 auto 6px;
   border: 2px solid var(--ink);
@@ -153,11 +150,12 @@ body.profile-page {
 
 .bio-copy {
   background: var(--bg-card);
-  border: 2px dashed var(--lavender-deep);
-  padding: 10px 12px;
-  font-size: 0.88rem;
+  border: 3px dashed var(--lavender-deep);
+  padding: 12px 14px;
+  font-size: 16px;
+  line-height: 1.5;
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .bio-highlight {
@@ -172,8 +170,8 @@ body.profile-page {
 .funfact-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 9px 11px;
+  gap: 12px;
+  padding: 10px 12px;
   background: var(--bg-card);
   border: 4px double var(--sky-deep);
   outline: 2px solid var(--ink);
@@ -181,8 +179,8 @@ body.profile-page {
 
 .funfact-btn {
   flex-shrink: 0;
-  width: 72px;
-  height: 72px;
+  width: 74px;
+  height: 74px;
   padding: 4px;
   border: 2px solid;
   border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
@@ -203,26 +201,26 @@ body.profile-page {
 .funfact-text strong {
   display: block;
   font-family: var(--font-pixel);
-  font-size: 0.68rem;
+  font-size: 13px;
   color: var(--pink-deep);
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 .funfact-text p {
-  font-size: 0.84rem;
+  font-size: 16px;
   font-weight: 700;
 }
 
 .favorites-title {
-  font-family: var(--font-pixel);
-  font-size: 0.72rem;
+  font-family: var(--font-display);
+  font-size: 20px;
   color: var(--ink);
 }
 
 .favorites-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 6px;
+  gap: 7px;
 }
 
 .fav-square {
@@ -245,19 +243,18 @@ body.profile-page {
 /* Columna derecha FICHA DE ARTISTA */
 .profile-spec-col {
   background: var(--bg-card);
-  border: 2px dashed var(--pink-deep);
-  padding: 10px;
+  border: 3px dashed var(--pink-deep);
+  padding: 11px;
   display: flex;
   flex-direction: column;
   gap: 9px;
 }
 
 .spec-title {
-  font-family: var(--font-pixel);
-  font-size: 0.86rem;
+  font-family: var(--font-display);
+  font-size: 20px;
   text-align: center;
   color: var(--lavender-deep);
-  letter-spacing: 0.05em;
   background: var(--lavender-soft);
   border: 2px solid var(--ink);
   padding: 4px 6px;
@@ -279,7 +276,7 @@ body.profile-page {
 .spec-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.78rem;
+  font-size: 14px;
 }
 
 .spec-table tr:nth-child(odd) {
@@ -292,7 +289,7 @@ body.profile-page {
 
 .spec-table th,
 .spec-table td {
-  padding: 5px 7px;
+  padding: 6px 8px;
   border: 2px solid var(--pink-mid);
   text-align: left;
   vertical-align: top;
@@ -300,40 +297,32 @@ body.profile-page {
 
 .spec-table th {
   font-family: var(--font-pixel);
-  font-size: 0.6rem;
+  font-size: 13px;
   color: var(--pink-deep);
-  width: 36%;
+  width: 38%;
 }
 
-/* Carrusel infinito de estampillas */
-.stamp-marquee {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  overflow: hidden;
-  padding: 8px 0;
+/* Muro denso de estampillas tipo colección retro (sin overflow fuera de ventana) */
+.stamp-wall {
+  padding: 10px 14px;
   background: var(--bg-blush);
-  border-top: 2px dashed var(--pink-mid);
-  border-bottom: 2px dashed var(--lavender-mid);
+  border-top: 3px dashed var(--pink-mid);
+  border-bottom: 3px dashed var(--lavender-mid);
 }
 
 .stamp-track {
-  display: inline-flex;
-  gap: 10px;
-  width: max-content;
-  animation: marquee-scroll 34s linear infinite;
-}
-
-.stamp-marquee:hover .stamp-track {
-  animation-play-state: paused;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
 }
 
 .stamp-item {
-  width: 102px;
-  height: 60px;
+  width: 96px;
+  height: 58px;
   padding: 3px;
   background: #FFFFFF;
-  border: 2px dotted var(--ink);
+  border: 3px dotted var(--ink);
   flex-shrink: 0;
 }
 
@@ -351,66 +340,75 @@ body.profile-page {
 
 .profile-lower-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 0.92fr 1.08fr;
   gap: 14px;
-  padding: 14px;
+  padding: 14px 16px;
 }
 
-.disciplines-stack {
-  display: grid;
-  gap: 7px;
+.disciplines-table-box {
   background: #FFFFFF;
   border: 4px double var(--pink-deep);
-  padding: 11px;
+  padding: 12px;
 }
 
-.disciplines-stack h2,
+.disciplines-table-box h2,
 .qa-box h2 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 22px;
   color: var(--lavender-deep);
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-.disc-pill-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 7px 10px;
+.profile-disc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.profile-disc-table th,
+.profile-disc-table td {
+  padding: 7px 8px;
   border: 2px solid var(--ink);
-  background: var(--bg-blush);
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 0.82rem;
-  text-decoration: none;
+  text-align: left;
 }
 
-.disc-pill-row:hover {
-  background: var(--mint-soft);
-  color: var(--ink);
+.profile-disc-table thead th {
+  background: var(--bg-plum);
+  color: var(--butter-soft);
+  font-family: var(--font-pixel);
+  font-size: 13px;
+}
+
+.profile-disc-table tbody tr:nth-child(odd) {
+  background: var(--bg-blush);
+}
+
+.profile-disc-table tbody tr:nth-child(even) {
+  background: var(--lavender-soft);
 }
 
 .qa-box {
   background: #FFFFFF;
   border: 4px double var(--lavender-deep);
-  padding: 12px;
+  padding: 12px 14px;
   display: grid;
   gap: 10px;
 }
 
 .qa-item h3 {
-  font-size: 0.92rem;
+  font-size: 18px;
   color: var(--pink-deep);
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 .qa-item p {
   padding-left: 10px;
   margin-left: 4px;
-  border-left: 2px dotted var(--lavender-mid);
-  font-size: 0.86rem;
+  border-left: 3px dotted var(--lavender-mid);
+  font-size: 16px;
+  line-height: 1.5;
   color: var(--ink);
+  max-width: 58ch;
 }
 
 @media (max-width: 860px) {
@@ -420,15 +418,24 @@ body.profile-page {
     grid-template-columns: 1fr;
   }
 
+  .profile-top-row {
+    flex-direction: column;
+  }
+
   .head-portrait {
-    width: 72px;
-    height: 72px;
+    width: 82px;
+    height: 82px;
   }
 }
 
 @media (max-width: 560px) {
   body.profile-page {
-    padding: 12px 8px 36px;
+    padding: 0 12px 36px;
+  }
+
+  body.profile-page > .retro-marquee {
+    width: calc(100% + 24px);
+    margin: 0 -12px 12px;
   }
 
   .profile-primary-card,
@@ -436,16 +443,9 @@ body.profile-page {
     border-width: 12px;
   }
 
-  .satin-bow {
-    left: -6px;
-    top: -18px;
-    width: 58px;
-    height: 44px;
-  }
-
   .profile-grid-top,
   .profile-lower-grid {
-    padding: 10px;
+    padding: 10px 12px;
   }
 
   .favorites-grid {

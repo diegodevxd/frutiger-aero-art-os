@@ -8,25 +8,26 @@
   <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/galerie.css">
 </head>
-<body class="gallery-page" data-gallery-mode="general">
-  <div id="loading" aria-live="polite">
-    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#E8DCFF" stroke="#2D173B" stroke-width="3.5" stroke-linejoin="round"/>
-    </svg>
-    <div class="loading-card">abriendo archivo visual @moekat...</div>
+<body class="gallery-page" data-gallery-mode="general" data-particles="stars">
+  <div class="retro-marquee" aria-hidden="true">
+    <div class="retro-marquee-track" id="galMarqueeTrack">
+      <span class="mq-seg">* Galería visual de moekat (@moekat) *</span>
+      <span class="mq-seg">* Dibujo Digital &amp; Tradicional *</span>
+      <span class="mq-seg">* Esculturas, Bisutería y Collage *</span>
+      <span class="mq-seg">* Clic en cualquier obra para ampliar *</span>
+      <span class="mq-seg">* Galería visual de moekat (@moekat) *</span>
+      <span class="mq-seg">* Dibujo Digital &amp; Tradicional *</span>
+      <span class="mq-seg">* Esculturas, Bisutería y Collage *</span>
+      <span class="mq-seg">* Clic en cualquier obra para ampliar *</span>
+    </div>
   </div>
 
-  <a class="back-widget" href="home.html" data-tip="Volver al inicio (@moekat)">
-    <img class="back-glitter-img" src="gifs/back-glitter.gif" alt="<<-BACK" width="136" height="42">
-    <img class="back-garfield-img" src="gifs/garfield/garfield-sleeping.gif" alt="Garfield durmiendo" width="108" height="82">
-  </a>
-
   <div class="gallery-window">
-    <div class="win-bar pink" id="galWinBar">
+    <div class="win-bar pink" id="galWinBar" data-ui>
       <div class="win-bar-title">
         <img src="icons/gallery.png" alt="" width="16" height="16">
         <span id="galWinTitle">C:\MOEKAT\GALERIE.HTM :: ARCHIVO VISUAL (49 OBRAS)</span>
@@ -34,20 +35,26 @@
       <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
     </div>
 
-    <div class="retro-marquee" aria-hidden="true">
-      <div class="retro-marquee-track" id="galMarqueeTrack">
-        <span>* GALERIA DE MOEKAT (@MOEKAT) * DIBUJO DIGITAL * TRADICIONAL * ESCULTURAS * BISUTERIA * COLLAGE * EMOTES * CLIC EN CUALQUIER OBRA PARA AMPLIAR *</span>
-        <span>* GALERIA DE MOEKAT (@MOEKAT) * DIBUJO DIGITAL * TRADICIONAL * ESCULTURAS * BISUTERIA * COLLAGE * EMOTES * CLIC EN CUALQUIER OBRA PARA AMPLIAR *</span>
+    <nav class="retro-return-bar" aria-label="Volver y accesos rápidos">
+      <a class="back-widget-inline" href="home.html" data-tip="Volver al inicio (@moekat)">
+        <img class="back-glitter-img" src="gifs/back-glitter.gif" alt="<<-BACK" width="96" height="30">
+        <img class="back-garfield-img" src="gifs/garfield/garfield-sleeping.gif" alt="Garfield durmiendo" width="44" height="36">
+      </a>
+      <div class="retro-nav-pills">
+        <a class="candy-btn" href="home.html">Inicio</a>
+        <a class="candy-btn mint" href="profil.html">Perfil</a>
+        <a class="candy-btn butter" href="comisiones.html">Comisiones</a>
+        <a class="candy-btn sky" href="oekaki.html">Lienzo</a>
       </div>
-    </div>
+    </nav>
 
-    <!-- Barra de sub-menu / pestanas para cambiar entre Galeria normal y Galeria Garfield -->
+    <!-- Barra de sub-menu / pestañas para cambiar entre Galería normal y Galería Garfield -->
     <nav class="gallery-mode-tabs" role="tablist" aria-label="Secciones de la galería">
       <button type="button" class="gallery-mode-tab is-active" id="tabBtnGeneral" role="tab" aria-selected="true" data-mode="general">
-        [*] GALERIA :: ARCHIVO (49)
+        [*] Galería :: Archivo (49)
       </button>
       <button type="button" class="gallery-mode-tab" id="tabBtnGarfield" role="tab" aria-selected="false" data-mode="garfield">
-        [*] GALERIA GARFIELD :: TAROT (22)
+        [*] Galería Garfield :: Tarot (22)
       </button>
     </nav>
 
@@ -59,29 +66,34 @@
         <div class="general-title-bar">
           <div class="gif-inline-pair">
             <img class="gif-sticker gif-pixel" src="gifs/old-web-2000s-pixel.gif" alt="" width="30" height="30">
-            <h1 class="gallery-heading">GALERIA :: @MOEKAT</h1>
+            <h1 class="gallery-heading" data-rainbow>Galería @moekat</h1>
             <img class="gif-sticker gif-pixel" src="gifs/old-web-pixel-cute.gif" alt="" width="28" height="28">
           </div>
 
           <div class="general-meta-controls">
-            <span class="pastel-badge butter">MOSTRANDO: <strong id="galStatCount">49 / 49</strong></span>
-            <span class="pastel-badge lavender" id="galStatCat">TODAS</span>
+            <span class="pastel-badge butter">Mostrando: <strong id="galStatCount">49 / 49</strong></span>
+            <span class="pastel-badge lavender" id="galStatCat">Todas</span>
             <input type="search" id="gallerySearch" class="gallery-search" placeholder="Buscar obra..." aria-label="Buscar obra">
             <button type="button" class="candy-btn lavender" id="galleryDensityBtn">Vista: Amplia</button>
           </div>
         </div>
 
+        <p class="lead-line">
+          Archivo completo de moekat (@moekat): 49 obras generales y baraja ordenada de 22 Arcanos del Tarot de Garfield.
+        </p>
+
         <div class="general-cats-row">
           <div class="gallery-filters" id="galleryFilters" aria-label="Filtrar por categoría"></div>
           <div class="gallery-pagination">
             <button type="button" class="page-nav-btn" id="galPrevBtn">&lt;&lt; ANT</button>
-            <span id="galPageInfo">PAG 1 / 2</span>
+            <span id="galPageInfo">Pag 1 / 2</span>
             <button type="button" class="page-nav-btn" id="galNextBtn">SIG &gt;&gt;</button>
           </div>
         </div>
       </header>
 
       <div class="gallery-grid-frame" aria-label="Rejilla de obras generales">
+        <h2 class="gallery-section-title">Archivo general (49 obras)</h2>
         <div class="gallery-grid" id="galleryGrid"></div>
       </div>
 
@@ -95,7 +107,7 @@
           <img class="gif-sticker" src="gifs/strawberry-glitter.gif" alt="" width="34" height="58">
         </div>
         <div class="btn88-row">
-          <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-moekat.gif" alt="@MOEKAT" width="88" height="31"></a>
+          <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-moekat.gif" alt="@moekat" width="88" height="31"></a>
           <a class="btn88-link" href="profil.html"><img src="gifs/buttons/btn-ug-artes.gif" alt="UG Artes" width="88" height="31"></a>
           <a class="btn88-link" href="comisiones.html"><img src="gifs/buttons/btn-comm.gif" alt="Comisiones" width="88" height="31"></a>
           <a class="btn88-link" href="oekaki.html"><img src="gifs/buttons/btn-oekaki.gif" alt="Oekaki" width="88" height="31"></a>
@@ -112,7 +124,7 @@
         <div class="garfield-title-row">
           <img class="gif-sticker" src="gifs/garfield/garfield-sticker-1.gif" alt="Garfield sticker" width="52" height="52">
           <div class="garfield-title-copy">
-            <h2 class="gallery-heading">GALERIA GARFIELD :: TAROT (0 - XXI)</h2>
+            <h2 class="gallery-section-title" style="font-size:28px;">Galería Garfield :: Tarot (0 - XXI)</h2>
             <p>Mazo completo de 22 Arcanos Mayores ilustrados a mano por moekat (@moekat). Ordenados de 0. El Loco a XXI. El Mundo.</p>
           </div>
           <img class="gif-sticker" src="gifs/garfield/garfield-sticker-2.gif" alt="Garfield sticker 2" width="52" height="43">
@@ -125,18 +137,19 @@
             <span class="garfield-gif-card"><img class="gif-sticker" src="gifs/garfield/garfield-catty-kitty.gif" alt="Garfield kitty" width="54" height="44"></span>
             <span class="garfield-gif-card"><img class="gif-sticker" src="gifs/garfield/cute-aww-love.gif" alt="Aww corazones cute" width="50" height="44"></span>
           </div>
-          <button type="button" class="candy-btn butter" id="drawTarotBtn">[?] SACAR CARTA AL AZAR</button>
+          <button type="button" class="candy-btn butter" id="drawTarotBtn">[?] Sacar carta al azar</button>
         </div>
       </header>
 
       <div class="tarot-spread-frame" aria-label="Baraja de Tarot de Garfield ordenada 0 a XXI">
+        <h2 class="gallery-section-title">22 Arcanos Mayores (0 - XXI)</h2>
         <div class="tarot-spread-grid" id="garfieldTarotGrid"></div>
       </div>
 
       <footer class="garfield-sticker-footer" aria-label="Stickers exclusivos de Garfield">
         <div class="garfield-sticker-footer-head">
-          <span>:: GARFIELD TAROT SHRINE &amp; CUTE STICKER BOARD ::</span>
-          <span>22 ARCANOS MAYORES (0 - XXI)</span>
+          <span>:: Garfield Tarot Shrine &amp; Sticker Board ::</span>
+          <span>22 Arcanos Mayores (0 - XXI)</span>
         </div>
         <div class="garfield-sticker-strip">
           <span class="garfield-sticker-frame"><img class="gif-sticker" src="gifs/garfield/garfield-archie.gif" alt="Garfield Archie" width="76" height="53"></span>
@@ -148,7 +161,7 @@
         <div class="btn88-row">
           <a class="btn88-link" href="galerie.html?tab=garfield"><img src="gifs/buttons/btn-garfield.gif" alt="Garfield Shrine" width="88" height="31"></a>
           <a class="btn88-link" href="galerie.html?tab=garfield"><img src="gifs/buttons/btn-tarot.gif" alt="Tarot 22 Arcanos" width="88" height="31"></a>
-          <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-moekat.gif" alt="@MOEKAT" width="88" height="31"></a>
+          <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-moekat.gif" alt="@moekat" width="88" height="31"></a>
         </div>
       </footer>
     </section>
