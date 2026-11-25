@@ -1,0 +1,131 @@
+/* ==========================================================================
+   TOKENS DE DISEÑO — Paleta Pastel Kawaii / Gyaru & Escala Tipográfica
+   Única fuente de verdad para colores, contrastes, bordes, sombras y tipos.
+   ========================================================================== */
+
+:root {
+  /* --- Superficies claras y oscuras de alto contraste --- */
+  --bg-cream: #FFF9FB;
+  --bg-blush: #FFF0F6;
+  --bg-warm: #FFF6EE;
+  --bg-card: #FFFFFF;
+  --bg-plum: #452459;
+  --bg-plum-deep: #321842;
+  --bg-plum-mid: #57306E;
+
+  /* --- Paleta Pastel Kawaii / Gyaru --- */
+  --pink-soft: #FFD6E8;
+  --pink-mid: #FF9EC7;
+  --pink-deep: #C43B7B;
+
+  --lavender-soft: #E8DCFF;
+  --lavender-mid: #C4AAFF;
+  --lavender-deep: #6E46B8;
+
+  --mint-soft: #CDF7E7;
+  --mint-mid: #85E3C3;
+  --mint-deep: #1A7A5E;
+
+  --peach-soft: #FFE4D1;
+  --peach-mid: #FFB890;
+  --peach-deep: #B54D26;
+
+  --sky-soft: #D6F0FF;
+  --sky-mid: #8ED4FF;
+  --sky-deep: #246DA8;
+
+  --butter-soft: #FFF5BE;
+  --butter-mid: #FFE07A;
+  --butter-deep: #8A6200;
+
+  /* --- Tinta y contraste (>= 4.5:1 sobre claro y sobre ciruela) --- */
+  --ink: #3B234A;
+  --ink-muted: #684978;
+  --ink-inverse: #FFF9FB;
+  --ink-accent: #B82E72;
+
+  /* --- Degradados Pastel --- */
+  --grad-pastel-rainbow: linear-gradient(
+    90deg,
+    #FF9EC7 0%,
+    #FFB890 18%,
+    #FFE07A 36%,
+    #85E3C3 56%,
+    #8ED4FF 76%,
+    #C4AAFF 92%,
+    #FF9EC7 100%
+  );
+  --grad-candy-stripe: repeating-linear-gradient(
+    -45deg,
+    #FFD6E8 0px,
+    #FFD6E8 10px,
+    #FFF9FB 10px,
+    #FFF9FB 20px,
+    #E8DCFF 20px,
+    #E8DCFF 30px,
+    #CDF7E7 30px,
+    #CDF7E7 40px
+  );
+  --grad-header-glow: linear-gradient(
+    180deg,
+    #FFFFFF 0%,
+    #FFEBF4 48%,
+    #FFD6E8 100%
+  );
+  --grad-btn-pink: linear-gradient(180deg, #FFE4F0 0%, #FFB7D6 55%, #FF9AC4 100%);
+  --grad-btn-mint: linear-gradient(180deg, #E8FFF6 0%, #B3F2DB 55%, #85E3C3 100%);
+  --grad-btn-lavender: linear-gradient(180deg, #F5EEFF 0%, #D9C4FF 55%, #C4AAFF 100%);
+  --grad-btn-butter: linear-gradient(180deg, #FFFCE6 0%, #FFF0A8 55%, #FFE07A 100%);
+
+  /* --- Bordes y Sombras --- */
+  --border-pink: 2px solid #F29BC3;
+  --border-plum: 2px solid #452459;
+  --border-double-pink: 4px double #E68CB7;
+  --shadow-soft: 0 8px 24px rgba(59, 35, 74, 0.12);
+  --shadow-candy: 4px 4px 0 rgba(196, 170, 255, 0.72), 7px 7px 0 rgba(255, 158, 199, 0.42);
+  --shadow-pixel: 3px 3px 0 #3B234A;
+  --shadow-glow: 0 0 18px rgba(255, 158, 199, 0.55), 0 0 8px rgba(196, 170, 255, 0.55);
+
+  /* --- Tipografía --- */
+  --font-display: 'Fredoka', 'Trebuchet MS', 'Segoe UI', rounded, sans-serif;
+  --font-body: 'Quicksand', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-pixel: 'Silkscreen', 'Courier New', ui-monospace, monospace;
+
+  /* --- Escala Tipográfica --- */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-md: 1.125rem;     /* 18px */
+  --text-lg: 1.35rem;      /* 21.6px */
+  --text-xl: 1.75rem;      /* 28px */
+  --text-2xl: 2.25rem;     /* 36px */
+  --text-hero: clamp(2.15rem, 4.8vw, 3.6rem);
+
+  /* --- Espaciado y Radios --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* --- Capas Z-Index --- */
+  --z-particles: 5;
+  --z-content: 20;
+  --z-sticky: 60;
+  --z-floating: 120;
+  --z-tooltip: 300;
+  --z-veil: 500;
+  --z-lightbox: 700;
+  --z-preloader: 900;
+
+  /* --- Transiciones --- */
+  --ease-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}

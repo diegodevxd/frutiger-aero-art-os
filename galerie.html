@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GALERÍA | Demian Tenorio (@dmxn_08)</title>
+  <meta name="description" content="Galería completa con las 71 obras de Demian Tenorio Rico (@dmxn_08): Tarot, Dibujo Digital, Dibujo Tradicional, Esculturas, Bisutería, Collage y Emotes.">
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/galerie.css">
+</head>
+<body class="gallery-page">
+  <div id="loading" aria-live="polite">
+    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#E8DCFF" stroke="#3B234A" stroke-width="3.5" stroke-linejoin="round"/>
+    </svg>
+    <div class="loading-card">abriendo colección de 71 obras...</div>
+  </div>
+
+  <a class="back-pill" href="home.html">← INICIO</a>
+
+  <main class="gallery-layout">
+    <!-- Columna izquierda sticky con marco arcoíris -->
+    <aside class="gallery-info-panel" aria-label="Filtros y paginación de la galería">
+      <h1 class="gallery-wordart">GALERÍA ★ @DMXN_08</h1>
+      <div class="rainbow-frame">
+        <div class="rainbow-inner gallery-info-inner">
+          <div class="gallery-stats" id="galleryStats">
+            Nº DE OBRAS: <strong>71</strong> / 71<br>
+            CATEGORÍA: <strong>TODAS</strong>
+          </div>
+
+          <p class="gallery-intro">
+            Archivo completo de Demian Tenorio Rico: Tarot ilustrado, Dibujo Digital y Tradicional, Escultura en arcilla/cerámica, Bisutería, Collage y Emotes. Haz clic en cualquier miniatura para abrir el visor a resolución completa ♡
+          </p>
+
+          <div class="gallery-filters" id="galleryFilters" aria-label="Filtrar por categoría"></div>
+
+          <div class="gallery-search-row">
+            <input type="search" id="gallerySearch" class="gallery-search" placeholder="Buscar obra o técnica...">
+            <button type="button" class="candy-btn lavender" id="galleryDensityBtn">Vista: Amplia</button>
+          </div>
+
+          <div class="gallery-pagination">
+            <button type="button" class="page-nav-btn" id="galPrevBtn">← ANT</button>
+            <span id="galPageInfo">PÁG 1 / 3</span>
+            <button type="button" class="page-nav-btn" id="galNextBtn">SIG →</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Columna derecha con rejilla de miniaturas cuadradas -->
+    <section class="gallery-grid-frame" aria-label="Rejilla de obras">
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+  </main>
+
+  <script src="js/artworks.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/galerie.js"></script>
+</body>
+</html>

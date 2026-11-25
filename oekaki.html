@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIENZO KAWAII | Demian Tenorio (@dmxn_08)</title>
+  <meta name="description" content="Lienzo de dibujo interactivo estilo Drawbox pastel en el portafolio de Demian Tenorio Rico (@dmxn_08).">
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/subpage.css">
+</head>
+<body class="subpage">
+  <div id="loading" aria-live="polite">
+    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFE07A" stroke="#3B234A" stroke-width="3.5" stroke-linejoin="round"/>
+    </svg>
+    <div class="loading-card">preparando pinceles pastel...</div>
+  </div>
+
+  <a class="back-pill" href="home.html">← INICIO</a>
+
+  <nav class="subpage-nav-strip" aria-label="Accesos rápidos">
+    <a class="candy-btn" href="home.html">Inicio</a>
+    <a class="candy-btn lavender" href="galerie.html">Galería (71)</a>
+    <a class="candy-btn mint" href="profil.html">Perfil</a>
+    <a class="candy-btn butter" href="comisiones.html">Comisiones</a>
+  </nav>
+
+  <main class="lace-frame subpage-shell">
+    <div class="subpage-inner">
+      <h1 class="subpage-title">✎ LIENZO KAWAII ✦</h1>
+
+      <section class="oekaki-board" aria-label="Mesa de dibujo interactiva">
+        <div class="canvas-stage">
+          <canvas id="oekakiCanvas" width="520" height="420" aria-label="Lienzo para dibujar"></canvas>
+        </div>
+
+        <aside class="oekaki-tools" aria-label="Herramientas de dibujo">
+          <div class="tool-btn-row">
+            <button type="button" class="candy-btn lavender" id="undoBtn">↶ Deshacer</button>
+            <button type="button" class="candy-btn butter" id="clearBtn">✕ Limpiar</button>
+          </div>
+
+          <button type="button" class="candy-btn" id="eraserBtn">Borrador</button>
+
+          <div class="brush-range-wrap">
+            <label for="brushSize">Grosor del pincel: <strong id="brushSizeVal">5px</strong></label>
+            <input type="range" id="brushSize" min="1" max="28" value="5">
+          </div>
+
+          <div>
+            <div style="font-family:var(--font-pixel); font-size:0.68rem; margin-bottom:6px;">PALETA PASTEL &amp; TINTA</div>
+            <div class="swatch-grid" id="swatchGrid"></div>
+          </div>
+
+          <label class="custom-color-row">
+            <span>Color libre:</span>
+            <input type="color" id="customColor" value="#3B234A">
+          </label>
+
+          <button type="button" class="candy-btn mint" id="downloadBtn">⬇ Descargar PNG</button>
+          <button type="button" class="candy-btn plum" id="saveLocalBtn">♡ Guardar aquí</button>
+        </aside>
+      </section>
+
+      <details class="saved-doodles-drawer" open>
+        <summary>Ver bocetos guardados localmente (<span id="doodleCount">0</span>)</summary>
+        <div class="doodle-gallery" id="doodleGallery"></div>
+      </details>
+    </div>
+  </main>
+
+  <script src="js/effects.js"></script>
+  <script src="js/oekaki.js"></script>
+</body>
+</html>

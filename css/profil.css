@@ -1,0 +1,477 @@
+/* ==========================================================================
+   PERFIL DE ARTISTA (profil.html) — Inspirada en reigen.moe/profil
+   ========================================================================== */
+
+body.profile-page {
+  padding: 28px 16px 76px;
+  background-color: #FFDFF0;
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.72) 0 12px, transparent 13px),
+    radial-gradient(circle at 75% 75%, rgba(232, 220, 255, 0.75) 0 16px, transparent 17px);
+  background-size: 64px 64px;
+}
+
+.profile-wrap {
+  position: relative;
+  z-index: var(--z-content);
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.profile-wrap > *,
+.profile-primary-card,
+.profile-lower-card,
+.profile-grid-top > *,
+.profile-lower-grid > *,
+.bio-split > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Encabezado superior con retratos flanqueantes y banda ajedrezada */
+.profile-banner-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-top-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 12px;
+}
+
+.head-portrait {
+  width: 118px;
+  height: 118px;
+  padding: 5px;
+  background: var(--bg-card);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: var(--shadow-candy);
+  flex-shrink: 0;
+}
+
+.head-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.profile-arched-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--lavender-deep);
+  transform: rotate(-4deg);
+  text-shadow:
+    3px 3px 0 #FFFFFF,
+    6px 6px 0 var(--pink-mid);
+  text-align: center;
+}
+
+.checkered-ribbon {
+  width: 100%;
+  height: 16px;
+  margin-top: 10px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  background-image:
+    linear-gradient(45deg, var(--pink-mid) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--pink-mid) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--lavender-mid) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--lavender-mid) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-color: var(--bg-cream);
+}
+
+/* Marco principal con encaje y moño decorativo */
+.profile-primary-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 240, 246, 0.96));
+  box-shadow: var(--shadow-soft);
+}
+
+.satin-bow {
+  position: absolute;
+  top: -26px;
+  left: -22px;
+  width: 78px;
+  height: 58px;
+  z-index: 6;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(59, 35, 74, 0.25));
+}
+
+.profile-grid-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.85fr);
+  gap: 20px;
+  padding: 18px;
+}
+
+.profile-bio-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bio-split {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.cert-card {
+  background: var(--bg-card);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.78rem;
+  box-shadow: 3px 3px 0 var(--pink-mid);
+}
+
+.cert-card img {
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  margin: 0 auto 8px;
+  border-radius: 8px;
+  border: 1.5px solid var(--ink);
+}
+
+.bio-copy {
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px dashed var(--lavender-mid);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.94rem;
+  display: grid;
+  gap: 10px;
+}
+
+.bio-highlight {
+  background: var(--mint-soft);
+  color: var(--ink);
+  padding: 1px 6px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+/* Widget interactivo "Dato curioso" */
+.funfact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 2px solid var(--pink-deep);
+  outline: 4px double var(--sky-mid);
+  border-radius: 12px;
+}
+
+.funfact-btn {
+  flex-shrink: 0;
+  width: 78px;
+  height: 78px;
+  padding: 4px;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: var(--butter-soft);
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.18s var(--ease-bouncy);
+}
+
+.funfact-btn:hover {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.funfact-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.funfact-text strong {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  color: var(--pink-deep);
+  margin-bottom: 4px;
+}
+
+.funfact-text p {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Rejilla de 10 obras favoritas (2 x 5) */
+.favorites-title {
+  font-family: var(--font-pixel);
+  font-size: 0.76rem;
+  color: var(--ink);
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.fav-square {
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  padding: 0;
+  background: var(--bg-card);
+  box-shadow: 3px 3px 0 var(--ink);
+  overflow: hidden;
+  transition: transform 0.18s var(--ease-bouncy);
+}
+
+.fav-square:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.fav-square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Columna derecha FICHA DE ARTISTA */
+.profile-spec-col {
+  background: var(--bg-card);
+  border: 2.5px dashed var(--pink-deep);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spec-title {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--lavender-deep);
+  letter-spacing: 0.06em;
+}
+
+.spec-portrait {
+  border: 2.5px solid var(--ink);
+  border-radius: 12px;
+  padding: 5px;
+  background: var(--pink-soft);
+}
+
+.spec-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.spec-table tr:nth-child(odd) {
+  background: var(--bg-blush);
+}
+
+.spec-table tr:nth-child(even) {
+  background: #F7F2FF;
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--pink-soft);
+  text-align: left;
+  vertical-align: top;
+}
+
+.spec-table th {
+  font-family: var(--font-pixel);
+  font-size: 0.66rem;
+  color: var(--pink-deep);
+  width: 36%;
+}
+
+/* Carrusel infinito de estampillas */
+.stamp-marquee {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 10px 0;
+  background: rgba(255, 255, 255, 0.72);
+  border-top: 2px dashed var(--pink-mid);
+  border-bottom: 2px dashed var(--lavender-mid);
+}
+
+.stamp-track {
+  display: inline-flex;
+  gap: 12px;
+  width: max-content;
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.stamp-marquee:hover .stamp-track {
+  animation-play-state: paused;
+}
+
+.stamp-item {
+  width: 104px;
+  height: 62px;
+  padding: 4px;
+  background: #FFFFFF;
+  border: 2px dotted var(--ink);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(196, 59, 123, 0.2);
+  flex-shrink: 0;
+}
+
+.stamp-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* Segunda caja con encaje: Disciplinas + Cuestionario Q&A */
+.profile-lower-card {
+  background: rgba(255, 249, 251, 0.96);
+  box-shadow: var(--shadow-soft);
+}
+
+.profile-lower-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.disciplines-stack {
+  display: grid;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 3px double var(--pink-deep);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.disciplines-stack h2,
+.qa-box h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--lavender-deep);
+  margin-bottom: 4px;
+}
+
+.disc-pill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 9px;
+  border: 1.5px solid var(--ink);
+  background: var(--bg-blush);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.disc-pill-row:hover {
+  background: var(--mint-soft);
+  color: var(--ink);
+  transform: translateX(3px);
+}
+
+.qa-box {
+  background: #FFFFFF;
+  border: 3px double var(--lavender-deep);
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.qa-item h3 {
+  font-size: 0.96rem;
+  color: var(--pink-deep);
+  margin-bottom: 4px;
+}
+
+.qa-item p {
+  padding-left: 12px;
+  margin-left: 6px;
+  border-left: 2px dotted var(--lavender-mid);
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .profile-grid-top,
+  .profile-lower-grid,
+  .bio-split {
+    grid-template-columns: 1fr;
+  }
+
+  .head-portrait {
+    width: 74px;
+    height: 74px;
+  }
+}
+
+@media (max-width: 560px) {
+  body.profile-page {
+    padding: 18px 8px 72px;
+  }
+
+  .profile-primary-card,
+  .profile-lower-card {
+    border-width: 12px;
+  }
+
+  .satin-bow {
+    left: -6px;
+    top: -20px;
+    width: 60px;
+    height: 46px;
+  }
+
+  .profile-grid-top,
+  .profile-lower-grid {
+    padding: 12px;
+  }
+
+  .favorites-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .funfact-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}

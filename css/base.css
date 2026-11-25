@@ -1,0 +1,649 @@
+/* ==========================================================================
+   BASE COMPARTIDA — Cursores pastel, Preloader, Transición, Partículas,
+   Tooltips, Marcos de encaje, Marcos arcoíris y Lightbox universal.
+   ========================================================================== */
+
+@import url('./tokens.css');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpath d='M3 2L11 22L14 14L22 11L3 2Z' fill='%23FFD6E8' stroke='%233B234A' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M19 3L20 6L23 7L20 8L19 11L18 8L15 7L18 6Z' fill='%23FFE07A' stroke='%233B234A' stroke-width='1'/%3E%3C/svg%3E") 3 2, auto;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--bg-cream);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cursores interactivos con corazón pastel */
+a,
+button,
+summary,
+select,
+[role="button"],
+.art-tile,
+.clickable {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M14 23C14 23 4 16.5 4 9.5C4 6 6.8 3.5 10 3.5C12 3.5 13.4 4.6 14 6C14.6 4.6 16 3.5 18 3.5C21.2 3.5 24 6 24 9.5C24 16.5 14 23 14 23Z' fill='%23FF9EC7' stroke='%233B234A' stroke-width='2'/%3E%3Ccircle cx='10' cy='9' r='1.6' fill='%23FFF9FB'/%3E%3C/svg%3E") 14 10, pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  -webkit-user-drag: none;
+}
+
+a {
+  color: var(--pink-deep);
+  text-decoration: none;
+  transition: color 0.18s ease, transform 0.18s var(--ease-bouncy);
+}
+
+a:hover {
+  color: var(--lavender-deep);
+}
+
+:focus-visible {
+  outline: 3px solid var(--lavender-deep);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--lavender-mid);
+  color: var(--bg-plum-deep);
+}
+
+/* Scrollbar pastel estilo kawaii */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-blush);
+  border-left: 1px solid var(--pink-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--pink-mid), var(--lavender-mid));
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--bg-blush);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--pink-deep), var(--lavender-deep));
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--pink-mid) var(--bg-blush);
+}
+
+/* ==========================================================================
+   PRELOADER (#loading) & CORTINA DE TRANSICIÓN ENTRE PÁGINAS (.page-veil)
+   ========================================================================== */
+
+#loading {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-preloader);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: var(--bg-blush);
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(232, 220, 255, 0.75) 0 18%, transparent 19%),
+    radial-gradient(circle at 80% 75%, rgba(205, 247, 231, 0.75) 0 18%, transparent 19%);
+  background-size: 64px 64px;
+  opacity: 1;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+#loading.is-loaded {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loading-card {
+  background: var(--bg-card);
+  color: var(--ink);
+  border: 4px double var(--pink-deep);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-candy);
+  padding: 16px 24px;
+  max-width: 280px;
+  text-align: center;
+  font-family: var(--font-pixel);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.loading-star {
+  width: 52px;
+  height: 52px;
+  animation: pastel-spin 1.8s linear infinite;
+  filter: drop-shadow(0 4px 10px rgba(196, 59, 123, 0.25));
+}
+
+.page-veil {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-veil);
+  background: radial-gradient(circle at center, rgba(255, 240, 246, 0.94), rgba(232, 220, 255, 0.96));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease-smooth);
+}
+
+.page-veil.is-entering {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ==========================================================================
+   PARTÍCULAS CAYENDO, DESTELLOS DEL CURSOR Y TOOLTIP FLOTANTE
+   ========================================================================== */
+
+.sparkle-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: var(--z-particles);
+}
+
+.falling-charm {
+  position: fixed;
+  top: -56px;
+  pointer-events: none;
+  z-index: var(--z-particles);
+  animation: charm-fall linear forwards;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 3px 6px rgba(110, 70, 184, 0.16));
+}
+
+.cursor-sparkle {
+  position: fixed;
+  pointer-events: none;
+  z-index: var(--z-tooltip);
+  font-size: 14px;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  animation: cursor-pop 0.68s ease-out forwards;
+  user-select: none;
+}
+
+#pastel-tooltip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-tooltip);
+  max-width: 230px;
+  padding: 6px 11px;
+  background: var(--bg-plum);
+  color: var(--bg-cream);
+  border: 2px solid var(--pink-mid);
+  border-radius: var(--radius-sm);
+  box-shadow: 3px 3px 0 var(--pink-soft);
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-999px, -999px, 0);
+  transition: opacity 0.14s ease;
+}
+
+#pastel-tooltip.is-visible {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   ANIMACIONES TIPO REIGEN.MOE (WOBBLE, ARCOÍRIS PASTEL, SCANLINES, REVEAL)
+   ========================================================================== */
+
+.wobble-char {
+  display: inline-block;
+  position: relative;
+  animation: text-wobble 1.5s ease-in-out infinite;
+  animation-delay: calc(var(--char-i, 0) * -0.11s);
+}
+
+.rainbow-char {
+  display: inline-block;
+  animation: pastel-rainbow-cycle 3.4s linear infinite;
+  animation-delay: calc(var(--char-i, 0) * -0.18s);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s var(--ease-smooth), transform 0.45s var(--ease-smooth);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   COMPONENTES REUTILIZABLES (ENCAJE, ARCOÍRIS, BOTÓN CANDY, BACK, BADGES)
+   ========================================================================== */
+
+/* Marco con encaje pastel SVG original */
+.lace-frame {
+  border: 18px solid transparent;
+  border-image-source: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='54' height='54' viewBox='0 0 54 54'%3E%3Crect width='54' height='54' fill='none'/%3E%3Ccircle cx='9' cy='9' r='8' fill='%23FFD6E8' stroke='%23E68CB7' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='9' r='8' fill='%23E8DCFF' stroke='%23B492F5' stroke-width='1.5'/%3E%3Ccircle cx='45' cy='9' r='8' fill='%23FFD6E8' stroke='%23E68CB7' stroke-width='1.5'/%3E%3Ccircle cx='9' cy='27' r='8' fill='%23E8DCFF' stroke='%23B492F5' stroke-width='1.5'/%3E%3Ccircle cx='45' cy='27' r='8' fill='%23E8DCFF' stroke='%23B492F5' stroke-width='1.5'/%3E%3Ccircle cx='9' cy='45' r='8' fill='%23FFD6E8' stroke='%23E68CB7' stroke-width='1.5'/%3E%3Ccircle cx='27' cy='45' r='8' fill='%23E8DCFF' stroke='%23B492F5' stroke-width='1.5'/%3E%3Ccircle cx='45' cy='45' r='8' fill='%23FFD6E8' stroke='%23E68CB7' stroke-width='1.5'/%3E%3Ccircle cx='9' cy='9' r='2.3' fill='%23FFF9FB'/%3E%3Ccircle cx='27' cy='9' r='2.3' fill='%23FFF9FB'/%3E%3Ccircle cx='45' cy='9' r='2.3' fill='%23FFF9FB'/%3E%3Ccircle cx='9' cy='27' r='2.3' fill='%23FFF9FB'/%3E%3Ccircle cx='45' cy='27' r='2.3' fill='%23FFF9FB'/%3E%3Ccircle cx='9' cy='45' r='2.3' fill='%23FFF9FB'/%3E%3Ccircle cx='27' cy='45' r='2.3' fill='%23FFF9FB'/%3E%3Ccircle cx='45' cy='45' r='2.3' fill='%23FFF9FB'/%3E%3C/svg%3E");
+  border-image-slice: 18;
+  border-image-repeat: round;
+}
+
+/* Marco con borde degradado pastel animado */
+.rainbow-frame {
+  position: relative;
+  padding: 5px;
+  border-radius: var(--radius-lg);
+  background: var(--grad-pastel-rainbow);
+  background-size: 220% 220%;
+  animation: gradient-shift 6s linear infinite;
+  box-shadow: var(--shadow-soft), 0 0 0 2px var(--ink);
+}
+
+.rainbow-frame > .rainbow-inner {
+  background: var(--bg-cream);
+  border-radius: calc(var(--radius-lg) - 4px);
+  border: 2px solid var(--ink);
+}
+
+/* Botón kawaii táctil */
+.candy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  background: var(--grad-btn-pink);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+  box-shadow: 0 3px 0 var(--ink), inset 0 2px 0 rgba(255, 255, 255, 0.85);
+  transition: transform 0.16s var(--ease-bouncy), box-shadow 0.16s ease, filter 0.16s ease;
+  text-decoration: none;
+}
+
+.candy-btn:hover {
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 var(--ink), var(--shadow-glow), inset 0 2px 0 rgba(255, 255, 255, 0.9);
+}
+
+.candy-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.candy-btn.mint {
+  background: var(--grad-btn-mint);
+}
+
+.candy-btn.lavender {
+  background: var(--grad-btn-lavender);
+}
+
+.candy-btn.butter {
+  background: var(--grad-btn-butter);
+}
+
+.candy-btn.plum {
+  background: linear-gradient(180deg, var(--bg-plum-mid), var(--bg-plum-deep));
+  color: var(--bg-cream);
+  border-color: var(--pink-mid);
+  box-shadow: 0 3px 0 var(--bg-plum-deep), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.candy-btn.plum:hover {
+  color: var(--butter-soft);
+}
+
+/* Botón flotante Volver al Hub */
+.back-pill {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: var(--z-floating);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-plum);
+  color: var(--bg-cream);
+  border: 2px solid var(--pink-mid);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  box-shadow: 3px 3px 0 var(--pink-soft);
+  transition: transform 0.18s var(--ease-bouncy), background 0.18s ease;
+}
+
+.back-pill:hover {
+  color: var(--butter-soft);
+  background: var(--pink-deep);
+  transform: translate(-1px, -2px);
+}
+
+.back-pill.bottom-left {
+  top: auto;
+  bottom: 16px;
+}
+
+/* Micro-badges estilo gyaru / web retro 88x31 */
+.pastel-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  font-family: var(--font-pixel);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--pink-soft);
+  box-shadow: 2px 2px 0 var(--ink);
+  user-select: none;
+}
+
+.pastel-badge.mint { background: var(--mint-soft); }
+.pastel-badge.lavender { background: var(--lavender-soft); }
+.pastel-badge.peach { background: var(--peach-soft); }
+.pastel-badge.sky { background: var(--sky-soft); }
+.pastel-badge.butter { background: var(--butter-soft); }
+.pastel-badge.plum {
+  background: var(--bg-plum);
+  color: var(--pink-soft);
+  border-color: var(--pink-mid);
+}
+
+/* ==========================================================================
+   VISOR MODAL / LIGHTBOX COMPARTIDO (.lightbox)
+   ========================================================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-lightbox);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(50, 24, 66, 0.84);
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.lightbox-dialog {
+  width: min(940px, 100%);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-cream);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(24, 10, 34, 0.55), 0 0 0 4px var(--pink-soft);
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: transform 0.24s var(--ease-bouncy);
+}
+
+.lightbox.is-open .lightbox-dialog {
+  transform: scale(1);
+}
+
+.lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--grad-header-glow);
+  border-bottom: 2px solid var(--ink);
+}
+
+.lightbox-counter {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  color: var(--ink);
+  background: var(--lavender-soft);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--ink);
+}
+
+.lightbox-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  background: var(--pink-soft);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  transition: transform 0.16s var(--ease-bouncy), background 0.16s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--pink-mid);
+  transform: rotate(90deg) scale(1.06);
+}
+
+.lightbox-stage {
+  position: relative;
+  flex: 1;
+  min-height: 260px;
+  max-height: calc(92vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: auto;
+  background-color: #241331;
+  background-image:
+    radial-gradient(circle, rgba(255, 214, 232, 0.12) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: calc(92vh - 216px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(255, 214, 232, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s ease;
+}
+
+.lightbox-img.is-zoomed {
+  max-width: none;
+  max-height: none;
+  transform: scale(1.38);
+  transform-origin: center center;
+}
+
+.lightbox-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-blush);
+  border-top: 2px solid var(--ink);
+}
+
+.lightbox-meta-wrap h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  color: var(--ink);
+}
+
+.lightbox-meta-wrap p {
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+}
+
+.lightbox-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.lightbox-actions .candy-btn {
+  padding: 7px 13px;
+  font-size: 0.82rem;
+}
+
+/* ==========================================================================
+   KEYFRAMES COMPARTIDOS
+   ========================================================================== */
+
+@keyframes charm-fall {
+  0% {
+    transform: translate3d(0, -40px, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.92;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(24px, calc(100vh + 80px), 0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cursor-pop {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.85) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -92%) scale(1.35) rotate(28deg);
+  }
+}
+
+@keyframes text-wobble {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes pastel-rainbow-cycle {
+  0%, 100% { color: #C43B7B; }
+  20% { color: #B54D26; }
+  40% { color: #8A6200; }
+  60% { color: #1A7A5E; }
+  80% { color: #246DA8; }
+  90% { color: #6E46B8; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pastel-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulse-arrow {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+@keyframes pulse-arrow-rev {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-4px); }
+}
+
+/* Accesibilidad: movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .falling-charm,
+  .cursor-sparkle {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .back-pill {
+    top: 10px;
+    left: 10px;
+    padding: 6px 11px;
+    font-size: 0.68rem;
+  }
+
+  .lightbox-dialog {
+    border-radius: var(--radius-md);
+  }
+
+  .lightbox-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

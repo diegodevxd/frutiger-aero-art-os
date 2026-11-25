@@ -1,0 +1,271 @@
+/* ==========================================================================
+   GALERÍA DE ARTE (galerie.html) — Inspirada en reigen.moe/galerie
+   ========================================================================== */
+
+body.gallery-page {
+  min-height: 100vh;
+  padding: 58px 18px 42px;
+  background-color: #F4EEFF;
+  background-image:
+    radial-gradient(circle at 24px 24px, rgba(255, 158, 199, 0.35) 3px, transparent 3px),
+    radial-gradient(circle at 6px 6px, rgba(196, 170, 255, 0.38) 2px, transparent 2px);
+  background-size: 36px 36px;
+}
+
+.gallery-layout {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 410px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Panel izquierdo sticky */
+.gallery-info-panel {
+  position: sticky;
+  top: 56px;
+}
+
+.gallery-wordart {
+  position: relative;
+  z-index: 2;
+  width: fit-content;
+  margin: 0 auto -18px;
+  padding: 8px 22px;
+  background: linear-gradient(135deg, #FF9EC7, #C4AAFF, #85E3C3);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--bg-cream);
+  text-shadow:
+    -2px -2px 0 var(--ink),
+    2px -2px 0 var(--ink),
+    -2px 2px 0 var(--ink),
+    2px 2px 0 var(--ink);
+  box-shadow: 0 4px 0 var(--ink);
+}
+
+.gallery-info-inner {
+  padding: 28px 20px 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.gallery-stats {
+  border: 2px dashed var(--pink-deep);
+  border-radius: var(--radius-sm);
+  background: var(--bg-blush);
+  padding: 10px 12px;
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.gallery-intro {
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.cat-pill {
+  padding: 6px 10px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  background: var(--bg-card);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: transform 0.14s var(--ease-bouncy), background 0.14s ease;
+}
+
+.cat-pill:hover {
+  background: var(--pink-soft);
+  transform: translateY(-2px);
+}
+
+.cat-pill.is-active {
+  background: var(--bg-plum);
+  color: var(--butter-soft);
+  box-shadow: 2px 2px 0 var(--pink-mid);
+}
+
+.gallery-search-row {
+  display: flex;
+  gap: 8px;
+}
+
+.gallery-search {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.gallery-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 2px dotted var(--lavender-deep);
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+}
+
+.page-nav-btn {
+  padding: 7px 12px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  background: var(--sky-soft);
+  color: var(--ink);
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+}
+
+.page-nav-btn:hover:not(:disabled) {
+  background: var(--mint-soft);
+  transform: translateY(-2px);
+}
+
+.page-nav-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Marco derecho con rejilla de 5 columnas */
+.gallery-grid-frame {
+  padding: 16px;
+  background-color: var(--lavender-soft);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.7) 2px, transparent 2px);
+  background-size: 18px 18px;
+  border: 4px ridge var(--pink-mid);
+  outline: 4px double var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-candy);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-grid.is-large {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.art-tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  padding: 0;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--bg-card);
+  overflow: hidden;
+  transition: transform 0.2s var(--ease-bouncy), box-shadow 0.2s ease, outline 0.15s ease;
+}
+
+.art-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.art-tile-badge {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  max-width: calc(100% - 8px);
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: rgba(50, 24, 66, 0.84);
+  color: var(--bg-cream);
+  font-family: var(--font-pixel);
+  font-size: 0.58rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.art-tile:hover {
+  transform: rotate(4.5deg) scale(1.06);
+  outline: 4px dashed #FFFFFF;
+  box-shadow: 0 0 0 2px var(--pink-deep), var(--shadow-glow);
+  z-index: 4;
+}
+
+.art-tile:hover .art-tile-badge {
+  opacity: 1;
+}
+
+/* Celda decorativa vacía para cerrar cuadrícula estilo reigen.moe */
+.art-placeholder {
+  aspect-ratio: 1 / 1;
+  border: 2px solid rgba(59, 35, 74, 0.35);
+  border-radius: 8px;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 214, 232, 0.55) 0 6px,
+    rgba(255, 249, 251, 0.72) 6px 12px
+  );
+  display: grid;
+  place-items: center;
+  color: rgba(110, 70, 184, 0.45);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.gallery-empty {
+  grid-column: 1 / -1;
+  padding: 36px 20px;
+  text-align: center;
+  background: var(--bg-cream);
+  border: 2px dashed var(--pink-deep);
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 1020px) {
+  .gallery-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-info-panel {
+    position: static;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  body.gallery-page {
+    padding: 56px 10px 28px;
+  }
+
+  .gallery-grid,
+  .gallery-grid.is-large {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+}

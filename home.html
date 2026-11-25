@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INICIO | Demian Tenorio (@dmxn_08)</title>
+  <meta name="description" content="Hub principal del portafolio visual de Demian Tenorio Rico (@dmxn_08).">
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="home-page">
+  <div id="loading" aria-live="polite">
+    <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFD6E8" stroke="#3B234A" stroke-width="3.5" stroke-linejoin="round"/>
+      <circle cx="32" cy="31" r="5" fill="#85E3C3" stroke="#3B234A" stroke-width="2.5"/>
+    </svg>
+    <div class="loading-card">cargando estudio @dmxn_08...</div>
+  </div>
+
+  <!-- Botón flotante TOGGLE FILTER -->
+  <button type="button" class="filter-toggle-btn" id="filterToggleBtn" data-tip="Alterna entre 5 filtros pastel (guardado automático)">
+    FILTRO ✦
+    <span id="filterLabel">Pastel Kawaii</span>
+  </button>
+
+  <div class="crt-scanlines" id="crtScanlines" aria-hidden="true"></div>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="home-filter-stage" id="homeFilterStage">
+    <!-- Barra superior móvil -->
+    <header class="mobile-topbar">
+      <button type="button" class="candy-btn butter" id="mobileMenuBtn" aria-expanded="false" aria-controls="homeSidebar">☰ MENÚ</button>
+      <span class="mobile-brand">@dmxn_08 ★</span>
+    </header>
+
+    <div class="hub-shell">
+      <!-- BARRA LATERAL IZQUIERDA FIJA -->
+      <aside class="sidebar" id="homeSidebar" aria-label="Navegación principal">
+        <!-- Mini widget interactivo tipo Paint que refresca la obra aleatoria -->
+        <div class="mini-paint-widget">
+          <div class="mini-paint-bar">
+            <span>✿ vista previa</span>
+            <span>clic = azar</span>
+          </div>
+          <button type="button" class="mini-paint-btn" id="miniPaintBtn" data-tip="Haz clic para cambiar la obra aleatoria del centro">
+            <img id="miniPaintImg" src="image/thumbs/tyarot.jpg" alt="Vista previa aleatoria de Demian">
+          </button>
+          <div class="mini-paint-palette" aria-hidden="true">
+            <i style="background:#FF9EC7"></i>
+            <i style="background:#FFE07A"></i>
+            <i style="background:#85E3C3"></i>
+            <i style="background:#8ED4FF"></i>
+            <i style="background:#C4AAFF"></i>
+          </div>
+        </div>
+
+        <div class="nav-wobble-title" data-wobble>NAVEGACIÓN</div>
+
+        <div class="nav-section-label">EN EL SITIO</div>
+        <nav class="nav-box" aria-label="Secciones del sitio">
+          <div class="nav-box-inner">
+            <a class="nav-item-link" href="galerie.html">GALERÍA (71)</a>
+            <a class="nav-item-link" href="profil.html">PERFIL</a>
+            <a class="nav-item-link" href="comisiones.html">COMISIONES</a>
+            <a class="nav-item-link" href="oekaki.html">LIENZO</a>
+            <a class="nav-item-link" href="#contacto" data-open-tab="contacto" id="sidebarContactLink">CONTACTO</a>
+          </div>
+        </nav>
+
+        <div class="nav-section-label">REDES SOCIALES</div>
+        <div class="nav-box">
+          <div class="nav-box-inner">
+            <a class="nav-item-link" href="https://instagram.com/demi.demiau" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+            <a class="nav-item-link" href="https://x.com/Chicharron_08" target="_blank" rel="noopener noreferrer">TWITTER / X</a>
+            <a class="nav-item-link" href="https://tiktok.com/@dmxn_08" target="_blank" rel="noopener noreferrer">TIKTOK</a>
+            <a class="nav-item-link" href="comisiones.html">TARIFAS MXN</a>
+          </div>
+        </div>
+
+        <p class="sidebar-note">
+          Demian Tenorio Rico<br>
+          Lic. Artes Visuales • UG
+        </p>
+
+        <div class="sidebar-badges" aria-label="Etiquetas del estudio">
+          <span class="pastel-badge">@dmxn_08</span>
+          <span class="pastel-badge mint">71 OBRAS</span>
+          <span class="pastel-badge lavender">UG ARTES</span>
+          <span class="pastel-badge butter">TAROT</span>
+        </div>
+
+        <a class="sidebar-back-link" href="index.html">← volver a portada</a>
+      </aside>
+
+      <!-- ÁREA PRINCIPAL -->
+      <main class="hub-main">
+        <div class="hub-frame">
+          <!-- Hero banner compuesto exclusivamente con obras de Demian -->
+          <section class="hub-hero-banner" aria-label="Presentación del artista">
+            <div class="hub-hero-copy">
+              <span class="hub-hero-kicker">Universidad de Guanajuato • Lic. Artes Visuales</span>
+              <h1>Demian Tenorio Rico (@dmxn_08)</h1>
+              <p>Ilustración semirrealista, tarot ilustrado, escultura en cerámica y arte objeto entre lo cómico y lo irreal.</p>
+            </div>
+            <div class="hub-hero-collage">
+              <a class="hero-art-card" href="galerie.html?cat=tarot" data-tip="Ver Tarot (22 obras)">
+                <img src="image/thumbs/tyarot.jpg" alt="Tarot I de Demian Tenorio">
+              </a>
+              <a class="hero-art-card" href="galerie.html?cat=dibujo-digital" data-tip="Ver Dibujo Digital (15 obras)">
+                <img src="image/thumbs/digital1.jpg" alt="Dibujo Digital I de Demian Tenorio">
+              </a>
+              <a class="hero-art-card" href="galerie.html?cat=esculturas" data-tip="Ver Esculturas (7 obras)">
+                <img src="image/thumbs/escultura1.jpg" alt="Escultura I de Demian Tenorio">
+              </a>
+            </div>
+          </section>
+
+          <!-- Cinta Marquee -->
+          <div class="hub-ticker" aria-hidden="true">
+            <div class="hub-ticker-track">
+              <span>★ DEMIAN TENORIO RICO ★ @DMXN_08 ★ TAROT • ILUSTRACIÓN • ESCULTURA • BISUTERÍA • COLLAGE • EMOTES ★</span>
+              <span>★ DEMIAN TENORIO RICO ★ @DMXN_08 ★ TAROT • ILUSTRACIÓN • ESCULTURA • BISUTERÍA • COLLAGE • EMOTES ★</span>
+            </div>
+          </div>
+
+          <div class="hub-grid">
+            <!-- COLUMNA CENTRAL -->
+            <div class="hub-center-col">
+              <!-- Showcase de Obra Aleatoria -->
+              <section class="random-showcase" aria-label="Showcase aleatorio">
+                <div class="showcase-top">
+                  <svg class="spin-charm" viewBox="0 0 36 36" aria-hidden="true">
+                    <circle cx="18" cy="18" r="16" fill="#FFD6E8" stroke="#3B234A" stroke-width="2"/>
+                    <path d="M18 5l3 8 8.5.7-6.5 5.4 2 8.2-7-4.5-7 4.5 2-8.2-6.5-5.4L15 13z" fill="#FFE07A" stroke="#3B234A" stroke-width="1.8"/>
+                  </svg>
+                  <h2 class="showcase-title" data-rainbow>DEMIAN TENORIO ★ @DMXN_08</h2>
+                  <button type="button" class="candy-btn butter" id="shuffleArtBtn">Obra al azar ✦</button>
+                </div>
+
+                <div class="showcase-stage">
+                  <button type="button" class="showcase-img-btn" id="showcaseOpenBtn" data-tip="Clic para abrir en el visor a resolución completa">
+                    <img id="randomArtImg" src="image/tyarot.jpg" alt="Tarot I — Arte Digital • 2024">
+                  </button>
+                  <div class="showcase-caption">
+                    <div>
+                      <strong id="randomArtTitle">Tarot I</strong><br>
+                      <span id="randomArtMeta">Tarot • Arte Digital • 2024</span>
+                    </div>
+                    <a class="candy-btn lavender" href="galerie.html">Ver las 71 obras →</a>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Sub-banner -->
+              <div class="study-banner">
+                <strong>ESTUDIO VISUAL @DMXN_08</strong>
+                <span>TAROT ★ ILUSTRACIÓN ★ ESCULTURA ★ BISUTERÍA</span>
+              </div>
+
+              <!-- Barra de pestañas -->
+              <div class="hub-tabs" id="hubTabs" role="tablist" aria-label="Secciones del estudio">
+                <button type="button" class="hub-tab-btn is-active" role="tab" aria-selected="true" data-tab="welcome">BIENVENIDX</button>
+                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="musica">MÚSICA</button>
+                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="comisiones">COMISIONES</button>
+                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="contacto">CONTACTO</button>
+              </div>
+
+              <!-- TAB 1: BIENVENIDX -->
+              <section class="hub-panel is-active" id="panel-welcome" role="tabpanel">
+                <h2 class="panel-heading">Artist Statement ♡</h2>
+                <div class="statement-box">
+                  <p>Mi trabajo artístico busca ser un espacio lúdico y vibrante, donde el color es protagonista y se convierte en un vehículo para motivar, liberar emociones y, en ocasiones, provocar una risa inesperada.</p>
+                  <p>Exploro lo cómico y lo absurdo como herramientas de desahogo y juego, generando un contraste constante entre lo real y lo irreal. Ese choque me permite cuestionar lo cotidiano y abrir la puerta a mundos semireales que se sienten familiares y extraños al mismo tiempo.</p>
+                  <p>Visualmente, mi estilo se nutre del arte semirrealista y de la riqueza creativa de los fandoms en internet, donde lo espontáneo y lo exagerado conviven con lo íntimo y lo auténtico. Mis piezas son un reflejo de esa energía digital: coloridas, irónicas y, sobre todo, vivas.</p>
+                  <p>En esencia, busco que mi arte sea un recordatorio de que lo absurdo también puede ser bello, y que en la mezcla entre lo serio y lo lúdico encontramos nuevas formas de sentir y expresarnos.</p>
+                </div>
+
+                <h2 class="panel-heading">Obras Seleccionadas</h2>
+                <div class="selected-grid">
+                  <button type="button" class="selected-card" data-featured-idx="0">
+                    <img src="image/thumbs/tyarot.jpg" alt="Tarot I">
+                    <strong>Tarot I</strong>
+                    <span>Arte Digital</span>
+                  </button>
+                  <button type="button" class="selected-card" data-featured-idx="1">
+                    <img src="image/thumbs/escultura1.jpg" alt="Escultura I">
+                    <strong>Escultura I</strong>
+                    <span>Arcilla</span>
+                  </button>
+                  <button type="button" class="selected-card" data-featured-idx="2">
+                    <img src="image/thumbs/digital1.jpg" alt="Dibujo Digital I">
+                    <strong>Dibujo Digital I</strong>
+                    <span>Ilustración</span>
+                  </button>
+                  <button type="button" class="selected-card" data-featured-idx="3">
+                    <img src="image/thumbs/biseturia1.jpg" alt="Bisutería I">
+                    <strong>Bisutería I</strong>
+                    <span>Arte Objeto</span>
+                  </button>
+                </div>
+
+                <h2 class="panel-heading">Disciplinas &amp; Archivo</h2>
+                <div class="disciplines-grid">
+                  <a class="discipline-card" href="galerie.html?cat=tarot">
+                    <strong>Tarot &amp; Simbolismo Digital</strong>
+                    <span>22 cartas ilustradas • Cultura pop y arcanos →</span>
+                  </a>
+                  <a class="discipline-card" href="galerie.html?cat=dibujo-digital">
+                    <strong>Ilustración Digital &amp; Tradicional</strong>
+                    <span>25 piezas • Color, lápiz y técnica mixta →</span>
+                  </a>
+                  <a class="discipline-card" href="galerie.html?cat=esculturas">
+                    <strong>Escultura en Arcilla &amp; Cerámica</strong>
+                    <span>7 piezas tridimensionales →</span>
+                  </a>
+                  <a class="discipline-card" href="galerie.html?cat=bisuteria">
+                    <strong>Bisutería, Collage &amp; Emotes</strong>
+                    <span>17 obras entre arte objeto, papel y PNG →</span>
+                  </a>
+                </div>
+              </section>
+
+              <!-- TAB 2: MÚSICA (JUKEBOX) -->
+              <section class="hub-panel" id="panel-musica" role="tabpanel">
+                <h2 class="panel-heading">Jukebox • Música para Crear Arte ♫</h2>
+                <div class="jukebox-wrap">
+                  <div class="jukebox-top">
+                    <span class="jukebox-track">♪ WorldFrutti.mp3</span>
+                    <span class="jukebox-track" id="jukeboxTime">00:00</span>
+                  </div>
+                  <canvas id="jukeboxCanvas" width="520" height="124" aria-label="Visualizador musical pastel"></canvas>
+                  <div class="jukebox-progress" id="jukeboxProgress" title="Clic para avanzar en la pista">
+                    <div class="jukebox-progress-fill" id="jukeboxProgressFill"></div>
+                  </div>
+                  <div class="jukebox-controls">
+                    <div class="jukebox-btns">
+                      <button type="button" class="candy-btn butter" id="jukeboxPlayBtn">▶ Play</button>
+                      <button type="button" class="candy-btn lavender" id="jukeboxStopBtn">⏹ Stop</button>
+                    </div>
+                    <label class="jukebox-vol">
+                      <span>VOL</span>
+                      <input type="range" id="jukeboxVol" min="0" max="1" step="0.05" value="0.75">
+                    </label>
+                  </div>
+                  <audio id="jukeboxAudio" src="music/WorldFrutti.mp3" preload="metadata"></audio>
+                </div>
+              </section>
+
+              <!-- TAB 3: COMISIONES -->
+              <section class="hub-panel" id="panel-comisiones" role="tabpanel">
+                <h2 class="panel-heading">Comisiones e Ilustración por Encargo (MXN)</h2>
+                <div class="comm-summary-grid">
+                  <div class="comm-mini-box">
+                    <h4>Retrato</h4>
+                    <p>Lineart $200<br>Color base $350<br>Renderizado $650</p>
+                  </div>
+                  <div class="comm-mini-box">
+                    <h4>Medio o 3/4</h4>
+                    <p>Lineart $350<br>Color base $500<br>Renderizado $750</p>
+                  </div>
+                  <div class="comm-mini-box">
+                    <h4>Completo &amp; Emotes</h4>
+                    <p>Completo desde $500<br>3 Emotes $200 • 5 $350<br>10 Emotes Promo $600</p>
+                  </div>
+                </div>
+
+                <div class="comm-sheets-row">
+                  <button type="button" class="comm-sheet-thumb" data-sheet-idx="0" data-tip="Ampliar Tabla de Precios">
+                    <img src="Comisiones/Comisiones%20tablita.png" alt="Tabla de precios de comisiones">
+                  </button>
+                  <button type="button" class="comm-sheet-thumb" data-sheet-idx="1" data-tip="Ampliar Reglas y Condiciones">
+                    <img src="Comisiones/Comisiones%20reglas.png" alt="Reglas de comisiones">
+                  </button>
+                  <button type="button" class="comm-sheet-thumb" data-sheet-idx="2" data-tip="Ampliar Ejemplos y Emotes">
+                    <img src="Comisiones/Comisiones%20ejemplos%20y%20emotes.png" alt="Ejemplos y emotes">
+                  </button>
+                </div>
+
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                  <a class="candy-btn mint" href="comisiones.html">Ver reglas y tarifas completas →</a>
+                  <button type="button" class="candy-btn" data-open-tab="contacto">♡ Solicitar comisión</button>
+                </div>
+              </section>
+
+              <!-- TAB 4: CONTACTO -->
+              <section class="hub-panel" id="panel-contacto" role="tabpanel">
+                <h2 class="panel-heading" id="contacto">Contacto Profesional ♡</h2>
+                <p style="margin-bottom:14px; font-weight:600;">¿Te interesa mi portafolio o te interesa adquirir una comisión? ¡Puedes rellenar el siguiente formulario para contactarte conmigo!</p>
+
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrbapazl" method="POST">
+                  <div class="form-row-2">
+                    <div class="form-field">
+                      <label for="contactName">Nombre completo *</label>
+                      <input type="text" id="contactName" name="name" class="form-control" required placeholder="Tu nombre completo">
+                    </div>
+                    <div class="form-field">
+                      <label for="contactEmail">Correo electrónico *</label>
+                      <input type="email" id="contactEmail" name="email" class="form-control" required placeholder="tu@email.com">
+                    </div>
+                  </div>
+
+                  <div class="form-row-2">
+                    <div class="form-field">
+                      <label for="contactService">Tipo de comisión</label>
+                      <select id="contactService" name="service" class="form-control">
+                        <option value="">Selecciona un servicio...</option>
+                        <option value="carta-personalizada">Carta de Tarot Personalizada</option>
+                        <option value="baraja-completa">Baraja Completa</option>
+                        <option value="arte-conceptual">Arte Conceptual</option>
+                        <option value="ilustracion-mistica">Ilustración Mística</option>
+                        <option value="simbolismo">Obra Simbólica</option>
+                        <option value="comision-ilustracion-emotes">Ilustración o Paquete de Emotes</option>
+                        <option value="otro">Otro proyecto</option>
+                      </select>
+                    </div>
+                    <div class="form-field">
+                      <label for="contactBudget">Presupuesto aproximado</label>
+                      <select id="contactBudget" name="budget" class="form-control">
+                        <option value="">Selecciona un rango...</option>
+                        <option value="500-1000">$500 - $1,000 MXN</option>
+                        <option value="1000-2500">$1,000 - $2,500 MXN</option>
+                        <option value="2500-5000">$2,500 - $5,000 MXN</option>
+                        <option value="5000+">Más de $5,000 MXN</option>
+                        <option value="consultar">A consultar</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="contactMessage">Describe tu visión *</label>
+                    <textarea id="contactMessage" name="message" rows="4" class="form-control" required placeholder="Cuéntame sobre tu personaje, estilo o idea..."></textarea>
+                  </div>
+
+                  <div class="form-status" id="formStatus" role="status"></div>
+
+                  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <button type="submit" class="candy-btn">✦ Enviar Consulta</button>
+                    <button type="button" class="candy-btn lavender" id="clearFormBtn">Limpiar</button>
+                  </div>
+                </form>
+              </section>
+            </div>
+
+            <!-- COLUMNA COMPAÑERA DERECHA -->
+            <aside class="hub-side-col" aria-label="Ficha rápida y widgets">
+              <div class="side-card welcome-card">
+                <div class="welcome-avatar">
+                  <img src="image/thumbs/Chopperpipi.png" alt="Avatar de @dmxn_08">
+                </div>
+                <h2>¡Bienvenidx!</h2>
+                <p>Soy Demian Tenorio Rico (@dmxn_08), artista visual en la Universidad de Guanajuato. Explora mis 71 obras originales entre tarot, ilustración, escultura y bisutería ♡</p>
+                <span class="live-clock-pill" id="liveClock">00:00:00</span>
+              </div>
+
+              <div class="side-card status-card">
+                <div style="font-family:var(--font-pixel); font-size:0.72rem;">estado actual:</div>
+                <div class="status-badge">★ COMISIONES ABIERTAS ★</div>
+                <button type="button" class="candy-btn clap-btn" id="clapBtn">
+                  ♡ Dar aplauso (<span id="clapCount">71</span>)
+                </button>
+              </div>
+
+              <div class="side-card filter-hint-card">
+                <img class="filter-hint-thumb" src="image/thumbs/tyarot2.jpg" alt="Tarot II — muestra de filtro pastel">
+                <p>¿Quieres cambiar la vibra de color? Usa el botón <strong>[FILTRO ✦]</strong> arriba a la derecha para alternar 5 tonos pastel.</p>
+              </div>
+
+              <div class="mini-banners-stack">
+                <a class="mini-banner-link" href="galerie.html?cat=tarot"><span>✦ TAROT ILUSTRADO</span><span>22 →</span></a>
+                <a class="mini-banner-link" href="galerie.html?cat=esculturas"><span>✿ ESCULTURA &amp; ARCILLA</span><span>7 →</span></a>
+                <a class="mini-banner-link" href="galerie.html?cat=emotes"><span>★ EMOTES PNG</span><span>3 →</span></a>
+                <a class="mini-banner-link" href="oekaki.html"><span>✎ DIBUJA EN EL LIENZO</span><span>↗</span></a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/artworks.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

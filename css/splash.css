@@ -1,0 +1,320 @@
+/* ==========================================================================
+   PORTADA / ENTRY GATE (index.html) — Inspirada en reigen.moe/
+   ========================================================================== */
+
+body.splash-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 18px 36px;
+  background-color: #FFEBF4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='110' viewBox='0 0 220 110'%3E%3Ctext x='12' y='44' fill='%23F7BEDB' fill-opacity='0.52' font-family='Trebuchet MS, sans-serif' font-weight='700' font-size='22' transform='rotate(-12 12 44)'%3E%40dmxn_08 %E2%9C%A6%3C/text%3E%3Ctext x='98' y='92' fill='%23D6C2FF' fill-opacity='0.55' font-family='Trebuchet MS, sans-serif' font-weight='700' font-size='19' transform='rotate(-12 98 92)'%3Edemian %E2%99%A1%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Cajón desplegable superior derecha (estilo drawer de portada) */
+.quick-drawer {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: var(--z-floating);
+  max-width: min(320px, calc(100vw - 24px));
+  background: var(--bg-cream);
+  border: 3px double var(--pink-deep);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-candy);
+  font-family: var(--font-pixel);
+  font-size: 0.74rem;
+}
+
+.quick-drawer summary {
+  list-style: none;
+  padding: 9px 14px;
+  background: linear-gradient(90deg, var(--pink-soft), var(--lavender-soft), var(--mint-soft));
+  color: var(--ink);
+  font-weight: 700;
+  border-radius: calc(var(--radius-md) - 4px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.quick-drawer summary::-webkit-details-marker {
+  display: none;
+}
+
+.quick-drawer[open] summary {
+  border-bottom: 2px dashed var(--pink-mid);
+  border-radius: calc(var(--radius-md) - 4px) calc(var(--radius-md) - 4px) 0 0;
+}
+
+.quick-drawer-body {
+  padding: 12px 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.quick-drawer-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--bg-blush);
+  border: 1.5px solid var(--pink-soft);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.quick-drawer-link:hover {
+  background: var(--lavender-soft);
+  border-color: var(--lavender-deep);
+  color: var(--ink);
+  transform: translateX(3px);
+}
+
+/* Contenido central */
+.splash-stage {
+  position: relative;
+  z-index: var(--z-content);
+  width: min(740px, 100%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.splash-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 18px);
+  flex-wrap: wrap;
+}
+
+.flank-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flank-star {
+  width: clamp(26px, 4vw, 38px);
+  height: clamp(26px, 4vw, 38px);
+  animation: text-wobble 2.2s ease-in-out infinite;
+}
+
+.flank-star:nth-child(2) {
+  animation-delay: -0.7s;
+}
+
+.splash-wordart {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+  color: var(--bg-cream);
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #F584B7 0%, #B492F5 52%, #6BC5B0 100%);
+  border: 3px solid var(--ink);
+  box-shadow: 0 5px 0 var(--ink), var(--shadow-glow);
+  text-shadow:
+    -2px -2px 0 var(--ink),
+    2px -2px 0 var(--ink),
+    -2px 2px 0 var(--ink),
+    2px 2px 0 var(--ink);
+  transform: rotate(-1.4deg);
+}
+
+.splash-notice {
+  max-width: 560px;
+  background: rgba(255, 249, 251, 0.9);
+  border: 2px dashed var(--pink-deep);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  font-size: clamp(0.92rem, 2vw, 1.05rem);
+  font-weight: 600;
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+
+.splash-notice strong {
+  color: var(--pink-deep);
+  text-decoration: underline wavy var(--lavender-mid);
+  text-underline-offset: 4px;
+}
+
+/* 4 bloques coloridos de iniciales (D M X N) */
+.splash-blocks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.char-tile {
+  width: clamp(58px, 13vw, 76px);
+  height: clamp(64px, 14vw, 82px);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.2s var(--ease-bouncy);
+}
+
+.char-tile:hover {
+  transform: translateY(-5px) rotate(-4deg);
+}
+
+.char-tile.pink { background: var(--pink-soft); }
+.char-tile.butter { background: var(--butter-soft); }
+.char-tile.lavender { background: var(--lavender-soft); }
+.char-tile.mint { background: var(--mint-soft); }
+
+.splash-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.6vw, 1.45rem);
+  font-weight: 600;
+  color: var(--lavender-deep);
+  text-shadow: 0 2px 0 #FFFFFF, 0 0 12px rgba(255, 158, 199, 0.5);
+}
+
+/* Botón ENTER flanqueado por flechas animadas */
+.enter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.enter-arrows {
+  display: inline-flex;
+  gap: 4px;
+  font-family: var(--font-pixel);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--pink-deep);
+  text-shadow: 1px 1px 0 #FFFFFF;
+}
+
+.enter-arrows.left span {
+  display: inline-block;
+  animation: pulse-arrow 0.9s ease-in-out infinite;
+}
+
+.enter-arrows.right span {
+  display: inline-block;
+  animation: pulse-arrow-rev 0.9s ease-in-out infinite;
+}
+
+.enter-cta {
+  padding: 13px 34px;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+  background: linear-gradient(180deg, #FFFCE6 0%, #FFE07A 52%, #FFD057 100%);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 5px 0 var(--ink), var(--shadow-glow);
+  transition: transform 0.18s var(--ease-bouncy), box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.enter-cta:hover {
+  color: var(--ink);
+  background: linear-gradient(180deg, #FFF0F6 0%, #FFB7D6 55%, #FF9EC7 100%);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 7px 0 var(--ink), 0 0 24px rgba(255, 158, 199, 0.75);
+}
+
+/* Mini charms de obras reales */
+.splash-preview-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.preview-charm {
+  width: 64px;
+  height: 64px;
+  padding: 4px;
+  background: var(--bg-card);
+  border: 2px solid var(--ink);
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 var(--pink-mid);
+  overflow: hidden;
+  transition: transform 0.2s var(--ease-bouncy);
+}
+
+.preview-charm:nth-child(odd) { transform: rotate(-4deg); }
+.preview-charm:nth-child(even) { transform: rotate(4deg); }
+
+.preview-charm:hover {
+  transform: rotate(0deg) scale(1.12);
+}
+
+.preview-charm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Contador retro pastel */
+.splash-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.lcd-digits {
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  padding: 3px 9px;
+  background: var(--bg-plum);
+  color: var(--mint-soft);
+  border: 1.5px solid var(--pink-mid);
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  body.splash-page {
+    padding-top: 72px;
+  }
+
+  .enter-arrows {
+    font-size: 1rem;
+  }
+
+  .enter-cta {
+    padding: 11px 24px;
+  }
+}
