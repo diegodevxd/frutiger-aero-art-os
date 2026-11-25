@@ -139,4 +139,4 @@ Inventario completo del contenido auténtico de **moekat (`@moekat`)** extraído
 - **Usuario / Nombre en el sitio:** moekat (`@moekat`).
 - **Avatar / OC oficial:** Garfield (`image/dibujotradicional9.png`).
 - **Formación e identidad:** Artista visual transgénero y guanajuatense; ingresó en 2023 a la Licenciatura en Artes Visuales en la Universidad de Guanajuato.
-- **URLs externas heredadas (mantenidas sin modificar hasta confirmación):** Instagram `https://instagram.com/demi.demiau`, Twitter/X `https://x.com/Chicharron_08`, TikTok `https://tiktok.com/@dmxn_08`, Formspree `https://formspree.io/f/xrbapazl`.
+- **Redes oficiales:** Instagram `@moekat.085` (`https://www.instagram.com/moekat.085/`), X `@Dmxn_0805` (`https://x.com/Dmxn_0805`), TikTok `@dmxn_0805` (`https://www.tiktok.com/@dmxn_0805`); Formspree `https://formspree.io/f/xrbapazl`.
