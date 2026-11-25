@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#002b5c" flood-opacity="0.45"/>
+    </filter>
+    <linearGradient id="redPane" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff8b6a"/>
+      <stop offset="50%" stop-color="#f1431b"/>
+      <stop offset="100%" stop-color="#b81d00"/>
+    </linearGradient>
+    <linearGradient id="greenPane" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#b7f56b"/>
+      <stop offset="50%" stop-color="#76c724"/>
+      <stop offset="100%" stop-color="#3c8a00"/>
+    </linearGradient>
+    <linearGradient id="bluePane" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7cd4ff"/>
+      <stop offset="50%" stop-color="#1993f2"/>
+      <stop offset="100%" stop-color="#0053b8"/>
+    </linearGradient>
+    <linearGradient id="yellowPane" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff07a"/>
+      <stop offset="50%" stop-color="#ffbf00"/>
+      <stop offset="100%" stop-color="#d47f00"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#shadow)">
+    <!-- Red top-left pane -->
+    <path d="M18,30 C32,20 48,22 61,28 L55,60 C43,54 29,53 13,61 Z" fill="url(#redPane)" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.5"/>
+    <!-- Green top-right pane -->
+    <path d="M68,31 C82,37 97,38 113,30 L107,62 C92,69 78,68 62,62 Z" fill="url(#greenPane)" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.5"/>
+    <!-- Blue bottom-left pane -->
+    <path d="M12,68 C28,60 42,61 54,67 L48,99 C35,93 21,92 6,100 Z" fill="url(#bluePane)" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.5"/>
+    <!-- Yellow bottom-right pane -->
+    <path d="M61,69 C77,75 91,76 106,69 L100,101 C85,108 71,107 55,101 Z" fill="url(#yellowPane)" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.5"/>
+    <!-- Specular Aero highlight -->
+    <path d="M18,30 C32,20 48,22 61,28 L58,44 C44,39 30,39 15,46 Z" fill="url(#gloss)"/>
+    <path d="M68,31 C82,37 97,38 113,30 L110,46 C95,52 80,52 65,46 Z" fill="url(#gloss)"/>
+  </g>
+</svg>
+
