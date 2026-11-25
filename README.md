@@ -10,8 +10,13 @@ Rediseño completo del portafolio artístico de **Demian Tenorio Rico (`@dmxn_08
 - `home.html` — Hub principal con barra lateral fija (`NAVEGACIÓN`), widget mini-lienzo interactivo, selector de 5 filtros pastel persistentes (`FILTRO ✦`), showcase **`Obra al azar ✦`**, *Artist Statement*, Jukebox para `music/WorldFrutti.mp3`, resumen de comisiones y formulario de contacto Formspree.
 - `galerie.html` — Archivo completo de **71 obras** (`Tarot 22`, `Dibujo Digital 15`, `Dibujo Tradicional 10`, `Esculturas 7`, `Bisutería 7`, `Collage 7`, `Emotes 3`) con filtros, buscador, paginación (25 por página) y Lightbox a resolución completa.
 - `profil.html` — Semblanza, ficha técnica de artista, dato interactivo al hacer clic, rejilla de 10 obras destacadas, cinta marquee de estampillas, disciplinas y *Artist Statement* en formato Q&A.
-- `comisiones.html` — Tarifas en MXN, paquetes promocionales de Emotes, reglas (`Sí puedo hacer / No puedo hacer`) y láminas originales ampliables.
+- `comisiones.html` — Tarifas en MXN, paquetes promocionales de Emotes, reglas (`Sí puedo hacer / No puedo hacer`), estado dinámico con GIF (`js/config.js`) y láminas originales ampliables.
 - `oekaki.html` — Lienzo interactivo HTML5 con pincel, borrador, deshacer, paleta de 20 colores pastel/tinta, descarga PNG y guardado local de bocetos.
+
+## Configuración de Comisiones y GIFs
+
+- El estado de comisiones (abiertas o cerradas) se controla desde una sola bandera en `js/config.js`: `window.COMMISSIONS_OPEN = true` (`gifs/comm-open.gif`) o `false` (`gifs/comm-closed.gif`).
+- Todos los GIFs y stickers decorativos están almacenados localmente en `gifs/` (sin hotlinks externos).
 
 ## Paleta Pastel (Tokens en `css/tokens.css`)
 

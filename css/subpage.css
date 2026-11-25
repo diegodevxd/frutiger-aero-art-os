@@ -242,6 +242,23 @@ body.subpage {
   border: 2px solid var(--pink-mid);
 }
 
+.comm-status-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, var(--sky-soft), var(--pink-soft));
+  border: 2.5px solid var(--ink);
+  border-radius: var(--radius-md);
+}
+
+.comm-status-banner-copy {
+  display: grid;
+  gap: 8px;
+}
+
 /* ==========================================================================
    LIENZO KAWAII / DRAWBOX (oekaki.html)
    ========================================================================== */

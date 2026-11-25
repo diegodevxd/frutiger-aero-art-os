@@ -21,7 +21,7 @@
     <div class="loading-card">cargando estudio @dmxn_08...</div>
   </div>
 
-  <!-- Botón flotante TOGGLE FILTER -->
+  <!-- Botón flotante superior derecha FILTRO -->
   <button type="button" class="filter-toggle-btn" id="filterToggleBtn" data-tip="Alterna entre 5 filtros pastel (guardado automático)">
     FILTRO ✦
     <span id="filterLabel">Pastel Kawaii</span>
@@ -38,130 +38,171 @@
     </header>
 
     <div class="hub-shell">
-      <!-- BARRA LATERAL IZQUIERDA FIJA -->
+      <!-- ================================================================
+           COLUMNA 1: SIDEBAR FIJA IZQUIERDA (EXACTA A LA REFERENCIA)
+           ================================================================ -->
       <aside class="sidebar" id="homeSidebar" aria-label="Navegación principal">
-        <!-- Mini widget interactivo tipo Paint que refresca la obra aleatoria -->
+        <!-- Mini ventana Paint interactiva -->
         <div class="mini-paint-widget">
           <div class="mini-paint-bar">
-            <span>✿ vista previa</span>
-            <span>clic = azar</span>
+            <span>untitled - Paint</span>
+            <span>×</span>
           </div>
-          <button type="button" class="mini-paint-btn" id="miniPaintBtn" data-tip="Haz clic para cambiar la obra aleatoria del centro">
-            <img id="miniPaintImg" src="image/thumbs/tyarot.jpg" alt="Vista previa aleatoria de Demian">
-          </button>
+          <div class="mini-paint-body">
+            <div class="mini-paint-tools" aria-hidden="true">
+              <span>✎</span><span>✒</span><span>✿</span><span>✂</span><span>★</span>
+            </div>
+            <button type="button" class="mini-paint-btn" id="miniPaintBtn" data-tip="Clic para cambiar la obra aleatoria del centro">
+              <img id="miniPaintImg" src="image/thumbs/tyarot.jpg" alt="Vista previa aleatoria de Demian">
+            </button>
+          </div>
           <div class="mini-paint-palette" aria-hidden="true">
             <i style="background:#FF9EC7"></i>
             <i style="background:#FFE07A"></i>
             <i style="background:#85E3C3"></i>
             <i style="background:#8ED4FF"></i>
             <i style="background:#C4AAFF"></i>
+            <i style="background:#3B234A"></i>
           </div>
         </div>
 
-        <div class="nav-wobble-title" data-wobble>NAVEGACIÓN</div>
+        <div class="nav-wobble-title" data-wobble>NAVIGATION</div>
 
-        <div class="nav-section-label">EN EL SITIO</div>
-        <nav class="nav-box" aria-label="Secciones del sitio">
+        <div class="nav-section-head">
+          <span>ON-SITE</span>
+          <img class="gif-sticker gif-pixel" src="gifs/old-web-pixel-cute.gif" alt="" width="24" height="24">
+        </div>
+        <nav class="nav-box" aria-label="Páginas del portafolio">
           <div class="nav-box-inner">
             <a class="nav-item-link" href="galerie.html">GALERÍA (71)</a>
             <a class="nav-item-link" href="profil.html">PERFIL</a>
             <a class="nav-item-link" href="comisiones.html">COMISIONES</a>
-            <a class="nav-item-link" href="oekaki.html">LIENZO</a>
+            <a class="nav-item-link" href="oekaki.html">OEKAKI / LIENZO</a>
             <a class="nav-item-link" href="#contacto" data-open-tab="contacto" id="sidebarContactLink">CONTACTO</a>
           </div>
         </nav>
 
-        <div class="nav-section-label">REDES SOCIALES</div>
+        <div class="nav-section-head">
+          <span>OFF-SITE</span>
+          <img class="gif-sticker gif-pixel" src="gifs/emoticon-te-amo.gif" alt="" width="44" height="12">
+        </div>
         <div class="nav-box">
           <div class="nav-box-inner">
             <a class="nav-item-link" href="https://instagram.com/demi.demiau" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
             <a class="nav-item-link" href="https://x.com/Chicharron_08" target="_blank" rel="noopener noreferrer">TWITTER / X</a>
             <a class="nav-item-link" href="https://tiktok.com/@dmxn_08" target="_blank" rel="noopener noreferrer">TIKTOK</a>
-            <a class="nav-item-link" href="comisiones.html">TARIFAS MXN</a>
+            <a class="nav-item-link" href="#contacto" data-open-tab="contacto">E-MAIL / FORM</a>
           </div>
         </div>
 
-        <p class="sidebar-note">
-          Demian Tenorio Rico<br>
-          Lic. Artes Visuales • UG
+        <p class="sidebar-contact-line">
+          Para ver mis redes, precios o escribirme directamente, entra a <a href="#contacto" data-open-tab="contacto">esta sección</a>.
         </p>
 
-        <div class="sidebar-badges" aria-label="Etiquetas del estudio">
-          <span class="pastel-badge">@dmxn_08</span>
-          <span class="pastel-badge mint">71 OBRAS</span>
-          <span class="pastel-badge lavender">UG ARTES</span>
-          <span class="pastel-badge butter">TAROT</span>
+        <!-- Badges 88x31 estilo old-web -->
+        <div class="badges-88x31-row" aria-label="Mini badges">
+          <a class="badge-88" href="profil.html" data-tip="Demian Tenorio Rico (@dmxn_08)">
+            <img src="gifs/demi-pixel-cat.jpg" alt="">
+            <span>@dmxn_08</span>
+          </a>
+          <a class="badge-88 lav" href="galerie.html" data-tip="71 obras en archivo">
+            <span>★ UG ARTES</span>
+          </a>
         </div>
+
+        <!-- Banners apilados -->
+        <div class="sidebar-wide-banners">
+          <a class="wide-sticker-banner" href="home.html">
+            <img src="image/thumbs/o0o.png" alt="">
+            <span>Demian Tenorio</span>
+            <img src="image/thumbs/GG.png" alt="">
+          </a>
+          <a class="wide-sticker-banner alt" href="galerie.html">
+            <img class="gif-pixel" src="gifs/old-web-wink.gif" alt="">
+            <span>@dmxn_08 • 71</span>
+            <img class="gif-pixel" src="gifs/punch-cat.gif" alt="">
+          </a>
+        </div>
+
+        <div class="link-me-note">
+          ↑ Link me back? ↑<br>
+          (archivo visual @dmxn_08)
+        </div>
+
+        <!-- Crest World Wide Web pastel original -->
+        <svg class="www-crest" viewBox="0 0 130 98" role="img" aria-label="World Wide Web">
+          <rect x="6" y="14" width="118" height="74" rx="10" fill="#452459" stroke="#FFE07A" stroke-width="4"/>
+          <path d="M24 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#FF9EC7" stroke="#3B234A" stroke-width="1.5"/>
+          <path d="M65 4l4 7 7 1-5 5 1 7-7-4-7 4 1-7-5-5 7-1z" fill="#FFE07A" stroke="#3B234A" stroke-width="1.5"/>
+          <path d="M106 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#85E3C3" stroke="#3B234A" stroke-width="1.5"/>
+          <circle cx="65" cy="48" r="20" fill="#8ED4FF" stroke="#FFF9FB" stroke-width="2.5"/>
+          <ellipse cx="65" cy="48" rx="10" ry="20" fill="none" stroke="#FFF9FB" stroke-width="1.8"/>
+          <line x1="45" y1="48" x2="85" y2="48" stroke="#FFF9FB" stroke-width="1.8"/>
+          <path d="M52 38c4 4 9 1 11 6 3 5-2 10 3 14" fill="none" stroke="#85E3C3" stroke-width="4" stroke-linecap="round"/>
+          <rect x="14" y="68" width="102" height="18" rx="5" fill="#FFD6E8" stroke="#3B234A" stroke-width="2"/>
+          <text x="65" y="80" text-anchor="middle" fill="#3B234A" font-family="Trebuchet MS, sans-serif" font-weight="700" font-size="9.5">WORLD WIDE WEB</text>
+        </svg>
 
         <a class="sidebar-back-link" href="index.html">← volver a portada</a>
       </aside>
 
-      <!-- ÁREA PRINCIPAL -->
+      <!-- ================================================================
+           ZONA PRINCIPAL: 3 COLUMNAS OLD-WEB (CENTRO + CINTA + DERECHA)
+           ================================================================ -->
       <main class="hub-main">
-        <div class="hub-frame">
-          <!-- Hero banner compuesto exclusivamente con obras de Demian -->
-          <section class="hub-hero-banner" aria-label="Presentación del artista">
-            <div class="hub-hero-copy">
-              <span class="hub-hero-kicker">Universidad de Guanajuato • Lic. Artes Visuales</span>
-              <h1>Demian Tenorio Rico (@dmxn_08)</h1>
-              <p>Ilustración semirrealista, tarot ilustrado, escultura en cerámica y arte objeto entre lo cómico y lo irreal.</p>
-            </div>
-            <div class="hub-hero-collage">
-              <a class="hero-art-card" href="galerie.html?cat=tarot" data-tip="Ver Tarot (22 obras)">
-                <img src="image/thumbs/tyarot.jpg" alt="Tarot I de Demian Tenorio">
-              </a>
-              <a class="hero-art-card" href="galerie.html?cat=dibujo-digital" data-tip="Ver Dibujo Digital (15 obras)">
-                <img src="image/thumbs/digital1.jpg" alt="Dibujo Digital I de Demian Tenorio">
-              </a>
-              <a class="hero-art-card" href="galerie.html?cat=esculturas" data-tip="Ver Esculturas (7 obras)">
-                <img src="image/thumbs/escultura1.jpg" alt="Escultura I de Demian Tenorio">
-              </a>
-            </div>
-          </section>
-
-          <!-- Cinta Marquee -->
+        <div class="hub-outer-frame">
+          <!-- Cinta Marquee superior -->
           <div class="hub-ticker" aria-hidden="true">
             <div class="hub-ticker-track">
-              <span>★ DEMIAN TENORIO RICO ★ @DMXN_08 ★ TAROT • ILUSTRACIÓN • ESCULTURA • BISUTERÍA • COLLAGE • EMOTES ★</span>
-              <span>★ DEMIAN TENORIO RICO ★ @DMXN_08 ★ TAROT • ILUSTRACIÓN • ESCULTURA • BISUTERÍA • COLLAGE • EMOTES ★</span>
+              <span>★ DEMIAN TENORIO RICO ★ @DMXN_08 ★ LIC. ARTES VISUALES UG ★ TAROT • ILUSTRACIÓN • ESCULTURA • BISUTERÍA • COLLAGE • EMOTES ★</span>
+              <span>★ DEMIAN TENORIO RICO ★ @DMXN_08 ★ LIC. ARTES VISUALES UG ★ TAROT • ILUSTRACIÓN • ESCULTURA • BISUTERÍA • COLLAGE • EMOTES ★</span>
             </div>
           </div>
 
-          <div class="hub-grid">
-            <!-- COLUMNA CENTRAL -->
+          <div class="hub-3col">
+            <!-- ==========================================================
+                 COLUMNA CENTRAL: RANDOM ARTWORK + BANNER + TABS + PANEL
+                 ========================================================== -->
             <div class="hub-center-col">
               <!-- Showcase de Obra Aleatoria -->
-              <section class="random-showcase" aria-label="Showcase aleatorio">
-                <div class="showcase-top">
-                  <svg class="spin-charm" viewBox="0 0 36 36" aria-hidden="true">
-                    <circle cx="18" cy="18" r="16" fill="#FFD6E8" stroke="#3B234A" stroke-width="2"/>
-                    <path d="M18 5l3 8 8.5.7-6.5 5.4 2 8.2-7-4.5-7 4.5 2-8.2-6.5-5.4L15 13z" fill="#FFE07A" stroke="#3B234A" stroke-width="1.8"/>
-                  </svg>
-                  <h2 class="showcase-title" data-rainbow>DEMIAN TENORIO ★ @DMXN_08</h2>
-                  <button type="button" class="candy-btn butter" id="shuffleArtBtn">Obra al azar ✦</button>
+              <section class="random-showcase" aria-label="Obra aleatoria">
+                <div class="showcase-header-bar">
+                  <h1 class="showcase-title" data-rainbow>DEMIAN TENORIO ★ @DMXN_08</h1>
+                  <img class="gif-sticker mcbling-pop" src="gifs/boyfriend-mcbling.gif" alt="" width="110" height="23">
                 </div>
 
                 <div class="showcase-stage">
+                  <div class="showcase-left-ornaments" aria-hidden="true">
+                    <svg class="spin-charm" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="16" fill="#FFD6E8" stroke="#3B234A" stroke-width="2"/>
+                      <path d="M18 5l3 8 8.5.7-6.5 5.4 2 8.2-7-4.5-7 4.5 2-8.2-6.5-5.4L15 13z" fill="#FFE07A" stroke="#3B234A" stroke-width="1.8"/>
+                    </svg>
+                    <img class="gif-sticker gif-pixel" src="gifs/old-web-2000s-pixel.gif" alt="" width="34" height="34">
+                  </div>
+
                   <button type="button" class="showcase-img-btn" id="showcaseOpenBtn" data-tip="Clic para abrir en el visor a resolución completa">
                     <img id="randomArtImg" src="image/tyarot.jpg" alt="Tarot I — Arte Digital • 2024">
                   </button>
+                </div>
+
+                <div class="showcase-bottom-bar">
                   <div class="showcase-caption">
-                    <div>
-                      <strong id="randomArtTitle">Tarot I</strong><br>
-                      <span id="randomArtMeta">Tarot • Arte Digital • 2024</span>
-                    </div>
-                    <a class="candy-btn lavender" href="galerie.html">Ver las 71 obras →</a>
+                    <strong id="randomArtTitle">Tarot I</strong> • <span id="randomArtMeta">Tarot • Arte Digital • 2024</span>
                   </div>
+                  <button type="button" class="random-retro-btn" id="shuffleArtBtn">OBRA AL AZAR ✦</button>
                 </div>
               </section>
 
-              <!-- Sub-banner -->
+              <!-- Sub-banner glossy tipo Psychic Web -->
               <div class="study-banner">
-                <strong>ESTUDIO VISUAL @DMXN_08</strong>
-                <span>TAROT ★ ILUSTRACIÓN ★ ESCULTURA ★ BISUTERÍA</span>
+                <div class="study-banner-left">
+                  <img class="gif-sticker gif-pixel" src="gifs/old-web-wink.gif" alt="" width="20" height="20">
+                  <strong>DEMIAN ★ ART</strong>
+                </div>
+                <span>TAROT • ILUSTRACIÓN • ESCULTURA &amp; MÁS!</span>
               </div>
 
-              <!-- Barra de pestañas -->
+              <!-- Fila de pestañas rectangulares -->
               <div class="hub-tabs" id="hubTabs" role="tablist" aria-label="Secciones del estudio">
                 <button type="button" class="hub-tab-btn is-active" role="tab" aria-selected="true" data-tab="welcome">BIENVENIDX</button>
                 <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="musica">MÚSICA</button>
@@ -171,15 +212,54 @@
 
               <!-- TAB 1: BIENVENIDX -->
               <section class="hub-panel is-active" id="panel-welcome" role="tabpanel">
-                <h2 class="panel-heading">Artist Statement ♡</h2>
-                <div class="statement-box">
-                  <p>Mi trabajo artístico busca ser un espacio lúdico y vibrante, donde el color es protagonista y se convierte en un vehículo para motivar, liberar emociones y, en ocasiones, provocar una risa inesperada.</p>
-                  <p>Exploro lo cómico y lo absurdo como herramientas de desahogo y juego, generando un contraste constante entre lo real y lo irreal. Ese choque me permite cuestionar lo cotidiano y abrir la puerta a mundos semireales que se sienten familiares y extraños al mismo tiempo.</p>
-                  <p>Visualmente, mi estilo se nutre del arte semirrealista y de la riqueza creativa de los fandoms en internet, donde lo espontáneo y lo exagerado conviven con lo íntimo y lo auténtico. Mis piezas son un reflejo de esa energía digital: coloridas, irónicas y, sobre todo, vivas.</p>
-                  <p>En esencia, busco que mi arte sea un recordatorio de que lo absurdo también puede ser bello, y que en la mezcla entre lo serio y lo lúdico encontramos nuevas formas de sentir y expresarnos.</p>
+                <div class="motto-quote">
+                  « Busco que mi arte sea un recordatorio de que lo absurdo también puede ser bello ♡ »
                 </div>
 
-                <h2 class="panel-heading">Obras Seleccionadas</h2>
+                <div class="sparkle-divider">
+                  <img class="gif-sticker gif-pixel" src="gifs/laughing-cat.gif" alt="" width="20" height="20">
+                  <span>✦ ✿ ARTIST STATEMENT ✿ ✦</span>
+                  <img class="gif-sticker gif-pixel" src="gifs/punch-cat.gif" alt="" width="20" height="20">
+                </div>
+
+                <div class="welcome-oldweb-grid">
+                  <div class="statement-boxes">
+                    <div class="statement-card">
+                      <div class="statement-card-head">
+                        <span>Espacio lúdico y vibrante</span>
+                        <img class="gif-sticker" src="gifs/demi-beret-cat.gif" alt="" width="38" height="38">
+                      </div>
+                      <p>Mi trabajo artístico busca ser un espacio lúdico y vibrante, donde el color es protagonista y se convierte en un vehículo para motivar, liberar emociones y, en ocasiones, provocar una risa inesperada.</p>
+                    </div>
+
+                    <div class="statement-card">
+                      <div class="statement-card-head">
+                        <span>Entre lo real y lo irreal</span>
+                        <img class="gif-sticker" src="gifs/demi-yui-idea.gif" alt="" width="44" height="33">
+                      </div>
+                      <p>Exploro lo cómico y lo absurdo como herramientas de desahogo y juego, generando un contraste constante entre lo real y lo irreal. Ese choque me permite cuestionar lo cotidiano y abrir la puerta a mundos semireales que se sienten familiares y extraños al mismo tiempo.</p>
+                    </div>
+
+                    <div class="statement-card">
+                      <div class="statement-card-head">
+                        <span>Fandoms e identidad visual</span>
+                        <img class="gif-sticker" src="gifs/bunny-glitter.gif" alt="" width="40" height="30">
+                      </div>
+                      <p>Visualmente, mi estilo se nutre del arte semirrealista y de la riqueza creativa de los fandoms en internet, donde lo espontáneo y lo exagerado conviven con lo íntimo y lo auténtico. Mis piezas son un reflejo de esa energía digital: coloridas, irónicas y, sobre todo, vivas.</p>
+                    </div>
+                  </div>
+
+                  <aside class="welcome-art-aside">
+                    <img class="aside-artwork" src="image/thumbs/digital1.jpg" alt="Dibujo Digital I de Demian Tenorio">
+                    <span style="font-size:0.76rem; font-weight:700;">Arte por Demian Tenorio Rico (@dmxn_08)</span>
+                    <img class="gif-sticker" src="gifs/demi-pusheen-trio.gif" alt="" width="96" height="69" style="margin:0 auto;">
+                  </aside>
+                </div>
+
+                <h2 class="panel-heading">
+                  <span>Obras Seleccionadas</span>
+                  <img class="gif-sticker gif-pixel" src="gifs/old-web-pixel-cute.gif" alt="" width="24" height="24">
+                </h2>
                 <div class="selected-grid">
                   <button type="button" class="selected-card" data-featured-idx="0">
                     <img src="image/thumbs/tyarot.jpg" alt="Tarot I">
@@ -222,17 +302,26 @@
                     <span>17 obras entre arte objeto, papel y PNG →</span>
                   </a>
                 </div>
+
+                <div class="gif-shelf" aria-label="Stickers animados decorativos">
+                  <img class="gif-stamp" src="gifs/meat-stamp.gif" alt="" width="99" height="56">
+                  <img class="gif-sticker" src="gifs/breadcat.gif" alt="" width="76" height="76" style="border-radius:8px; border:2px solid var(--ink);">
+                  <img class="gif-sticker" src="gifs/demi-nyanko-roll.gif" alt="" width="92" height="52" style="border-radius:8px; border:2px solid var(--ink);">
+                </div>
               </section>
 
-              <!-- TAB 2: MÚSICA (JUKEBOX) -->
+              <!-- TAB 2: MÚSICA -->
               <section class="hub-panel" id="panel-musica" role="tabpanel">
-                <h2 class="panel-heading">Jukebox • Música para Crear Arte ♫</h2>
+                <h2 class="panel-heading">
+                  <span>Jukebox • Música para Crear Arte ♫</span>
+                  <img class="gif-sticker" src="gifs/demi-chi-piano.gif" alt="" width="56" height="48" style="border-radius:6px; border:1.5px solid var(--ink);">
+                </h2>
                 <div class="jukebox-wrap">
                   <div class="jukebox-top">
                     <span class="jukebox-track">♪ WorldFrutti.mp3</span>
                     <span class="jukebox-track" id="jukeboxTime">00:00</span>
                   </div>
-                  <canvas id="jukeboxCanvas" width="520" height="124" aria-label="Visualizador musical pastel"></canvas>
+                  <canvas id="jukeboxCanvas" width="520" height="118" aria-label="Visualizador musical pastel"></canvas>
                   <div class="jukebox-progress" id="jukeboxProgress" title="Clic para avanzar en la pista">
                     <div class="jukebox-progress-fill" id="jukeboxProgressFill"></div>
                   </div>
@@ -253,6 +342,14 @@
               <!-- TAB 3: COMISIONES -->
               <section class="hub-panel" id="panel-comisiones" role="tabpanel">
                 <h2 class="panel-heading">Comisiones e Ilustración por Encargo (MXN)</h2>
+                <div class="comm-status-box" style="margin-bottom:12px;">
+                  <span class="comm-status-pill" data-comm-status-pill>★ COMISIONES ABIERTAS ★</span>
+                  <div class="comm-status-gif-frame">
+                    <img data-comm-status-gif src="gifs/comm-open.gif" alt="Estado de comisiones">
+                  </div>
+                  <p data-comm-status-note style="font-size:0.84rem; font-weight:700;">¡Comisiones disponibles! Revisa tarifas o escríbeme ♡</p>
+                </div>
+
                 <div class="comm-summary-grid">
                   <div class="comm-mini-box">
                     <h4>Retrato</h4>
@@ -288,8 +385,11 @@
 
               <!-- TAB 4: CONTACTO -->
               <section class="hub-panel" id="panel-contacto" role="tabpanel">
-                <h2 class="panel-heading" id="contacto">Contacto Profesional ♡</h2>
-                <p style="margin-bottom:14px; font-weight:600;">¿Te interesa mi portafolio o te interesa adquirir una comisión? ¡Puedes rellenar el siguiente formulario para contactarte conmigo!</p>
+                <h2 class="panel-heading" id="contacto">
+                  <span>Contacto Profesional ♡</span>
+                  <img class="gif-sticker gif-pixel" src="gifs/emoticon-te-amo.gif" alt="" width="68" height="19">
+                </h2>
+                <p style="margin-bottom:12px; font-weight:600;">¿Te interesa mi portafolio o te interesa adquirir una comisión? ¡Puedes rellenar el siguiente formulario para contactarte conmigo!</p>
 
                 <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrbapazl" method="POST">
                   <div class="form-row-2">
@@ -337,43 +437,78 @@
 
                   <div class="form-status" id="formStatus" role="status"></div>
 
-                  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                  <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
                     <button type="submit" class="candy-btn">✦ Enviar Consulta</button>
                     <button type="button" class="candy-btn lavender" id="clearFormBtn">Limpiar</button>
+                    <img class="gif-sticker" src="gifs/cat-shy.gif" alt="" width="48" height="48" style="border-radius:8px; border:1.5px solid var(--ink);">
                   </div>
                 </form>
               </section>
             </div>
 
-            <!-- COLUMNA COMPAÑERA DERECHA -->
-            <aside class="hub-side-col" aria-label="Ficha rápida y widgets">
+            <!-- CINTA VERTICAL DECORATIVA -->
+            <div class="vertical-pastel-ribbon" aria-hidden="true">
+              ♡ @dmxn_08 ✦ artes visuales ug ✦ tarot &amp; ilustración ✦ pastel kawaii ♡
+            </div>
+
+            <!-- ==========================================================
+                 COLUMNA DERECHA: BIENVENIDA + STATUS GIF + FILTRO + STICKERS
+                 ========================================================== -->
+            <aside class="hub-side-col" aria-label="Bienvenida y estado">
               <div class="side-card welcome-card">
-                <div class="welcome-avatar">
-                  <img src="image/thumbs/Chopperpipi.png" alt="Avatar de @dmxn_08">
+                <div class="welcome-art-header">
+                  <img class="bg-art" src="image/thumbs/digital1.jpg" alt="Obra digital de Demian Tenorio">
+                  <img class="sticker-corner gif-pixel" src="gifs/strawberry-glitter.gif" alt="">
                 </div>
-                <h2>¡Bienvenidx!</h2>
-                <p>Soy Demian Tenorio Rico (@dmxn_08), artista visual en la Universidad de Guanajuato. Explora mis 71 obras originales entre tarot, ilustración, escultura y bisutería ♡</p>
-                <span class="live-clock-pill" id="liveClock">00:00:00</span>
+                <div class="welcome-bubble">
+                  <h2>¡Bienvenidx!</h2>
+                  <p>Soy Demian Tenorio Rico (@dmxn_08), artista transgénero y guanajuatense en la Lic. de Artes Visuales (UG). Explora mis 71 obras originales y disfruta tu estancia ♡</p>
+                  <span class="live-clock-pill" id="liveClock">00:00:00</span>
+                </div>
               </div>
 
+              <!-- Status Box estilo referencia + GIF dinámico de comisiones -->
               <div class="side-card status-card">
-                <div style="font-family:var(--font-pixel); font-size:0.72rem;">estado actual:</div>
-                <div class="status-badge">★ COMISIONES ABIERTAS ★</div>
-                <button type="button" class="candy-btn clap-btn" id="clapBtn">
-                  ♡ Dar aplauso (<span id="clapCount">71</span>)
-                </button>
+                <div class="status-top-split">
+                  <div class="status-online-box">
+                    <span>status:</span>
+                    <span class="online-gif-wrap">
+                      <img class="gif-sticker gif-pixel" src="gifs/online-myspace.gif" alt="En línea" width="77" height="29">
+                    </span>
+                  </div>
+                  <button type="button" class="candy-btn clap-btn" id="clapBtn">
+                    ♡ Clap (<span id="clapCount">71</span>)
+                  </button>
+                </div>
+
+                <div class="comm-status-box">
+                  <span class="comm-status-pill" data-comm-status-pill>★ COMISIONES ABIERTAS ★</span>
+                  <div class="comm-status-gif-frame">
+                    <img data-comm-status-gif src="gifs/comm-open.gif" alt="Estado de comisiones">
+                  </div>
+                  <p data-comm-status-note style="font-size:0.78rem; font-weight:700; line-height:1.35;">¡Comisiones disponibles! Revisa tarifas o escríbeme ♡</p>
+                  <a class="candy-btn mint" href="comisiones.html" style="padding:6px 12px; font-size:0.76rem;">Ver comisiones →</a>
+                </div>
               </div>
 
+              <!-- Tarjeta de sugerencia de filtros -->
               <div class="side-card filter-hint-card">
-                <img class="filter-hint-thumb" src="image/thumbs/tyarot2.jpg" alt="Tarot II — muestra de filtro pastel">
-                <p>¿Quieres cambiar la vibra de color? Usa el botón <strong>[FILTRO ✦]</strong> arriba a la derecha para alternar 5 tonos pastel.</p>
+                <img class="filter-hint-thumb" src="image/thumbs/tyarot2.jpg" alt="Tarot II — muestra de filtro">
+                <p>¿Quieres probar otros tonos pastel? Pulsa <strong>[FILTRO ✦]</strong> arriba a la derecha para alternar 5 atmósferas ♡</p>
               </div>
 
-              <div class="mini-banners-stack">
-                <a class="mini-banner-link" href="galerie.html?cat=tarot"><span>✦ TAROT ILUSTRADO</span><span>22 →</span></a>
-                <a class="mini-banner-link" href="galerie.html?cat=esculturas"><span>✿ ESCULTURA &amp; ARCILLA</span><span>7 →</span></a>
-                <a class="mini-banner-link" href="galerie.html?cat=emotes"><span>★ EMOTES PNG</span><span>3 →</span></a>
-                <a class="mini-banner-link" href="oekaki.html"><span>✎ DIBUJA EN EL LIENZO</span><span>↗</span></a>
+              <!-- Mini banners y GIFs finales -->
+              <div class="side-card" style="display:grid; gap:8px;">
+                <div class="mini-banners-stack">
+                  <a class="mini-banner-link" href="galerie.html?cat=tarot"><span>✦ TAROT ILUSTRADO</span><span>22 →</span></a>
+                  <a class="mini-banner-link" href="galerie.html?cat=esculturas"><span>✿ ESCULTURA &amp; ARCILLA</span><span>7 →</span></a>
+                  <a class="mini-banner-link" href="galerie.html?cat=emotes"><span>★ EMOTES PNG</span><span>3 →</span></a>
+                  <a class="mini-banner-link" href="oekaki.html"><span>✎ LIENZO KAWAII</span><span>↗</span></a>
+                </div>
+                <div class="gif-shelf">
+                  <img class="gif-sticker" src="gifs/blushing-mdd.gif" alt="" width="76" height="67" style="border-radius:8px; border:1.5px solid var(--ink);">
+                  <img class="gif-sticker" src="gifs/bunny-glitter.gif" alt="" width="74" height="56">
+                </div>
               </div>
             </aside>
           </div>
@@ -382,6 +517,7 @@
     </div>
   </div>
 
+  <script src="js/config.js"></script>
   <script src="js/artworks.js"></script>
   <script src="js/effects.js"></script>
   <script src="js/home.js"></script>
