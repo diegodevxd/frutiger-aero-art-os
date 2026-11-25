@@ -147,7 +147,7 @@ El listado de prueba tiene esta forma:
 | `403 The caller does not have permission` | La carpeta no está compartida con la cuenta de servicio. | Repite el paso 5 con el correo `...iam.gserviceaccount.com`. |
 | `404 File not found` | ID de carpeta incorrecto o la cuenta no tiene acceso. | Revisa el ID y la variable `DRIVE_FOLDER_ID`. |
 | `Falta la variable de entorno GDRIVE_SA_KEY` | El secreto no existe o tiene otro nombre. | Créalo como `GDRIVE_SA_KEY` en Settings → Secrets → Actions. |
-| El workflow falla al hacer `git push` | El repo restringe los permisos del `GITHUB_TOKEN`. | Settings → Actions → General → Workflow permissions: **Read and write permissions**. |
+| El workflow falla al hacer `git push` | El repo restringe los permisos del `GITHUB_TOKEN` o hay branch protection en `main`. | Settings → Actions → General → Workflow permissions: **Read and write permissions**; si hay branch protection, permite pushes del bot o desactívala para `main`. |
 | El video no aparece | Pesa más de 25 MB. | Comprímelo o súbelo a otra plataforma y enlázalo manualmente. |
 | La galería no cambia | El workflow no ha corrido o falló. | Revisa Actions → Drive sync y correlo a mano. |
 | `data/drive-manifest.json` da 404 en local | Abriste el sitio con `file://`. | Usa `python -m http.server` como explica el README. |
