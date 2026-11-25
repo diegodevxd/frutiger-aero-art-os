@@ -43,5 +43,6 @@ Luego visita `http://localhost:8000/index.html`.
 ## Documentación y capturas
 
 - Notas de estudio de referencia: [docs/reference-notes.md](docs/reference-notes.md)
+- Sincronización diaria con Google Drive: [docs/drive-sync-setup.md](docs/drive-sync-setup.md)
 - Mapeo de contenido e inventario de las 75 obras: [docs/content-map.md](docs/content-map.md)
 - Capturas en escritorio y móvil: `docs/screenshots/`

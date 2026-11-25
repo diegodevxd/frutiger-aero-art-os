@@ -8,7 +8,8 @@
 
 (function () {
   const PAGE_SIZE = 25;
-  const EXTRA_MODES = ['portafolio', 'piedra', 'dibujo', 'dioramas'];
+  const EXTRA_MODES = ['portafolio', 'piedra', 'dibujo', 'dioramas', 'drive'];
+  const DRIVE_MANIFEST_URL = 'data/drive-manifest.json';
 
   const MODE_TITLES = {
     general: 'C:\\MOEKAT\\GALERIE.HTM :: ARCHIVO VISUAL (53 OBRAS)',
@@ -16,7 +17,8 @@
     portafolio: 'C:\\MOEKAT\\PORTAFOLIO.HTM :: 24 LAMINAS (2 TOMOS)',
     piedra: 'C:\\MOEKAT\\BITACORA_PIEDRA.HTM :: 18 PAGINAS',
     dibujo: 'C:\\MOEKAT\\BITACORA_DIBUJO.HTM :: 1 LAMINA',
-    dioramas: 'C:\\MOEKAT\\DIORAMAS.HTM :: 9 FOTOS + 1 VIDEO'
+    dioramas: 'C:\\MOEKAT\\DIORAMAS.HTM :: 9 FOTOS + 1 VIDEO',
+    drive: 'C:\\MOEKAT\\DRIVE.HTM :: GALERIA SINCRONIZADA'
   };
 
   const MODE_MARQUEES = {
@@ -55,6 +57,12 @@
       '* Maquetas y escenas en miniatura',
       '* 9 fotos + recorrido en video',
       '* Clic en cada foto para ampliar'
+    ],
+    drive: [
+      '* Galería sincronizada desde Google Drive',
+      '* Subcarpetas = secciones',
+      '* Se actualiza automáticamente cada día',
+      '* Carga diferida'
     ]
   };
 
@@ -436,6 +444,42 @@
       return groupEl;
     }
 
+    function buildVideoFrame(videoData, fallbackTitle) {
+      const frame = document.createElement('div');
+      frame.className = 'video-frame';
+
+      const vTitle = document.createElement('p');
+      vTitle.className = 'video-frame-title';
+      vTitle.textContent = `:: ${videoData.title || fallbackTitle || 'Video'} ::`;
+
+      const video = document.createElement('video');
+      video.controls = true;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      video.setAttribute('muted', '');
+      if (videoData.poster) video.poster = videoData.poster;
+
+      const source = document.createElement('source');
+      source.src = videoData.src;
+      source.type = videoData.src.endsWith('.webm')
+        ? 'video/webm'
+        : videoData.src.endsWith('.mov')
+          ? 'video/quicktime'
+          : 'video/mp4';
+      video.appendChild(source);
+
+      const caption = document.createElement('p');
+      caption.className = 'video-frame-caption';
+      caption.textContent = videoData.meta || 'Video · moekat';
+
+      frame.appendChild(vTitle);
+      frame.appendChild(video);
+      frame.appendChild(caption);
+      return frame;
+    }
+
     function renderDioramas(extra, body) {
       const images = extra.images || [];
       const grid = document.createElement('div');
@@ -468,43 +512,146 @@
       body.appendChild(grid);
 
       if (extra.video && extra.video.src) {
-        const frame = document.createElement('div');
-        frame.className = 'video-frame';
-
-        const vTitle = document.createElement('p');
-        vTitle.className = 'video-frame-title';
-        vTitle.textContent = `:: ${extra.video.title || 'Diorama en video'} ::`;
-
-        const video = document.createElement('video');
-        video.controls = true;
-        video.muted = true;
-        video.defaultMuted = true;
-        video.playsInline = true;
-        video.preload = 'metadata';
-        video.setAttribute('muted', '');
-        if (extra.video.poster) video.poster = extra.video.poster;
-
-        const source = document.createElement('source');
-        source.src = extra.video.src;
-        source.type = 'video/mp4';
-        video.appendChild(source);
-
-        const caption = document.createElement('p');
-        caption.className = 'video-frame-caption';
-        caption.textContent = extra.video.meta || 'Video · moekat';
-
-        frame.appendChild(vTitle);
-        frame.appendChild(video);
-        frame.appendChild(caption);
-        body.appendChild(frame);
+        body.appendChild(buildVideoFrame(extra.video, 'Diorama en video'));
       }
     }
 
+    let driveManifest = null;
+    let driveManifestPromise = null;
+
+    function loadDriveManifest() {
+      if (!driveManifestPromise) {
+        driveManifestPromise = fetch(DRIVE_MANIFEST_URL + '?t=' + Date.now(), { cache: 'no-store' })
+          .then((response) => {
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
+          })
+          .then((manifest) => {
+            driveManifest = manifest;
+            return manifest;
+          })
+          .catch((error) => {
+            driveManifestPromise = null;
+            throw error;
+          });
+      }
+      return driveManifestPromise;
+    }
+
+    function renderDriveManifest(manifest, body, badgesEl) {
+      const sections = Array.isArray(manifest.sections) ? manifest.sections : [];
+      const totalItems = sections.reduce((total, section) => total + (section.items || []).length, 0);
+
+      if (badgesEl) {
+        badgesEl.innerHTML = '';
+        const stamp = manifest.updatedAt ? manifest.updatedAt.slice(0, 10) : 'sin fecha';
+        [`${sections.length} secciones`, `${totalItems} archivos`, `Sync: ${stamp}`].forEach((txt, i) => {
+          const badge = document.createElement('span');
+          badge.className = `pastel-badge ${i === 1 ? 'lavender' : 'butter'}`;
+          badge.textContent = txt;
+          badgesEl.appendChild(badge);
+        });
+      }
+
+      body.innerHTML = '';
+      if (!sections.length || !totalItems) {
+        const empty = document.createElement('div');
+        empty.className = 'gallery-empty';
+        empty.innerHTML =
+          '<strong>Aún no hay archivos sincronizados desde Drive.</strong><br>El workflow corre a diario a las 09:00 UTC o manualmente desde la pestaña Actions.';
+        body.appendChild(empty);
+        return;
+      }
+
+      sections.forEach((section) => {
+        const items = section.items || [];
+        const wrap = document.createElement('div');
+        wrap.className = 'drive-section';
+
+        const title = document.createElement('h3');
+        title.className = 'pageflip-group-title';
+        title.textContent = section.name;
+        const count = document.createElement('span');
+        count.textContent = `(${items.length} archivos)`;
+        title.appendChild(count);
+        wrap.appendChild(title);
+
+        const images = items.filter((item) => item.type === 'image');
+        if (images.length) {
+          const grid = document.createElement('div');
+          grid.className = 'diorama-grid';
+          images.forEach((item, idx) => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'art-tile';
+            btn.setAttribute('data-tip', `${item.title} • ${item.meta}`);
+            btn.setAttribute('aria-label', `Abrir ${item.title}`);
+
+            const img = document.createElement('img');
+            img.src = item.thumb || item.src;
+            img.alt = item.title;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+
+            const badge = document.createElement('span');
+            badge.className = 'art-tile-badge';
+            badge.textContent = item.title;
+
+            btn.appendChild(img);
+            btn.appendChild(badge);
+            btn.addEventListener('click', () => {
+              if (window.PastelLightbox) window.PastelLightbox.open(images, idx);
+            });
+            grid.appendChild(btn);
+          });
+          wrap.appendChild(grid);
+        }
+
+        items
+          .filter((item) => item.type === 'pdf')
+          .forEach((item) => {
+            wrap.appendChild(renderPageflipGroup({ title: item.title, pages: item.pages || [] }));
+          });
+
+        items
+          .filter((item) => item.type === 'video')
+          .forEach((item) => {
+            wrap.appendChild(buildVideoFrame(item, 'Video · Drive'));
+          });
+
+        body.appendChild(wrap);
+      });
+    }
+
+    function renderDriveGallery(section) {
+      const badgesEl = section.querySelector('.extra-gallery-badges');
+      const body = section.querySelector('[data-extra-body]');
+      if (!body) return;
+
+      if (driveManifest) {
+        renderDriveManifest(driveManifest, body, badgesEl);
+        return;
+      }
+
+      body.innerHTML = '<div class="drive-loading">Cargando galería de Drive...</div>';
+      loadDriveManifest()
+        .then((manifest) => renderDriveManifest(manifest, body, badgesEl))
+        .catch(() => {
+          body.innerHTML =
+            '<div class="gallery-empty"><strong>No se pudo leer data/drive-manifest.json.</strong><br>Sirve el sitio con un servidor local o revisa la última corrida del workflow.</div>';
+        });
+    }
+
     function renderExtraGallery(key) {
+      const section = extraSections[key];
+      if (!section) return;
+      if (key === 'drive') {
+        renderDriveGallery(section);
+        return;
+      }
       if (renderedExtras.has(key)) return;
       const extra = (window.PDF_GALLERIES || {})[key];
-      const section = extraSections[key];
-      if (!extra || !section) return;
+      if (!extra) return;
       renderedExtras.add(key);
 
       const introEl = section.querySelector('.extra-gallery-intro');
