@@ -209,7 +209,7 @@
      ---------------------------------------------------------------------- */
   function initCursorSparkles() {
     if (prefersReducedMotion() || isCoarsePointer()) return;
-    const symbols = ['✦', '♡', '⋆', '✿'];
+    const symbols = ['*', '<3', '+', 'o'];
     const colors = ['#E68CB7', '#B492F5', '#5AC8A6', '#F4A261', '#6BB8EE'];
     let lastTime = 0;
 
@@ -287,10 +287,10 @@
               <p id="lbMeta">Archivo visual • @dmxn_08</p>
             </div>
             <div class="lightbox-actions">
-              <button type="button" class="candy-btn lavender" id="lbPrevBtn" aria-label="Obra anterior">← Anterior</button>
-              <button type="button" class="candy-btn lavender" id="lbNextBtn" aria-label="Siguiente obra">Siguiente →</button>
-              <button type="button" class="candy-btn mint" id="lbZoomBtn">Acercar ✦</button>
-              <a class="candy-btn" id="lbCommissionLink" href="home.html#contacto">♡ Encargar similar</a>
+              <button type="button" class="candy-btn lavender" id="lbPrevBtn" aria-label="Obra anterior">&lt;&lt; Anterior</button>
+              <button type="button" class="candy-btn lavender" id="lbNextBtn" aria-label="Siguiente obra">Siguiente &gt;&gt;</button>
+              <button type="button" class="candy-btn mint" id="lbZoomBtn">[+] Acercar</button>
+              <a class="candy-btn" id="lbCommissionLink" href="home.html#contacto">&lt;3 Encargar similar</a>
             </div>
           </div>
         </div>
@@ -319,7 +319,7 @@
       titleEl.textContent = current.title || 'Obra';
       metaEl.textContent = current.meta || 'Archivo visual';
       counterEl.textContent = `${index + 1} / ${items.length}`;
-      zoomBtn.textContent = zoomed ? 'Ajustar ✦' : 'Acercar ✦';
+      zoomBtn.textContent = zoomed ? '[-] Ajustar' : '[+] Acercar';
       const q = encodeURIComponent(`${current.title} (${current.meta || 'Portafolio'})`);
       commissionLink.href = `home.html?obra=${q}#contacto`;
 

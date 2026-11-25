@@ -8,28 +8,46 @@
   <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/profil.css">
 </head>
 <body class="profile-page" data-particles="flowers">
   <div id="loading" aria-live="polite">
     <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFD6E8" stroke="#3B234A" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFD6E8" stroke="#2D173B" stroke-width="3.5" stroke-linejoin="round"/>
     </svg>
     <div class="loading-card">cargando semblanza y ficha...</div>
   </div>
 
-  <a class="back-pill bottom-left" href="home.html">← INICIO</a>
+  <a class="back-widget bottom-left" href="home.html" data-tip="Volver al inicio (@dmxn_08)">
+    <img class="back-glitter-img" src="gifs/back-glitter.gif" alt="<<-BACK" width="136" height="42">
+    <img class="back-garfield-img" src="gifs/garfield/garfield-sleeping.gif" alt="Garfield durmiendo" width="108" height="82">
+  </a>
 
   <main class="profile-wrap">
-    <!-- Encabezado con retratos propios + título inclinado + banda ajedrezada -->
+    <!-- Encabezado con retratos cuadrados + banda pixel ajedrezada -->
     <header class="profile-banner-head">
+      <div class="win-bar pink" style="width:100%;">
+        <div class="win-bar-title">
+          <img src="icons/about.png" alt="" width="16" height="16">
+          <span>C:\DMXN_08\PROFIL.HTM :: FICHA DE ARTISTA</span>
+        </div>
+        <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
+      </div>
+
+      <div class="retro-marquee" style="width:100%;" aria-hidden="true">
+        <div class="retro-marquee-track">
+          <span>* SOBRE DEMIAN TENORIO RICO (@DMXN_08) * GUANAJUATO, MEXICO * ARTES VISUALES UG * ARTISTA TRANSGENERO *</span>
+          <span>* SOBRE DEMIAN TENORIO RICO (@DMXN_08) * GUANAJUATO, MEXICO * ARTES VISUALES UG * ARTISTA TRANSGENERO *</span>
+        </div>
+      </div>
+
       <div class="profile-top-row">
         <div class="head-portrait">
           <img src="image/thumbs/digital2.jpg" alt="Ilustración digital II de Demian Tenorio">
         </div>
-        <h1 class="profile-arched-title">sobre mí ♡</h1>
+        <h1 class="profile-arched-title">sobre mí &lt;3</h1>
         <div class="head-portrait">
           <img src="image/thumbs/digital5.jpg" alt="Ilustración digital V de Demian Tenorio">
         </div>
@@ -40,10 +58,10 @@
     <!-- Caja principal con borde de encaje + moño pastel -->
     <section class="lace-frame profile-primary-card" aria-label="Semblanza y Ficha Técnica">
       <svg class="satin-bow" viewBox="0 0 90 66" aria-hidden="true">
-        <path d="M45 31C31 12 8 10 8 28C8 43 31 40 45 34C59 40 82 43 82 28C82 10 59 12 45 31Z" fill="#FF9EC7" stroke="#3B234A" stroke-width="3"/>
-        <path d="M40 34L24 60L34 55L44 37Z" fill="#FFD6E8" stroke="#3B234A" stroke-width="2.5"/>
-        <path d="M50 34L66 60L56 55L46 37Z" fill="#FFD6E8" stroke="#3B234A" stroke-width="2.5"/>
-        <circle cx="45" cy="33" r="8" fill="#E8DCFF" stroke="#3B234A" stroke-width="3"/>
+        <path d="M45 31C31 12 8 10 8 28C8 43 31 40 45 34C59 40 82 43 82 28C82 10 59 12 45 31Z" fill="#FF9EC7" stroke="#2D173B" stroke-width="3"/>
+        <path d="M40 34L24 60L34 55L44 37Z" fill="#FFD6E8" stroke="#2D173B" stroke-width="2.5"/>
+        <path d="M50 34L66 60L56 55L46 37Z" fill="#FFD6E8" stroke="#2D173B" stroke-width="2.5"/>
+        <circle cx="45" cy="33" r="8" fill="#E8DCFF" stroke="#2D173B" stroke-width="3"/>
       </svg>
 
       <div class="profile-grid-top">
@@ -67,7 +85,7 @@
           <div class="bio-split">
             <div class="cert-card">
               <img src="image/thumbs/tyarot.jpg" alt="Tarot I del archivo de Demian">
-              <p><strong>Archivo Oficial</strong><br>Demian Tenorio Rico ingresado en 2023 a la Lic. en Artes Visuales (UG) ♡</p>
+              <p><strong>Archivo Oficial</strong><br>Demian Tenorio Rico ingresado en 2023 a la Lic. en Artes Visuales (UG) &lt;3</p>
             </div>
 
             <div class="bio-copy">
@@ -79,10 +97,10 @@
           <!-- Widget interactivo click-para-dato -->
           <div class="funfact-row">
             <button type="button" class="funfact-btn" id="funfactBtn" data-tip="Haz clic para ver otro dato del archivo">
-              <img src="image/thumbs/o0o.png" alt="Emote o0o — clic para ver dato">
+              <img src="image/thumbs/o0o.png" alt="Emote o0o - clic para ver dato">
             </button>
             <div class="funfact-text">
-              <strong>✦ DATO DEL ARCHIVO (haz clic en el emote)</strong>
+              <strong>* DATO DEL ARCHIVO (haz clic en el emote)</strong>
               <p id="funfactCopy">Soy Demian Tenorio Rico (@dmxn_08), artista transgénero y guanajuatense.</p>
             </div>
           </div>
@@ -98,9 +116,9 @@
             <img src="image/thumbs/digital1.jpg" alt="Obra digital destacada de Demian Tenorio">
           </div>
           <div class="gif-shelf" aria-hidden="true">
-            <img class="gif-sticker" src="gifs/blushing-mdd.gif" alt="" width="68" height="60" style="border-radius:8px; border:1.5px solid var(--ink);">
-            <img class="gif-sticker" src="gifs/breadcat.gif" alt="" width="60" height="60" style="border-radius:8px; border:1.5px solid var(--ink);">
-            <img class="gif-sticker" src="gifs/demi-beret-cat.gif" alt="" width="60" height="60" style="border-radius:8px; border:1.5px solid var(--ink);">
+            <img class="gif-sticker" src="gifs/blushing-mdd.gif" alt="" width="68" height="60" style="border:2px solid var(--ink);">
+            <img class="gif-sticker" src="gifs/breadcat.gif" alt="" width="60" height="60" style="border:2px solid var(--ink);">
+            <img class="gif-sticker" src="gifs/demi-beret-cat.gif" alt="" width="60" height="60" style="border:2px solid var(--ink);">
           </div>
           <table class="spec-table">
             <tbody>
@@ -130,17 +148,17 @@
       <div class="profile-lower-grid">
         <div class="disciplines-stack">
           <h2>Disciplinas &amp; Series</h2>
-          <a class="disc-pill-row" href="galerie.html?cat=tarot"><span>✦ Tarot Ilustrado</span><span>22 obras →</span></a>
-          <a class="disc-pill-row" href="galerie.html?cat=dibujo-digital"><span>✧ Dibujo Digital</span><span>15 obras →</span></a>
-          <a class="disc-pill-row" href="galerie.html?cat=dibujo-tradicional"><span>✎ Dibujo Tradicional</span><span>10 obras →</span></a>
-          <a class="disc-pill-row" href="galerie.html?cat=esculturas"><span>✿ Escultura (Arcilla &amp; Cerámica)</span><span>7 obras →</span></a>
-          <a class="disc-pill-row" href="galerie.html?cat=bisuteria"><span>♡ Bisutería</span><span>7 obras →</span></a>
-          <a class="disc-pill-row" href="galerie.html?cat=collage"><span>✂ Collage (Técnica Mixta)</span><span>7 obras →</span></a>
-          <a class="disc-pill-row" href="galerie.html?cat=emotes"><span>★ Emotes PNG</span><span>3 obras →</span></a>
+          <a class="disc-pill-row" href="galerie.html?cat=tarot"><span>* Tarot Ilustrado</span><span>22 obras &gt;&gt;</span></a>
+          <a class="disc-pill-row" href="galerie.html?cat=dibujo-digital"><span>+ Dibujo Digital</span><span>15 obras &gt;&gt;</span></a>
+          <a class="disc-pill-row" href="galerie.html?cat=dibujo-tradicional"><span>/ Dibujo Tradicional</span><span>10 obras &gt;&gt;</span></a>
+          <a class="disc-pill-row" href="galerie.html?cat=esculturas"><span>~ Escultura (Arcilla &amp; Cerámica)</span><span>7 obras &gt;&gt;</span></a>
+          <a class="disc-pill-row" href="galerie.html?cat=bisuteria"><span>&lt;3 Bisutería</span><span>7 obras &gt;&gt;</span></a>
+          <a class="disc-pill-row" href="galerie.html?cat=collage"><span># Collage (Técnica Mixta)</span><span>7 obras &gt;&gt;</span></a>
+          <a class="disc-pill-row" href="galerie.html?cat=emotes"><span>* Emotes PNG</span><span>3 obras &gt;&gt;</span></a>
         </div>
 
         <div class="qa-box">
-          <h2>Artist Statement • Q&amp;A</h2>
+          <h2>Artist Statement | Q&amp;A</h2>
           <article class="qa-item">
             <h3>1. ¿Qué busca comunicar tu trabajo artístico?</h3>
             <p>Mi trabajo artístico busca ser un espacio lúdico y vibrante, donde el color es protagonista y se convierte en un vehículo para motivar, liberar emociones y, en ocasiones, provocar una risa inesperada.</p>
@@ -155,9 +173,16 @@
           </article>
           <article class="qa-item">
             <h3>4. ¿Cuál es la esencia de tus piezas y cómo encargar una?</h3>
-            <p>En esencia, busco que mi arte sea un recordatorio de que lo absurdo también puede ser bello, y que en la mezcla entre lo serio y lo lúdico encontramos nuevas formas de sentir y expresarnos. Puedes revisar mis tarifas en <a href="comisiones.html">Comisiones</a> o escribirme desde <a href="home.html#contacto">Contacto</a> ♡</p>
+            <p>En esencia, busco que mi arte sea un recordatorio de que lo absurdo también puede ser bello, y que en la mezcla entre lo serio y lo lúdico encontramos nuevas formas de sentir y expresarnos. Puedes revisar mis tarifas en <a href="comisiones.html">Comisiones</a> o escribirme desde <a href="home.html#contacto">Contacto</a> &lt;3</p>
           </article>
         </div>
+      </div>
+
+      <div class="btn88-row" style="padding:0 14px 12px;" aria-label="Botones 88 por 31">
+        <a class="btn88-link" href="home.html"><img src="gifs/buttons/btn-dmxn.gif" alt="@DMXN_08" width="88" height="31"></a>
+        <a class="btn88-link" href="galerie.html"><img src="gifs/buttons/btn-garfield.gif" alt="Galería" width="88" height="31"></a>
+        <a class="btn88-link" href="comisiones.html"><img src="gifs/buttons/btn-comm.gif" alt="Comisiones" width="88" height="31"></a>
+        <a class="btn88-link" href="oekaki.html"><img src="gifs/buttons/btn-oekaki.gif" alt="Oekaki" width="88" height="31"></a>
       </div>
     </section>
   </main>

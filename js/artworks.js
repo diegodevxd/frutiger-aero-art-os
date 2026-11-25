@@ -10,14 +10,14 @@
   ];
 
   const categories = [
-    { id: 'all', label: 'Todas', count: 71, badge: '★ 71 obras' },
-    { id: 'tarot', label: 'Tarot', count: 22, badge: '✦ 22 cartas' },
-    { id: 'dibujo-digital', label: 'Dibujo Digital', count: 15, badge: '✧ 15 piezas' },
-    { id: 'dibujo-tradicional', label: 'Dibujo Tradicional', count: 10, badge: '✎ 10 piezas' },
-    { id: 'esculturas', label: 'Esculturas', count: 7, badge: '✿ 7 piezas' },
-    { id: 'bisuteria', label: 'Bisutería', count: 7, badge: '♡ 7 piezas' },
-    { id: 'collage', label: 'Collage', count: 7, badge: '✂ 7 piezas' },
-    { id: 'emotes', label: 'Emotes', count: 3, badge: '★ 3 PNGs' }
+    { id: 'all', label: 'Todas', count: 71, badge: '* 71 obras' },
+    { id: 'tarot', label: 'Tarot', count: 22, badge: '+ 22 cartas' },
+    { id: 'dibujo-digital', label: 'Dibujo Digital', count: 15, badge: '+ 15 piezas' },
+    { id: 'dibujo-tradicional', label: 'Dibujo Tradicional', count: 10, badge: '/ 10 piezas' },
+    { id: 'esculturas', label: 'Esculturas', count: 7, badge: '~ 7 piezas' },
+    { id: 'bisuteria', label: 'Bisutería', count: 7, badge: '<3 7 piezas' },
+    { id: 'collage', label: 'Collage', count: 7, badge: '# 7 piezas' },
+    { id: 'emotes', label: 'Emotes', count: 3, badge: '* 3 PNGs' }
   ];
 
   const artworks = [];

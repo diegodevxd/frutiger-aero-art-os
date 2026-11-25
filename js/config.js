@@ -16,7 +16,7 @@ window.PORTFOLIO_CONFIG = {
     const isOpen = Boolean(window.COMMISSIONS_OPEN);
 
     root.querySelectorAll('[data-comm-status-pill]').forEach((el) => {
-      el.textContent = isOpen ? '★ COMISIONES ABIERTAS ★' : '✕ COMISIONES CERRADAS ✕';
+      el.textContent = isOpen ? '* COMISIONES ABIERTAS *' : '[X] COMISIONES CERRADAS [X]';
       el.classList.toggle('is-open', isOpen);
       el.classList.toggle('is-closed', !isOpen);
     });
@@ -24,14 +24,14 @@ window.PORTFOLIO_CONFIG = {
     root.querySelectorAll('[data-comm-status-gif]').forEach((img) => {
       img.src = isOpen ? this.COMMISSIONS_OPEN_GIF : this.COMMISSIONS_CLOSED_GIF;
       img.alt = isOpen
-        ? 'Comisiones abiertas — Getting Online'
-        : 'Comisiones cerradas — Anime Girl Running';
+        ? 'Comisiones abiertas - Getting Online'
+        : 'Comisiones cerradas - Anime Girl Running';
     });
 
     root.querySelectorAll('[data-comm-status-note]').forEach((el) => {
       el.textContent = isOpen
-        ? '¡Comisiones disponibles! Revisa tarifas o escríbeme ♡'
-        : 'Comisiones cerradas por el momento — ¡vuelve pronto ♡!';
+        ? '¡Comisiones disponibles! Revisa tarifas o escríbeme <3'
+        : 'Comisiones cerradas por el momento - ¡vuelve pronto <3!';
     });
   }
 };

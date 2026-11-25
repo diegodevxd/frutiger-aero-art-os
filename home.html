@@ -8,22 +8,22 @@
   <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Pixelify+Sans:wght@500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
 <body class="home-page">
   <div id="loading" aria-live="polite">
     <svg class="loading-star" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFD6E8" stroke="#3B234A" stroke-width="3.5" stroke-linejoin="round"/>
-      <circle cx="32" cy="31" r="5" fill="#85E3C3" stroke="#3B234A" stroke-width="2.5"/>
+      <path d="M32 6L38.6 22.8L56 24.8L42.8 36.6L46.4 54L32 45.2L17.6 54L21.2 36.6L8 24.8L25.4 22.8Z" fill="#FFD6E8" stroke="#2D173B" stroke-width="3.5" stroke-linejoin="round"/>
+      <circle cx="32" cy="31" r="5" fill="#85E3C3" stroke="#2D173B" stroke-width="2.5"/>
     </svg>
     <div class="loading-card">cargando estudio @dmxn_08...</div>
   </div>
 
   <!-- Botón flotante superior derecha FILTRO -->
   <button type="button" class="filter-toggle-btn" id="filterToggleBtn" data-tip="Alterna entre 5 filtros pastel (guardado automático)">
-    FILTRO ✦
+    FILTRO [*]
     <span id="filterLabel">Pastel Kawaii</span>
   </button>
 
@@ -33,24 +33,21 @@
   <div class="home-filter-stage" id="homeFilterStage">
     <!-- Barra superior móvil -->
     <header class="mobile-topbar">
-      <button type="button" class="candy-btn butter" id="mobileMenuBtn" aria-expanded="false" aria-controls="homeSidebar">☰ MENÚ</button>
-      <span class="mobile-brand">@dmxn_08 ★</span>
+      <button type="button" class="candy-btn butter" id="mobileMenuBtn" aria-expanded="false" aria-controls="homeSidebar">[MENU]</button>
+      <span class="mobile-brand">@dmxn_08 * ART</span>
     </header>
 
     <div class="hub-shell">
-      <!-- ================================================================
-           COLUMNA 1: SIDEBAR FIJA IZQUIERDA (EXACTA A LA REFERENCIA)
-           ================================================================ -->
+      <!-- COLUMNA 1: SIDEBAR FIJA IZQUIERDA (EXACTA A REIGEN.MOE) -->
       <aside class="sidebar" id="homeSidebar" aria-label="Navegación principal">
-        <!-- Mini ventana Paint interactiva -->
         <div class="mini-paint-widget">
           <div class="mini-paint-bar">
             <span>untitled - Paint</span>
-            <span>×</span>
+            <span>[X]</span>
           </div>
           <div class="mini-paint-body">
             <div class="mini-paint-tools" aria-hidden="true">
-              <span>✎</span><span>✒</span><span>✿</span><span>✂</span><span>★</span>
+              <span>/</span><span>~</span><span>*</span><span>#</span><span>+</span>
             </div>
             <button type="button" class="mini-paint-btn" id="miniPaintBtn" data-tip="Clic para cambiar la obra aleatoria del centro">
               <img id="miniPaintImg" src="image/thumbs/tyarot.jpg" alt="Vista previa aleatoria de Demian">
@@ -74,7 +71,7 @@
         </div>
         <nav class="nav-box" aria-label="Páginas del portafolio">
           <div class="nav-box-inner">
-            <a class="nav-item-link" href="galerie.html">GALERÍA (71)</a>
+            <a class="nav-item-link" href="galerie.html">GALERIA (71)</a>
             <a class="nav-item-link" href="profil.html">PERFIL</a>
             <a class="nav-item-link" href="comisiones.html">COMISIONES</a>
             <a class="nav-item-link" href="oekaki.html">OEKAKI / LIENZO</a>
@@ -99,15 +96,12 @@
           Para ver mis redes, precios o escribirme directamente, entra a <a href="#contacto" data-open-tab="contacto">esta sección</a>.
         </p>
 
-        <!-- Badges 88x31 estilo old-web -->
-        <div class="badges-88x31-row" aria-label="Mini badges">
-          <a class="badge-88" href="profil.html" data-tip="Demian Tenorio Rico (@dmxn_08)">
-            <img src="gifs/demi-pixel-cat.jpg" alt="">
-            <span>@dmxn_08</span>
-          </a>
-          <a class="badge-88 lav" href="galerie.html" data-tip="71 obras en archivo">
-            <span>★ UG ARTES</span>
-          </a>
+        <!-- Botones 88x31 estilo old-web -->
+        <div class="badges-88x31-row" aria-label="Botones 88 por 31">
+          <a class="btn88-link" href="profil.html" data-tip="Demian Tenorio Rico (@dmxn_08)"><img src="gifs/buttons/btn-dmxn.gif" alt="@DMXN_08" width="88" height="31"></a>
+          <a class="btn88-link" href="profil.html" data-tip="Licenciatura Artes Visuales UG"><img src="gifs/buttons/btn-ug-artes.gif" alt="UG ARTES" width="88" height="31"></a>
+          <a class="btn88-link" href="galerie.html?cat=tarot" data-tip="Colección Tarot (22 cartas)"><img src="gifs/buttons/btn-tarot.gif" alt="TAROT 22" width="88" height="31"></a>
+          <a class="btn88-link" href="comisiones.html" data-tip="Comisiones abiertas en MXN"><img src="gifs/buttons/btn-comm.gif" alt="COMISIONES" width="88" height="31"></a>
         </div>
 
         <!-- Banners apilados -->
@@ -119,93 +113,92 @@
           </a>
           <a class="wide-sticker-banner alt" href="galerie.html">
             <img class="gif-pixel" src="gifs/old-web-wink.gif" alt="">
-            <span>@dmxn_08 • 71</span>
+            <span>@dmxn_08 * 71</span>
             <img class="gif-pixel" src="gifs/punch-cat.gif" alt="">
           </a>
         </div>
 
         <div class="link-me-note">
-          ↑ Link me back? ↑<br>
+          :: Link me back? ::<br>
           (archivo visual @dmxn_08)
         </div>
 
         <!-- Crest World Wide Web pastel original -->
         <svg class="www-crest" viewBox="0 0 130 98" role="img" aria-label="World Wide Web">
-          <rect x="6" y="14" width="118" height="74" rx="10" fill="#452459" stroke="#FFE07A" stroke-width="4"/>
-          <path d="M24 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#FF9EC7" stroke="#3B234A" stroke-width="1.5"/>
-          <path d="M65 4l4 7 7 1-5 5 1 7-7-4-7 4 1-7-5-5 7-1z" fill="#FFE07A" stroke="#3B234A" stroke-width="1.5"/>
-          <path d="M106 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#85E3C3" stroke="#3B234A" stroke-width="1.5"/>
-          <circle cx="65" cy="48" r="20" fill="#8ED4FF" stroke="#FFF9FB" stroke-width="2.5"/>
-          <ellipse cx="65" cy="48" rx="10" ry="20" fill="none" stroke="#FFF9FB" stroke-width="1.8"/>
-          <line x1="45" y1="48" x2="85" y2="48" stroke="#FFF9FB" stroke-width="1.8"/>
-          <path d="M52 38c4 4 9 1 11 6 3 5-2 10 3 14" fill="none" stroke="#85E3C3" stroke-width="4" stroke-linecap="round"/>
-          <rect x="14" y="68" width="102" height="18" rx="5" fill="#FFD6E8" stroke="#3B234A" stroke-width="2"/>
-          <text x="65" y="80" text-anchor="middle" fill="#3B234A" font-family="Trebuchet MS, sans-serif" font-weight="700" font-size="9.5">WORLD WIDE WEB</text>
+          <rect x="4" y="10" width="122" height="80" fill="#3B1E4F" stroke="#FFE07A" stroke-width="4"/>
+          <path d="M24 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#FF9EC7" stroke="#2D173B" stroke-width="1.5"/>
+          <path d="M65 4l4 7 7 1-5 5 1 7-7-4-7 4 1-7-5-5 7-1z" fill="#FFE07A" stroke="#2D173B" stroke-width="1.5"/>
+          <path d="M106 10l3 6 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1z" fill="#85E3C3" stroke="#2D173B" stroke-width="1.5"/>
+          <circle cx="65" cy="48" r="19" fill="#8ED4FF" stroke="#FFF9FB" stroke-width="2.5"/>
+          <ellipse cx="65" cy="48" rx="9" ry="19" fill="none" stroke="#FFF9FB" stroke-width="1.8"/>
+          <line x1="46" y1="48" x2="84" y2="48" stroke="#FFF9FB" stroke-width="1.8"/>
+          <rect x="14" y="68" width="102" height="17" fill="#FFD6E8" stroke="#2D173B" stroke-width="2"/>
+          <text x="65" y="80" text-anchor="middle" fill="#2D173B" font-family="Trebuchet MS, sans-serif" font-weight="700" font-size="9.5">WORLD WIDE WEB</text>
         </svg>
 
-        <a class="sidebar-back-link" href="index.html">← volver a portada</a>
+        <a class="sidebar-back-link" href="index.html">&lt;&lt; volver a portada</a>
       </aside>
 
-      <!-- ================================================================
-           ZONA PRINCIPAL: 3 COLUMNAS OLD-WEB (CENTRO + CINTA + DERECHA)
-           ================================================================ -->
+      <!-- ZONA PRINCIPAL: 3 COLUMNAS OLD-WEB -->
       <main class="hub-main">
         <div class="hub-outer-frame">
-          <!-- Cinta Marquee superior -->
-          <div class="hub-ticker" aria-hidden="true">
-            <div class="hub-ticker-track">
-              <span>★ DEMIAN TENORIO RICO ★ @DMXN_08 ★ LIC. ARTES VISUALES UG ★ TAROT • ILUSTRACIÓN • ESCULTURA • BISUTERÍA • COLLAGE • EMOTES ★</span>
-              <span>★ DEMIAN TENORIO RICO ★ @DMXN_08 ★ LIC. ARTES VISUALES UG ★ TAROT • ILUSTRACIÓN • ESCULTURA • BISUTERÍA • COLLAGE • EMOTES ★</span>
+          <div class="win-bar">
+            <div class="win-bar-title">
+              <img src="icons/portfolio.png" alt="" width="16" height="16">
+              <span>DMXN_08_HUB.HTM :: 71 OBRAS EN LINEA</span>
+            </div>
+            <div class="win-controls" aria-hidden="true"><span>_</span><span>[]</span><span>X</span></div>
+          </div>
+
+          <div class="retro-marquee plum" aria-hidden="true">
+            <div class="retro-marquee-track">
+              <span>* DEMIAN TENORIO RICO * @DMXN_08 * LIC. ARTES VISUALES UG * TAROT | ILUSTRACION | ESCULTURA | BISUTERIA | COLLAGE | EMOTES *</span>
+              <span>* DEMIAN TENORIO RICO * @DMXN_08 * LIC. ARTES VISUALES UG * TAROT | ILUSTRACION | ESCULTURA | BISUTERIA | COLLAGE | EMOTES *</span>
             </div>
           </div>
 
           <div class="hub-3col">
-            <!-- ==========================================================
-                 COLUMNA CENTRAL: RANDOM ARTWORK + BANNER + TABS + PANEL
-                 ========================================================== -->
+            <!-- COLUMNA CENTRAL -->
             <div class="hub-center-col">
-              <!-- Showcase de Obra Aleatoria -->
               <section class="random-showcase" aria-label="Obra aleatoria">
                 <div class="showcase-header-bar">
-                  <h1 class="showcase-title" data-rainbow>DEMIAN TENORIO ★ @DMXN_08</h1>
+                  <h1 class="showcase-title" data-rainbow>DEMIAN TENORIO :: @DMXN_08</h1>
                   <img class="gif-sticker mcbling-pop" src="gifs/boyfriend-mcbling.gif" alt="" width="110" height="23">
                 </div>
 
                 <div class="showcase-stage">
                   <div class="showcase-left-ornaments" aria-hidden="true">
                     <svg class="spin-charm" viewBox="0 0 36 36">
-                      <circle cx="18" cy="18" r="16" fill="#FFD6E8" stroke="#3B234A" stroke-width="2"/>
-                      <path d="M18 5l3 8 8.5.7-6.5 5.4 2 8.2-7-4.5-7 4.5 2-8.2-6.5-5.4L15 13z" fill="#FFE07A" stroke="#3B234A" stroke-width="1.8"/>
+                      <rect x="2" y="2" width="32" height="32" fill="#FFD6E8" stroke="#2D173B" stroke-width="2"/>
+                      <path d="M18 5l3 8 8.5.7-6.5 5.4 2 8.2-7-4.5-7 4.5 2-8.2-6.5-5.4L15 13z" fill="#FFE07A" stroke="#2D173B" stroke-width="1.8"/>
                     </svg>
                     <img class="gif-sticker gif-pixel" src="gifs/old-web-2000s-pixel.gif" alt="" width="34" height="34">
                   </div>
 
                   <button type="button" class="showcase-img-btn" id="showcaseOpenBtn" data-tip="Clic para abrir en el visor a resolución completa">
-                    <img id="randomArtImg" src="image/tyarot.jpg" alt="Tarot I — Arte Digital • 2024">
+                    <img id="randomArtImg" src="image/tyarot.jpg" alt="Tarot I - Arte Digital - 2024">
                   </button>
                 </div>
 
                 <div class="showcase-bottom-bar">
                   <div class="showcase-caption">
-                    <strong id="randomArtTitle">Tarot I</strong> • <span id="randomArtMeta">Tarot • Arte Digital • 2024</span>
+                    <strong id="randomArtTitle">Tarot I</strong> | <span id="randomArtMeta">Tarot - Arte Digital - 2024</span>
                   </div>
-                  <button type="button" class="random-retro-btn" id="shuffleArtBtn">OBRA AL AZAR ✦</button>
+                  <button type="button" class="random-retro-btn" id="shuffleArtBtn">OBRA AL AZAR [*]</button>
                 </div>
               </section>
 
-              <!-- Sub-banner glossy tipo Psychic Web -->
               <div class="study-banner">
                 <div class="study-banner-left">
                   <img class="gif-sticker gif-pixel" src="gifs/old-web-wink.gif" alt="" width="20" height="20">
-                  <strong>DEMIAN ★ ART</strong>
+                  <strong>DEMIAN :: ART</strong>
                 </div>
-                <span>TAROT • ILUSTRACIÓN • ESCULTURA &amp; MÁS!</span>
+                <span>TAROT | ILUSTRACION | ESCULTURA &amp; MAS!</span>
               </div>
 
-              <!-- Fila de pestañas rectangulares -->
               <div class="hub-tabs" id="hubTabs" role="tablist" aria-label="Secciones del estudio">
                 <button type="button" class="hub-tab-btn is-active" role="tab" aria-selected="true" data-tab="welcome">BIENVENIDX</button>
-                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="musica">MÚSICA</button>
+                <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="musica">MUSICA</button>
                 <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="comisiones">COMISIONES</button>
                 <button type="button" class="hub-tab-btn" role="tab" aria-selected="false" data-tab="contacto">CONTACTO</button>
               </div>
@@ -213,12 +206,12 @@
               <!-- TAB 1: BIENVENIDX -->
               <section class="hub-panel is-active" id="panel-welcome" role="tabpanel">
                 <div class="motto-quote">
-                  « Busco que mi arte sea un recordatorio de que lo absurdo también puede ser bello ♡ »
+                  &laquo; Busco que mi arte sea un recordatorio de que lo absurdo también puede ser bello &lt;3 &raquo;
                 </div>
 
                 <div class="sparkle-divider">
                   <img class="gif-sticker gif-pixel" src="gifs/laughing-cat.gif" alt="" width="20" height="20">
-                  <span>✦ ✿ ARTIST STATEMENT ✿ ✦</span>
+                  <span>:: ARTIST STATEMENT ::</span>
                   <img class="gif-sticker gif-pixel" src="gifs/punch-cat.gif" alt="" width="20" height="20">
                 </div>
 
@@ -251,7 +244,7 @@
 
                   <aside class="welcome-art-aside">
                     <img class="aside-artwork" src="image/thumbs/digital1.jpg" alt="Dibujo Digital I de Demian Tenorio">
-                    <span style="font-size:0.76rem; font-weight:700;">Arte por Demian Tenorio Rico (@dmxn_08)</span>
+                    <span style="font-size:0.74rem; font-weight:700;">Arte por Demian Tenorio Rico (@dmxn_08)</span>
                     <img class="gif-sticker" src="gifs/demi-pusheen-trio.gif" alt="" width="96" height="69" style="margin:0 auto;">
                   </aside>
                 </div>
@@ -287,38 +280,45 @@
                 <div class="disciplines-grid">
                   <a class="discipline-card" href="galerie.html?cat=tarot">
                     <strong>Tarot &amp; Simbolismo Digital</strong>
-                    <span>22 cartas ilustradas • Cultura pop y arcanos →</span>
+                    <span>22 cartas ilustradas | Cultura pop y arcanos &gt;&gt;</span>
                   </a>
                   <a class="discipline-card" href="galerie.html?cat=dibujo-digital">
                     <strong>Ilustración Digital &amp; Tradicional</strong>
-                    <span>25 piezas • Color, lápiz y técnica mixta →</span>
+                    <span>25 piezas | Color, lápiz y técnica mixta &gt;&gt;</span>
                   </a>
                   <a class="discipline-card" href="galerie.html?cat=esculturas">
                     <strong>Escultura en Arcilla &amp; Cerámica</strong>
-                    <span>7 piezas tridimensionales →</span>
+                    <span>7 piezas tridimensionales &gt;&gt;</span>
                   </a>
                   <a class="discipline-card" href="galerie.html?cat=bisuteria">
                     <strong>Bisutería, Collage &amp; Emotes</strong>
-                    <span>17 obras entre arte objeto, papel y PNG →</span>
+                    <span>17 obras entre arte objeto, papel y PNG &gt;&gt;</span>
                   </a>
+                </div>
+
+                <div class="btn88-row" style="margin-bottom:8px;" aria-label="Botones retro del estudio">
+                  <a class="btn88-link" href="galerie.html"><img src="gifs/buttons/btn-garfield.gif" alt="Garfield Gallery" width="88" height="31"></a>
+                  <a class="btn88-link" href="oekaki.html"><img src="gifs/buttons/btn-oekaki.gif" alt="Oekaki Drawbox" width="88" height="31"></a>
+                  <span class="btn88-link"><img src="gifs/buttons/btn-bestviewed.gif" alt="Mejor visto en 800x600" width="88" height="31"></span>
+                  <span class="btn88-link"><img src="gifs/buttons/btn-html.gif" alt="HTML 4.0" width="88" height="31"></span>
                 </div>
 
                 <div class="gif-shelf" aria-label="Stickers animados decorativos">
                   <img class="gif-stamp" src="gifs/meat-stamp.gif" alt="" width="99" height="56">
-                  <img class="gif-sticker" src="gifs/breadcat.gif" alt="" width="76" height="76" style="border-radius:8px; border:2px solid var(--ink);">
-                  <img class="gif-sticker" src="gifs/demi-nyanko-roll.gif" alt="" width="92" height="52" style="border-radius:8px; border:2px solid var(--ink);">
+                  <img class="gif-sticker" src="gifs/breadcat.gif" alt="" width="76" height="76" style="border:2px solid var(--ink);">
+                  <img class="gif-sticker" src="gifs/demi-nyanko-roll.gif" alt="" width="92" height="52" style="border:2px solid var(--ink);">
                 </div>
               </section>
 
               <!-- TAB 2: MÚSICA -->
               <section class="hub-panel" id="panel-musica" role="tabpanel">
                 <h2 class="panel-heading">
-                  <span>Jukebox • Música para Crear Arte ♫</span>
-                  <img class="gif-sticker" src="gifs/demi-chi-piano.gif" alt="" width="56" height="48" style="border-radius:6px; border:1.5px solid var(--ink);">
+                  <span>Jukebox | Música para Crear Arte [~]</span>
+                  <img class="gif-sticker" src="gifs/demi-chi-piano.gif" alt="" width="56" height="48" style="border:2px solid var(--ink);">
                 </h2>
                 <div class="jukebox-wrap">
                   <div class="jukebox-top">
-                    <span class="jukebox-track">♪ WorldFrutti.mp3</span>
+                    <span class="jukebox-track">[~] WorldFrutti.mp3</span>
                     <span class="jukebox-track" id="jukeboxTime">00:00</span>
                   </div>
                   <canvas id="jukeboxCanvas" width="520" height="118" aria-label="Visualizador musical pastel"></canvas>
@@ -327,8 +327,8 @@
                   </div>
                   <div class="jukebox-controls">
                     <div class="jukebox-btns">
-                      <button type="button" class="candy-btn butter" id="jukeboxPlayBtn">▶ Play</button>
-                      <button type="button" class="candy-btn lavender" id="jukeboxStopBtn">⏹ Stop</button>
+                      <button type="button" class="candy-btn butter" id="jukeboxPlayBtn">&gt; Play</button>
+                      <button type="button" class="candy-btn lavender" id="jukeboxStopBtn">[=] Stop</button>
                     </div>
                     <label class="jukebox-vol">
                       <span>VOL</span>
@@ -342,12 +342,12 @@
               <!-- TAB 3: COMISIONES -->
               <section class="hub-panel" id="panel-comisiones" role="tabpanel">
                 <h2 class="panel-heading">Comisiones e Ilustración por Encargo (MXN)</h2>
-                <div class="comm-status-box" style="margin-bottom:12px;">
-                  <span class="comm-status-pill" data-comm-status-pill>★ COMISIONES ABIERTAS ★</span>
+                <div class="comm-status-box" style="margin-bottom:10px;">
+                  <span class="comm-status-pill" data-comm-status-pill>* COMISIONES ABIERTAS *</span>
                   <div class="comm-status-gif-frame">
                     <img data-comm-status-gif src="gifs/comm-open.gif" alt="Estado de comisiones">
                   </div>
-                  <p data-comm-status-note style="font-size:0.84rem; font-weight:700;">¡Comisiones disponibles! Revisa tarifas o escríbeme ♡</p>
+                  <p data-comm-status-note style="font-size:0.82rem; font-weight:700;">¡Comisiones disponibles! Revisa tarifas o escríbeme &lt;3</p>
                 </div>
 
                 <div class="comm-summary-grid">
@@ -361,7 +361,7 @@
                   </div>
                   <div class="comm-mini-box">
                     <h4>Completo &amp; Emotes</h4>
-                    <p>Completo desde $500<br>3 Emotes $200 • 5 $350<br>10 Emotes Promo $600</p>
+                    <p>Completo desde $500<br>3 Emotes $200 | 5 $350<br>10 Emotes Promo $600</p>
                   </div>
                 </div>
 
@@ -378,18 +378,18 @@
                 </div>
 
                 <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                  <a class="candy-btn mint" href="comisiones.html">Ver reglas y tarifas completas →</a>
-                  <button type="button" class="candy-btn" data-open-tab="contacto">♡ Solicitar comisión</button>
+                  <a class="candy-btn mint" href="comisiones.html">Ver reglas y tarifas completas &gt;&gt;</a>
+                  <button type="button" class="candy-btn" data-open-tab="contacto">&lt;3 Solicitar comisión</button>
                 </div>
               </section>
 
               <!-- TAB 4: CONTACTO -->
               <section class="hub-panel" id="panel-contacto" role="tabpanel">
                 <h2 class="panel-heading" id="contacto">
-                  <span>Contacto Profesional ♡</span>
+                  <span>Contacto Profesional &lt;3</span>
                   <img class="gif-sticker gif-pixel" src="gifs/emoticon-te-amo.gif" alt="" width="68" height="19">
                 </h2>
-                <p style="margin-bottom:12px; font-weight:600;">¿Te interesa mi portafolio o te interesa adquirir una comisión? ¡Puedes rellenar el siguiente formulario para contactarte conmigo!</p>
+                <p style="margin-bottom:10px; font-weight:600;">¿Te interesa mi portafolio o te interesa adquirir una comisión? ¡Puedes rellenar el siguiente formulario para contactarte conmigo!</p>
 
                 <form class="contact-form" id="contactForm" action="https://formspree.io/f/xrbapazl" method="POST">
                   <div class="form-row-2">
@@ -438,9 +438,9 @@
                   <div class="form-status" id="formStatus" role="status"></div>
 
                   <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-                    <button type="submit" class="candy-btn">✦ Enviar Consulta</button>
+                    <button type="submit" class="candy-btn">[+] Enviar Consulta</button>
                     <button type="button" class="candy-btn lavender" id="clearFormBtn">Limpiar</button>
-                    <img class="gif-sticker" src="gifs/cat-shy.gif" alt="" width="48" height="48" style="border-radius:8px; border:1.5px solid var(--ink);">
+                    <img class="gif-sticker" src="gifs/cat-shy.gif" alt="" width="48" height="48" style="border:2px solid var(--ink);">
                   </div>
                 </form>
               </section>
@@ -448,12 +448,10 @@
 
             <!-- CINTA VERTICAL DECORATIVA -->
             <div class="vertical-pastel-ribbon" aria-hidden="true">
-              ♡ @dmxn_08 ✦ artes visuales ug ✦ tarot &amp; ilustración ✦ pastel kawaii ♡
+              &lt;3 @dmxn_08 * artes visuales ug * tarot &amp; ilustracion * pastel kawaii &lt;3
             </div>
 
-            <!-- ==========================================================
-                 COLUMNA DERECHA: BIENVENIDA + STATUS GIF + FILTRO + STICKERS
-                 ========================================================== -->
+            <!-- COLUMNA DERECHA -->
             <aside class="hub-side-col" aria-label="Bienvenida y estado">
               <div class="side-card welcome-card">
                 <div class="welcome-art-header">
@@ -462,12 +460,11 @@
                 </div>
                 <div class="welcome-bubble">
                   <h2>¡Bienvenidx!</h2>
-                  <p>Soy Demian Tenorio Rico (@dmxn_08), artista transgénero y guanajuatense en la Lic. de Artes Visuales (UG). Explora mis 71 obras originales y disfruta tu estancia ♡</p>
+                  <p>Soy Demian Tenorio Rico (@dmxn_08), artista transgénero y guanajuatense en la Lic. de Artes Visuales (UG). Explora mis 71 obras originales y disfruta tu estancia &lt;3</p>
                   <span class="live-clock-pill" id="liveClock">00:00:00</span>
                 </div>
               </div>
 
-              <!-- Status Box estilo referencia + GIF dinámico de comisiones -->
               <div class="side-card status-card">
                 <div class="status-top-split">
                   <div class="status-online-box">
@@ -477,36 +474,34 @@
                     </span>
                   </div>
                   <button type="button" class="candy-btn clap-btn" id="clapBtn">
-                    ♡ Clap (<span id="clapCount">71</span>)
+                    <span>&lt;3 Clap (<strong id="clapCount">71</strong>)</span>
                   </button>
                 </div>
 
                 <div class="comm-status-box">
-                  <span class="comm-status-pill" data-comm-status-pill>★ COMISIONES ABIERTAS ★</span>
+                  <span class="comm-status-pill" data-comm-status-pill>* COMISIONES ABIERTAS *</span>
                   <div class="comm-status-gif-frame">
                     <img data-comm-status-gif src="gifs/comm-open.gif" alt="Estado de comisiones">
                   </div>
-                  <p data-comm-status-note style="font-size:0.78rem; font-weight:700; line-height:1.35;">¡Comisiones disponibles! Revisa tarifas o escríbeme ♡</p>
-                  <a class="candy-btn mint" href="comisiones.html" style="padding:6px 12px; font-size:0.76rem;">Ver comisiones →</a>
+                  <p data-comm-status-note style="font-size:0.76rem; font-weight:700; line-height:1.35;">¡Comisiones disponibles! Revisa tarifas o escríbeme &lt;3</p>
+                  <a class="candy-btn mint" href="comisiones.html" style="padding:5px 10px; font-size:0.68rem;">Ver comisiones &gt;&gt;</a>
                 </div>
               </div>
 
-              <!-- Tarjeta de sugerencia de filtros -->
               <div class="side-card filter-hint-card">
-                <img class="filter-hint-thumb" src="image/thumbs/tyarot2.jpg" alt="Tarot II — muestra de filtro">
-                <p>¿Quieres probar otros tonos pastel? Pulsa <strong>[FILTRO ✦]</strong> arriba a la derecha para alternar 5 atmósferas ♡</p>
+                <img class="filter-hint-thumb" src="image/thumbs/tyarot2.jpg" alt="Tarot II - muestra de filtro">
+                <p>¿Quieres probar otros tonos pastel? Pulsa <strong>[FILTRO *]</strong> arriba a la derecha para alternar 5 atmósferas &lt;3</p>
               </div>
 
-              <!-- Mini banners y GIFs finales -->
               <div class="side-card" style="display:grid; gap:8px;">
                 <div class="mini-banners-stack">
-                  <a class="mini-banner-link" href="galerie.html?cat=tarot"><span>✦ TAROT ILUSTRADO</span><span>22 →</span></a>
-                  <a class="mini-banner-link" href="galerie.html?cat=esculturas"><span>✿ ESCULTURA &amp; ARCILLA</span><span>7 →</span></a>
-                  <a class="mini-banner-link" href="galerie.html?cat=emotes"><span>★ EMOTES PNG</span><span>3 →</span></a>
-                  <a class="mini-banner-link" href="oekaki.html"><span>✎ LIENZO KAWAII</span><span>↗</span></a>
+                  <a class="mini-banner-link" href="galerie.html?cat=tarot"><span>* TAROT ILUSTRADO</span><span>22 &gt;&gt;</span></a>
+                  <a class="mini-banner-link" href="galerie.html?cat=esculturas"><span>+ ESCULTURA &amp; ARCILLA</span><span>7 &gt;&gt;</span></a>
+                  <a class="mini-banner-link" href="galerie.html?cat=emotes"><span>* EMOTES PNG</span><span>3 &gt;&gt;</span></a>
+                  <a class="mini-banner-link" href="oekaki.html"><span>/ LIENZO KAWAII</span><span>[+]</span></a>
                 </div>
                 <div class="gif-shelf">
-                  <img class="gif-sticker" src="gifs/blushing-mdd.gif" alt="" width="76" height="67" style="border-radius:8px; border:1.5px solid var(--ink);">
+                  <img class="gif-sticker" src="gifs/blushing-mdd.gif" alt="" width="76" height="67" style="border:2px solid var(--ink);">
                   <img class="gif-sticker" src="gifs/bunny-glitter.gif" alt="" width="74" height="56">
                 </div>
               </div>

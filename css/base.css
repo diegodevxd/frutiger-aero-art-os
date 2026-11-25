@@ -1,6 +1,6 @@
 /* ==========================================================================
-   BASE COMPARTIDA — Cursores pastel, Preloader, Transición, Partículas,
-   Tooltips, Marcos de encaje, Marcos arcoíris y Lightbox universal.
+   BASE COMPARTIDA - Estilo Old-Web 1999-2004 (Bordes biselados, cuadrícula
+   cuadrada 0px, widget BACK tipo referencia, marquesinas, botones 88x31)
    ========================================================================== */
 
 @import url('./tokens.css');
@@ -11,27 +11,26 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border-radius: 0;
 }
 
 html {
   font-size: 16px;
   scroll-behavior: smooth;
   overflow-x: clip;
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpath d='M3 2L11 22L14 14L22 11L3 2Z' fill='%23FFD6E8' stroke='%233B234A' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M19 3L20 6L23 7L20 8L19 11L18 8L15 7L18 6Z' fill='%23FFE07A' stroke='%233B234A' stroke-width='1'/%3E%3C/svg%3E") 3 2, auto;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M2 2L9 20L12 13L19 10L2 2Z' fill='%23FFD6E8' stroke='%232D173B' stroke-width='2'/%3E%3C/svg%3E") 2 2, auto;
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100svh;
   font-family: var(--font-body);
   font-size: var(--text-base);
-  line-height: 1.6;
+  line-height: 1.48;
   color: var(--ink);
   background-color: var(--bg-cream);
   overflow-x: clip;
-  -webkit-font-smoothing: antialiased;
 }
 
-/* Cursores interactivos con corazón pastel */
 a,
 button,
 summary,
@@ -39,7 +38,7 @@ select,
 [role="button"],
 .art-tile,
 .clickable {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M14 23C14 23 4 16.5 4 9.5C4 6 6.8 3.5 10 3.5C12 3.5 13.4 4.6 14 6C14.6 4.6 16 3.5 18 3.5C21.2 3.5 24 6 24 9.5C24 16.5 14 23 14 23Z' fill='%23FF9EC7' stroke='%233B234A' stroke-width='2'/%3E%3Ccircle cx='10' cy='9' r='1.6' fill='%23FFF9FB'/%3E%3C/svg%3E") 14 10, pointer;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12 20C12 20 3 14 3 8.5C3 5.5 5.4 3.5 8 3.5C9.8 3.5 11.2 4.5 12 5.8C12.8 4.5 14.2 3.5 16 3.5C18.6 3.5 21 5.5 21 8.5C21 14 12 20 12 20Z' fill='%23FF9EC7' stroke='%232D173B' stroke-width='2'/%3E%3C/svg%3E") 12 8, pointer;
 }
 
 img {
@@ -50,8 +49,8 @@ img {
 
 a {
   color: var(--pink-deep);
-  text-decoration: none;
-  transition: color 0.18s ease, transform 0.18s var(--ease-bouncy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 a:hover {
@@ -59,35 +58,34 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 3px solid var(--lavender-deep);
-  outline-offset: 3px;
-  border-radius: 6px;
+  outline: 2px dotted var(--lavender-deep);
+  outline-offset: 2px;
 }
 
 ::selection {
-  background: var(--lavender-mid);
-  color: var(--bg-plum-deep);
+  background: var(--bg-plum);
+  color: var(--butter-soft);
 }
 
-/* Scrollbar pastel estilo kawaii */
+/* Scrollbar biselada estilo Win98 pastel */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
 }
 
 ::-webkit-scrollbar-track {
   background: var(--bg-blush);
-  border-left: 1px solid var(--pink-soft);
+  border-left: 2px solid var(--pink-mid);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--pink-mid), var(--lavender-mid));
-  border-radius: var(--radius-pill);
-  border: 2px solid var(--bg-blush);
+  background: var(--pink-soft);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--pink-deep), var(--lavender-deep));
+  background: var(--lavender-soft);
 }
 
 * {
@@ -96,7 +94,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   PRELOADER (#loading) & CORTINA DE TRANSICIÓN ENTRE PÁGINAS (.page-veil)
+   PRELOADER (#loading) Y CORTINA DE TRANSICIÓN (.page-veil)
    ========================================================================== */
 
 #loading {
@@ -107,14 +105,12 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   background-color: var(--bg-blush);
-  background-image:
-    radial-gradient(circle at 20% 25%, rgba(232, 220, 255, 0.75) 0 18%, transparent 19%),
-    radial-gradient(circle at 80% 75%, rgba(205, 247, 231, 0.75) 0 18%, transparent 19%);
-  background-size: 64px 64px;
+  background-image: url('../gifs/tiles/tile-splash.png');
+  background-repeat: repeat;
   opacity: 1;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
+  transition: opacity 0.25s ease-out, visibility 0.25s ease-out;
 }
 
 #loading.is-loaded {
@@ -127,40 +123,38 @@ a:hover {
   background: var(--bg-card);
   color: var(--ink);
   border: 4px double var(--pink-deep);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-candy);
-  padding: 16px 24px;
-  max-width: 280px;
+  outline: 2px solid var(--ink);
+  padding: 12px 20px;
+  max-width: 300px;
   text-align: center;
   font-family: var(--font-pixel);
-  font-size: 0.78rem;
-  line-height: 1.5;
+  font-size: 0.72rem;
+  line-height: 1.45;
 }
 
 .loading-star {
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   animation: pastel-spin 1.8s linear infinite;
-  filter: drop-shadow(0 4px 10px rgba(196, 59, 123, 0.25));
 }
 
 .page-veil {
   position: fixed;
   inset: 0;
   z-index: var(--z-veil);
-  background: radial-gradient(circle at center, rgba(255, 240, 246, 0.94), rgba(232, 220, 255, 0.96));
+  background: var(--lavender-soft);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s var(--ease-smooth);
+  transition: opacity 0.16s ease-out;
 }
 
 .page-veil.is-entering {
-  opacity: 1;
+  opacity: 0.92;
   pointer-events: all;
 }
 
 /* ==========================================================================
-   PARTÍCULAS CAYENDO, DESTELLOS DEL CURSOR Y TOOLTIP FLOTANTE
+   PARTÍCULAS CAYENDO, DESTELLOS Y TOOLTIP OLD-WEB
    ========================================================================== */
 
 .sparkle-layer {
@@ -178,17 +172,17 @@ a:hover {
   z-index: var(--z-particles);
   animation: charm-fall linear forwards;
   will-change: transform, opacity;
-  filter: drop-shadow(0 3px 6px rgba(110, 70, 184, 0.16));
 }
 
 .cursor-sparkle {
   position: fixed;
   pointer-events: none;
   z-index: var(--z-tooltip);
-  font-size: 14px;
+  font-family: var(--font-pixel);
+  font-size: 13px;
   line-height: 1;
   transform: translate(-50%, -50%);
-  animation: cursor-pop 0.68s ease-out forwards;
+  animation: cursor-pop 0.62s ease-out forwards;
   user-select: none;
 }
 
@@ -197,20 +191,19 @@ a:hover {
   top: 0;
   left: 0;
   z-index: var(--z-tooltip);
-  max-width: 230px;
-  padding: 6px 11px;
-  background: var(--bg-plum);
-  color: var(--bg-cream);
-  border: 2px solid var(--pink-mid);
-  border-radius: var(--radius-sm);
-  box-shadow: 3px 3px 0 var(--pink-soft);
+  max-width: 240px;
+  padding: 5px 9px;
+  background: var(--butter-soft);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  outline: 2px solid var(--pink-mid);
   font-family: var(--font-pixel);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   line-height: 1.35;
   pointer-events: none;
   opacity: 0;
   transform: translate3d(-999px, -999px, 0);
-  transition: opacity 0.14s ease;
+  transition: opacity 0.12s ease-out;
 }
 
 #pastel-tooltip.is-visible {
@@ -218,13 +211,13 @@ a:hover {
 }
 
 /* ==========================================================================
-   ANIMACIONES TIPO REIGEN.MOE (WOBBLE, ARCOÍRIS PASTEL, SCANLINES, REVEAL)
+   ANIMACIONES RETRO (WOBBLE, ARCOÍRIS, MARQUEE)
    ========================================================================== */
 
 .wobble-char {
   display: inline-block;
   position: relative;
-  animation: text-wobble 1.5s ease-in-out infinite;
+  animation: text-wobble 1.4s ease-in-out infinite;
   animation-delay: calc(var(--char-i, 0) * -0.11s);
 }
 
@@ -235,19 +228,184 @@ a:hover {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.45s var(--ease-smooth), transform 0.45s var(--ease-smooth);
-}
-
-.reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* ==========================================================================
-   COMPONENTES REUTILIZABLES (ENCAJE, ARCOÍRIS, BOTÓN CANDY, BACK, BADGES)
+   WIDGET BACK TIPO REFERENCIA (<<-BACK glitter + Garfield durmiendo)
    ========================================================================== */
+
+.back-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 148px;
+  height: 148px;
+  padding: 7px 6px 5px;
+  background-color: #FFE8F6;
+  background-image: url('../gifs/tiles/tile-back-starburst.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
+  text-decoration: none;
+  z-index: var(--z-floating);
+  transition: transform 0.12s ease-out;
+}
+
+.back-widget:hover {
+  outline: 3px solid var(--pink-deep);
+  transform: translate(-1px, -1px);
+}
+
+.back-widget:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  transform: translate(1px, 1px);
+}
+
+.back-glitter-img {
+  width: 132px;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.back-garfield-img {
+  width: 108px;
+  max-height: 82px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (min-width: 1280px) {
+  .back-widget {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+  }
+
+  .back-widget.bottom-left {
+    top: auto;
+    bottom: 14px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .back-widget {
+    position: static;
+    margin: 0 auto 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .back-widget {
+    width: 136px;
+    height: 136px;
+    padding: 6px 5px 4px;
+  }
+
+  .back-glitter-img {
+    width: 120px;
+  }
+
+  .back-garfield-img {
+    width: 98px;
+    max-height: 74px;
+  }
+}
+
+/* ==========================================================================
+   COMPONENTES OLD-WEB COMPARTIDOS (WIN98 BAR, BOTÓN BISELADO, MARQUEE,
+   MARCO DE ENCAJE, ARCOÍRIS, BADGES, 88x31 Y LIGHTBOX TRAMADO)
+   ========================================================================== */
+
+.win-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 8px;
+  background: var(--bg-plum);
+  color: var(--butter-soft);
+  border-bottom: 2px solid var(--ink);
+  font-family: var(--font-pixel);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.win-bar.pink {
+  background: var(--pink-deep);
+  color: var(--bg-cream);
+}
+
+.win-bar-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.win-bar-title img {
+  width: 16px;
+  height: 16px;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.win-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.win-controls span {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 15px;
+  background: var(--pink-soft);
+  color: var(--ink);
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  font-family: var(--font-pixel);
+  font-size: 0.54rem;
+  line-height: 1;
+}
+
+.retro-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--butter-soft);
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+  padding: 4px 0;
+  font-family: var(--font-pixel);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+}
+
+.retro-marquee.plum {
+  background: var(--bg-plum-deep);
+  color: var(--pink-soft);
+}
+
+.retro-marquee-track {
+  display: inline-flex;
+  gap: 28px;
+  animation: marquee-scroll 24s linear infinite;
+}
+
+.retro-marquee:hover .retro-marquee-track {
+  animation-play-state: paused;
+}
 
 /* Marco con encaje pastel SVG original */
 .lace-frame {
@@ -257,123 +415,101 @@ a:hover {
   border-image-repeat: round;
 }
 
-/* Marco con borde degradado pastel animado */
+/* Marco con tira de píxeles arcoíris animada (sin gradientes CSS) */
 .rainbow-frame {
   position: relative;
-  padding: 5px;
-  border-radius: var(--radius-lg);
-  background: var(--grad-pastel-rainbow);
-  background-size: 220% 220%;
-  animation: gradient-shift 6s linear infinite;
-  box-shadow: var(--shadow-soft), 0 0 0 2px var(--ink);
+  padding: 6px;
+  background-color: var(--pink-mid);
+  background-image: url('../gifs/tiles/tile-rainbow-border.png');
+  background-repeat: repeat;
+  animation: rainbow-scroll 5s linear infinite;
+  border: 2px solid var(--ink);
 }
 
 .rainbow-frame > .rainbow-inner {
   background: var(--bg-cream);
-  border-radius: calc(var(--radius-lg) - 4px);
   border: 2px solid var(--ink);
 }
 
-/* Botón kawaii táctil */
-.candy-btn {
+/* Botón biselado estilo Win98 pastel */
+.candy-btn,
+.retro-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 10px 18px;
-  border: 2px solid var(--ink);
-  border-radius: var(--radius-pill);
-  background: var(--grad-btn-pink);
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: var(--text-sm);
-  letter-spacing: 0.02em;
-  box-shadow: 0 3px 0 var(--ink), inset 0 2px 0 rgba(255, 255, 255, 0.85);
-  transition: transform 0.16s var(--ease-bouncy), box-shadow 0.16s ease, filter 0.16s ease;
-  text-decoration: none;
-}
-
-.candy-btn:hover {
-  color: var(--ink);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 0 var(--ink), var(--shadow-glow), inset 0 2px 0 rgba(255, 255, 255, 0.9);
-}
-
-.candy-btn:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 0 var(--ink);
-}
-
-.candy-btn.mint {
-  background: var(--grad-btn-mint);
-}
-
-.candy-btn.lavender {
-  background: var(--grad-btn-lavender);
-}
-
-.candy-btn.butter {
-  background: var(--grad-btn-butter);
-}
-
-.candy-btn.plum {
-  background: linear-gradient(180deg, var(--bg-plum-mid), var(--bg-plum-deep));
-  color: var(--bg-cream);
-  border-color: var(--pink-mid);
-  box-shadow: 0 3px 0 var(--bg-plum-deep), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-
-.candy-btn.plum:hover {
-  color: var(--butter-soft);
-}
-
-/* Botón flotante Volver al Hub */
-.back-pill {
-  position: fixed;
-  top: 14px;
-  left: 14px;
-  z-index: var(--z-floating);
-  display: inline-flex;
-  align-items: center;
   gap: 6px;
-  padding: 8px 14px;
-  background: var(--bg-plum);
-  color: var(--bg-cream);
-  border: 2px solid var(--pink-mid);
-  border-radius: var(--radius-pill);
+  padding: 7px 13px;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
+  background: var(--pink-soft);
+  color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.72rem;
-  box-shadow: 3px 3px 0 var(--pink-soft);
-  transition: transform 0.18s var(--ease-bouncy), background 0.18s ease;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.12s ease-out, background-color 0.12s ease-out;
 }
 
-.back-pill:hover {
+.candy-btn:hover,
+.retro-btn:hover {
+  color: var(--ink);
+  background: var(--butter-soft);
+  transform: translate(-1px, -1px);
+}
+
+.candy-btn:active,
+.retro-btn:active {
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  transform: translate(1px, 1px);
+}
+
+.candy-btn.mint,
+.retro-btn.mint {
+  background: var(--mint-soft);
+}
+
+.candy-btn.lavender,
+.retro-btn.lavender {
+  background: var(--lavender-soft);
+}
+
+.candy-btn.butter,
+.retro-btn.butter {
+  background: var(--butter-soft);
+}
+
+.candy-btn.sky,
+.retro-btn.sky {
+  background: var(--sky-soft);
+}
+
+.candy-btn.plum,
+.retro-btn.plum {
+  background: var(--bg-plum);
   color: var(--butter-soft);
+  border-color: var(--bevel-plum-light) var(--bevel-plum-dark) var(--bevel-plum-dark) var(--bevel-plum-light);
+}
+
+.candy-btn.plum:hover,
+.retro-btn.plum:hover {
   background: var(--pink-deep);
-  transform: translate(-1px, -2px);
+  color: var(--bg-cream);
 }
 
-.back-pill.bottom-left {
-  top: auto;
-  bottom: 16px;
-}
-
-/* Micro-badges estilo gyaru / web retro 88x31 */
+/* Micro-badges rectangulares old-web */
 .pastel-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border: 2px solid var(--ink);
-  border-radius: 6px;
   font-family: var(--font-pixel);
-  font-size: 0.68rem;
+  font-size: 0.64rem;
   font-weight: 700;
   color: var(--ink);
   background: var(--pink-soft);
-  box-shadow: 2px 2px 0 var(--ink);
   user-select: none;
 }
 
@@ -386,6 +522,33 @@ a:hover {
   background: var(--bg-plum);
   color: var(--pink-soft);
   border-color: var(--pink-mid);
+}
+
+/* Botones 88x31 auténticos */
+.btn88-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn88-link {
+  display: inline-block;
+  border: 2px solid var(--ink);
+  background: var(--bg-card);
+  line-height: 0;
+}
+
+.btn88-link:hover {
+  outline: 2px solid var(--pink-deep);
+}
+
+.btn88-link img {
+  width: 88px;
+  height: 31px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 /* ==========================================================================
@@ -408,14 +571,15 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 3px 7px;
+  padding: 3px 6px;
   background: var(--bg-plum);
-  border: 1.5px solid var(--pink-mid);
-  border-radius: 7px;
+  border: 2px solid var(--pink-mid);
 }
 
 .mcbling-pop {
-  filter: drop-shadow(1px 1px 0 #3B234A) drop-shadow(-1px -1px 0 #3B234A);
+  background: var(--bg-plum);
+  padding: 2px 5px;
+  border: 2px solid var(--ink);
 }
 
 .gif-stamp {
@@ -425,8 +589,6 @@ a:hover {
   padding: 2px;
   background: #FFFFFF;
   border: 2px dotted var(--ink);
-  border-radius: 6px;
-  box-shadow: 2px 2px 0 rgba(59, 35, 74, 0.35);
 }
 
 .gif-shelf {
@@ -434,7 +596,7 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .gif-inline-pair {
@@ -448,11 +610,10 @@ a:hover {
 .comm-status-pill {
   display: inline-block;
   font-family: var(--font-pixel);
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 5px 10px;
+  padding: 4px 8px;
   border: 2px solid var(--ink);
-  border-radius: 7px;
   background: var(--mint-soft);
   color: var(--mint-deep);
 }
@@ -463,24 +624,24 @@ a:hover {
 }
 
 .comm-status-gif-frame {
-  width: min(196px, 100%);
+  width: min(192px, 100%);
   margin: 0 auto;
   padding: 4px;
   background: #FFFFFF;
-  border: 2px solid var(--ink);
-  border-radius: 10px;
-  box-shadow: 3px 3px 0 var(--pink-mid);
+  border: 2px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  outline: 2px solid var(--ink);
 }
 
 .comm-status-gif-frame img {
   width: 100%;
-  max-height: 170px;
+  max-height: 162px;
   object-fit: cover;
-  border-radius: 6px;
+  border: 2px solid var(--ink);
 }
 
 /* ==========================================================================
-   VISOR MODAL / LIGHTBOX COMPARTIDO (.lightbox)
+   VISOR MODAL / LIGHTBOX COMPARTIDO (TRAMA DITHER, CERO BLUR/GLASS)
    ========================================================================== */
 
 .lightbox {
@@ -490,13 +651,14 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px;
-  background: rgba(50, 24, 66, 0.84);
-  backdrop-filter: blur(8px);
+  padding: 16px;
+  background-color: rgba(41, 18, 56, 0.85);
+  background-image: url('../gifs/tiles/tile-dither-dark.png');
+  background-repeat: repeat;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.22s ease, visibility 0.22s ease;
+  transition: opacity 0.18s ease-out, visibility 0.18s ease-out;
 }
 
 .lightbox.is-open {
@@ -506,17 +668,16 @@ a:hover {
 }
 
 .lightbox-dialog {
-  width: min(940px, 100%);
-  max-height: 92vh;
+  width: min(920px, 100%);
+  max-height: 92svh;
   display: flex;
   flex-direction: column;
   background: var(--bg-cream);
-  border: 3px solid var(--ink);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 24px 60px rgba(24, 10, 34, 0.55), 0 0 0 4px var(--pink-soft);
+  border: 4px ridge var(--pink-mid);
+  outline: 3px solid var(--ink);
   overflow: hidden;
-  transform: scale(0.95);
-  transition: transform 0.24s var(--ease-bouncy);
+  transform: scale(0.96);
+  transition: transform 0.18s ease-out;
 }
 
 .lightbox.is-open .lightbox-dialog {
@@ -527,68 +688,65 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 10px 16px;
-  background: var(--grad-header-glow);
+  gap: 10px;
+  padding: 7px 12px;
+  background: var(--bg-plum);
+  color: var(--butter-soft);
   border-bottom: 2px solid var(--ink);
 }
 
 .lightbox-counter {
   font-family: var(--font-pixel);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--ink);
   background: var(--lavender-soft);
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--ink);
+  padding: 3px 8px;
+  border: 2px solid var(--ink);
 }
 
 .lightbox-close {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 2px solid var(--ink);
+  width: 30px;
+  height: 28px;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
   background: var(--pink-soft);
   color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-family: var(--font-pixel);
+  font-size: 0.9rem;
   font-weight: 700;
   display: grid;
   place-items: center;
-  transition: transform 0.16s var(--ease-bouncy), background 0.16s ease;
 }
 
 .lightbox-close:hover {
-  background: var(--pink-mid);
-  transform: rotate(90deg) scale(1.06);
+  background: var(--butter-soft);
 }
 
 .lightbox-stage {
   position: relative;
   flex: 1;
-  min-height: 260px;
-  max-height: calc(92vh - 180px);
+  min-height: 240px;
+  max-height: calc(92svh - 170px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 14px;
   overflow: auto;
-  background-color: #241331;
-  background-image:
-    radial-gradient(circle, rgba(255, 214, 232, 0.12) 1.5px, transparent 1.5px);
-  background-size: 20px 20px;
+  background-color: var(--bg-plum-deep);
+  background-image: url('../gifs/tiles/tile-sidebar.png');
+  background-repeat: repeat;
 }
 
 .lightbox-img {
   max-width: 100%;
-  max-height: calc(92vh - 216px);
+  max-height: calc(92svh - 208px);
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: var(--radius-sm);
-  border: 2px solid rgba(255, 214, 232, 0.45);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-  transition: transform 0.25s ease;
+  border: 3px solid var(--bg-cream);
+  outline: 2px solid var(--ink);
+  transition: transform 0.2s ease-out;
 }
 
 .lightbox-img.is-zoomed {
@@ -603,8 +761,8 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 12px 16px;
+  gap: 10px;
+  padding: 10px 14px;
   background: var(--bg-blush);
   border-top: 2px solid var(--ink);
 }
@@ -627,11 +785,6 @@ a:hover {
   gap: 8px;
 }
 
-.lightbox-actions .candy-btn {
-  padding: 7px 13px;
-  font-size: 0.82rem;
-}
-
 /* ==========================================================================
    KEYFRAMES COMPARTIDOS
    ========================================================================== */
@@ -648,7 +801,7 @@ a:hover {
     opacity: 0.85;
   }
   100% {
-    transform: translate3d(24px, calc(100vh + 80px), 0) rotate(360deg);
+    transform: translate3d(24px, calc(100svh + 80px), 0) rotate(360deg);
     opacity: 0;
   }
 }
@@ -656,32 +809,31 @@ a:hover {
 @keyframes cursor-pop {
   0% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(0.85) rotate(0deg);
+    transform: translate(-50%, -50%) scale(0.9);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -92%) scale(1.35) rotate(28deg);
+    transform: translate(-50%, -90%) scale(1.25);
   }
 }
 
 @keyframes text-wobble {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+  50% { transform: translateY(-3px); }
 }
 
 @keyframes pastel-rainbow-cycle {
-  0%, 100% { color: #C43B7B; }
-  20% { color: #B54D26; }
-  40% { color: #8A6200; }
-  60% { color: #1A7A5E; }
-  80% { color: #246DA8; }
-  90% { color: #6E46B8; }
+  0%, 100% { color: #B82E72; }
+  20% { color: #A8441E; }
+  40% { color: #785400; }
+  60% { color: #146E53; }
+  80% { color: #1D5D94; }
+  90% { color: #5C35A6; }
 }
 
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes rainbow-scroll {
+  from { background-position: 0 0; }
+  to { background-position: 48px 0; }
 }
 
 @keyframes pastel-spin {
@@ -704,7 +856,6 @@ a:hover {
   50% { transform: translateX(-4px); }
 }
 
-/* Accesibilidad: movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -722,17 +873,6 @@ a:hover {
 }
 
 @media (max-width: 640px) {
-  .back-pill {
-    top: 10px;
-    left: 10px;
-    padding: 6px 11px;
-    font-size: 0.68rem;
-  }
-
-  .lightbox-dialog {
-    border-radius: var(--radius-md);
-  }
-
   .lightbox-footer {
     flex-direction: column;
     align-items: stretch;

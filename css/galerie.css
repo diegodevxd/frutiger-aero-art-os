@@ -1,146 +1,165 @@
 /* ==========================================================================
-   GALERÍA DE ARTE (galerie.html) — Inspirada en reigen.moe/galerie
+   GALERÍA GARFIELD (galerie.html) - Tema exclusivo de Garfield + Stickers cute
+   Mantiene las 71 obras originales de Demian en rejilla densa old-web.
    ========================================================================== */
 
 body.gallery-page {
-  min-height: 100vh;
-  padding: 58px 18px 42px;
-  background-color: #F4EEFF;
-  background-image:
-    radial-gradient(circle at 24px 24px, rgba(255, 158, 199, 0.35) 3px, transparent 3px),
-    radial-gradient(circle at 6px 6px, rgba(196, 170, 255, 0.38) 2px, transparent 2px);
-  background-size: 36px 36px;
+  min-height: 100svh;
+  padding: 18px 14px 36px;
+  background-color: #FFF2E2;
+  background-image: url('../gifs/tiles/tile-galerie-garfield.png');
+  background-repeat: repeat;
+}
+
+.gallery-window {
+  max-width: 1020px;
+  margin: 0 auto;
+  background: var(--bg-cream);
+  border: 4px ridge var(--peach-mid);
+  outline: 3px solid var(--ink);
 }
 
 .gallery-layout {
-  max-width: 1140px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: 410px minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 14px;
+  padding: 12px;
   align-items: start;
+  background: var(--peach-soft);
 }
 
 /* Panel izquierdo sticky */
 .gallery-info-panel {
   position: sticky;
-  top: 56px;
+  top: 16px;
+}
+
+.gallery-wordart-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: var(--butter-soft);
+  border: 3px double var(--peach-deep);
+  outline: 2px solid var(--ink);
+  margin-bottom: 8px;
 }
 
 .gallery-wordart {
-  position: relative;
-  z-index: 2;
-  width: fit-content;
-  margin: 0 auto -18px;
-  padding: 8px 22px;
-  background: linear-gradient(135deg, #FF9EC7, #C4AAFF, #85E3C3);
-  border: 3px solid var(--ink);
-  border-radius: var(--radius-pill);
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.18rem, 2.2vw, 1.48rem);
   font-weight: 700;
-  color: var(--bg-cream);
-  text-shadow:
-    -2px -2px 0 var(--ink),
-    2px -2px 0 var(--ink),
-    -2px 2px 0 var(--ink),
-    2px 2px 0 var(--ink);
-  box-shadow: 0 4px 0 var(--ink);
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.1;
 }
 
 .gallery-info-inner {
-  padding: 28px 20px 18px;
+  padding: 12px;
   display: grid;
-  gap: 14px;
+  gap: 10px;
+  background: var(--bg-cream);
 }
 
-.gallery-stats {
-  border: 2px dashed var(--pink-deep);
-  border-radius: var(--radius-sm);
+.garfield-stats-table {
+  width: 100%;
+  border-collapse: collapse;
   background: var(--bg-blush);
-  padding: 10px 12px;
   font-family: var(--font-pixel);
-  font-size: 0.72rem;
-  line-height: 1.55;
-  color: var(--ink);
+  font-size: 0.66rem;
+}
+
+.garfield-stats-table th,
+.garfield-stats-table td {
+  padding: 5px 7px;
+  border: 2px solid var(--ink);
+  text-align: left;
+}
+
+.garfield-stats-table th {
+  background: var(--peach-soft);
+  color: var(--peach-deep);
+  width: 42%;
 }
 
 .gallery-intro {
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   color: var(--ink);
+  padding: 7px 9px;
+  background: var(--bg-card);
+  border: 2px dashed var(--peach-deep);
 }
 
 .gallery-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 5px;
 }
 
-.cat-pill {
-  padding: 6px 10px;
-  border: 2px solid var(--ink);
-  border-radius: var(--radius-pill);
+.cat-btn {
+  padding: 4px 7px;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
   background: var(--bg-card);
   color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
   font-weight: 700;
-  transition: transform 0.14s var(--ease-bouncy), background 0.14s ease;
 }
 
-.cat-pill:hover {
-  background: var(--pink-soft);
-  transform: translateY(-2px);
+.cat-btn:hover {
+  background: var(--butter-soft);
 }
 
-.cat-pill.is-active {
+.cat-btn.is-active {
   background: var(--bg-plum);
   color: var(--butter-soft);
-  box-shadow: 2px 2px 0 var(--pink-mid);
+  border-color: var(--bevel-plum-dark) var(--bevel-plum-light) var(--bevel-plum-light) var(--bevel-plum-dark);
 }
 
 .gallery-search-row {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .gallery-search {
   flex: 1;
   min-width: 0;
-  padding: 8px 12px;
+  padding: 6px 8px;
   border: 2px solid var(--ink);
-  border-radius: 10px;
   background: #FFFFFF;
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
 
 .gallery-pagination {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  padding-top: 10px;
+  gap: 6px;
+  padding-top: 8px;
   border-top: 2px dotted var(--lavender-deep);
   font-family: var(--font-pixel);
-  font-size: 0.75rem;
+  font-size: 0.68rem;
 }
 
 .page-nav-btn {
-  padding: 7px 12px;
-  border: 2px solid var(--ink);
-  border-radius: var(--radius-pill);
+  padding: 5px 9px;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
   background: var(--sky-soft);
   color: var(--ink);
   font-family: var(--font-pixel);
-  font-size: 0.7rem;
+  font-size: 0.64rem;
 }
 
 .page-nav-btn:hover:not(:disabled) {
   background: var(--mint-soft);
-  transform: translateY(-2px);
 }
 
 .page-nav-btn:disabled {
@@ -148,39 +167,77 @@ body.gallery-page {
   cursor: not-allowed;
 }
 
-/* Marco derecho con rejilla de 5 columnas */
+/* Rincón Garfield del panel izquierdo */
+.garfield-shrine-box {
+  padding: 8px;
+  background: var(--peach-soft);
+  border: 2px dashed var(--peach-deep);
+  display: grid;
+  gap: 6px;
+  text-align: center;
+}
+
+.garfield-shrine-label {
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--peach-deep);
+  background: var(--butter-soft);
+  border: 2px solid var(--ink);
+  padding: 2px 4px;
+}
+
+.garfield-mini-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.garfield-gif-card {
+  background: #FFFFFF;
+  border: 2px solid var(--ink);
+  padding: 2px;
+}
+
+/* Marco derecho con rejilla densa de 5 columnas */
+.gallery-main-col {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
 .gallery-grid-frame {
-  padding: 16px;
+  padding: 10px;
   background-color: var(--lavender-soft);
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.7) 2px, transparent 2px);
-  background-size: 18px 18px;
+  background-image: url('../gifs/tiles/tile-subpage.png');
+  background-repeat: repeat;
   border: 4px ridge var(--pink-mid);
-  outline: 4px double var(--ink);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-candy);
+  outline: 3px solid var(--ink);
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
+  gap: 8px;
 }
 
 .gallery-grid.is-large {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 10px;
 }
 
 .art-tile {
   position: relative;
   aspect-ratio: 1 / 1;
   width: 100%;
-  padding: 0;
-  border: 2px solid var(--ink);
-  border-radius: 8px;
+  padding: 2px;
+  border: 2px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  outline: 2px solid var(--ink);
   background: var(--bg-card);
   overflow: hidden;
-  transition: transform 0.2s var(--ease-bouncy), box-shadow 0.2s ease, outline 0.15s ease;
+  transition: transform 0.14s ease-out;
 }
 
 .art-tile img {
@@ -191,26 +248,23 @@ body.gallery-page {
 
 .art-tile-badge {
   position: absolute;
-  left: 4px;
-  bottom: 4px;
-  max-width: calc(100% - 8px);
-  padding: 2px 6px;
-  border-radius: 5px;
-  background: rgba(50, 24, 66, 0.84);
-  color: var(--bg-cream);
+  left: 2px;
+  bottom: 2px;
+  max-width: calc(100% - 4px);
+  padding: 2px 5px;
+  background: var(--bg-plum);
+  color: var(--butter-soft);
   font-family: var(--font-pixel);
-  font-size: 0.58rem;
+  font-size: 0.54rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   opacity: 0;
-  transition: opacity 0.18s ease;
 }
 
 .art-tile:hover {
-  transform: rotate(4.5deg) scale(1.06);
-  outline: 4px dashed #FFFFFF;
-  box-shadow: 0 0 0 2px var(--pink-deep), var(--shadow-glow);
+  transform: rotate(3deg) scale(1.04);
+  outline: 3px dashed var(--pink-deep);
   z-index: 4;
 }
 
@@ -218,30 +272,66 @@ body.gallery-page {
   opacity: 1;
 }
 
-/* Celda decorativa vacía para cerrar cuadrícula estilo reigen.moe */
+/* Celda decorativa vacía estilo reigen.moe */
 .art-placeholder {
   aspect-ratio: 1 / 1;
-  border: 2px solid rgba(59, 35, 74, 0.35);
-  border-radius: 8px;
-  background: repeating-linear-gradient(
-    -45deg,
-    rgba(255, 214, 232, 0.55) 0 6px,
-    rgba(255, 249, 251, 0.72) 6px 12px
-  );
+  border: 2px solid var(--ink);
+  background-color: var(--pink-soft);
+  background-image: url('../gifs/tiles/tile-placeholder.png');
+  background-repeat: repeat;
   display: grid;
   place-items: center;
-  color: rgba(110, 70, 184, 0.45);
-  font-size: 1.1rem;
+  color: var(--lavender-deep);
+  font-family: var(--font-pixel);
+  font-size: 0.9rem;
   pointer-events: none;
 }
 
 .gallery-empty {
   grid-column: 1 / -1;
-  padding: 36px 20px;
+  padding: 28px 16px;
   text-align: center;
   background: var(--bg-cream);
   border: 2px dashed var(--pink-deep);
-  border-radius: var(--radius-md);
+}
+
+/* Tira inferior exclusiva de stickers Garfield & Cute */
+.garfield-sticker-footer {
+  padding: 10px 12px;
+  background: var(--butter-soft);
+  border: 3px double var(--peach-deep);
+  outline: 2px solid var(--ink);
+  display: grid;
+  gap: 8px;
+  text-align: center;
+}
+
+.garfield-sticker-footer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-family: var(--font-pixel);
+  font-size: 0.64rem;
+  color: var(--peach-deep);
+}
+
+.garfield-sticker-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.garfield-sticker-frame {
+  padding: 3px;
+  background: #FFFFFF;
+  border: 2px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 1020px) {
@@ -260,12 +350,16 @@ body.gallery-page {
 
 @media (max-width: 600px) {
   body.gallery-page {
-    padding: 56px 10px 28px;
+    padding: 12px 8px 26px;
+  }
+
+  .gallery-layout {
+    padding: 8px;
   }
 
   .gallery-grid,
   .gallery-grid.is-large {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 6px;
   }
 }

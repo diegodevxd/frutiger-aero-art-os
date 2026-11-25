@@ -14,6 +14,8 @@
     const searchEl = document.getElementById('gallerySearch');
     const densityBtn = document.getElementById('galleryDensityBtn');
     const statsEl = document.getElementById('galleryStats');
+    const countEl = document.getElementById('galStatCount');
+    const catEl = document.getElementById('galStatCat');
     const prevBtn = document.getElementById('galPrevBtn');
     const nextBtn = document.getElementById('galNextBtn');
     const pageInfo = document.getElementById('galPageInfo');
@@ -35,7 +37,7 @@
       data.categories.forEach((cat) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = `cat-pill${cat.id === activeCat ? ' is-active' : ''}`;
+        btn.className = `cat-btn${cat.id === activeCat ? ' is-active' : ''}`;
         btn.textContent = `${cat.label} (${cat.count})`;
         btn.setAttribute('aria-pressed', String(cat.id === activeCat));
         btn.addEventListener('click', () => {
@@ -71,13 +73,16 @@
       const pageItems = filtered.slice(start, start + PAGE_SIZE);
 
       const activeCategoryObj = data.categories.find((c) => c.id === activeCat) || data.categories[0];
-      if (statsEl) {
+      if (countEl && catEl) {
+        countEl.textContent = `${filtered.length} / ${data.artworks.length}`;
+        catEl.textContent = activeCategoryObj.label.toUpperCase();
+      } else if (statsEl) {
         statsEl.innerHTML =
           `Nº DE OBRAS: <strong>${filtered.length}</strong> / ${data.artworks.length}<br>` +
           `CATEGORÍA: <strong>${activeCategoryObj.label.toUpperCase()}</strong>`;
       }
 
-      if (pageInfo) pageInfo.textContent = `PÁG ${currentPage} / ${totalPages}`;
+      if (pageInfo) pageInfo.textContent = `PAG ${currentPage} / ${totalPages}`;
       if (prevBtn) prevBtn.disabled = currentPage <= 1;
       if (nextBtn) nextBtn.disabled = currentPage >= totalPages;
 
@@ -86,7 +91,7 @@
       if (pageItems.length === 0) {
         const empty = document.createElement('div');
         empty.className = 'gallery-empty';
-        empty.innerHTML = `<strong>No se encontraron obras para "${searchQuery}"</strong><br>Prueba limpiando el buscador o cambiando de categoría ♡`;
+        empty.innerHTML = `<strong>No se encontraron obras para "${searchQuery}"</strong><br>Prueba limpiando el buscador o cambiando de categoría &lt;3`;
         gridEl.appendChild(empty);
         return;
       }
@@ -126,7 +131,7 @@
         const ph = document.createElement('div');
         ph.className = 'art-placeholder';
         ph.setAttribute('aria-hidden', 'true');
-        ph.textContent = '✦';
+        ph.textContent = '*';
         gridEl.appendChild(ph);
       }
     }

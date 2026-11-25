@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PERFIL DE ARTISTA (profil.html) — Dato interactivo, 10 obras & estampillas
+   PERFIL DE ARTISTA (profil.html) - Dato interactivo, 10 obras & estampillas
    ========================================================================== */
 
 (function () {

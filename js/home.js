@@ -86,7 +86,7 @@
       const item = data.artworks[currentIdx];
       if (imgEl) {
         imgEl.src = item.src;
-        imgEl.alt = `${item.title} — ${item.meta}`;
+        imgEl.alt = `${item.title} - ${item.meta}`;
       }
       if (miniPaintImg) {
         miniPaintImg.src = item.thumb;
@@ -207,7 +207,9 @@
       if (!sec || !Number.isFinite(sec)) return '00:00';
       const m = Math.floor(sec / 60);
       const s = Math.floor(sec % 60);
-      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      const mm = m < 10 ? `0${m}` : String(m);
+      const ss = s < 10 ? `0${s}` : String(s);
+      return `${mm}:${ss}`;
     }
 
     function drawBars() {
@@ -254,12 +256,12 @@
         if (audio.paused) {
           audio.play().catch(() => {});
           playing = true;
-          playBtn.textContent = '⏸ Pausa';
+          playBtn.textContent = '|| Pausa';
           if (!rafId) drawBars();
         } else {
           audio.pause();
           playing = false;
-          playBtn.textContent = '▶ Play';
+          playBtn.textContent = '> Play';
         }
       });
     }
@@ -269,7 +271,7 @@
         audio.pause();
         audio.currentTime = 0;
         playing = false;
-        if (playBtn) playBtn.textContent = '▶ Play';
+        if (playBtn) playBtn.textContent = '> Play';
         if (fill) fill.style.width = '0%';
         if (timeEl) timeEl.textContent = '00:00';
         drawBars();
@@ -284,7 +286,7 @@
 
     audio.addEventListener('ended', () => {
       playing = false;
-      if (playBtn) playBtn.textContent = '▶ Play';
+      if (playBtn) playBtn.textContent = '> Play';
       drawBars();
     });
 
@@ -360,7 +362,7 @@
       const original = submitBtn ? submitBtn.textContent : 'Enviar';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando ♡...';
+        submitBtn.textContent = 'Enviando <3...';
       }
 
       const fd = new FormData(form);

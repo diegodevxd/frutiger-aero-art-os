@@ -114,6 +114,7 @@
 
       if (!items.length) {
         const p = document.createElement('p');
+        p.className = 'doodle-empty';
         p.textContent = 'Aún no guardas bocetos en este navegador. ¡Dibuja algo y pulsa "Guardar aquí"!';
         doodleGallery.appendChild(p);
         return;

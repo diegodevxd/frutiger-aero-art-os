@@ -1,39 +1,39 @@
 /* ==========================================================================
    PÁGINAS SECUNDARIAS: COMISIONES (comisiones.html) & LIENZO (oekaki.html)
+   Estilo ventana Win98 / HTML clásico denso con barras biseladas.
    ========================================================================== */
 
 body.subpage {
-  min-height: 100vh;
-  padding: 62px 16px 48px;
+  min-height: 100svh;
+  padding: 18px 14px 36px;
   background-color: #FFF0F6;
-  background-image:
-    radial-gradient(circle at 20% 25%, rgba(205, 247, 231, 0.72) 0 18%, transparent 19%),
-    radial-gradient(circle at 80% 75%, rgba(232, 220, 255, 0.75) 0 18%, transparent 19%);
-  background-size: 80px 80px;
+  background-image: url('../gifs/tiles/tile-subpage.png');
+  background-repeat: repeat;
+}
+
+.subpage-shell {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--bg-cream);
+  outline: 3px solid var(--ink);
 }
 
 .subpage-nav-strip {
-  max-width: 980px;
-  margin: 0 auto 18px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 8px;
-}
-
-.subpage-shell {
-  max-width: 980px;
-  width: 100%;
-  margin: 0 auto;
-  background: var(--bg-cream);
-  box-shadow: var(--shadow-candy);
+  padding: 8px 10px;
+  background: var(--bg-blush);
+  border-bottom: 2px solid var(--ink);
 }
 
 .subpage-inner {
-  padding: 24px 22px;
+  padding: 16px;
   display: grid;
-  gap: 22px;
+  gap: 16px;
   min-width: 0;
 }
 
@@ -45,19 +45,36 @@ body.subpage {
 .subpage-title {
   text-align: center;
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 4vw, 2.55rem);
+  font-size: clamp(1.55rem, 3.6vw, 2.2rem);
   color: var(--pink-deep);
-  text-shadow: 2px 2px 0 #FFFFFF, 4px 4px 0 var(--lavender-mid);
+  background: var(--butter-soft);
+  padding: 6px 12px;
+  border: 3px double var(--ink);
 }
 
 /* ==========================================================================
    COMISIONES
    ========================================================================== */
 
+.comm-status-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  background: var(--sky-soft);
+  border: 2px solid var(--ink);
+}
+
+.comm-status-banner-copy {
+  display: grid;
+  gap: 7px;
+}
+
 .price-table-wrap {
   overflow-x: auto;
-  border: 2.5px solid var(--ink);
-  border-radius: var(--radius-md);
+  border: 2px solid var(--ink);
   background: #FFFFFF;
 }
 
@@ -69,15 +86,15 @@ body.subpage {
 
 .price-table th,
 .price-table td {
-  padding: 12px 10px;
-  border: 1.5px solid var(--pink-soft);
+  padding: 10px 8px;
+  border: 2px solid var(--pink-mid);
 }
 
 .price-table thead th {
   background: var(--bg-plum);
   color: var(--butter-soft);
   font-family: var(--font-pixel);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 .price-table tbody th {
@@ -85,12 +102,12 @@ body.subpage {
   color: var(--ink);
   font-family: var(--font-display);
   text-align: left;
-  padding-left: 14px;
+  padding-left: 12px;
 }
 
 .price-table tbody td {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 700;
   color: var(--ink);
 }
@@ -98,67 +115,62 @@ body.subpage {
 .price-notes {
   display: grid;
   gap: 4px;
-  padding: 12px 14px;
+  padding: 9px 11px;
   background: var(--butter-soft);
   border: 2px dashed var(--ink);
-  border-radius: var(--radius-sm);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .emotes-promo-card {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 16px;
+  gap: 12px;
   align-items: center;
-  padding: 18px;
+  padding: 12px;
   background: var(--lavender-soft);
-  border: 2.5px solid var(--ink);
-  border-radius: var(--radius-md);
+  border: 2px solid var(--ink);
 }
 
 .emote-prices-list {
   display: grid;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 6px;
+  margin-top: 6px;
 }
 
 .emote-price-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 8px 14px;
+  gap: 10px;
+  padding: 6px 10px;
   background: #FFFFFF;
   border: 2px solid var(--ink);
-  border-radius: 10px;
   font-weight: 700;
+  font-size: 0.86rem;
 }
 
 .promo-tag {
   background: var(--pink-soft);
   color: var(--pink-deep);
-  border: 1.5px solid var(--pink-deep);
-  border-radius: var(--radius-pill);
-  padding: 2px 8px;
+  border: 2px solid var(--pink-deep);
+  padding: 1px 6px;
   font-family: var(--font-pixel);
-  font-size: 0.64rem;
+  font-size: 0.6rem;
 }
 
 .emote-samples-row {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 .emote-sample-box {
-  width: 82px;
-  height: 82px;
-  padding: 6px;
+  width: 78px;
+  height: 78px;
+  padding: 4px;
   background: #FFFFFF;
   border: 2px solid var(--ink);
-  border-radius: 12px;
-  box-shadow: 3px 3px 0 var(--pink-mid);
 }
 
 .emote-sample-box img {
@@ -170,13 +182,12 @@ body.subpage {
 .rules-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 12px;
 }
 
 .rule-card {
-  padding: 16px 18px;
-  border: 2.5px solid var(--ink);
-  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  border: 2px solid var(--ink);
 }
 
 .rule-card.yes { background: var(--mint-soft); }
@@ -184,49 +195,49 @@ body.subpage {
 
 .rule-card h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  margin-bottom: 10px;
+  font-size: 1.08rem;
+  margin-bottom: 8px;
 }
 
 .rule-card ul {
-  padding-left: 20px;
+  padding-left: 18px;
   display: grid;
-  gap: 6px;
+  gap: 5px;
   font-weight: 600;
+  font-size: 0.86rem;
 }
 
 .sheets-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 10px;
 }
 
 .sheet-card {
   background: #FFFFFF;
-  border: 2px solid var(--ink);
-  border-radius: 12px;
-  padding: 8px;
+  border: 2px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  outline: 2px solid var(--ink);
+  padding: 6px;
   text-align: center;
-  transition: transform 0.18s var(--ease-bouncy);
 }
 
 .sheet-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 4px 4px 0 var(--pink-mid);
+  background: var(--butter-soft);
 }
 
 .sheet-card img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 8px;
+  border: 2px solid var(--ink);
+  margin-bottom: 6px;
 }
 
 .sheet-card span {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.92rem;
+  font-weight: 700;
+  font-size: 0.86rem;
 }
 
 .comm-cta-bar {
@@ -234,29 +245,11 @@ body.subpage {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 16px;
+  gap: 10px;
+  padding: 12px;
   background: var(--bg-plum);
   color: var(--bg-cream);
-  border-radius: var(--radius-md);
   border: 2px solid var(--pink-mid);
-}
-
-.comm-status-banner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 14px 16px;
-  background: linear-gradient(135deg, var(--sky-soft), var(--pink-soft));
-  border: 2.5px solid var(--ink);
-  border-radius: var(--radius-md);
-}
-
-.comm-status-banner-copy {
-  display: grid;
-  gap: 8px;
 }
 
 /* ==========================================================================
@@ -266,16 +259,15 @@ body.subpage {
 .oekaki-board {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 232px;
-  gap: 18px;
+  gap: 14px;
   align-items: start;
 }
 
 .canvas-stage {
   background: #FFFFFF;
   border: 3px dashed var(--pink-deep);
-  border-radius: var(--radius-md);
-  padding: 8px;
-  box-shadow: var(--shadow-soft);
+  outline: 2px solid var(--ink);
+  padding: 6px;
 }
 
 #oekakiCanvas {
@@ -284,18 +276,17 @@ body.subpage {
   height: auto;
   aspect-ratio: 520 / 420;
   background: #FFFFFF;
-  border-radius: 8px;
+  border: 2px solid var(--ink);
   cursor: crosshair;
   touch-action: none;
 }
 
 .oekaki-tools {
   display: grid;
-  gap: 12px;
-  padding: 14px;
+  gap: 10px;
+  padding: 11px;
   background: var(--bg-blush);
-  border: 2.5px solid var(--ink);
-  border-radius: var(--radius-md);
+  border: 2px solid var(--ink);
 }
 
 .tool-btn-row {
@@ -305,15 +296,15 @@ body.subpage {
 }
 
 .tool-btn-row .candy-btn {
-  padding: 8px 10px;
-  font-size: 0.78rem;
+  padding: 7px 8px;
+  font-size: 0.66rem;
 }
 
 .brush-range-wrap {
   display: grid;
-  gap: 6px;
+  gap: 5px;
   font-family: var(--font-pixel);
-  font-size: 0.7rem;
+  font-size: 0.66rem;
 }
 
 .brush-range-wrap input[type="range"] {
@@ -324,20 +315,17 @@ body.subpage {
 .swatch-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 6px;
+  gap: 5px;
 }
 
 .swatch-btn {
   aspect-ratio: 1 / 1;
   border: 2px solid var(--ink);
-  border-radius: 6px;
-  transition: transform 0.14s var(--ease-bouncy);
 }
 
 .swatch-btn:hover,
 .swatch-btn.is-active {
-  transform: scale(1.12);
-  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--ink);
+  outline: 2px solid var(--pink-deep);
 }
 
 .custom-color-row {
@@ -346,44 +334,47 @@ body.subpage {
   justify-content: space-between;
   gap: 8px;
   font-family: var(--font-pixel);
-  font-size: 0.68rem;
+  font-size: 0.64rem;
 }
 
 .custom-color-row input[type="color"] {
-  width: 52px;
-  height: 32px;
+  width: 48px;
+  height: 28px;
   border: 2px solid var(--ink);
-  border-radius: 8px;
   background: #FFFFFF;
   padding: 2px;
 }
 
 .saved-doodles-drawer {
-  border: 2.5px dashed var(--lavender-deep);
-  border-radius: var(--radius-md);
+  border: 2px dashed var(--lavender-deep);
   background: #FFFFFF;
-  padding: 12px 16px;
+  padding: 10px 12px;
 }
 
 .saved-doodles-drawer summary {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-family: var(--font-pixel);
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--lavender-deep);
 }
 
 .doodle-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 12px;
-  margin-top: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(144px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.doodle-empty {
+  grid-column: 1 / -1;
+  font-size: 0.86rem;
+  color: var(--ink);
 }
 
 .doodle-card {
   background: var(--mint-soft);
   border: 2px solid var(--ink);
-  border-radius: 10px;
-  padding: 8px;
+  padding: 7px;
   display: grid;
   gap: 6px;
   text-align: center;
@@ -394,8 +385,7 @@ body.subpage {
   aspect-ratio: 520 / 420;
   object-fit: cover;
   background: #FFFFFF;
-  border-radius: 6px;
-  border: 1.5px solid var(--ink);
+  border: 2px solid var(--ink);
 }
 
 @media (max-width: 780px) {
@@ -409,7 +399,7 @@ body.subpage {
 
 @media (max-width: 520px) {
   body.subpage {
-    padding: 58px 8px 36px;
+    padding: 12px 8px 28px;
   }
 
   .subpage-shell {
@@ -417,16 +407,16 @@ body.subpage {
   }
 
   .subpage-inner {
-    padding: 16px 12px;
+    padding: 12px 9px;
   }
 
   .price-table th,
   .price-table td {
-    padding: 8px 6px;
-    font-size: 0.85rem;
+    padding: 7px 5px;
+    font-size: 0.8rem;
   }
 
   .price-table thead th {
-    font-size: 0.62rem;
+    font-size: 0.58rem;
   }
 }
